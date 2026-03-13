@@ -62,21 +62,21 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -512.0
-offset_right = 78.0
-offset_bottom = 456.0
+offset_left = -37.259853
+offset_top = -518.0
+offset_right = 64.74011
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.7804583, 0.49505568)
+scale = Vector2(0.79211926, 0.49919507)
 texture = SubResource("CompressedTexture2D_rhts7")
 
 [node name="ScrollMenu" type="TextureRect" parent="." unique_id=1693574303]
 layout_mode = 0
-offset_left = -73.512695
-offset_top = -451.00003
-offset_right = 735.4906
-offset_bottom = 342.8044
+offset_left = -76.53376
+offset_top = -519.0
+offset_right = 516.61945
+offset_bottom = 128.76733
 rotation = 0.014036163
 scale = Vector2(0.9874177, 0.9757229)
 texture = ExtResource("2_qe12f")
@@ -90,13 +90,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -328.12927
-offset_top = -583.66736
-offset_right = 139.87073
-offset_bottom = -220.66736
+offset_left = -259.98596
+offset_top = -509.91455
+offset_right = 168.2698
+offset_bottom = -146.91455
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 41
+metadata/_edit_group_ = true
 
 [node name="BtnNewGame" type="Button" parent="ScrollMenu/VBoxContainer" unique_id=1082370394]
 layout_mode = 2
@@ -107,7 +108,7 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = " Nova Jornada"
 flat = true
 
@@ -120,7 +121,7 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Exploração"
 flat = true
 
@@ -133,7 +134,7 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Diário de Bordo"
 flat = true
 
@@ -146,12 +147,12 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Sair"
 flat = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ScrollMenu" unique_id=944465513]
-position = Vector2(289.3061, 709.2779)
+position = Vector2(203.35193, 762.773)
 scale = Vector2(0.422428, 0.31858477)
 sprite_frames = SubResource("SpriteFrames_j5v2v")
 animation = &"marretando"
