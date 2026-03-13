@@ -5,9 +5,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pass
-
-func _on_btn_exit_pressed():
-	get_tree().quit() 
+#
+#func _on_btn_exit_pressed():
+	#get_tree().quit() 
 
 func _on_btn_new_game_mouse_entered():
 	# Faz o Corvan começar a marretar quando o mouse entra no botão 

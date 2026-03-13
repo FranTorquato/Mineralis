@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://5ukccvxxc0cs"]
 
+[ext_resource type="Script" uid="uid://dqb1nd5hfqak7" path="res://main_menu.gd" id="1_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://5e4xfup8kbqr" path="res://PergaminhoNovo.png" id="2_qe12f"]
 [ext_resource type="FontFile" uid="uid://cgvirln0471sv" path="res://Silkscreen-Bold.ttf" id="3_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://cgg8djw2pd8vo" path="res://Marretando1.png" id="4_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://da5k8jkhoaomg" path="res://Marretando2.png" id="5_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://ggxtnihwpcq4" path="res://Marretando5.png" id="6_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://uysmd2271u7t" path="res://Marretando3.png" id="6_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://dx0hs7vd57nuf" path="res://Marretando4.png" id="7_dy7ct"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rhts7"]
 load_path = "res://.godot/imported/Mapa.png-2e05c98610c0b02a859a53196c10aab9.ctex"
@@ -20,13 +23,19 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("4_dy7ct")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("5_0o4t1")
 }, {
-"duration": 1.0,
+"duration": 1.5,
+"texture": ExtResource("6_8qtwp")
+}, {
+"duration": 1.4,
+"texture": ExtResource("7_dy7ct")
+}, {
+"duration": 1.5,
 "texture": ExtResource("6_0k4wn")
 }],
 "loop": true,
@@ -39,33 +48,37 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = 497.0
-offset_right = 19.0
-offset_bottom = 497.0
+offset_left = 38.0
+offset_top = 516.0
+offset_right = 38.0
+offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9930259, 1)
+script = ExtResource("1_nlkkf")
 
 [node name="MapBackground" type="TextureRect" parent="." unique_id=1581150504]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -21.0
-offset_top = -484.0
-offset_right = 81.0
-offset_bottom = 484.0
+offset_left = -37.259853
+offset_top = -518.0
+offset_right = 64.74011
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.79211926, 0.49919507)
 texture = SubResource("CompressedTexture2D_rhts7")
 
 [node name="ScrollMenu" type="TextureRect" parent="." unique_id=1693574303]
 layout_mode = 0
-offset_left = -79.99999
-offset_top = -457.0
-offset_right = 836.68665
-offset_bottom = 573.14636
+offset_left = -76.53376
+offset_top = -519.0
+offset_right = 516.61945
+offset_bottom = 128.76733
 rotation = 0.014036163
+scale = Vector2(0.9874177, 0.9757229)
 texture = ExtResource("2_qe12f")
 expand_mode = 1
 stretch_mode = 4
@@ -77,13 +90,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -292.7382
-offset_top = -774.4457
-offset_right = 175.26178
-offset_bottom = -411.44568
+offset_left = -259.98596
+offset_top = -509.91455
+offset_right = 168.2698
+offset_bottom = -146.91455
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 41
+metadata/_edit_group_ = true
 
 [node name="BtnNewGame" type="Button" parent="ScrollMenu/VBoxContainer" unique_id=1082370394]
 layout_mode = 2
@@ -94,7 +108,7 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = " Nova Jornada"
 flat = true
 
@@ -107,7 +121,7 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Exploração"
 flat = true
 
@@ -120,7 +134,7 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Diário de Bordo"
 flat = true
 
@@ -133,28 +147,30 @@ theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "Sair"
 flat = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ScrollMenu" unique_id=944465513]
-position = Vector2(272.4448, 742.2492)
+position = Vector2(203.35193, 762.773)
 scale = Vector2(0.422428, 0.31858477)
 sprite_frames = SubResource("SpriteFrames_j5v2v")
 animation = &"marretando"
-frame_progress = 0.7139021
+autoplay = "marretando"
+frame_progress = 0.5058206
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1292175189]
 layout_mode = 0
-offset_left = 623.0
-offset_top = -433.0
-offset_right = 1354.0
-offset_bottom = -293.0
+offset_left = 454.1674
+offset_top = -523.0
+offset_right = 1169.1674
+offset_bottom = -374.0
+scale = Vector2(0.9874177, 0.9757229)
 theme_override_colors/default_color = Color(0.29411766, 0.21176471, 0.12941177, 1)
 theme_override_colors/font_outline_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("3_8qtwp")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 85
 text = "MINERALIS"
 
 [connection signal="mouse_entered" from="ScrollMenu/VBoxContainer/BtnNewGame" to="." method="_on_btn_new_game_mouse_entered"]
