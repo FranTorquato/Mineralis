@@ -1,18 +1,13 @@
 extends Control
 
-func _ready() -> void:
-	pass 
-
 func _process(delta: float) -> void:
 	pass
 #
 #func _on_btn_exit_pressed():
 	#get_tree().quit() 
 
-func _on_btn_new_game_mouse_entered():
-	# Faz o Corvan começar a marretar quando o mouse entra no botão 
-	$AnimatedSprite2D.play("marretando")
+func _on_btn_new_game_pressed():
+	# O caminho deve ser exatamente onde você salvou a primeira cena da fase
+	get_tree().change_scene_to_file("res://Fase 1-1/Cena01.tscn")
 
-func _on_btn_new_game_mouse_exited():
-	# Faz o Corvan voltar a ficar parado quando o mouse sai 
-	$AnimatedSprite2D.play("idle")
+@onready var animation_player = $AnimationPlayer # Ajuste o caminho para o seu nó AnimationPlayer
