@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://5ukccvxxc0cs"]
 
-[ext_resource type="Script" uid="uid://dqb1nd5hfqak7" path="res://main_menu.gd" id="1_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://e24of1yjs8j5" path="res://Mapa.png" id="2_qe12f"]
 [ext_resource type="FontFile" uid="uid://cgvirln0471sv" path="res://Silkscreen-Bold.ttf" id="3_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://cgg8djw2pd8vo" path="res://Marretando1.png" id="4_dy7ct"]
@@ -219,7 +218,6 @@ offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9930259, 1)
-script = ExtResource("1_nlkkf")
 
 [node name="MapBackground" type="TextureRect" parent="." unique_id=1581150504]
 layout_mode = 1

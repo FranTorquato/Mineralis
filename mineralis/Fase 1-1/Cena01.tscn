@@ -1,25 +1,11 @@
 [gd_scene format=3 uid="uid://dx1mq35klmc0o"]
 
-[ext_resource type="Texture2D" uid="uid://cucngnx0w0eq6" path="res://Fase 1-1/Cena 01 - Opção 1.png" id="1_f60xg"]
+[ext_resource type="Texture2D" uid="uid://bs26hee246nfh" path="res://Fase 1-1/Cena01.JPG" id="1_oiilf"]
 [ext_resource type="Texture2D" uid="uid://cd57io7xpfrjh" path="res://Fase 1-1/Condor.png" id="2_frj78"]
-[ext_resource type="Texture2D" uid="uid://c2o31qr2ok5b8" path="res://Fase 1-1/LhamaAndando.png" id="3_6qgxj"]
+[ext_resource type="Texture2D" uid="uid://blrclbnjavqtp" path="res://Fase 1-1/LhamaComendo1.png" id="3_6qgxj"]
+[ext_resource type="Script" uid="uid://qx0bbi65ptby" path="res://Fase 1-1/lhama_comendo.gd" id="3_k4bgr"]
 
 [sub_resource type="GDScript" id="GDScript_6qgxj"]
-script/source = "extends Node2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-func _on_area_2d_body_entered(body):
-	if body.name == \"Corvan\":
-		get_tree().change_scene_to_file(\"res://Fase 1-1/Cena02.tscn\")
-"
 
 [sub_resource type="GDScript" id="GDScript_oiilf"]
 script/source = "extends CharacterBody2D
@@ -97,23 +83,27 @@ size = Vector2(295.5, 190.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oiilf"]
 atlas = ExtResource("3_6qgxj")
-region = Rect2(0, 0, 469, 422)
+region = Rect2(0, 0, 469, 427)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4bgr"]
 atlas = ExtResource("3_6qgxj")
-region = Rect2(469, 0, 469, 422)
+region = Rect2(469, 0, 469, 427)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_avg25"]
 atlas = ExtResource("3_6qgxj")
-region = Rect2(938, 0, 469, 422)
+region = Rect2(938, 0, 469, 427)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbegu"]
 atlas = ExtResource("3_6qgxj")
-region = Rect2(1407, 0, 469, 422)
+region = Rect2(1407, 0, 469, 427)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sb285"]
 atlas = ExtResource("3_6qgxj")
-region = Rect2(2345, 0, 469, 422)
+region = Rect2(1876, 0, 469, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w64wn"]
+atlas = ExtResource("3_6qgxj")
+region = Rect2(2345, 0, 469, 427)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lqhyg"]
 animations = [{
@@ -132,25 +122,25 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sb285")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_w64wn")
 }],
 "loop": true,
 "name": &"default",
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6psh"]
-size = Vector2(285, 280.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qgxj"]
+size = Vector2(383, 290)
 
 [node name="Cena01" type="Node2D" unique_id=1525857177]
 script = SubResource("GDScript_6qgxj")
 
-[node name="Cena01Opção1" type="Sprite2D" parent="." unique_id=1327623720]
-position = Vector2(965.5, 533)
-scale = Vector2(0.6871449, 0.6875)
-texture = ExtResource("1_f60xg")
-
-[node name="Area2D" type="Area2D" parent="Cena01Opção1" unique_id=1660589924]
-position = Vector2(677, 540)
+[node name="Cena01" type="Sprite2D" parent="." unique_id=124441891]
+position = Vector2(960.75, 539.25)
+scale = Vector2(1.5270916, 1.2012264)
+texture = ExtResource("1_oiilf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=435352443]
 
@@ -166,22 +156,28 @@ script = SubResource("GDScript_oiilf")
 position = Vector2(30, 69)
 scale = Vector2(0.5977778, 0.55508476)
 sprite_frames = SubResource("SpriteFrames_gfqmf")
-frame_progress = 0.57975096
+frame_progress = 0.8725073
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Condor" unique_id=1253771158]
 visible = false
 position = Vector2(48, 90)
 shape = SubResource("RectangleShape2D_frj78")
 
-[node name="LhamaAndando" type="CharacterBody2D" parent="." unique_id=1072681719]
-position = Vector2(593, 561)
+[node name="LhamaComendo" type="CharacterBody2D" parent="." unique_id=1072681719]
+position = Vector2(216, 486)
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+safe_margin = 0.245
+script = ExtResource("3_k4bgr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LhamaAndando" unique_id=1261148963]
-position = Vector2(-256.00003, 352)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LhamaComendo" unique_id=1261148963]
+position = Vector2(1549, 361)
 scale = Vector2(0.66548294, 0.66824645)
 sprite_frames = SubResource("SpriteFrames_lqhyg")
-frame_progress = 0.9463738
+frame_progress = 0.29659927
+flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LhamaAndando" unique_id=327348418]
-position = Vector2(-276.5, 342.25)
-shape = SubResource("RectangleShape2D_d6psh")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LhamaComendo" unique_id=1970577187]
+position = Vector2(1502, 376)
+shape = SubResource("RectangleShape2D_6qgxj")

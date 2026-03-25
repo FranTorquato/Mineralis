@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://c6ig3jr8eyrob"]
 
+[ext_resource type="Texture2D" uid="uid://e5takbrjhgfs" path="res://Fase 1-1/Cena02.png" id="1_5aws4"]
+
 [node name="Cena02" type="Node2D" unique_id=1205616140]
+
+[node name="Cena02" type="Sprite2D" parent="." unique_id=1582836985]
+position = Vector2(958.99994, 540)
+scale = Vector2(0.7929752, 0.62326396)
+texture = ExtResource("1_5aws4")
