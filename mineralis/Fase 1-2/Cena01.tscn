@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://f2q15a5sy6u5"]
+
+[ext_resource type="Texture2D" uid="uid://bvntub5w1x15w" path="res://Fase 1-2/Fase 1.2 - Cena 01-02.png" id="1_jmhtg"]
+
+[node name="Cena01" type="Node2D" unique_id=870278672]
+
+[node name="Fase1_2Cena0102" type="Sprite2D" parent="." unique_id=550411682]
+position = Vector2(932, 516.00006)
+scale = Vector2(1.0021971, 0.5871582)
+texture = ExtResource("1_jmhtg")

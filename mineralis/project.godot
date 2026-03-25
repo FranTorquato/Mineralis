@@ -13,7 +13,7 @@ config_version=5
 config/name="Mineralis"
 run/main_scene="uid://5ukccvxxc0cs"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Menu Principal/icon.svg"
 
 [display]
 
