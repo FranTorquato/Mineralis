@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddpsh6kpf3j5b"
-path="res://.godot/imported/Fase 1.2 - Cena 01.png-4e1bcb13121e6edac2df21e34a0c1594.ctex"
+uid="uid://cxc07vric4tqv"
+path="res://.godot/imported/Fase 1.2 - Cena 01.PNG-efab931085725307bce574ce824da8a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase 1-2/Fase 1.2 - Cena 01.png"
-dest_files=["res://.godot/imported/Fase 1.2 - Cena 01.png-4e1bcb13121e6edac2df21e34a0c1594.ctex"]
+source_file="res://Fase 1-2/Fase 1.2 - Cena 01.PNG"
+dest_files=["res://.godot/imported/Fase 1.2 - Cena 01.PNG-efab931085725307bce574ce824da8a3.ctex"]
 
 [params]
 
