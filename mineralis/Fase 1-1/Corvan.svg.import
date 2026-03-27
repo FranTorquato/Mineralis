@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxc07vric4tqv"
-path="res://.godot/imported/Fase 1.2 - Cena 01.png-4e1bcb13121e6edac2df21e34a0c1594.ctex"
+uid="uid://5rhguax0c8ks"
+path="res://.godot/imported/Corvan.svg-af20902b182f80f812da1863d48ba66b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fase 1-2/Fase 1.2 - Cena 01.png"
-dest_files=["res://.godot/imported/Fase 1.2 - Cena 01.png-4e1bcb13121e6edac2df21e34a0c1594.ctex"]
+source_file="res://Fase 1-1/Corvan.svg"
+dest_files=["res://.godot/imported/Corvan.svg-af20902b182f80f812da1863d48ba66b.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
