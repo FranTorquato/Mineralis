@@ -5,6 +5,6 @@
 [node name="Cena03" type="Node2D" unique_id=843460940]
 
 [node name="Fase1_3Cena03" type="Sprite2D" parent="." unique_id=53638916]
-position = Vector2(955, 539.5)
-scale = Vector2(1.1892902, 1.2087543)
+position = Vector2(960.00006, 540)
+scale = Vector2(1.195517, 1.2098767)
 texture = ExtResource("1_qtto2")

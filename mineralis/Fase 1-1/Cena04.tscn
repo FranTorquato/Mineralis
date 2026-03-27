@@ -5,6 +5,6 @@
 [node name="Cena04" type="Node2D" unique_id=574276363]
 
 [node name="Cena01" type="Sprite2D" parent="." unique_id=629019605]
-position = Vector2(609, 240.00003)
-scale = Vector2(2.070219, 1.840719)
+position = Vector2(959, 541)
+scale = Vector2(1.5282869, 1.2084726)
 texture = ExtResource("1_eynty")

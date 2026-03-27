@@ -132,8 +132,8 @@ distance = -91.69999
 script = SubResource("GDScript_6qgxj")
 
 [node name="Cena01" type="Sprite2D" parent="." unique_id=124441891]
-position = Vector2(941.75, 511.25)
-scale = Vector2(1.4949454, 1.1204667)
+position = Vector2(958.3358, 541.36035)
+scale = Vector2(1.521377, 1.1876024)
 texture = ExtResource("1_oiilf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=435352443]
