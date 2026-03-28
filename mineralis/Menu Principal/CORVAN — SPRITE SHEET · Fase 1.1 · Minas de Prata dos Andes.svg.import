@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e24of1yjs8j5"
-path="res://.godot/imported/Mapa.png-6c43e359b88660ae3f7236b4e05c06b0.ctex"
+uid="uid://cboys1n662oes"
+path="res://.godot/imported/CORVAN — SPRITE SHEET · Fase 1.1 · Minas de Prata dos Andes.svg-b30e147ec6825f9bb9ffbe7bf7681053.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu Principal/Mapa.png"
-dest_files=["res://.godot/imported/Mapa.png-6c43e359b88660ae3f7236b4e05c06b0.ctex"]
+source_file="res://Menu Principal/CORVAN — SPRITE SHEET · Fase 1.1 · Minas de Prata dos Andes.svg"
+dest_files=["res://.godot/imported/CORVAN — SPRITE SHEET · Fase 1.1 · Minas de Prata dos Andes.svg-b30e147ec6825f9bb9ffbe7bf7681053.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

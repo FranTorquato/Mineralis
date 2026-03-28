@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+
+<!-- FUNDO EXTERNO (pergaminho escuro/couro) -->
+<rect x="0"   y="0"   width="800" height="800" fill="#6B4A1E"/>
+<rect x="8"   y="8"   width="784" height="784" fill="#7A5628"/>
+<rect x="4"   y="4"   width="792" height="792" fill="#6B4A1E"/>
+
+<!-- Textura couro - manchas escuras nos cantos -->
+<rect x="0"   y="0"   width="80"  height="80"  fill="#4A2E0E"/>
+<rect x="720" y="0"   width="80"  height="80"  fill="#4A2E0E"/>
+<rect x="0"   y="720" width="80"  height="80"  fill="#3A2008"/>
+<rect x="720" y="720" width="80"  height="80"  fill="#3A2008"/>
+<rect x="8"   y="8"   width="60"  height="60"  fill="#3A2008"/>
+<rect x="732" y="8"   width="60"  height="60"  fill="#3A2008"/>
+<rect x="8"   y="732" width="60"  height="60"  fill="#2A1404"/>
+<rect x="732" y="732" width="60"  height="60"  fill="#2A1404"/>
+
+<!-- Rachaduras pergaminho cantos -->
+<rect x="16"  y="40"  width="4"   height="32"  fill="#3A2008"/>
+<rect x="20"  y="32"  width="4"   height="24"  fill="#3A2008"/>
+<rect x="760" y="40"  width="4"   height="32"  fill="#3A2008"/>
+<rect x="756" y="32"  width="4"   height="24"  fill="#3A2008"/>
+<rect x="16"  y="728" width="4"   height="32"  fill="#2A1404"/>
+<rect x="20"  y="736" width="4"   height="24"  fill="#2A1404"/>
+<rect x="760" y="728" width="4"   height="32"  fill="#2A1404"/>
+<rect x="756" y="736" width="4"   height="24"  fill="#2A1404"/>
+
+<!-- MOLDURA INTERNA (borda dourada/marrom) -->
+<rect x="40"  y="110" width="720" height="580" fill="#2A5A6A"/>
+<rect x="44"  y="114" width="712" height="572" fill="#1E4A5A"/>
+<rect x="40"  y="110" width="720" height="4"   fill="#8A6A30"/>
+<rect x="40"  y="686" width="720" height="4"   fill="#8A6A30"/>
+<rect x="40"  y="110" width="4"   height="580" fill="#8A6A30"/>
+<rect x="756" y="110" width="4"   height="580" fill="#8A6A30"/>
+
+<!-- OCEANO - fundo azul petróleo com grade -->
+<rect x="44"  y="114" width="712" height="572" fill="#2A6878"/>
+
+<!-- Grade do oceano (linhas sutis) -->
+<!-- Horizontais -->
+<rect x="44"  y="170" width="712" height="2"   fill="#1E5060" opacity="1"/>
+<rect x="44"  y="228" width="712" height="2"   fill="#1E5060"/>
+<rect x="44"  y="286" width="712" height="2"   fill="#1E5060"/>
+<rect x="44"  y="344" width="712" height="2"   fill="#1E5060"/>
+<rect x="44"  y="402" width="712" height="2"   fill="#1E5060"/>
+<rect x="44"  y="460" width="712" height="2"   fill="#1E5060"/>
+<rect x="44"  y="518" width="712" height="2"   fill="#1E5060"/>
+<rect x="44"  y="576" width="712" height="2"   fill="#1E5060"/>
+<rect x="44"  y="634" width="712" height="2"   fill="#1E5060"/>
+<!-- Verticais -->
+<rect x="104" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="164" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="224" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="284" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="344" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="404" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="464" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="524" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="584" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="644" y="114" width="2"   height="572" fill="#1E5060"/>
+<rect x="704" y="114" width="2"   height="572" fill="#1E5060"/>
+
+<!-- ============================================================ -->
+<!-- CONTINENTES                                                   -->
+<!-- ============================================================ -->
+
+<!-- AMERICA DO NORTE -->
+<rect x="56"  y="118" width="168" height="8"   fill="#8AAA48"/>
+<rect x="56"  y="126" width="176" height="8"   fill="#8AAA48"/>
+<rect x="56"  y="134" width="184" height="8"   fill="#9ABB50"/>
+<rect x="56"  y="142" width="192" height="8"   fill="#9ABB50"/>
+<rect x="60"  y="150" width="192" height="8"   fill="#AACB58"/>
+<rect x="64"  y="158" width="184" height="8"   fill="#AACB58"/>
+<rect x="68"  y="166" width="180" height="8"   fill="#9ABB50"/>
+<rect x="72"  y="174" width="172" height="8"   fill="#9ABB50"/>
+<rect x="76"  y="182" width="164" height="8"   fill="#8AAA48"/>
+<rect x="80"  y="190" width="156" height="8"   fill="#8AAA48"/>
+<rect x="84"  y="198" width="148" height="8"   fill="#9ABB50"/>
+<rect x="88"  y="206" width="136" height="8"   fill="#9ABB50"/>
+<rect x="92"  y="214" width="120" height="8"   fill="#8AAA48"/>
+<rect x="96"  y="222" width="108" height="8"   fill="#8AAA48"/>
+<rect x="96"  y="230" width="96"  height="8"   fill="#7A9A40"/>
+<rect x="100" y="238" width="84"  height="8"   fill="#7A9A40"/>
+<rect x="100" y="246" width="72"  height="8"   fill="#8AAA48"/>
+<rect x="104" y="254" width="60"  height="8"   fill="#7A9A40"/>
+<rect x="108" y="262" width="48"  height="8"   fill="#6A8A38"/>
+<rect x="112" y="270" width="40"  height="8"   fill="#6A8A38"/>
+<rect x="116" y="278" width="32"  height="8"   fill="#7A9A40"/>
+<rect x="120" y="286" width="24"  height="8"   fill="#6A8A38"/>
+
+<!-- Groenlandia -->
+<rect x="212" y="118" width="32"  height="8"   fill="#DDEEBB"/>
+<rect x="208" y="126" width="40"  height="8"   fill="#DDEEBB"/>
+<rect x="208" y="134" width="44"  height="8"   fill="#DDEEBB"/>
+<rect x="212" y="142" width="40"  height="8"   fill="#DDEEBB"/>
+<rect x="216" y="150" width="32"  height="8"   fill="#DDEEBB"/>
+<rect x="220" y="158" width="24"  height="8"   fill="#DDEEBB"/>
+
+<!-- Destaque floresta (verde mais escuro) nas montanhas Rochosas -->
+<rect x="88"  y="150" width="24"  height="48"  fill="#4A7830"/>
+<rect x="80"  y="158" width="16"  height="32"  fill="#4A7830"/>
+
+<!-- AMERICA CENTRAL (istmo) -->
+<rect x="124" y="294" width="20"  height="8"   fill="#7A9A40"/>
+<rect x="128" y="302" width="16"  height="8"   fill="#7A9A40"/>
+<rect x="132" y="310" width="12"  height="8"   fill="#6A8A38"/>
+<rect x="136" y="318" width="8"   height="8"   fill="#6A8A38"/>
+
+<!-- AMERICA DO SUL -->
+<rect x="132" y="326" width="48"  height="8"   fill="#7AAA38"/>
+<rect x="128" y="334" width="60"  height="8"   fill="#8ABB40"/>
+<rect x="124" y="342" width="72"  height="8"   fill="#8ABB40"/>
+<rect x="120" y="350" width="80"  height="8"   fill="#9ACB48"/>
+<rect x="120" y="358" width="84"  height="8"   fill="#9ACB48"/>
+<rect x="120" y="366" width="88"  height="8"   fill="#8ABB40"/>
+<rect x="120" y="374" width="88"  height="8"   fill="#8ABB40"/>
+<rect x="124" y="382" width="84"  height="8"   fill="#7AAA38"/>
+<rect x="128" y="390" width="76"  height="8"   fill="#7AAA38"/>
+<rect x="132" y="398" width="68"  height="8"   fill="#8ABB40"/>
+<rect x="136" y="406" width="56"  height="8"   fill="#7AAA38"/>
+<rect x="140" y="414" width="48"  height="8"   fill="#6A9A30"/>
+<rect x="144" y="422" width="40"  height="8"   fill="#6A9A30"/>
+<rect x="148" y="430" width="32"  height="8"   fill="#7AAA38"/>
+<rect x="152" y="438" width="24"  height="8"   fill="#6A9A30"/>
+<rect x="156" y="446" width="16"  height="8"   fill="#5A8A28"/>
+<rect x="160" y="454" width="8"   height="8"   fill="#5A8A28"/>
+<rect x="160" y="462" width="8"   height="8"   fill="#5A8A28"/>
+<rect x="164" y="470" width="4"   height="8"   fill="#5A8A28"/>
+
+<!-- Floresta Amazonica (verde escuro) -->
+<rect x="128" y="350" width="48"  height="40"  fill="#3A7820"/>
+<rect x="124" y="358" width="16"  height="24"  fill="#3A7820"/>
+
+<!-- Andes (marrom) -->
+<rect x="120" y="326" width="8"   height="144" fill="#8A7050"/>
+
+<!-- EUROPA -->
+<rect x="360" y="118" width="64"  height="8"   fill="#9ABB50"/>
+<rect x="356" y="126" width="72"  height="8"   fill="#9ABB50"/>
+<rect x="352" y="134" width="80"  height="8"   fill="#AACB58"/>
+<rect x="348" y="142" width="84"  height="8"   fill="#AACB58"/>
+<rect x="348" y="150" width="80"  height="8"   fill="#9ABB50"/>
+<rect x="352" y="158" width="72"  height="8"   fill="#9ABB50"/>
+<rect x="356" y="166" width="64"  height="8"   fill="#8AAA48"/>
+<rect x="360" y="174" width="56"  height="8"   fill="#8AAA48"/>
+<rect x="364" y="182" width="48"  height="8"   fill="#9ABB50"/>
+<rect x="368" y="190" width="40"  height="8"   fill="#8AAA48"/>
+<rect x="372" y="198" width="32"  height="8"   fill="#8AAA48"/>
+<rect x="372" y="206" width="28"  height="8"   fill="#7A9A40"/>
+<rect x="376" y="214" width="20"  height="8"   fill="#7A9A40"/>
+<!-- Peninsula Iberica -->
+<rect x="352" y="206" width="20"  height="16"  fill="#8AAA48"/>
+<!-- Escandinávia -->
+<rect x="404" y="118" width="16"  height="32"  fill="#AACB58"/>
+<rect x="412" y="126" width="12"  height="40"  fill="#AACB58"/>
+<rect x="416" y="118" width="8"   height="24"  fill="#9ABB50"/>
+
+<!-- AFRICA -->
+<rect x="360" y="222" width="80"  height="8"   fill="#C8C870"/>
+<rect x="352" y="230" width="96"  height="8"   fill="#C8C870"/>
+<rect x="348" y="238" width="104" height="8"   fill="#D8D878"/>
+<rect x="344" y="246" width="112" height="8"   fill="#D8D878"/>
+<rect x="344" y="254" width="112" height="8"   fill="#C8C870"/>
+<rect x="344" y="262" width="112" height="8"   fill="#C8B860"/>
+<rect x="344" y="270" width="112" height="8"   fill="#B8A858"/>
+<rect x="348" y="278" width="104" height="8"   fill="#B8A858"/>
+<rect x="352" y="286" width="96"  height="8"   fill="#A89848"/>
+<rect x="356" y="294" width="88"  height="8"   fill="#9ABB50"/>
+<rect x="360" y="302" width="80"  height="8"   fill="#9ABB50"/>
+<rect x="364" y="310" width="72"  height="8"   fill="#8AAA48"/>
+<rect x="368" y="318" width="64"  height="8"   fill="#8AAA48"/>
+<rect x="372" y="326" width="56"  height="8"   fill="#7A9A40"/>
+<rect x="376" y="334" width="48"  height="8"   fill="#7A9A40"/>
+<rect x="380" y="342" width="40"  height="8"   fill="#8AAA48"/>
+<rect x="384" y="350" width="32"  height="8"   fill="#7A9A40"/>
+<rect x="388" y="358" width="24"  height="8"   fill="#6A8A38"/>
+<rect x="392" y="366" width="16"  height="8"   fill="#6A8A38"/>
+<rect x="396" y="374" width="8"   height="8"   fill="#6A8A38"/>
+
+<!-- Saara (areia) -->
+<rect x="348" y="246" width="96"  height="32"  fill="#D8C878"/>
+
+<!-- Madagascar -->
+<rect x="464" y="310" width="12"  height="32"  fill="#8AAA48"/>
+<rect x="460" y="318" width="16"  height="24"  fill="#7A9A40"/>
+
+<!-- ORIENTE MEDIO -->
+<rect x="440" y="206" width="48"  height="8"   fill="#C8B860"/>
+<rect x="444" y="214" width="44"  height="8"   fill="#C8B860"/>
+<rect x="444" y="222" width="40"  height="8"   fill="#B8A858"/>
+<rect x="448" y="230" width="32"  height="8"   fill="#B8A858"/>
+<rect x="448" y="238" width="24"  height="8"   fill="#C8B860"/>
+<rect x="452" y="246" width="16"  height="8"   fill="#B8A858"/>
+<!-- Peninsula Arabica *)-->
+<rect x="444" y="238" width="32"  height="8"   fill="#D8C870"/>
+<rect x="448" y="246" width="32"  height="8"   fill="#D8C870"/>
+<rect x="452" y="254" width="28"  height="8"   fill="#C8B860"/>
+<rect x="456" y="262" width="20"  height="8"   fill="#C8B860"/>
+<rect x="460" y="270" width="12"  height="8"   fill="#B8A858"/>
+
+<!-- ASIA -->
+<rect x="460" y="118" width="240" height="8"   fill="#9ABB50"/>
+<rect x="456" y="126" width="248" height="8"   fill="#AACB58"/>
+<rect x="452" y="134" width="256" height="8"   fill="#AACB58"/>
+<rect x="448" y="142" width="264" height="8"   fill="#9ABB50"/>
+<rect x="448" y="150" width="268" height="8"   fill="#9ABB50"/>
+<rect x="452" y="158" width="264" height="8"   fill="#AACB58"/>
+<rect x="456" y="166" width="256" height="8"   fill="#AACB58"/>
+<rect x="460" y="174" width="248" height="8"   fill="#9ABB50"/>
+<rect x="464" y="182" width="240" height="8"   fill="#9ABB50"/>
+<rect x="468" y="190" width="236" height="8"   fill="#8AAA48"/>
+<rect x="472" y="198" width="232" height="8"   fill="#8AAA48"/>
+<rect x="476" y="206" width="224" height="8"   fill="#9ABB50"/>
+<rect x="484" y="214" width="216" height="8"   fill="#8AAA48"/>
+<rect x="492" y="222" width="208" height="8"   fill="#8AAA48"/>
+<rect x="496" y="230" width="200" height="8"   fill="#9ABB50"/>
+<rect x="500" y="238" width="188" height="8"   fill="#8AAA48"/>
+<rect x="504" y="246" width="172" height="8"   fill="#7A9A40"/>
+<rect x="508" y="254" width="152" height="8"   fill="#7A9A40"/>
+<rect x="516" y="262" width="128" height="8"   fill="#8AAA48"/>
+<rect x="524" y="270" width="104" height="8"   fill="#7A9A40"/>
+
+<!-- Siberia / norte Asia mais claro -->
+<rect x="460" y="118" width="240" height="40"  fill="#AACB58"/>
+
+<!-- Himalaia (mais escuro/marrom) -->
+<rect x="548" y="198" width="64"  height="16"  fill="#9A8858"/>
+<rect x="552" y="190" width="56"  height="12"  fill="#8A7848"/>
+
+<!-- China interior -->
+<rect x="580" y="206" width="100" height="56"  fill="#9ABB50"/>
+
+<!-- India -->
+<rect x="536" y="254" width="48"  height="8"   fill="#AACB58"/>
+<rect x="540" y="262" width="44"  height="8"   fill="#AACB58"/>
+<rect x="544" y="270" width="36"  height="8"   fill="#9ABB50"/>
+<rect x="548" y="278" width="28"  height="8"   fill="#9ABB50"/>
+<rect x="552" y="286" width="20"  height="8"   fill="#8AAA48"/>
+<rect x="556" y="294" width="12"  height="8"   fill="#8AAA48"/>
+<rect x="560" y="302" width="4"   height="8"   fill="#7A9A40"/>
+
+<!-- Peninsula Indochina -->
+<rect x="628" y="254" width="28"  height="8"   fill="#8AAA48"/>
+<rect x="624" y="262" width="28"  height="8"   fill="#8AAA48"/>
+<rect x="620" y="270" width="24"  height="8"   fill="#7A9A40"/>
+<rect x="620" y="278" width="20"  height="8"   fill="#7A9A40"/>
+<rect x="624" y="286" width="16"  height="8"   fill="#6A8A38"/>
+<rect x="628" y="294" width="12"  height="8"   fill="#6A8A38"/>
+
+<!-- Japao -->
+<rect x="700" y="166" width="12"  height="32"  fill="#9ABB50"/>
+<rect x="704" y="150" width="8"   height="20"  fill="#9ABB50"/>
+<rect x="708" y="142" width="8"   height="16"  fill="#8AAA48"/>
+
+<!-- RUSSIA/Siberia extra -->
+<rect x="452" y="118" width="8"   height="48"  fill="#AACB58"/>
+<rect x="444" y="118" width="12"  height="32"  fill="#9ABB50"/>
+
+<!-- OCEANIA / AUSTRALIA -->
+<rect x="596" y="374" width="96"  height="8"   fill="#C8B860"/>
+<rect x="588" y="382" width="112" height="8"   fill="#C8C870"/>
+<rect x="584" y="390" width="120" height="8"   fill="#C8C870"/>
+<rect x="580" y="398" width="128" height="8"   fill="#B8B860"/>
+<rect x="580" y="406" width="128" height="8"   fill="#B8B860"/>
+<rect x="580" y="414" width="124" height="8"   fill="#C8C870"/>
+<rect x="584" y="422" width="116" height="8"   fill="#C8C870"/>
+<rect x="588" y="430" width="104" height="8"   fill="#B8A858"/>
+<rect x="592" y="438" width="92"  height="8"   fill="#B8A858"/>
+<rect x="596" y="446" width="76"  height="8"   fill="#C8B860"/>
+<rect x="600" y="454" width="60"  height="8"   fill="#B8A858"/>
+<rect x="604" y="462" width="44"  height="8"   fill="#B8A858"/>
+<rect x="608" y="470" width="28"  height="8"   fill="#C8B860"/>
+
+<!-- Interior Australia (deserto vermelho) -->
+<rect x="596" y="398" width="80"  height="40"  fill="#C89050"/>
+
+<!-- Nova Zelandia -->
+<rect x="720" y="438" width="12"  height="24"  fill="#8AAA48"/>
+<rect x="716" y="454" width="8"   height="16"  fill="#7A9A40"/>
+
+<!-- Ilhas do Pacifico (pequenas) -->
+<rect x="660" y="310" width="8"   height="8"   fill="#7A9A40"/>
+<rect x="700" y="326" width="8"   height="8"   fill="#8AAA48"/>
+<rect x="680" y="350" width="8"   height="8"   fill="#7A9A40"/>
+<rect x="720" y="374" width="8"   height="8"   fill="#8AAA48"/>
+
+<!-- Ilhas Britanicas -->
+<rect x="344" y="134" width="16"  height="24"  fill="#9ABB50"/>
+<rect x="340" y="142" width="16"  height="20"  fill="#9ABB50"/>
+<rect x="348" y="126" width="12"  height="12"  fill="#8AAA48"/>
+
+<!-- Ilha de Cuba / Caribe -->
+<rect x="152" y="294" width="24"  height="8"   fill="#7A9A40"/>
+<rect x="160" y="302" width="16"  height="8"   fill="#6A8A38"/>
+<rect x="176" y="286" width="8"   height="8"   fill="#7A9A40"/>
+
+<!-- ============================================================ -->
+<!-- PERGAMINHO SUPERIOR (titulo) -->
+<!-- ============================================================ -->
+<!-- Corpo do pergaminho -->
+<rect x="200" y="50"  width="400" height="56"  fill="#D4B878"/>
+<rect x="208" y="54"  width="384" height="48"  fill="#E4C888"/>
+<rect x="212" y="58"  width="376" height="40"  fill="#EDD898"/>
+<!-- Dobras laterais do pergaminho -->
+<rect x="196" y="54"  width="16"  height="48"  fill="#B89858"/>
+<rect x="200" y="50"  width="8"   height="56"  fill="#C8A868"/>
+<rect x="588" y="54"  width="16"  height="48"  fill="#B89858"/>
+<rect x="592" y="50"  width="8"   height="56"  fill="#C8A868"/>
+<!-- Sombra inferior pergaminho -->
+<rect x="204" y="102" width="392" height="6"   fill="#A88848"/>
+<!-- Borda superior curvada -->
+<rect x="216" y="46"  width="368" height="8"   fill="#C8A868"/>
+<rect x="228" y="42"  width="344" height="8"   fill="#D4B878"/>
+<rect x="244" y="38"  width="312" height="8"   fill="#C8A868"/>
+<!-- Linhas de textura pergaminho -->
+<rect x="220" y="66"  width="360" height="2"   fill="#D4B878"/>
+<rect x="220" y="76"  width="360" height="2"   fill="#D4B878"/>
+<rect x="220" y="86"  width="360" height="2"   fill="#D4B878"/>
+
+<!-- TEXTO DO TITULO (pixel font) -->
+<!-- "CORVAN" estilizado em pixel art -->
+<!-- C -->
+<rect x="246" y="62"  width="4"   height="28"  fill="#5A3A10"/>
+<rect x="250" y="62"  width="20"  height="4"   fill="#5A3A10"/>
+<rect x="250" y="86"  width="20"  height="4"   fill="#5A3A10"/>
+<!-- O -->
+<rect x="278" y="62"  width="4"   height="28"  fill="#5A3A10"/>
+<rect x="296" y="62"  width="4"   height="28"  fill="#5A3A10"/>
+<rect x="282" y="62"  width="14"  height="4"   fill="#5A3A10"/>
+<rect x="282" y="86"  width="14"  height="4"   fill="#5A3A10"/>
+<!-- R -->
+<rect x="308" y="62"  width="4"   height="28"  fill="#5A3A10"/>
+<rect x="312" y="62"  width="12"  height="4"   fill="#5A3A10"/>
+<rect x="324" y="66"  width="4"   height="8"   fill="#5A3A10"/>
+<rect x="312" y="74"  width="12"  height="4"   fill="#5A3A10"/>
+<rect x="320" y="78"  width="4"   height="12"  fill="#5A3A10"/>
+<rect x="324" y="82"  width="4"   height="8"   fill="#5A3A10"/>
+<!-- V -->
+<rect x="336" y="62"  width="4"   height="20"  fill="#5A3A10"/>
+<rect x="352" y="62"  width="4"   height="20"  fill="#5A3A10"/>
+<rect x="340" y="82"  width="4"   height="8"   fill="#5A3A10"/>
+<rect x="348" y="82"  width="4"   height="8"   fill="#5A3A10"/>
+<rect x="344" y="86"  width="4"   height="4"   fill="#5A3A10"/>
+<!-- A -->
+<rect x="364" y="66"  width="4"   height="24"  fill="#5A3A10"/>
+<rect x="380" y="66"  width="4"   height="24"  fill="#5A3A10"/>
+<rect x="368" y="62"  width="12"  height="4"   fill="#5A3A10"/>
+<rect x="368" y="74"  width="12"  height="4"   fill="#5A3A10"/>
+<!-- N -->
+<rect x="392" y="62"  width="4"   height="28"  fill="#5A3A10"/>
+<rect x="408" y="62"  width="4"   height="28"  fill="#5A3A10"/>
+<rect x="396" y="66"  width="4"   height="4"   fill="#5A3A10"/>
+<rect x="400" y="70"  width="4"   height="4"   fill="#5A3A10"/>
+<rect x="404" y="74"  width="4"   height="4"   fill="#5A3A10"/>
+
+<!-- Subtitulo "O Guardiao dos Minerios" menor -->
+<rect x="252" y="96"  width="296" height="2"   fill="#7A5A20" opacity="1"/>
+
+<!-- ============================================================ -->
+<!-- PERGAMINHO INFERIOR (opcoes menu) -->
+<!-- ============================================================ -->
+<rect x="160" y="696" width="480" height="60"  fill="#D4B878"/>
+<rect x="168" y="700" width="464" height="52"  fill="#E4C888"/>
+<rect x="172" y="704" width="456" height="44"  fill="#EDD898"/>
+<rect x="156" y="700" width="16"  height="52"  fill="#B89858"/>
+<rect x="160" y="696" width="8"   height="60"  fill="#C8A868"/>
+<rect x="628" y="700" width="16"  height="52"  fill="#B89858"/>
+<rect x="632" y="696" width="8"   height="60"  fill="#C8A868"/>
+<rect x="164" y="752" width="472" height="6"   fill="#A88848"/>
+<rect x="168" y="692" width="464" height="8"   fill="#C8A868"/>
+<rect x="180" y="688" width="440" height="8"   fill="#D4B878"/>
+
+<!-- Linhas textura pergaminho inferior -->
+<rect x="180" y="714" width="440" height="2"   fill="#D4B878"/>
+<rect x="180" y="724" width="440" height="2"   fill="#D4B878"/>
+<rect x="180" y="734" width="440" height="2"   fill="#D4B878"/>
+<rect x="180" y="744" width="440" height="2"   fill="#D4B878"/>
+
+<!-- Icone bussola (canto inferior direito) -->
+<rect x="740" y="744" width="24"  height="4"   fill="#E8E8E8"/>
+<rect x="750" y="734" width="4"   height="24"  fill="#E8E8E8"/>
+<rect x="744" y="738" width="8"   height="8"   fill="#E8D060"/>
+<rect x="752" y="750" width="8"   height="8"   fill="#C84020"/>
+
+<!-- Botoes do menu (texto pixel) -->
+<!-- JOGAR -->
+<rect x="222" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="226" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="238" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="226" y="716" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="226" y="724" width="12"  height="4"   fill="#5A3A10"/>
+
+<rect x="250" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="254" y="708" width="8"   height="4"   fill="#5A3A10"/>
+<rect x="262" y="710" width="4"   height="6"   fill="#5A3A10"/>
+<rect x="254" y="716" width="8"   height="4"   fill="#5A3A10"/>
+<rect x="262" y="720" width="4"   height="8"   fill="#5A3A10"/>
+<rect x="254" y="724" width="8"   height="4"   fill="#5A3A10"/>
+
+<rect x="274" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="274" y="712" width="4"   height="8"   fill="#5A3A10"/>
+<rect x="274" y="720" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="274" y="724" width="4"   height="4"   fill="#5A3A10"/>
+<rect x="274" y="728" width="12"  height="4"   fill="#5A3A10"/>
+
+<rect x="294" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="298" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="298" y="716" width="8"   height="4"   fill="#5A3A10"/>
+<rect x="298" y="724" width="12"  height="4"   fill="#5A3A10"/>
+
+<rect x="318" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="322" y="708" width="8"   height="4"   fill="#5A3A10"/>
+<rect x="330" y="708" width="4"   height="20"  fill="#5A3A10"/>
+
+<!-- SEPARADOR -->
+<rect x="348" y="712" width="4"   height="16"  fill="#9A7840"/>
+
+<!-- OPCOES -->
+<rect x="364" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="368" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="368" y="716" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="368" y="724" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="380" y="710" width="4"   height="6"   fill="#5A3A10"/>
+<rect x="380" y="720" width="4"   height="8"   fill="#5A3A10"/>
+
+<rect x="392" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="396" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="396" y="724" width="12"  height="4"   fill="#5A3A10"/>
+
+<rect x="416" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="420" y="708" width="8"   height="4"   fill="#5A3A10"/>
+<rect x="428" y="712" width="4"   height="4"   fill="#5A3A10"/>
+<rect x="420" y="716" width="8"   height="4"   fill="#5A3A10"/>
+<rect x="428" y="720" width="4"   height="8"   fill="#5A3A10"/>
+<rect x="420" y="724" width="8"   height="4"   fill="#5A3A10"/>
+
+<rect x="440" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="444" y="708" width="8"   height="4"   fill="#5A3A10"/>
+<rect x="452" y="708" width="4"   height="20"  fill="#5A3A10"/>
+
+<rect x="464" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="468" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="468" y="716" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="468" y="724" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="480" y="710" width="4"   height="6"   fill="#5A3A10"/>
+<rect x="480" y="720" width="4"   height="8"   fill="#5A3A10"/>
+
+<rect x="492" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="492" y="712" width="4"   height="8"   fill="#5A3A10"/>
+<rect x="492" y="720" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="492" y="724" width="4"   height="4"   fill="#5A3A10"/>
+<rect x="492" y="728" width="12"  height="4"   fill="#5A3A10"/>
+
+<rect x="512" y="708" width="4"   height="20"  fill="#5A3A10"/>
+<rect x="516" y="708" width="12"  height="4"   fill="#5A3A10"/>
+<rect x="516" y="724" width="12"  height="4"   fill="#5A3A10"/>
+
+<!-- PIN marcador Potosi (Bolivia - America do Sul) -->
+<rect x="138" y="370" width="8"   height="4"   fill="#E84020"/>
+<rect x="136" y="366" width="12"  height="8"   fill="#E84020"/>
+<rect x="138" y="358" width="8"   height="12"  fill="#E84020"/>
+<rect x="140" y="354" width="4"   height="8"   fill="#FF6040"/>
+<rect x="138" y="362" width="8"   height="4"   fill="#FF8060"/>
+
+<!-- Estrela/brilho no canto (bussola decorativa) -->
+<rect x="744" y="676" width="4"   height="4"   fill="#E8E0C0"/>
+<rect x="740" y="680" width="12"  height="4"   fill="#E8E0C0"/>
+<rect x="744" y="684" width="4"   height="4"   fill="#E8E0C0"/>
+<rect x="742" y="678" width="4"   height="8"   fill="#F8F0D0"/>
+
+</svg>

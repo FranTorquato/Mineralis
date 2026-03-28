@@ -1,61 +1,53 @@
 [gd_scene format=3 uid="uid://5ukccvxxc0cs"]
 
-[ext_resource type="Texture2D" uid="uid://e24of1yjs8j5" path="res://Menu Principal/Mapa.png" id="2_qe12f"]
+[ext_resource type="Texture2D" uid="uid://d3kmk0x01yoqm" path="res://Menu Principal/mapa 1.PNG" id="1_1soyw"]
 [ext_resource type="FontFile" uid="uid://cgvirln0471sv" path="res://Menu Principal/Silkscreen-Bold.ttf" id="3_8qtwp"]
-[ext_resource type="Texture2D" uid="uid://cgg8djw2pd8vo" path="res://Menu Principal/Marretando1.png" id="4_dy7ct"]
-[ext_resource type="Texture2D" uid="uid://da5k8jkhoaomg" path="res://Menu Principal/Marretando2.png" id="5_0o4t1"]
-[ext_resource type="Texture2D" uid="uid://ggxtnihwpcq4" path="res://Menu Principal/Marretando5.png" id="6_0k4wn"]
-[ext_resource type="Texture2D" uid="uid://cao8wn61yk5nk" path="res://Menu Principal/PergaminhoArt.png" id="6_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://cboys1n662oes" path="res://Menu Principal/CORVAN — SPRITE SHEET · Fase 1.1 · Minas de Prata dos Andes.svg" id="4_aujqx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1soyw"]
+atlas = ExtResource("4_aujqx")
+region = Rect2(3, 289, 75, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aujqx"]
+atlas = ExtResource("4_aujqx")
+region = Rect2(153, 289, 75, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og5ts"]
+atlas = ExtResource("4_aujqx")
+region = Rect2(228, 289, 75, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vikdp"]
+atlas = ExtResource("4_aujqx")
+region = Rect2(378, 289, 75, 197)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j5v2v"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_dy7ct")
-}],
+"frames": [],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.5,
-"texture": ExtResource("4_dy7ct")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1soyw")
 }, {
-"duration": 1.5,
-"texture": ExtResource("5_0o4t1")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aujqx")
 }, {
-"duration": 1.5,
-"texture": ExtResource("6_0k4wn")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og5ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vikdp")
 }],
 "loop": true,
 "name": &"marretando",
 "speed": 5.5
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dy7ct"]
-atlas = ExtResource("6_8qtwp")
-region = Rect2(0, 0, 456, 610)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0o4t1"]
-atlas = ExtResource("6_8qtwp")
-region = Rect2(456, 0, 456, 610)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0k4wn"]
-atlas = ExtResource("6_8qtwp")
-region = Rect2(912, 0, 456, 610)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_iotk1"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dy7ct")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0o4t1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0k4wn")
-}],
+"frames": [],
 "loop": false,
 "name": &"default",
 "speed": 5.0
@@ -219,20 +211,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9930259, 1)
 
-[node name="MapBackground" type="TextureRect" parent="." unique_id=1581150504]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.168518
-offset_top = -49.99997
-offset_right = 536.1697
-offset_bottom = 977.3928
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.79211926, 0.49919507)
-texture = ExtResource("2_qe12f")
-
 [node name="ScrollMenu" type="TextureRect" parent="." unique_id=1693574303]
 layout_mode = 0
 offset_left = 20.140461
@@ -244,99 +222,107 @@ scale = Vector2(0.9874177, 0.9757229)
 expand_mode = 1
 stretch_mode = 4
 
+[node name="Mapa1" type="Sprite2D" parent="ScrollMenu" unique_id=1225436816]
+position = Vector2(975.7463, 489.4054)
+rotation = -0.0142043745
+scale = Vector2(2.244473, 2.0222409)
+skew = 0.00033438206
+texture = ExtResource("1_1soyw")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollMenu" unique_id=1292175189]
 layout_mode = 0
-offset_left = 642.1897
-offset_top = -27.5722
-offset_right = 1282.5138
-offset_bottom = 84.78502
+offset_left = 663.8157
+offset_top = 796.20624
+offset_right = 1304.1399
+offset_bottom = 908.5635
 rotation = -0.017525792
 scale = Vector2(0.9874177, 0.9757229)
-theme_override_colors/default_color = Color(0.29411766, 0.21176471, 0.12941177, 1)
-theme_override_colors/font_outline_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
+theme_override_colors/default_color = Color(0.48606825, 0.36157045, 0.23760623, 1)
+theme_override_colors/font_outline_color = Color(0.12999302, 0.07364602, 0.06385729, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("3_8qtwp")
 theme_override_font_sizes/normal_font_size = 85
 text = "MINERALIS"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ScrollMenu" unique_id=944465513]
-position = Vector2(140.74202, 881.5353)
-rotation = -0.2617994
-scale = Vector2(0.3816797, 0.34431803)
+position = Vector2(912.323, 770.1264)
+rotation = -0.021371294
+scale = Vector2(1.2195958, 0.8180916)
 sprite_frames = SubResource("SpriteFrames_j5v2v")
 animation = &"marretando"
 autoplay = "marretando"
-frame_progress = 0.41250774
+frame_progress = 0.36246833
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="ScrollMenu" unique_id=365158899]
-position = Vector2(231.01584, 257.06378)
+position = Vector2(234.21722, 267.26813)
 sprite_frames = SubResource("SpriteFrames_iotk1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollMenu" unique_id=1737869246]
+layout_direction = 4
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -369.78378
-offset_top = -862.81976
-offset_right = -16.783783
-offset_bottom = -551.81976
+anchors_preset = -1
+anchor_left = 0.13919508
+anchor_top = 0.54177654
+anchor_right = 1.6075584
+anchor_bottom = 0.8943579
+offset_left = -176.5
+offset_right = 176.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+rotation = -0.009523546
 mouse_filter = 2
 theme_override_constants/separation = 41
+metadata/_edit_use_anchors_ = true
 
 [node name="BtnNewGame" type="Button" parent="ScrollMenu/VBoxContainer" unique_id=1082370394]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.29411766, 0.21176471, 0.12941177, 1)
-theme_override_colors/font_pressed_color = Color(0.23921569, 0.16862746, 0.12156863, 1)
+theme_override_colors/font_color = Color(0.81802416, 0.66180545, 0.5148617, 1)
+theme_override_colors/font_pressed_color = Color(0.12941177, 0.07450981, 0.0627451, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 30
 text = " Nova Jornada"
 flat = true
 
 [node name="BtnContinue" type="Button" parent="ScrollMenu/VBoxContainer" unique_id=200319519]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.29411766, 0.21176471, 0.12941177, 1)
-theme_override_colors/font_pressed_color = Color(0.23921569, 0.16862746, 0.12156863, 1)
+theme_override_colors/font_color = Color(0.81960785, 0.6627451, 0.5137255, 1)
+theme_override_colors/font_pressed_color = Color(0.12941177, 0.07450981, 0.0627451, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 30
 text = "Exploração"
 flat = true
 
 [node name="BtnEncyclopedia" type="Button" parent="ScrollMenu/VBoxContainer" unique_id=1674258434]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.29411766, 0.21176471, 0.12941177, 1)
-theme_override_colors/font_pressed_color = Color(0.23921569, 0.16862746, 0.12156863, 1)
+theme_override_colors/font_color = Color(0.81960785, 0.6627451, 0.5137255, 1)
+theme_override_colors/font_pressed_color = Color(0.12941177, 0.07450981, 0.0627451, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 30
 text = "Diário de Bordo"
 flat = true
 
 [node name="BtnExit" type="Button" parent="ScrollMenu/VBoxContainer" unique_id=880517291]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.29411766, 0.21176471, 0.12941177, 1)
-theme_override_colors/font_pressed_color = Color(0.23921569, 0.16862746, 0.12156863, 1)
+theme_override_colors/font_color = Color(0.81960785, 0.6627451, 0.5137255, 1)
+theme_override_colors/font_pressed_color = Color(0.12941177, 0.07450981, 0.0627451, 1)
 theme_override_colors/font_hover_color = Color(1, 0.8, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.8, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("3_8qtwp")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 30
 text = "Sair"
 flat = true
 
