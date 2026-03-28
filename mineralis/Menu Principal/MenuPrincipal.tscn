@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b4u67jyoihr74"]
+
+[ext_resource type="Texture2D" uid="uid://cykrlomrly5wi" path="res://Menu Principal/Assets/mapa_menu_principal.svg" id="1_8qkx0"]
+[ext_resource type="PackedScene" uid="uid://dng3vurrsljxs" path="res://Menu Principal/card_phase.tscn" id="2_40j08"]
+[ext_resource type="Texture2D" uid="uid://cim7y3xdwpbs" path="res://Menu Principal/Assets/card_1_1_andes.svg" id="3_cf3kj"]
+[ext_resource type="Texture2D" uid="uid://bm2qgotm8d3xr" path="res://Menu Principal/Assets/card_1_2_amazonia.svg" id="4_o1yen"]
+[ext_resource type="Texture2D" uid="uid://lgeaqu40cenj" path="res://Menu Principal/Assets/card_1_3_machu_picchu.svg" id="5_864k4"]
+
+[node name="MenuPrincipal" type="Node2D" unique_id=802552858]
+
+[node name="MapaFundo" type="TextureRect" parent="." unique_id=337802023]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MapaMenuPrincipal" type="Sprite2D" parent="." unique_id=1611846731]
+position = Vector2(1014.00006, 622)
+scale = Vector2(2.828438, 1.9625001)
+texture = ExtResource("1_8qkx0")
+
+[node name="Card_1_1" parent="." unique_id=783619987 instance=ExtResource("2_40j08")]
+position = Vector2(404, 225)
+phase_texture = ExtResource("3_cf3kj")
+
+[node name="Card_1_2" parent="." unique_id=1932664492 instance=ExtResource("2_40j08")]
+position = Vector2(1188, 252)
+phase_texture = ExtResource("4_o1yen")
+
+[node name="Card_1_3" parent="." unique_id=1263194238 instance=ExtResource("2_40j08")]
+position = Vector2(1780, 212)
+phase_texture = ExtResource("5_864k4")

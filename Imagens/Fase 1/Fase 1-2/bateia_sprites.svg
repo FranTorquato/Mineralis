@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1040" width="960" height="1040"
+     style="background:#0d0f1a; font-family: 'Courier New', monospace; image-rendering: pixelated; shape-rendering: crispEdges;">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       BATEIA – SPRITE SHEET COMPLETO  |  Fase 1.2 – Ouro dos Rios
+       Godot 4 AnimatedSprite2D  |  Escala: 1px SVG = 1px jogo (32×32 base)
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- FUNDO GERAL -->
+  <rect width="960" height="1040" fill="#0d0f1a"/>
+
+  <!-- Grade de fundo sutil -->
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1a1d2e" stroke-width="0.5"/>
+    </pattern>
+    <!-- Filtro glow dourado -->
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#ffd700" flood-opacity="0.6" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Filtro glow água -->
+    <filter id="waterGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#4fc3f7" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Filtro lama/turvo -->
+    <filter id="mudFilter">
+      <feColorMatrix type="matrix"
+        values="0.6 0.3 0.1 0 0.1
+                0.3 0.5 0.1 0 0.05
+                0.1 0.2 0.3 0 0
+                0   0   0   1 0"/>
+    </filter>
+  </defs>
+  <rect width="960" height="1040" fill="url(#grid)"/>
+
+  <!-- ══════════════════════════════════════
+       TÍTULO
+  ══════════════════════════════════════ -->
+  <rect x="0" y="0" width="960" height="36" fill="#12142a"/>
+  <text x="480" y="23" text-anchor="middle" fill="#d4a017" font-size="13" font-weight="bold" letter-spacing="3">
+    ⚱ BATEIA – PIXEL ART SPRITES │ FASE 1.2 – O OURO DOS RIOS │ GODOT 4
+  </text>
+  <line x1="0" y1="36" x2="960" y2="36" stroke="#3a2e1a" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       LINHA 1 – ESTADOS IDLE / INVENTÁRIO
+       Sprites base sem animação (para UI e inventário do Godot)
+  ══════════════════════════════════════════════════════════════════ -->
+  <text x="12" y="60" fill="#d4a017" font-size="10" letter-spacing="2">▸ ESTADOS BASE / INVENTÁRIO</text>
+  <line x1="0" y1="64" x2="960" y2="64" stroke="#2a2a3a" stroke-width="0.5"/>
+
+  <!-- ── SPRITE 01: IDLE – Vista de Cima (no chão, coletável) ── -->
+  <g transform="translate(32,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <!-- Bateia vista de cima, plana, 32x32 escalado 2.5x -->
+    <!-- Borda externa madeira -->
+    <rect x="8"  y="20" width="64" height="40" rx="32" fill="#7a4010"/>
+    <rect x="10" y="22" width="60" height="36" rx="30" fill="#8b4e18"/>
+    <!-- Aro metálico externo -->
+    <rect x="6"  y="18" width="68" height="44" rx="34" fill="none" stroke="#8a9ba8" stroke-width="3"/>
+    <rect x="7"  y="19" width="66" height="42" rx="33" fill="none" stroke="#b0c4cc" stroke-width="1"/>
+    <!-- Interior cinza (metal/lama seca) -->
+    <ellipse cx="40" cy="40" rx="27" ry="17" fill="#5a6670"/>
+    <ellipse cx="40" cy="40" rx="24" ry="14" fill="#6b7880"/>
+    <ellipse cx="40" cy="40" rx="20" ry="11" fill="#7a8890"/>
+    <!-- Reflexo centro -->
+    <ellipse cx="34" cy="36" rx="6" ry="3" fill="#9ab0b8" opacity="0.5"/>
+    <!-- Listras de madeira -->
+    <rect x="10" y="30" width="60" height="2" rx="1" fill="#6a3a0a" opacity="0.4"/>
+    <rect x="10" y="34" width="60" height="2" rx="1" fill="#6a3a0a" opacity="0.4"/>
+    <rect x="10" y="46" width="60" height="2" rx="1" fill="#5a3008" opacity="0.3"/>
+    <rect x="10" y="50" width="60" height="2" rx="1" fill="#5a3008" opacity="0.3"/>
+    <!-- Label -->
+    <text x="40" y="74" text-anchor="middle" fill="#8a9ba8" font-size="7">01 IDLE</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">COLETÁVEL</text>
+  </g>
+
+  <!-- ── SPRITE 02: IDLE – Vista Isométrica (segurado) ── -->
+  <g transform="translate(136,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <!-- Madeira lateral -->
+    <ellipse cx="40" cy="52" rx="32" ry="10" fill="#7a4010"/>
+    <!-- Aro inferior -->
+    <ellipse cx="40" cy="50" rx="32" ry="10" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="40" cy="50" rx="32" ry="10" fill="none" stroke="#c0d0d8" stroke-width="0.7" opacity="0.7"/>
+    <!-- Corpo madeira -->
+    <path d="M 8,36 Q 8,52 40,58 Q 72,52 72,36 Z" fill="#8b4e18"/>
+    <path d="M 9,36 Q 9,50 40,56 Q 71,50 71,36 Z" fill="#9a5820"/>
+    <!-- Listras madeira vertical -->
+    <line x1="16" y1="36" x2="13" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <line x1="24" y1="36" x2="22" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <line x1="32" y1="36" x2="31" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="36" x2="40" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="48" y1="36" x2="49" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="56" y1="36" x2="58" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <line x1="64" y1="36" x2="67" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <!-- Aro externo superior -->
+    <ellipse cx="40" cy="36" rx="32" ry="10" fill="none" stroke="#8a9ba8" stroke-width="3"/>
+    <ellipse cx="40" cy="36" rx="32" ry="10" fill="none" stroke="#d0e0e8" stroke-width="1" opacity="0.6"/>
+    <!-- Interior elíptico (metal) -->
+    <ellipse cx="40" cy="36" rx="28" ry="8.5" fill="#5a6670"/>
+    <ellipse cx="40" cy="36" rx="24" ry="7" fill="#6b7880"/>
+    <ellipse cx="40" cy="36" rx="18" ry="5" fill="#7a8890"/>
+    <!-- Brilho metal -->
+    <ellipse cx="32" cy="33" rx="5" ry="2" fill="#aabbc8" opacity="0.55"/>
+    <text x="40" y="74" text-anchor="middle" fill="#8a9ba8" font-size="7">02 ISO</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">SEGURADO</text>
+  </g>
+
+  <!-- ── SPRITE 03: IDLE LATERAL – Inclinada 45° esquerda ── -->
+  <g transform="translate(240,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <!-- Inclinada, estilo sprite de referência inferior-esquerdo -->
+    <g transform="rotate(-35,40,45)">
+      <ellipse cx="40" cy="52" rx="30" ry="9" fill="#7a4010"/>
+      <ellipse cx="40" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2"/>
+      <path d="M 10,38 Q 10,52 40,58 Q 70,52 70,38 Z" fill="#9a5820"/>
+      <line x1="18" y1="38" x2="14" y2="56" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="28" y1="38" x2="26" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="40" y1="38" x2="40" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="52" y1="38" x2="54" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="62" y1="38" x2="66" y2="56" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <ellipse cx="40" cy="38" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+      <ellipse cx="40" cy="38" rx="26" ry="7.5" fill="#5a6670"/>
+      <ellipse cx="40" cy="38" rx="20" ry="5.5" fill="#7a8890"/>
+      <ellipse cx="32" cy="35" rx="4" ry="2" fill="#aabbc8" opacity="0.5"/>
+    </g>
+    <text x="40" y="74" text-anchor="middle" fill="#8a9ba8" font-size="7">03 INCL.ESQ</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">ANIMAÇÃO</text>
+  </g>
+
+  <!-- ── SPRITE 04: IDLE LATERAL – Inclinada 45° direita ── -->
+  <g transform="translate(344,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <g transform="rotate(35,40,45)">
+      <ellipse cx="40" cy="52" rx="30" ry="9" fill="#7a4010"/>
+      <ellipse cx="40" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2"/>
+      <path d="M 10,38 Q 10,52 40,58 Q 70,52 70,38 Z" fill="#9a5820"/>
+      <line x1="18" y1="38" x2="14" y2="56" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="28" y1="38" x2="26" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="40" y1="38" x2="40" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="52" y1="38" x2="54" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="62" y1="38" x2="66" y2="56" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+      <ellipse cx="40" cy="38" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+      <ellipse cx="40" cy="38" rx="26" ry="7.5" fill="#5a6670"/>
+      <ellipse cx="40" cy="38" rx="20" ry="5.5" fill="#7a8890"/>
+      <ellipse cx="32" cy="35" rx="4" ry="2" fill="#aabbc8" opacity="0.5"/>
+    </g>
+    <text x="40" y="74" text-anchor="middle" fill="#8a9ba8" font-size="7">04 INCL.DIR</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">ANIMAÇÃO</text>
+  </g>
+
+  <!-- ── SPRITE 05: COM ÁGUA LIMPA ── -->
+  <g transform="translate(448,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="40" cy="52" rx="32" ry="10" fill="#7a4010"/>
+    <path d="M 8,36 Q 8,52 40,58 Q 72,52 72,36 Z" fill="#9a5820"/>
+    <line x1="16" y1="36" x2="13" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <line x1="28" y1="36" x2="26" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="36" x2="40" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="52" y1="36" x2="54" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="64" y1="36" x2="67" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <ellipse cx="40" cy="36" rx="32" ry="10" fill="none" stroke="#8a9ba8" stroke-width="3"/>
+    <!-- Água limpa interior -->
+    <ellipse cx="40" cy="36" rx="28" ry="8.5" fill="#1a6880" opacity="0.85"/>
+    <ellipse cx="40" cy="36" rx="22" ry="6.5" fill="#2980a0"/>
+    <!-- Reflexo água -->
+    <ellipse cx="33" cy="33" rx="6" ry="2" fill="#7fd0f0" opacity="0.6"/>
+    <ellipse cx="46" cy="37" rx="3" ry="1" fill="#5ab8e0" opacity="0.4"/>
+    <!-- Faíscas douradas (ouro) -->
+    <circle cx="30" cy="36" r="1.5" fill="#ffd700" filter="url(#goldGlow)"/>
+    <circle cx="45" cy="34" r="1"   fill="#ffd700" filter="url(#goldGlow)"/>
+    <circle cx="50" cy="38" r="1.2" fill="#ffd700" filter="url(#goldGlow)"/>
+    <!-- Ondas água -->
+    <ellipse cx="40" cy="36" rx="14" ry="4" fill="none" stroke="#4ab0d0" stroke-width="0.7" opacity="0.5"/>
+    <ellipse cx="40" cy="36" rx="8"  ry="2.5" fill="none" stroke="#6ac8e8" stroke-width="0.5" opacity="0.4"/>
+    <text x="40" y="74" text-anchor="middle" fill="#4ab0d0" font-size="7">05 ÁGUA LIMPA</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">COM OURO</text>
+  </g>
+
+  <!-- ── SPRITE 06: COM LAMA / ÁGUA TURVA ── -->
+  <g transform="translate(552,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="40" cy="52" rx="32" ry="10" fill="#7a4010"/>
+    <path d="M 8,36 Q 8,52 40,58 Q 72,52 72,36 Z" fill="#9a5820"/>
+    <line x1="16" y1="36" x2="13" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <line x1="28" y1="36" x2="26" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="36" x2="40" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="52" y1="36" x2="54" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="64" y1="36" x2="67" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <ellipse cx="40" cy="36" rx="32" ry="10" fill="none" stroke="#8a9ba8" stroke-width="3"/>
+    <!-- Lama turva -->
+    <ellipse cx="40" cy="36" rx="28" ry="8.5" fill="#5a4020" opacity="0.9"/>
+    <ellipse cx="40" cy="36" rx="22" ry="6.5" fill="#6b4e28"/>
+    <!-- Bolhas lama -->
+    <circle cx="28" cy="35" r="2" fill="#7a5830" opacity="0.7"/>
+    <circle cx="44" cy="37" r="1.5" fill="#7a5830" opacity="0.6"/>
+    <circle cx="52" cy="34" r="2.5" fill="#7a5830" opacity="0.7"/>
+    <!-- Partículas mercúrio/poluição -->
+    <circle cx="36" cy="36" r="1" fill="#c0c8b0" opacity="0.5"/>
+    <circle cx="50" cy="35" r="0.8" fill="#a0a898" opacity="0.4"/>
+    <!-- Sinal de perigo -->
+    <text x="40" y="31" text-anchor="middle" fill="#ff6600" font-size="10">⚠</text>
+    <text x="40" y="74" text-anchor="middle" fill="#7a5830" font-size="7">06 TURVA/LAMA</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">OBSTÁCULO</text>
+  </g>
+
+  <!-- ── SPRITE 07: PEPITA ENCONTRADA (brilho dourado) ── -->
+  <g transform="translate(656,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="40" cy="52" rx="32" ry="10" fill="#7a4010"/>
+    <path d="M 8,36 Q 8,52 40,58 Q 72,52 72,36 Z" fill="#9a5820"/>
+    <line x1="16" y1="36" x2="13" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <line x1="28" y1="36" x2="26" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="36" x2="40" y2="58" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="52" y1="36" x2="54" y2="57" stroke="#6a3a0a" stroke-width="1.5" opacity="0.4"/>
+    <line x1="64" y1="36" x2="67" y2="55" stroke="#6a3a0a" stroke-width="1.5" opacity="0.5"/>
+    <ellipse cx="40" cy="36" rx="32" ry="10" fill="none" stroke="#d4a017" stroke-width="3"/>
+    <!-- Água dourada -->
+    <ellipse cx="40" cy="36" rx="28" ry="8.5" fill="#1a5060" opacity="0.85"/>
+    <!-- Pepita grande central -->
+    <ellipse cx="40" cy="36" rx="7" ry="4" fill="#e8b830" filter="url(#goldGlow)"/>
+    <ellipse cx="40" cy="36" rx="5" ry="3" fill="#ffd700"/>
+    <ellipse cx="37" cy="34" rx="2" ry="1.2" fill="#fff2aa" opacity="0.7"/>
+    <!-- Pepitas menores -->
+    <ellipse cx="26" cy="37" rx="3" ry="2" fill="#d4a017" filter="url(#goldGlow)"/>
+    <ellipse cx="55" cy="35" rx="2.5" ry="1.5" fill="#e8b830" filter="url(#goldGlow)"/>
+    <!-- Faíscas -->
+    <line x1="40" y1="28" x2="40" y2="25" stroke="#ffe066" stroke-width="1.5" opacity="0.8"/>
+    <line x1="46" y1="30" x2="48" y2="27" stroke="#ffe066" stroke-width="1.5" opacity="0.7"/>
+    <line x1="34" y1="30" x2="32" y2="27" stroke="#ffe066" stroke-width="1.5" opacity="0.7"/>
+    <line x1="49" y1="35" x2="52" y2="34" stroke="#ffe066" stroke-width="1" opacity="0.6"/>
+    <line x1="31" y1="35" x2="28" y2="34" stroke="#ffe066" stroke-width="1" opacity="0.6"/>
+    <text x="40" y="74" text-anchor="middle" fill="#d4a017" font-size="7" filter="url(#goldGlow)">07 PEPITA!</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">COLETANDO</text>
+  </g>
+
+  <!-- ── SPRITE 08: VAZIA (pós-uso / seca) ── -->
+  <g transform="translate(760,76)">
+    <rect x="0" y="0" width="80" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="40" cy="52" rx="32" ry="10" fill="#5a3008" opacity="0.8"/>
+    <path d="M 8,36 Q 8,52 40,58 Q 72,52 72,36 Z" fill="#7a4010" opacity="0.8"/>
+    <line x1="16" y1="36" x2="13" y2="55" stroke="#4a2808" stroke-width="1.5" opacity="0.5"/>
+    <line x1="28" y1="36" x2="26" y2="57" stroke="#4a2808" stroke-width="1.5" opacity="0.4"/>
+    <line x1="40" y1="36" x2="40" y2="58" stroke="#4a2808" stroke-width="1.5" opacity="0.4"/>
+    <line x1="52" y1="36" x2="54" y2="57" stroke="#4a2808" stroke-width="1.5" opacity="0.4"/>
+    <line x1="64" y1="36" x2="67" y2="55" stroke="#4a2808" stroke-width="1.5" opacity="0.5"/>
+    <ellipse cx="40" cy="36" rx="32" ry="10" fill="none" stroke="#6a7880" stroke-width="2.5"/>
+    <!-- Interior seco / areia residual -->
+    <ellipse cx="40" cy="36" rx="28" ry="8.5" fill="#3a3228"/>
+    <ellipse cx="40" cy="36" rx="20" ry="6" fill="#4a4030"/>
+    <!-- Grãos de areia fina -->
+    <circle cx="30" cy="36" r="1"   fill="#6a5a40" opacity="0.7"/>
+    <circle cx="38" cy="35" r="0.8" fill="#6a5a40" opacity="0.6"/>
+    <circle cx="47" cy="37" r="1"   fill="#5a4a30" opacity="0.6"/>
+    <circle cx="53" cy="35" r="0.7" fill="#5a4a30" opacity="0.5"/>
+    <text x="40" y="74" text-anchor="middle" fill="#6a7880" font-size="7">08 VAZIA</text>
+    <text x="40" y="82" text-anchor="middle" fill="#5a6680" font-size="6">PÓS-USO</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       LINHA 2 – ANIMAÇÃO PENEIRAMENTO (Frames sequenciais)
+       Mecânica circular de garimpo – Cena 3
+  ══════════════════════════════════════════════════════════════════ -->
+  <text x="12" y="186" fill="#d4a017" font-size="10" letter-spacing="2">▸ ANIMAÇÃO: PENEIRAMENTO CIRCULAR (8 FRAMES) – CENA 3</text>
+  <line x1="0" y1="190" x2="960" y2="190" stroke="#2a2a3a" stroke-width="0.5"/>
+
+  <!-- Macro-função reutilizável como símbolo para os 8 frames de rotação -->
+  <!-- Frame A: posição 0° (água começa a girar) -->
+  <g transform="translate(32,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <!-- Água com sedimento girando - posição 0° -->
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a5060" opacity="0.8"/>
+    <ellipse cx="48" cy="40" rx="26" ry="7.5" fill="#1e6070"/>
+    <!-- Sedimento acumulado à esquerda (posição 0°) -->
+    <ellipse cx="36" cy="40" rx="10" ry="4" fill="#5a4020" opacity="0.7"/>
+    <!-- Ondas rotacionais -->
+    <path d="M 22,40 Q 30,36 38,40 Q 46,44 54,40 Q 62,36 74,40" fill="none" stroke="#4ab0d0" stroke-width="1" opacity="0.6"/>
+    <!-- Frame label -->
+    <text x="48" y="72" text-anchor="middle" fill="#4ab0d0" font-size="7">F1 – 0°</text>
+    <text x="48" y="79" text-anchor="middle" fill="#5a6680" font-size="6">INÍCIO</text>
+  </g>
+
+  <!-- Frame B: 45° -->
+  <g transform="translate(140,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a5060" opacity="0.8"/>
+    <ellipse cx="48" cy="40" rx="26" ry="7.5" fill="#1e6070"/>
+    <!-- Sedimento migrando 45° -->
+    <ellipse cx="42" cy="37" rx="9" ry="3.5" fill="#5a4020" opacity="0.7"/>
+    <path d="M 22,42 Q 32,37 44,40 Q 56,43 68,39 Q 76,36 78,40" fill="none" stroke="#4ab0d0" stroke-width="1" opacity="0.6"/>
+    <text x="48" y="72" text-anchor="middle" fill="#4ab0d0" font-size="7">F2 – 45°</text>
+    <text x="48" y="79" text-anchor="middle" fill="#5a6680" font-size="6">ROTAÇÃO</text>
+  </g>
+
+  <!-- Frame C: 90° -->
+  <g transform="translate(248,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a5060" opacity="0.8"/>
+    <ellipse cx="48" cy="40" rx="26" ry="7.5" fill="#1e6070"/>
+    <!-- Sedimento no topo (90°) -->
+    <ellipse cx="48" cy="35" rx="9" ry="3" fill="#5a4020" opacity="0.7"/>
+    <path d="M 20,41 Q 34,35 48,39 Q 62,43 76,38 Q 80,37 82,40" fill="none" stroke="#4ab0d0" stroke-width="1" opacity="0.6"/>
+    <text x="48" y="72" text-anchor="middle" fill="#4ab0d0" font-size="7">F3 – 90°</text>
+    <text x="48" y="79" text-anchor="middle" fill="#5a6680" font-size="6">ROTAÇÃO</text>
+  </g>
+
+  <!-- Frame D: 135° -->
+  <g transform="translate(356,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a5060" opacity="0.8"/>
+    <ellipse cx="48" cy="40" rx="26" ry="7.5" fill="#1e6070"/>
+    <!-- Sedimento 135° -->
+    <ellipse cx="56" cy="37" rx="9" ry="3.5" fill="#5a4020" opacity="0.7"/>
+    <path d="M 20,38 Q 34,43 50,40 Q 64,37 76,42 Q 80,43 82,40" fill="none" stroke="#4ab0d0" stroke-width="1" opacity="0.6"/>
+    <text x="48" y="72" text-anchor="middle" fill="#4ab0d0" font-size="7">F4 – 135°</text>
+    <text x="48" y="79" text-anchor="middle" fill="#5a6680" font-size="6">ROTAÇÃO</text>
+  </g>
+
+  <!-- Frame E: 180° (sedimento à direita) -->
+  <g transform="translate(464,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a5060" opacity="0.8"/>
+    <ellipse cx="48" cy="40" rx="26" ry="7.5" fill="#1e6070"/>
+    <!-- Sedimento à direita (180°) -->
+    <ellipse cx="62" cy="40" rx="10" ry="4" fill="#5a4020" opacity="0.7"/>
+    <path d="M 22,40 Q 30,44 38,40 Q 46,36 54,40 Q 62,44 74,40" fill="none" stroke="#4ab0d0" stroke-width="1" opacity="0.6"/>
+    <text x="48" y="72" text-anchor="middle" fill="#4ab0d0" font-size="7">F5 – 180°</text>
+    <text x="48" y="79" text-anchor="middle" fill="#5a6680" font-size="6">ROTAÇÃO</text>
+  </g>
+
+  <!-- Frame F: 270° sedimento embaixo, pepita aparecendo -->
+  <g transform="translate(572,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a5060" opacity="0.8"/>
+    <ellipse cx="48" cy="40" rx="26" ry="7.5" fill="#1e6070"/>
+    <!-- Sedimento indo embaixo, ouro emergindo -->
+    <ellipse cx="48" cy="44" rx="9" ry="2.5" fill="#5a4020" opacity="0.6"/>
+    <!-- Pepita emergindo do sedimento -->
+    <ellipse cx="44" cy="38" rx="4" ry="2.5" fill="#d4a017" opacity="0.8" filter="url(#goldGlow)"/>
+    <path d="M 22,37 Q 36,43 50,39 Q 62,35 76,41" fill="none" stroke="#4ab0d0" stroke-width="1" opacity="0.6"/>
+    <text x="48" y="72" text-anchor="middle" fill="#ffd700" font-size="7">F6 – 270°</text>
+    <text x="48" y="79" text-anchor="middle" fill="#d4a017" font-size="6">OURO EMERGE</text>
+  </g>
+
+  <!-- Frame G: 315° separação quase completa -->
+  <g transform="translate(680,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#d4a017" stroke-width="2.5"/>
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a5060" opacity="0.8"/>
+    <ellipse cx="48" cy="40" rx="26" ry="7.5" fill="#1e6070"/>
+    <!-- Sedimento saindo, pepitas visíveis -->
+    <ellipse cx="36" cy="43" rx="7" ry="2" fill="#5a4020" opacity="0.5"/>
+    <ellipse cx="38" cy="38" rx="5" ry="3"   fill="#e8b830" filter="url(#goldGlow)"/>
+    <ellipse cx="52" cy="37" rx="3.5" ry="2" fill="#d4a017" filter="url(#goldGlow)"/>
+    <!-- Água saindo da borda -->
+    <path d="M 14,42 Q 12,46 10,50" fill="none" stroke="#4ab0d0" stroke-width="2" opacity="0.5"/>
+    <text x="48" y="72" text-anchor="middle" fill="#ffd700" font-size="7">F7 – 315°</text>
+    <text x="48" y="79" text-anchor="middle" fill="#d4a017" font-size="6">SEPARANDO</text>
+  </g>
+
+  <!-- Frame H: 360° / pepita exposta! -->
+  <g transform="translate(788,202)">
+    <rect x="0" y="0" width="96" height="80" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="56" rx="36" ry="11" fill="#7a4010"/>
+    <path d="M 12,40 Q 12,56 48,62 Q 84,56 84,40 Z" fill="#9a5820"/>
+    <line x1="20" y1="40" x2="16" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="32" y1="40" x2="30" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="48" y1="40" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="64" y1="40" x2="66" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="76" y1="40" x2="80" y2="59" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <ellipse cx="48" cy="40" rx="36" ry="11" fill="none" stroke="#ffd700" stroke-width="3"/>
+    <!-- Água quase limpa -->
+    <ellipse cx="48" cy="40" rx="32" ry="9.5" fill="#1a4055" opacity="0.7"/>
+    <!-- 3 pepitas bem expostas -->
+    <ellipse cx="40" cy="39" rx="6"   ry="3.5" fill="#ffd700" filter="url(#goldGlow)"/>
+    <ellipse cx="38" cy="38" rx="4"   ry="2.5" fill="#ffe066"/>
+    <ellipse cx="36" cy="37" rx="2"   ry="1.2" fill="#fff2aa" opacity="0.8"/>
+    <ellipse cx="56" cy="40" rx="4"   ry="2.5" fill="#e8b830" filter="url(#goldGlow)"/>
+    <ellipse cx="30" cy="41" rx="2.5" ry="1.5" fill="#d4a017" filter="url(#goldGlow)"/>
+    <!-- Raios de celebração -->
+    <line x1="40" y1="27" x2="40" y2="23" stroke="#ffe066" stroke-width="2" opacity="0.9"/>
+    <line x1="47" y1="29" x2="50" y2="25" stroke="#ffe066" stroke-width="1.5" opacity="0.8"/>
+    <line x1="33" y1="29" x2="30" y2="25" stroke="#ffe066" stroke-width="1.5" opacity="0.8"/>
+    <line x1="52" y1="33" x2="56" y2="31" stroke="#ffe066" stroke-width="1" opacity="0.7"/>
+    <line x1="28" y1="33" x2="24" y2="31" stroke="#ffe066" stroke-width="1" opacity="0.7"/>
+    <!-- Mini estrela -->
+    <text x="40" y="28" text-anchor="middle" fill="#fff2aa" font-size="8">✦</text>
+    <text x="48" y="72" text-anchor="middle" fill="#ffd700" font-size="7" filter="url(#goldGlow)">F8 – ACHEI!</text>
+    <text x="48" y="79" text-anchor="middle" fill="#d4a017" font-size="6">COLETA OK</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       LINHA 3 – ESTADOS CONTEXTUAIS (ambiente / UI)
+  ══════════════════════════════════════════════════════════════════ -->
+  <text x="12" y="312" fill="#d4a017" font-size="10" letter-spacing="2">▸ ESTADOS CONTEXTUAIS – AMBIENTE E INTERFACE</text>
+  <line x1="0" y1="316" x2="960" y2="316" stroke="#2a2a3a" stroke-width="0.5"/>
+
+  <!-- SPRITE 09: NO CHÃO – Margem do rio (coletável no mapa) -->
+  <g transform="translate(32,328)">
+    <rect x="0" y="0" width="96" height="96" fill="#111320" rx="2"/>
+    <!-- Solo amazônico -->
+    <rect x="0" y="64" width="96" height="32" fill="#3a2810" rx="2"/>
+    <!-- Gramíneas simples -->
+    <line x1="12" y1="64" x2="10" y2="54" stroke="#3a6830" stroke-width="2"/>
+    <line x1="16" y1="64" x2="18" y2="52" stroke="#4a7838" stroke-width="1.5"/>
+    <line x1="78" y1="64" x2="80" y2="53" stroke="#3a6830" stroke-width="2"/>
+    <line x1="83" y1="64" x2="81" y2="55" stroke="#4a7838" stroke-width="1.5"/>
+    <!-- Bateia pousada no solo, levemente inclinada -->
+    <g transform="translate(8,30) rotate(-8,40,25)">
+      <ellipse cx="40" cy="34" rx="30" ry="9"  fill="#7a4010"/>
+      <path d="M 10,24 Q 10,34 40,40 Q 70,34 70,24 Z" fill="#9a5820"/>
+      <line x1="18" y1="24" x2="14" y2="38" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="30" y1="24" x2="28" y2="40" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="40" y1="24" x2="40" y2="40" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="50" y1="24" x2="52" y2="40" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="62" y1="24" x2="66" y2="38" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <ellipse cx="40" cy="24" rx="30" ry="9"  fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+      <ellipse cx="40" cy="24" rx="26" ry="7.5" fill="#5a6670"/>
+      <ellipse cx="40" cy="24" rx="18" ry="5.2" fill="#7a8890"/>
+      <!-- Brilho -->
+      <ellipse cx="32" cy="21" rx="4" ry="1.5" fill="#aabbc8" opacity="0.5"/>
+    </g>
+    <!-- Sombra no chão -->
+    <ellipse cx="48" cy="68" rx="30" ry="5" fill="#000000" opacity="0.3"/>
+    <!-- Ícone de interação -->
+    <text x="48" y="14" text-anchor="middle" fill="#ffcc44" font-size="11">!</text>
+    <rect x="42" y="4" width="12" height="12" rx="2" fill="none" stroke="#ffcc44" stroke-width="1.5" opacity="0.7"/>
+    <text x="48" y="88" text-anchor="middle" fill="#8a9ba8" font-size="7">09 NO CHÃO</text>
+    <text x="48" y="95" text-anchor="middle" fill="#5a6680" font-size="6">COLETÁVEL MAPA</text>
+  </g>
+
+  <!-- SPRITE 10: NA ÁGUA DO RIO (flutuando) -->
+  <g transform="translate(144,328)">
+    <rect x="0" y="0" width="96" height="96" fill="#111320" rx="2"/>
+    <!-- Rio -->
+    <rect x="0" y="52" width="96" height="44" fill="#1a4060" rx="2" opacity="0.9"/>
+    <!-- Ondas do rio -->
+    <path d="M 0,56 Q 16,52 32,56 Q 48,60 64,56 Q 80,52 96,56" fill="none" stroke="#4ab0d0" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 0,64 Q 20,60 40,64 Q 60,68 80,64 Q 88,62 96,64" fill="none" stroke="#3a90b0" stroke-width="1" opacity="0.4"/>
+    <!-- Reflexo luz na água -->
+    <ellipse cx="30" cy="60" rx="8" ry="2" fill="#7fd0f0" opacity="0.3"/>
+    <ellipse cx="68" cy="66" rx="6" ry="1.5" fill="#7fd0f0" opacity="0.25"/>
+    <!-- Bateia flutuando na superfície -->
+    <g transform="translate(8,20)">
+      <ellipse cx="40" cy="38" rx="32" ry="10" fill="#7a4010"/>
+      <path d="M 8,28 Q 8,38 40,44 Q 72,38 72,28 Z" fill="#9a5820"/>
+      <line x1="16" y1="28" x2="13" y2="42" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="28" y1="28" x2="26" y2="44" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="40" y1="28" x2="40" y2="44" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="52" y1="28" x2="54" y2="44" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="64" y1="28" x2="67" y2="42" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <ellipse cx="40" cy="28" rx="32" ry="10" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+      <ellipse cx="40" cy="28" rx="28" ry="8.5" fill="#1a6880" opacity="0.8"/>
+      <ellipse cx="40" cy="28" rx="20" ry="6"   fill="#2980a0"/>
+      <!-- Gotas de água caindo da beira -->
+      <circle cx="8"  cy="34" r="1.5" fill="#4ab0d0" opacity="0.7"/>
+      <circle cx="72" cy="34" r="1.5" fill="#4ab0d0" opacity="0.7"/>
+    </g>
+    <!-- Sombra/reflexo na água -->
+    <ellipse cx="48" cy="58" rx="32" ry="5" fill="#7a4010" opacity="0.2"/>
+    <text x="48" y="88" text-anchor="middle" fill="#4ab0d0" font-size="7">10 NO RIO</text>
+    <text x="48" y="95" text-anchor="middle" fill="#5a6680" font-size="6">FLUTUANDO</text>
+  </g>
+
+  <!-- SPRITE 11: INCLINADA DESPEJANDO ÁGUA -->
+  <g transform="translate(256,328)">
+    <rect x="0" y="0" width="96" height="96" fill="#111320" rx="2"/>
+    <!-- Bateia fortemente inclinada, água caindo -->
+    <g transform="rotate(-45,48,48)">
+      <ellipse cx="48" cy="56" rx="30" ry="9"  fill="#7a4010"/>
+      <path d="M 18,44 Q 18,56 48,62 Q 78,56 78,44 Z" fill="#9a5820"/>
+      <line x1="26" y1="44" x2="22" y2="60" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="36" y1="44" x2="34" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="48" y1="44" x2="48" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="60" y1="44" x2="62" y2="62" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <line x1="70" y1="44" x2="74" y2="60" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+      <ellipse cx="48" cy="44" rx="30" ry="9"  fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+      <ellipse cx="48" cy="44" rx="26" ry="7.5" fill="#1a5060" opacity="0.7"/>
+      <ellipse cx="48" cy="44" rx="18" ry="5"   fill="#1e6070" opacity="0.8"/>
+    </g>
+    <!-- Água caindo -->
+    <path d="M 14,60 Q 8,68 10,80 Q 12,88 14,92" fill="none" stroke="#4ab0d0" stroke-width="3" opacity="0.7"/>
+    <path d="M 18,64 Q 14,72 16,82" fill="none" stroke="#6ad0f0" stroke-width="2" opacity="0.5"/>
+    <!-- Gotas -->
+    <ellipse cx="10" cy="84" rx="3" ry="5" fill="#4ab0d0" opacity="0.4"/>
+    <ellipse cx="16" cy="88" rx="2" ry="3" fill="#4ab0d0" opacity="0.3"/>
+    <text x="48" y="88" text-anchor="middle" fill="#4ab0d0" font-size="7">11 DESPEJANDO</text>
+    <text x="48" y="95" text-anchor="middle" fill="#5a6680" font-size="6">ÁGUA</text>
+  </g>
+
+  <!-- SPRITE 12: DANIFICADA / OBSOLETA -->
+  <g transform="translate(368,328)">
+    <rect x="0" y="0" width="96" height="96" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="62" rx="32" ry="10" fill="#5a3008" opacity="0.7"/>
+    <path d="M 16,46 Q 16,62 48,68 Q 80,62 80,46 Z" fill="#7a4010" opacity="0.7"/>
+    <!-- Rachaduras na madeira -->
+    <line x1="22" y1="46" x2="26" y2="65" stroke="#3a2008" stroke-width="1.5" opacity="0.8"/>
+    <path d="M 26,50 L 30,54 L 26,58" fill="none" stroke="#2a1000" stroke-width="1.5" opacity="0.8"/>
+    <line x1="60" y1="46" x2="58" y2="65" stroke="#3a2008" stroke-width="1.5" opacity="0.6"/>
+    <!-- Aro amassado -->
+    <ellipse cx="48" cy="46" rx="32" ry="10" fill="none" stroke="#6a7880" stroke-width="2" stroke-dasharray="4,2"/>
+    <!-- Interior enferrujado -->
+    <ellipse cx="48" cy="46" rx="28" ry="8.5" fill="#3a3228"/>
+    <ellipse cx="48" cy="46" rx="20" ry="6"   fill="#4a3820"/>
+    <!-- Ferrugem -->
+    <circle cx="36" cy="44" r="3" fill="#8a3a10" opacity="0.6"/>
+    <circle cx="52" cy="47" r="2" fill="#7a3008" opacity="0.5"/>
+    <circle cx="44" cy="49" r="2" fill="#8a3a10" opacity="0.4"/>
+    <!-- X vermelho -->
+    <line x1="32" y1="32" x2="46" y2="46" stroke="#cc3300" stroke-width="2.5" opacity="0.8"/>
+    <line x1="46" y1="32" x2="32" y2="46" stroke="#cc3300" stroke-width="2.5" opacity="0.8"/>
+    <text x="48" y="88" text-anchor="middle" fill="#8a3a10" font-size="7">12 DANIFICADA</text>
+    <text x="48" y="95" text-anchor="middle" fill="#5a6680" font-size="6">INÚTIL</text>
+  </g>
+
+  <!-- SPRITE 13: BRILHANDO (highlight – selecionada no inventário) -->
+  <g transform="translate(480,328)">
+    <rect x="0" y="0" width="96" height="96" fill="#111320" rx="2"/>
+    <!-- Aura de seleção -->
+    <ellipse cx="48" cy="48" rx="42" ry="38" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,2"/>
+    <ellipse cx="48" cy="48" rx="38" ry="34" fill="none" stroke="#ffe066" stroke-width="1" opacity="0.2"/>
+    <ellipse cx="48" cy="62" rx="32" ry="10" fill="#7a4010"/>
+    <path d="M 16,46 Q 16,62 48,68 Q 80,62 80,46 Z" fill="#9a5820"/>
+    <line x1="24" y1="46" x2="20" y2="65" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="36" y1="46" x2="34" y2="68" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <line x1="48" y1="46" x2="48" y2="68" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <line x1="60" y1="46" x2="62" y2="68" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <line x1="72" y1="46" x2="76" y2="65" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <!-- Aro brilhante -->
+    <ellipse cx="48" cy="46" rx="32" ry="10" fill="none" stroke="#ffd700" stroke-width="3.5" filter="url(#goldGlow)"/>
+    <ellipse cx="48" cy="46" rx="32" ry="10" fill="none" stroke="#fff2cc" stroke-width="1"/>
+    <!-- Interior -->
+    <ellipse cx="48" cy="46" rx="28" ry="8.5" fill="#5a6670"/>
+    <ellipse cx="48" cy="46" rx="20" ry="6"   fill="#7a8890"/>
+    <!-- Brilho intenso -->
+    <ellipse cx="38" cy="42" rx="6" ry="2.5" fill="#ffffff" opacity="0.6"/>
+    <!-- Cantos brilhantes UI -->
+    <line x1="4"  y1="4"  x2="14" y2="4"  stroke="#ffd700" stroke-width="2"/>
+    <line x1="4"  y1="4"  x2="4"  y2="14" stroke="#ffd700" stroke-width="2"/>
+    <line x1="92" y1="4"  x2="82" y2="4"  stroke="#ffd700" stroke-width="2"/>
+    <line x1="92" y1="4"  x2="92" y2="14" stroke="#ffd700" stroke-width="2"/>
+    <line x1="4"  y1="92" x2="14" y2="92" stroke="#ffd700" stroke-width="2"/>
+    <line x1="4"  y1="92" x2="4"  y2="82" stroke="#ffd700" stroke-width="2"/>
+    <line x1="92" y1="92" x2="82" y2="92" stroke="#ffd700" stroke-width="2"/>
+    <line x1="92" y1="92" x2="92" y2="82" stroke="#ffd700" stroke-width="2"/>
+    <text x="48" y="88" text-anchor="middle" fill="#ffd700" font-size="7">13 SELECIONADA</text>
+    <text x="48" y="95" text-anchor="middle" fill="#5a6680" font-size="6">UI INVENTÁRIO</text>
+  </g>
+
+  <!-- SPRITE 14: ÍCONE MINIATURA (UI / barra de ferramentas 16px) -->
+  <g transform="translate(592,328)">
+    <rect x="0" y="0" width="96" height="96" fill="#111320" rx="2"/>
+    <!-- Grade de pixels ampliada de um ícone 16x16 -->
+    <text x="48" y="16" text-anchor="middle" fill="#5a6680" font-size="8">16×16 ICON</text>
+    <!-- Representação do ícone em pixels aumentados (cada px = 5x5) -->
+    <g transform="translate(8,22)">
+      <!-- Linha 0: aro superior -->
+      <rect x="15" y="0"  width="50" height="5"  fill="#8a9ba8"/>
+      <!-- Linha 1 -->
+      <rect x="10" y="5"  width="60" height="5"  fill="#8a9ba8"/>
+      <rect x="15" y="5"  width="50" height="5"  fill="#aabbc8"/>
+      <!-- Linha 2: interior -->
+      <rect x="8"  y="10" width="64" height="5"  fill="#7a4010"/>
+      <rect x="13" y="10" width="54" height="5"  fill="#5a6670"/>
+      <!-- Linha 3: interior mais claro -->
+      <rect x="8"  y="15" width="64" height="5"  fill="#7a4010"/>
+      <rect x="15" y="15" width="50" height="5"  fill="#7a8890"/>
+      <!-- Linha 4: interior fundo -->
+      <rect x="10" y="20" width="60" height="5"  fill="#9a5820"/>
+      <rect x="18" y="20" width="44" height="5"  fill="#6b7880"/>
+      <!-- Linha 5: aro inferior -->
+      <rect x="13" y="25" width="54" height="5"  fill="#8a9ba8"/>
+      <!-- Linha 6: madeira -->
+      <rect x="15" y="30" width="50" height="5"  fill="#8b4e18"/>
+      <!-- Linha 7: base madeira -->
+      <rect x="18" y="35" width="44" height="5"  fill="#7a4010"/>
+    </g>
+    <text x="48" y="88" text-anchor="middle" fill="#8a9ba8" font-size="7">14 ÍCONE</text>
+    <text x="48" y="95" text-anchor="middle" fill="#5a6680" font-size="6">PIXEL GRID</text>
+  </g>
+
+  <!-- SPRITE 15: EFEITO SUCESSO (3 pepitas coletadas) -->
+  <g transform="translate(704,328)">
+    <rect x="0" y="0" width="96" height="96" fill="#111320" rx="2"/>
+    <ellipse cx="48" cy="62" rx="32" ry="10" fill="#7a4010"/>
+    <path d="M 16,46 Q 16,62 48,68 Q 80,62 80,46 Z" fill="#9a5820"/>
+    <line x1="24" y1="46" x2="20" y2="65" stroke="#5a3008" stroke-width="1.2" opacity="0.45"/>
+    <line x1="36" y1="46" x2="34" y2="68" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <line x1="48" y1="46" x2="48" y2="68" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <line x1="60" y1="46" x2="62" y2="68" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <line x1="72" y1="46" x2="76" y2="65" stroke="#5a3008" stroke-width="1.2" opacity="0.4"/>
+    <ellipse cx="48" cy="46" rx="32" ry="10" fill="none" stroke="#ffd700" stroke-width="3"/>
+    <!-- Pepitas expostas em exibição -->
+    <ellipse cx="48" cy="46" rx="28" ry="8.5" fill="#1a3040"/>
+    <ellipse cx="36" cy="45" rx="5"   ry="3"   fill="#ffd700" filter="url(#goldGlow)"/>
+    <ellipse cx="48" cy="44" rx="6"   ry="3.5" fill="#ffe066" filter="url(#goldGlow)"/>
+    <ellipse cx="62" cy="46" rx="4.5" ry="2.8" fill="#e8b830" filter="url(#goldGlow)"/>
+    <!-- Brilhos -->
+    <ellipse cx="34" cy="43" rx="2"   ry="1"   fill="#fff2aa" opacity="0.8"/>
+    <ellipse cx="46" cy="42" rx="2.5" ry="1.2" fill="#ffffff"  opacity="0.7"/>
+    <ellipse cx="60" cy="44" rx="2"   ry="1"   fill="#fff2aa"  opacity="0.7"/>
+    <!-- Partículas de celebração -->
+    <circle cx="22" cy="30" r="2" fill="#ffd700" opacity="0.9"/>
+    <circle cx="74" cy="28" r="2" fill="#ffd700" opacity="0.9"/>
+    <circle cx="30" cy="22" r="1.5" fill="#ff9933" opacity="0.8"/>
+    <circle cx="66" cy="20" r="1.5" fill="#ff9933" opacity="0.8"/>
+    <circle cx="48" cy="16" r="2.5" fill="#ffe066" opacity="0.9"/>
+    <!-- Raios -->
+    <line x1="22" y1="30" x2="18" y2="24" stroke="#ffd700" stroke-width="1.5" opacity="0.7"/>
+    <line x1="74" y1="28" x2="78" y2="22" stroke="#ffd700" stroke-width="1.5" opacity="0.7"/>
+    <line x1="48" y1="16" x2="48" y2="8"  stroke="#ffe066" stroke-width="2" opacity="0.8"/>
+    <text x="48" y="88" text-anchor="middle" fill="#ffd700" font-size="7">15 SUCESSO</text>
+    <text x="48" y="95" text-anchor="middle" fill="#d4a017" font-size="6">3 PEPITAS!</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       LINHA 4 – SPRITE SHEET GODOT HORIZONTAL (Atlas ready)
+  ══════════════════════════════════════════════════════════════════ -->
+  <text x="12" y="456" fill="#d4a017" font-size="10" letter-spacing="2">▸ SPRITE SHEET HORIZONTAL – GODOT AnimatedSprite2D (32px × 32px, 8 frames)</text>
+  <line x1="0" y1="460" x2="960" y2="460" stroke="#2a2a3a" stroke-width="0.5"/>
+
+  <!-- Container do atlas 8 frames peneiramento -->
+  <rect x="32" y="472" width="704" height="96" fill="#080a14" rx="2" stroke="#2a3050" stroke-width="1"/>
+  <!-- Guias de corte Godot -->
+  <line x1="120" y1="472" x2="120" y2="568" stroke="#3a4060" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="208" y1="472" x2="208" y2="568" stroke="#3a4060" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="296" y1="472" x2="296" y2="568" stroke="#3a4060" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="384" y1="472" x2="384" y2="568" stroke="#3a4060" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="472" y1="472" x2="472" y2="568" stroke="#3a4060" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="560" y1="472" x2="560" y2="568" stroke="#3a4060" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="648" y1="472" x2="648" y2="568" stroke="#3a4060" stroke-width="0.5" stroke-dasharray="3,2"/>
+
+  <!-- Os 8 frames em escala 88px cada (dentro do atlas) -->
+  <!-- Frame 1 -->
+  <g transform="translate(32,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a5060"/>
+    <ellipse cx="44" cy="50" rx="18" ry="5.5" fill="#1e6070"/>
+    <ellipse cx="34" cy="48" rx="8" ry="3" fill="#5a4020" opacity="0.6"/>
+    <text x="44" y="88" text-anchor="middle" fill="#4a6080" font-size="8">F1</text>
+  </g>
+  <!-- Frame 2 -->
+  <g transform="translate(120,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a5060"/>
+    <ellipse cx="44" cy="50" rx="18" ry="5.5" fill="#1e6070"/>
+    <ellipse cx="38" cy="47" rx="7" ry="3" fill="#5a4020" opacity="0.6"/>
+    <text x="44" y="88" text-anchor="middle" fill="#4a6080" font-size="8">F2</text>
+  </g>
+  <!-- Frame 3 -->
+  <g transform="translate(208,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a5060"/>
+    <ellipse cx="44" cy="50" rx="18" ry="5.5" fill="#1e6070"/>
+    <ellipse cx="44" cy="45" rx="7" ry="2.5" fill="#5a4020" opacity="0.6"/>
+    <text x="44" y="88" text-anchor="middle" fill="#4a6080" font-size="8">F3</text>
+  </g>
+  <!-- Frame 4 -->
+  <g transform="translate(296,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a5060"/>
+    <ellipse cx="44" cy="50" rx="18" ry="5.5" fill="#1e6070"/>
+    <ellipse cx="52" cy="47" rx="7" ry="3" fill="#5a4020" opacity="0.6"/>
+    <text x="44" y="88" text-anchor="middle" fill="#4a6080" font-size="8">F4</text>
+  </g>
+  <!-- Frame 5 -->
+  <g transform="translate(384,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a5060"/>
+    <ellipse cx="44" cy="50" rx="18" ry="5.5" fill="#1e6070"/>
+    <ellipse cx="56" cy="50" rx="8" ry="3" fill="#5a4020" opacity="0.6"/>
+    <text x="44" y="88" text-anchor="middle" fill="#4a6080" font-size="8">F5</text>
+  </g>
+  <!-- Frame 6 – ouro emerge -->
+  <g transform="translate(472,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#8a9ba8" stroke-width="2.5"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a5060"/>
+    <ellipse cx="44" cy="50" rx="18" ry="5.5" fill="#1e6070"/>
+    <ellipse cx="44" cy="54" rx="7" ry="2" fill="#5a4020" opacity="0.5"/>
+    <ellipse cx="40" cy="48" rx="4" ry="2.5" fill="#d4a017" filter="url(#goldGlow)"/>
+    <text x="44" y="88" text-anchor="middle" fill="#d4a017" font-size="8">F6</text>
+  </g>
+  <!-- Frame 7 – separação -->
+  <g transform="translate(560,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#d4a017" stroke-width="2.5"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a5060"/>
+    <ellipse cx="36" cy="52" rx="6" ry="2" fill="#5a4020" opacity="0.4"/>
+    <ellipse cx="38" cy="47" rx="5" ry="3"   fill="#e8b830" filter="url(#goldGlow)"/>
+    <ellipse cx="52" cy="48" rx="3.5" ry="2" fill="#d4a017" filter="url(#goldGlow)"/>
+    <text x="44" y="88" text-anchor="middle" fill="#e8b830" font-size="8">F7</text>
+  </g>
+  <!-- Frame 8 – COLETA! -->
+  <g transform="translate(648,472)">
+    <ellipse cx="44" cy="62" rx="30" ry="9" fill="#7a4010"/>
+    <path d="M 14,50 Q 14,62 44,68 Q 74,62 74,50 Z" fill="#9a5820"/>
+    <ellipse cx="44" cy="50" rx="30" ry="9" fill="none" stroke="#ffd700" stroke-width="3"/>
+    <ellipse cx="44" cy="50" rx="26" ry="7.5" fill="#1a3040"/>
+    <ellipse cx="36" cy="49" rx="4.5" ry="2.8" fill="#ffd700" filter="url(#goldGlow)"/>
+    <ellipse cx="44" cy="47" rx="5.5" ry="3.2" fill="#ffe066" filter="url(#goldGlow)"/>
+    <ellipse cx="56" cy="49" rx="4"   ry="2.5" fill="#e8b830" filter="url(#goldGlow)"/>
+    <line x1="44" y1="36" x2="44" y2="30" stroke="#ffe066" stroke-width="2" opacity="0.9"/>
+    <line x1="52" y1="38" x2="56" y2="33" stroke="#ffe066" stroke-width="1.5" opacity="0.8"/>
+    <line x1="36" y1="38" x2="32" y2="33" stroke="#ffe066" stroke-width="1.5" opacity="0.8"/>
+    <text x="44" y="88" text-anchor="middle" fill="#ffd700" font-size="8">F8 ✦</text>
+  </g>
+
+  <!-- Indicação Godot -->
+  <rect x="752" y="472" width="176" height="96" fill="#0a0c1a" rx="2" stroke="#2a3050" stroke-width="1"/>
+  <text x="840" y="500" text-anchor="middle" fill="#4a6080" font-size="9" letter-spacing="1">GODOT 4</text>
+  <text x="840" y="516" text-anchor="middle" fill="#6a8098" font-size="8">AnimatedSprite2D</text>
+  <text x="840" y="530" text-anchor="middle" fill="#4a6080" font-size="8">Hframes: 8</text>
+  <text x="840" y="544" text-anchor="middle" fill="#4a6080" font-size="8">Vframes: 1</text>
+  <text x="840" y="558" text-anchor="middle" fill="#d4a017" font-size="8">FPS: 10~12</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       LINHA 5 – PALETA DE CORES OFICIAL
+  ══════════════════════════════════════════════════════════════════ -->
+  <text x="12" y="590" fill="#d4a017" font-size="10" letter-spacing="2">▸ PALETA OFICIAL – BATEIA DA FASE 1.2</text>
+  <line x1="0" y1="594" x2="960" y2="594" stroke="#2a2a3a" stroke-width="0.5"/>
+
+  <!-- Swatches de cor -->
+  <g transform="translate(32,606)">
+    <!-- Cor 1 -->
+    <rect x="0"   y="0" width="32" height="32" fill="#8a9ba8" rx="2"/>
+    <text x="16"  y="44" text-anchor="middle" fill="#8a9ba8" font-size="7">ARO</text>
+    <text x="16"  y="52" text-anchor="middle" fill="#5a6680" font-size="6">#8A9BA8</text>
+    <!-- Cor 2 -->
+    <rect x="48"  y="0" width="32" height="32" fill="#aabbc8" rx="2"/>
+    <text x="64"  y="44" text-anchor="middle" fill="#aabbc8" font-size="7">ARO CLR</text>
+    <text x="64"  y="52" text-anchor="middle" fill="#5a6680" font-size="6">#AABBC8</text>
+    <!-- Cor 3 -->
+    <rect x="96"  y="0" width="32" height="32" fill="#9a5820" rx="2"/>
+    <text x="112" y="44" text-anchor="middle" fill="#9a5820" font-size="7">MADEIRA</text>
+    <text x="112" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#9A5820</text>
+    <!-- Cor 4 -->
+    <rect x="144" y="0" width="32" height="32" fill="#7a4010" rx="2"/>
+    <text x="160" y="44" text-anchor="middle" fill="#7a4010" font-size="7">MAD.ESC</text>
+    <text x="160" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#7A4010</text>
+    <!-- Cor 5 -->
+    <rect x="192" y="0" width="32" height="32" fill="#5a3008" rx="2"/>
+    <text x="208" y="44" text-anchor="middle" fill="#7a5028" font-size="7">MAD.SCR</text>
+    <text x="208" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#5A3008</text>
+    <!-- Cor 6 -->
+    <rect x="240" y="0" width="32" height="32" fill="#6b7880" rx="2"/>
+    <text x="256" y="44" text-anchor="middle" fill="#6b7880" font-size="7">METAL</text>
+    <text x="256" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#6B7880</text>
+    <!-- Cor 7 -->
+    <rect x="288" y="0" width="32" height="32" fill="#7a8890" rx="2"/>
+    <text x="304" y="44" text-anchor="middle" fill="#7a8890" font-size="7">MET.CLR</text>
+    <text x="304" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#7A8890</text>
+    <!-- Cor 8 -->
+    <rect x="336" y="0" width="32" height="32" fill="#1a6880" rx="2"/>
+    <text x="352" y="44" text-anchor="middle" fill="#1a6880" font-size="7">ÁGUA</text>
+    <text x="352" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#1A6880</text>
+    <!-- Cor 9 -->
+    <rect x="384" y="0" width="32" height="32" fill="#4ab0d0" rx="2"/>
+    <text x="400" y="44" text-anchor="middle" fill="#4ab0d0" font-size="7">ÁG.CLR</text>
+    <text x="400" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#4AB0D0</text>
+    <!-- Cor 10 -->
+    <rect x="432" y="0" width="32" height="32" fill="#5a4020" rx="2"/>
+    <text x="448" y="44" text-anchor="middle" fill="#8a6030" font-size="7">SEDIM.</text>
+    <text x="448" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#5A4020</text>
+    <!-- Cor 11 -->
+    <rect x="480" y="0" width="32" height="32" fill="#ffd700" rx="2"/>
+    <text x="496" y="44" text-anchor="middle" fill="#ffd700" font-size="7">OURO</text>
+    <text x="496" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#FFD700</text>
+    <!-- Cor 12 -->
+    <rect x="528" y="0" width="32" height="32" fill="#e8b830" rx="2"/>
+    <text x="544" y="44" text-anchor="middle" fill="#e8b830" font-size="7">OURO MD</text>
+    <text x="544" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#E8B830</text>
+    <!-- Cor 13 -->
+    <rect x="576" y="0" width="32" height="32" fill="#ffe066" rx="2"/>
+    <text x="592" y="44" text-anchor="middle" fill="#ffe066" font-size="7">OURO CL</text>
+    <text x="592" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#FFE066</text>
+    <!-- Cor 14 -->
+    <rect x="624" y="0" width="32" height="32" fill="#fff2aa" rx="2"/>
+    <text x="640" y="44" text-anchor="middle" fill="#fff2aa" font-size="7">REFLEXO</text>
+    <text x="640" y="52" text-anchor="middle" fill="#5a6680" font-size="6">#FFF2AA</text>
+    <!-- Cor 15 Transparente -->
+    <rect x="672" y="0" width="32" height="32" fill="none" stroke="#3a4060" stroke-width="1" rx="2"
+          style="background:repeating-linear-gradient(45deg,#333 0,#333 4px,#666 4px,#666 8px)"/>
+    <line x1="672" y1="0"  x2="704" y2="32" stroke="#3a4060" stroke-width="1"/>
+    <line x1="672" y1="32" x2="704" y2="0"  stroke="#3a4060" stroke-width="1"/>
+    <text x="688" y="44" text-anchor="middle" fill="#3a4060" font-size="7">TRANSP.</text>
+    <text x="688" y="52" text-anchor="middle" fill="#5a6680" font-size="6">ALPHA 0</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════
+       LINHA 6 – NOTAS DE IMPLEMENTAÇÃO GODOT
+  ══════════════════════════════════════════════════════════════════ -->
+  <rect x="32" y="680" width="900" height="310" fill="#080c14" rx="3" stroke="#1e2a3a" stroke-width="1"/>
+  <text x="52" y="702" fill="#d4a017" font-size="10" letter-spacing="2">▸ GUIA DE IMPLEMENTAÇÃO – GODOT 4</text>
+  <line x1="52" y1="708" x2="912" y2="708" stroke="#1e2a3a" stroke-width="0.5"/>
+
+  <!-- Coluna esquerda -->
+  <text x="52"  y="726" fill="#6a9ab8" font-size="9" letter-spacing="1">ANIMAÇÕES RECOMENDADAS:</text>
+  <text x="52"  y="742" fill="#8ab0c8" font-size="8">• "idle"         → Sprite 02 (1 frame, inventário/mão)</text>
+  <text x="52"  y="756" fill="#8ab0c8" font-size="8">• "sway"         → Sprites 03+04 (2 frames, Corvan andando)</text>
+  <text x="52"  y="770" fill="#8ab0c8" font-size="8">• "pan"          → F1→F8 (8 frames, peneiramento circular)</text>
+  <text x="52"  y="784" fill="#8ab0c8" font-size="8">• "water_dirty"  → Sprite 06 (1 frame, água turva)</text>
+  <text x="52"  y="798" fill="#8ab0c8" font-size="8">• "gold_found"   → Sprite 07+15 (brilho pepita)</text>
+  <text x="52"  y="812" fill="#8ab0c8" font-size="8">• "pickup"       → Sprite 13 (UI hover)</text>
+  <text x="52"  y="826" fill="#8ab0c8" font-size="8">• "broken"       → Sprite 12 (condição especial)</text>
+
+  <text x="52"  y="848" fill="#6a9ab8" font-size="9" letter-spacing="1">CONFIGURAÇÃO AnimatedSprite2D:</text>
+  <text x="52"  y="862" fill="#8ab0c8" font-size="8">  SpriteFrames → atlas: bateia_sprites.png</text>
+  <text x="52"  y="876" fill="#8ab0c8" font-size="8">  animation "pan" → Hframes:8, Vframes:1, FPS:10, loop:true</text>
+  <text x="52"  y="890" fill="#8ab0c8" font-size="8">  animation "idle" → frame único, loop:false</text>
+  <text x="52"  y="904" fill="#d4a017" font-size="8">  CanvasItem → Texture Filter: Nearest (pixel perfect!)</text>
+  <text x="52"  y="918" fill="#8ab0c8" font-size="8">  Scale: Vector2(2,2) ou (3,3) para tela HD</text>
+
+  <!-- Coluna direita -->
+  <text x="520" y="726" fill="#6a9ab8" font-size="9" letter-spacing="1">LÓGICA DE CENA 3 – MINIGAME:</text>
+  <text x="520" y="742" fill="#8ab0c8" font-size="8">• Água limpa  → play("pan") FPS:10, chance ouro: alta</text>
+  <text x="520" y="756" fill="#8ab0c8" font-size="8">• Água turva  → play("water_dirty"), chance ouro: baixa</text>
+  <text x="520" y="770" fill="#8ab0c8" font-size="8">• Pepita ouro → play("gold_found"), emitir sinal</text>
+  <text x="520" y="784" fill="#8ab0c8" font-size="8">• Barra visib.→ reduz com bateia em lama (Sprite 06)</text>
+
+  <text x="520" y="806" fill="#6a9ab8" font-size="9" letter-spacing="1">SINAL GDScript EXEMPLO:</text>
+  <rect x="520" y="812" width="380" height="86" fill="#0a0e18" rx="2" stroke="#1e2840" stroke-width="1"/>
+  <text x="530" y="826" fill="#66aacc" font-size="8" font-family="Courier New">signal pepita_coletada(quantidade)</text>
+  <text x="530" y="838" fill="#5a9a80" font-size="8" font-family="Courier New">func _on_pan_complete():</text>
+  <text x="530" y="850" fill="#8ab0c8" font-size="8" font-family="Courier New">  if agua_limpa and frame == 7:</text>
+  <text x="530" y="862" fill="#8ab0c8" font-size="8" font-family="Courier New">    play("gold_found")</text>
+  <text x="530" y="874" fill="#8ab0c8" font-size="8" font-family="Courier New">    emit_signal("pepita_coletada", 1)</text>
+  <text x="530" y="886" fill="#8ab0c8" font-size="8" font-family="Courier New">    $AudioStreamPlayer.play() # clink!</text>
+  <text x="530" y="898" fill="#5a9a80" font-size="8" font-family="Courier New">  else: play("idle")</text>
+
+  <!-- Footer linha 6 -->
+  <line x1="32" y1="968" x2="932" y2="968" stroke="#1e2a3a" stroke-width="0.5"/>
+  <text x="52"  y="982" fill="#3a5070" font-size="8">Fase 1.2 – O Ouro dos Rios │ 15 sprites │ 8 frames animação │ Paleta 14 cores + alpha │ Godot 4 AnimatedSprite2D</text>
+
+</svg>

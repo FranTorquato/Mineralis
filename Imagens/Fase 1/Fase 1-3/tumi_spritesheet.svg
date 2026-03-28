@@ -1,0 +1,837 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="560" height="560">
+<!--
+  TUMI – Sprite Sheet Completo
+  8 sprites · 80×160px cada · 4 colunas × 2 linhas
+  Fundo transparente · Godot: Texture2D · Filter = Nearest
+  HFrames=4 · VFrames=2 · ou importar individualmente
+
+  SPRITES:
+  [0,0] Normal / idle         [1,0] Brilhando / pickup
+  [2,0] Girado 45°            [3,0] Girado 90° (horizontal)
+  [0,1] Danificado            [1,1] Encantado (glowing)
+  [2,1] Miniatura (ícone UI)  [3,1] Sombra / silhueta
+-->
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 0,0 · NORMAL / IDLE · col0 row0
+     cx=40 — peça padrão, posição vertical
+════════════════════════════════════════════════ -->
+<g transform="translate(0,0)">
+
+  <!-- raios solares do topo -->
+  <rect x="36" y="4"  width="4" height="7" fill="#E8C040"/>
+  <rect x="28" y="6"  width="4" height="5" fill="#D4A830"/>
+  <rect x="44" y="6"  width="4" height="5" fill="#D4A830"/>
+  <rect x="22" y="10" width="4" height="4" fill="#C09020"/>
+  <rect x="50" y="10" width="4" height="4" fill="#C09020"/>
+  <rect x="17" y="15" width="4" height="4" fill="#B08018"/>
+  <rect x="55" y="15" width="4" height="4" fill="#B08018"/>
+
+  <!-- halo dourado -->
+  <rect x="24" y="10" width="28" height="3" fill="#F0D050" opacity="0.50"/>
+  <rect x="20" y="12" width="36" height="2" fill="#F0D050" opacity="0.30"/>
+
+  <!-- toca / chapéu cerimonial -->
+  <rect x="26" y="8"  width="24" height="6"  fill="#C89828"/>
+  <rect x="28" y="7"  width="20" height="4"  fill="#D4A830"/>
+  <rect x="30" y="6"  width="16" height="3"  fill="#E8C040"/>
+  <rect x="34" y="5"  width="4"  height="2"  fill="#F0D050"/>
+  <rect x="38" y="5"  width="4"  height="2"  fill="#B88820"/>
+
+  <!-- cabeça -->
+  <rect x="28" y="11" width="20" height="16" fill="#D4A060"/>
+  <rect x="30" y="11" width="16" height="14" fill="#DCA868"/>
+  <!-- olhos -->
+  <rect x="31" y="15" width="4" height="4" fill="#1A1008"/>
+  <rect x="41" y="15" width="4" height="4" fill="#1A1008"/>
+  <rect x="32" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.45"/>
+  <rect x="42" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.45"/>
+  <!-- nariz -->
+  <rect x="37" y="20" width="2" height="3" fill="#B07848"/>
+  <!-- boca -->
+  <rect x="33" y="24" width="10" height="2" fill="#804020"/>
+  <!-- sobrancelhas -->
+  <rect x="31" y="13" width="5" height="2" fill="#6A3810"/>
+  <rect x="40" y="13" width="5" height="2" fill="#6A3810"/>
+
+  <!-- orelhas / arcos auriculares -->
+  <rect x="25" y="15" width="4" height="6" fill="#C89048"/>
+  <rect x="47" y="15" width="4" height="6" fill="#C89048"/>
+  <!-- brincos solares -->
+  <rect x="22" y="17" width="5" height="5" fill="#D4A830"/>
+  <rect x="23" y="18" width="3" height="3" fill="#F0D050"/>
+  <rect x="49" y="17" width="5" height="5" fill="#D4A830"/>
+  <rect x="50" y="18" width="3" height="3" fill="#F0D050"/>
+
+  <!-- pescoço -->
+  <rect x="34" y="27" width="8" height="4" fill="#C89048"/>
+
+  <!-- CORPO DO CABO -->
+  <rect x="24" y="31" width="28" height="36" fill="#B88820"/>
+  <rect x="26" y="31" width="24" height="34" fill="#D4A830"/>
+  <!-- contorno cabo -->
+  <rect x="24" y="31" width="28" height="2"  fill="#907010"/>
+  <rect x="24" y="65" width="28" height="2"  fill="#907010"/>
+  <rect x="24" y="31" width="2"  height="36" fill="#907010"/>
+  <rect x="50" y="31" width="2"  height="36" fill="#C09828"/>
+  <!-- padrão geométrico -->
+  <rect x="36" y="35" width="4"  height="4"  fill="#F0D050"/>
+  <rect x="34" y="37" width="8"  height="4"  fill="#F0D050"/>
+  <rect x="36" y="41" width="4"  height="4"  fill="#F0D050"/>
+  <!-- faixas -->
+  <rect x="26" y="47" width="24" height="2" fill="#907010"/>
+  <rect x="26" y="57" width="24" height="2" fill="#907010"/>
+  <!-- dentes de serra -->
+  <rect x="26" y="49" width="4" height="4" fill="#907010"/>
+  <rect x="30" y="49" width="4" height="4" fill="#E8C040"/>
+  <rect x="34" y="49" width="4" height="4" fill="#907010"/>
+  <rect x="38" y="49" width="4" height="4" fill="#E8C040"/>
+  <rect x="42" y="49" width="4" height="4" fill="#907010"/>
+  <rect x="46" y="49" width="4" height="4" fill="#E8C040"/>
+  <!-- reflexo cabo -->
+  <rect x="27" y="32" width="3" height="32" fill="#F8E898" opacity="0.28"/>
+  <!-- sulcos -->
+  <rect x="29" y="32" width="2" height="13" fill="#907010" opacity="0.55"/>
+  <rect x="45" y="32" width="2" height="13" fill="#907010" opacity="0.55"/>
+
+  <!-- VIROLA -->
+  <rect x="26" y="67" width="24" height="5" fill="#A07020"/>
+  <rect x="28" y="67" width="20" height="5" fill="#C89828"/>
+  <rect x="30" y="68" width="16" height="3" fill="#E8C040"/>
+  <rect x="28" y="68" width="2"  height="2" fill="#F0D050"/>
+  <rect x="46" y="68" width="2"  height="2" fill="#F0D050"/>
+
+  <!-- HASTE -->
+  <rect x="32" y="72" width="12" height="18" fill="#B0B8C0"/>
+  <rect x="34" y="72" width="8"  height="18" fill="#C8D0D8"/>
+  <rect x="34" y="72" width="3"  height="18" fill="#E0E8F0" opacity="0.55"/>
+  <rect x="32" y="72" width="2"  height="18" fill="#8890A0"/>
+  <rect x="42" y="72" width="2"  height="18" fill="#A0A8B0"/>
+  <rect x="32" y="76" width="12" height="2"  fill="#9098A8"/>
+  <rect x="32" y="84" width="12" height="2"  fill="#9098A8"/>
+
+  <!-- BASE DA LÂMINA -->
+  <rect x="26" y="90" width="24" height="4" fill="#B0B8C0"/>
+  <rect x="28" y="90" width="20" height="4" fill="#C0C8D0"/>
+
+  <!-- LÂMINA SEMICIRCULAR -->
+  <rect x="16" y="94"  width="44" height="4"  fill="#B8C0C8"/>
+  <rect x="18" y="94"  width="40" height="4"  fill="#C8D0D8"/>
+  <rect x="12" y="98"  width="52" height="4"  fill="#B8C0C8"/>
+  <rect x="14" y="98"  width="48" height="4"  fill="#C8D0D8"/>
+  <rect x="8"  y="102" width="60" height="4"  fill="#B8C0C8"/>
+  <rect x="10" y="102" width="56" height="4"  fill="#C8D0D8"/>
+  <rect x="6"  y="106" width="64" height="5"  fill="#B0B8C2"/>
+  <rect x="8"  y="106" width="60" height="5"  fill="#C0C8D2"/>
+  <rect x="8"  y="111" width="60" height="4"  fill="#B8C0C8"/>
+  <rect x="10" y="111" width="56" height="4"  fill="#C8D0D8"/>
+  <rect x="12" y="115" width="52" height="4"  fill="#B8C0C8"/>
+  <rect x="14" y="115" width="48" height="4"  fill="#C8D0D8"/>
+  <rect x="16" y="119" width="44" height="4"  fill="#B8C0C8"/>
+  <rect x="18" y="119" width="40" height="4"  fill="#C8D0D8"/>
+  <rect x="22" y="123" width="32" height="4"  fill="#B8C0C8"/>
+  <rect x="24" y="123" width="28" height="4"  fill="#C8D0D8"/>
+  <rect x="28" y="127" width="20" height="3"  fill="#B0B8C0"/>
+
+  <!-- gume esquerdo -->
+  <rect x="16" y="94"  width="2" height="4"  fill="#E8F0F8"/>
+  <rect x="12" y="98"  width="2" height="4"  fill="#E8F0F8"/>
+  <rect x="8"  y="102" width="2" height="4"  fill="#F0F4F8"/>
+  <rect x="6"  y="106" width="2" height="9"  fill="#F4F8FC"/>
+  <rect x="8"  y="111" width="2" height="4"  fill="#F0F4F8"/>
+  <rect x="12" y="115" width="2" height="4"  fill="#E8F0F8"/>
+  <rect x="16" y="119" width="2" height="4"  fill="#E0E8F0"/>
+  <rect x="22" y="123" width="2" height="4"  fill="#D8E0E8"/>
+  <!-- gume direito -->
+  <rect x="58" y="94"  width="2" height="4"  fill="#E8F0F8"/>
+  <rect x="62" y="98"  width="2" height="4"  fill="#E8F0F8"/>
+  <rect x="66" y="102" width="2" height="4"  fill="#F0F4F8"/>
+  <rect x="68" y="106" width="2" height="9"  fill="#F4F8FC"/>
+  <rect x="66" y="111" width="2" height="4"  fill="#F0F4F8"/>
+  <rect x="62" y="115" width="2" height="4"  fill="#E8F0F8"/>
+  <rect x="58" y="119" width="2" height="4"  fill="#E0E8F0"/>
+  <rect x="52" y="123" width="2" height="4"  fill="#D8E0E8"/>
+
+  <!-- reflexo central lâmina -->
+  <rect x="34" y="94"  width="8"  height="4"  fill="#FFFFFF" opacity="0.32"/>
+  <rect x="32" y="98"  width="12" height="4"  fill="#FFFFFF" opacity="0.28"/>
+  <rect x="30" y="102" width="16" height="9"  fill="#FFFFFF" opacity="0.24"/>
+  <rect x="30" y="111" width="16" height="4"  fill="#FFFFFF" opacity="0.20"/>
+  <rect x="32" y="115" width="12" height="4"  fill="#FFFFFF" opacity="0.16"/>
+  <rect x="34" y="119" width="8"  height="4"  fill="#FFFFFF" opacity="0.12"/>
+
+  <!-- sombra lateral esq lâmina -->
+  <rect x="18" y="94"  width="8" height="28" fill="#8890A0" opacity="0.30"/>
+  <!-- sombra lateral dir lâmina -->
+  <rect x="54" y="94"  width="8" height="28" fill="#9098A8" opacity="0.25"/>
+
+  <!-- contorno lâmina -->
+  <rect x="26" y="90"  width="24" height="1" fill="#505860"/>
+  <rect x="16" y="94"  width="1" height="4"  fill="#505860"/>
+  <rect x="12" y="98"  width="1" height="4"  fill="#505860"/>
+  <rect x="8"  y="102" width="1" height="4"  fill="#505860"/>
+  <rect x="6"  y="106" width="1" height="9"  fill="#505860"/>
+  <rect x="8"  y="111" width="1" height="4"  fill="#505860"/>
+  <rect x="12" y="115" width="1" height="4"  fill="#505860"/>
+  <rect x="16" y="119" width="1" height="4"  fill="#505860"/>
+  <rect x="22" y="123" width="1" height="4"  fill="#505860"/>
+  <rect x="59" y="94"  width="1" height="4"  fill="#505860"/>
+  <rect x="63" y="98"  width="1" height="4"  fill="#505860"/>
+  <rect x="67" y="102" width="1" height="4"  fill="#505860"/>
+  <rect x="69" y="106" width="1" height="9"  fill="#505860"/>
+  <rect x="67" y="111" width="1" height="4"  fill="#505860"/>
+  <rect x="63" y="115" width="1" height="4"  fill="#505860"/>
+  <rect x="59" y="119" width="1" height="4"  fill="#505860"/>
+  <rect x="53" y="123" width="1" height="4"  fill="#505860"/>
+  <rect x="28" y="130" width="20" height="1" fill="#505860"/>
+
+  <!-- incrustações -->
+  <rect x="16" y="102" width="6" height="6" fill="#2A8070"/>
+  <rect x="17" y="103" width="4" height="4" fill="#3AA090"/>
+  <rect x="17" y="103" width="2" height="2" fill="#55C0B0" opacity="0.7"/>
+  <rect x="54" y="102" width="6" height="6" fill="#2A8070"/>
+  <rect x="55" y="103" width="4" height="4" fill="#3AA090"/>
+  <rect x="55" y="103" width="2" height="2" fill="#55C0B0" opacity="0.7"/>
+  <rect x="36" y="96"  width="4" height="4" fill="#B82818"/>
+  <rect x="37" y="97"  width="2" height="2" fill="#E04030" opacity="0.8"/>
+</g>
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 1,0 · BRILHANDO / PICKUP · col1 row0
+     Efeito dourado pulsante ao coletar o item
+════════════════════════════════════════════════ -->
+<g transform="translate(140,0)">
+  <!-- aura dourada externa -->
+  <rect x="10" y="2"   width="56" height="140" fill="#F0C020" opacity="0.08" rx="6"/>
+  <rect x="14" y="6"   width="48" height="132" fill="#F8D840" opacity="0.10" rx="4"/>
+
+  <!-- partículas de brilho ao redor -->
+  <rect x="4"  y="20"  width="4" height="4" fill="#FFE860" opacity="0.80"/>
+  <rect x="68" y="30"  width="4" height="4" fill="#FFE860" opacity="0.80"/>
+  <rect x="2"  y="60"  width="3" height="3" fill="#FFD040" opacity="0.70"/>
+  <rect x="71" y="70"  width="3" height="3" fill="#FFD040" opacity="0.70"/>
+  <rect x="6"  y="100" width="4" height="4" fill="#FFE860" opacity="0.75"/>
+  <rect x="66" y="110" width="4" height="4" fill="#FFE860" opacity="0.75"/>
+  <rect x="14" y="8"   width="3" height="3" fill="#FFFAB0" opacity="0.85"/>
+  <rect x="58" y="8"   width="3" height="3" fill="#FFFAB0" opacity="0.85"/>
+  <rect x="8"  y="130" width="3" height="3" fill="#FFE040" opacity="0.65"/>
+  <rect x="64" y="130" width="3" height="3" fill="#FFE040" opacity="0.65"/>
+
+  <!-- raios + halo mais brilhantes -->
+  <rect x="36" y="4"  width="4" height="8" fill="#FFE860"/>
+  <rect x="28" y="6"  width="4" height="5" fill="#F0D040"/>
+  <rect x="44" y="6"  width="4" height="5" fill="#F0D040"/>
+  <rect x="22" y="10" width="4" height="4" fill="#E0C030"/>
+  <rect x="50" y="10" width="4" height="4" fill="#E0C030"/>
+  <rect x="17" y="15" width="4" height="4" fill="#D0B020"/>
+  <rect x="55" y="15" width="4" height="4" fill="#D0B020"/>
+  <rect x="24" y="10" width="28" height="3" fill="#FFE860" opacity="0.55"/>
+
+  <!-- toca -->
+  <rect x="26" y="8"  width="24" height="6"  fill="#E8C030"/>
+  <rect x="28" y="7"  width="20" height="4"  fill="#F0D040"/>
+  <rect x="30" y="6"  width="16" height="3"  fill="#FFE860"/>
+  <rect x="34" y="5"  width="4"  height="2"  fill="#FFFAB0"/>
+  <rect x="38" y="5"  width="4"  height="2"  fill="#D4A820"/>
+
+  <!-- cabeça -->
+  <rect x="28" y="11" width="20" height="16" fill="#E0B070"/>
+  <rect x="30" y="11" width="16" height="14" fill="#EABC7A"/>
+  <!-- brilho no rosto -->
+  <rect x="30" y="11" width="5"  height="10" fill="#FFE898" opacity="0.35"/>
+  <!-- olhos -->
+  <rect x="31" y="15" width="4" height="4" fill="#1A1008"/>
+  <rect x="41" y="15" width="4" height="4" fill="#1A1008"/>
+  <rect x="32" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.55"/>
+  <rect x="42" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.55"/>
+  <rect x="37" y="20" width="2" height="3" fill="#B07848"/>
+  <rect x="33" y="24" width="10" height="2" fill="#804020"/>
+  <rect x="25" y="15" width="4" height="6" fill="#D09858"/>
+  <rect x="47" y="15" width="4" height="6" fill="#D09858"/>
+  <rect x="22" y="17" width="5" height="5" fill="#E8C040"/>
+  <rect x="23" y="18" width="3" height="3" fill="#FFE860"/>
+  <rect x="49" y="17" width="5" height="5" fill="#E8C040"/>
+  <rect x="50" y="18" width="3" height="3" fill="#FFE860"/>
+  <rect x="34" y="27" width="8" height="4" fill="#D09858"/>
+
+  <!-- cabo dourado intenso -->
+  <rect x="24" y="31" width="28" height="36" fill="#D4A820"/>
+  <rect x="26" y="31" width="24" height="34" fill="#F0C830"/>
+  <rect x="27" y="32" width="4"  height="32" fill="#FFE870" opacity="0.40"/>
+  <rect x="36" y="35" width="4"  height="4"  fill="#FFFAB0"/>
+  <rect x="34" y="37" width="8"  height="4"  fill="#FFFAB0"/>
+  <rect x="36" y="41" width="4"  height="4"  fill="#FFFAB0"/>
+  <rect x="26" y="47" width="24" height="2" fill="#A88010"/>
+  <rect x="26" y="57" width="24" height="2" fill="#A88010"/>
+  <rect x="26" y="49" width="4" height="4" fill="#A88010"/>
+  <rect x="30" y="49" width="4" height="4" fill="#FFE040"/>
+  <rect x="34" y="49" width="4" height="4" fill="#A88010"/>
+  <rect x="38" y="49" width="4" height="4" fill="#FFE040"/>
+  <rect x="42" y="49" width="4" height="4" fill="#A88010"/>
+  <rect x="46" y="49" width="4" height="4" fill="#FFE040"/>
+
+  <!-- virola brilhante -->
+  <rect x="26" y="67" width="24" height="5" fill="#C09020"/>
+  <rect x="28" y="67" width="20" height="5" fill="#E8C030"/>
+  <rect x="30" y="68" width="16" height="3" fill="#FFE860"/>
+  <rect x="28" y="68" width="2"  height="2" fill="#FFFAB0"/>
+  <rect x="46" y="68" width="2"  height="2" fill="#FFFAB0"/>
+
+  <!-- haste com brilho -->
+  <rect x="32" y="72" width="12" height="18" fill="#C8D4DC"/>
+  <rect x="34" y="72" width="8"  height="18" fill="#E0ECF4"/>
+  <rect x="34" y="72" width="3"  height="18" fill="#FFFFFF" opacity="0.55"/>
+  <rect x="32" y="76" width="12" height="2"  fill="#A0B0B8"/>
+  <rect x="32" y="84" width="12" height="2"  fill="#A0B0B8"/>
+
+  <!-- lâmina com brilho dourado intenso -->
+  <rect x="26" y="90" width="24" height="4" fill="#C8D4DC"/>
+  <rect x="16" y="94"  width="44" height="4"  fill="#D0DCE4"/>
+  <rect x="12" y="98"  width="52" height="4"  fill="#D0DCE4"/>
+  <rect x="8"  y="102" width="60" height="4"  fill="#D0DCE4"/>
+  <rect x="6"  y="106" width="64" height="5"  fill="#C8D4DC"/>
+  <rect x="8"  y="111" width="60" height="4"  fill="#D0DCE4"/>
+  <rect x="12" y="115" width="52" height="4"  fill="#D0DCE4"/>
+  <rect x="16" y="119" width="44" height="4"  fill="#D0DCE4"/>
+  <rect x="22" y="123" width="32" height="4"  fill="#C8D4DC"/>
+  <rect x="28" y="127" width="20" height="3"  fill="#C0CCD4"/>
+  <!-- overlay dourado na lâmina (brilho de coleta) -->
+  <rect x="10" y="94"  width="56" height="36" fill="#FFD840" opacity="0.18"/>
+  <!-- reflexo intenso -->
+  <rect x="30" y="94"  width="16" height="36" fill="#FFFFFF" opacity="0.30"/>
+  <!-- gumes -->
+  <rect x="6"  y="106" width="2" height="9"  fill="#FFFFFF"/>
+  <rect x="68" y="106" width="2" height="9"  fill="#FFFFFF"/>
+  <!-- incrustações brilhando -->
+  <rect x="16" y="102" width="6" height="6" fill="#30A888"/>
+  <rect x="17" y="103" width="4" height="4" fill="#50D0B8"/>
+  <rect x="17" y="103" width="2" height="2" fill="#A0FFF0" opacity="0.8"/>
+  <rect x="54" y="102" width="6" height="6" fill="#30A888"/>
+  <rect x="55" y="103" width="4" height="4" fill="#50D0B8"/>
+  <rect x="55" y="103" width="2" height="2" fill="#A0FFF0" opacity="0.8"/>
+  <rect x="36" y="96"  width="4" height="4" fill="#E03020"/>
+  <rect x="37" y="97"  width="2" height="2" fill="#FF6050" opacity="0.9"/>
+  <!-- contorno lâmina -->
+  <rect x="6"  y="106" width="1" height="9"  fill="#404850"/>
+  <rect x="69" y="106" width="1" height="9"  fill="#404850"/>
+</g>
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 2,0 · GIRADO 45° · col2 row0
+     Tumi na diagonal — usado em animações de ataque
+════════════════════════════════════════════════ -->
+<g transform="translate(280,0)">
+  <!-- rotacionado 45° ao redor do centro (40,80) -->
+  <g transform="rotate(-45,40,80)">
+    <!-- raios solares -->
+    <rect x="36" y="4"  width="4" height="7" fill="#E8C040"/>
+    <rect x="28" y="6"  width="4" height="5" fill="#D4A830"/>
+    <rect x="44" y="6"  width="4" height="5" fill="#D4A830"/>
+    <rect x="22" y="10" width="4" height="4" fill="#C09020"/>
+    <rect x="50" y="10" width="4" height="4" fill="#C09020"/>
+    <!-- toca -->
+    <rect x="26" y="8"  width="24" height="6"  fill="#C89828"/>
+    <rect x="28" y="7"  width="20" height="4"  fill="#D4A830"/>
+    <rect x="30" y="6"  width="16" height="3"  fill="#E8C040"/>
+    <rect x="34" y="5"  width="4"  height="2"  fill="#F0D050"/>
+    <!-- cabeça -->
+    <rect x="28" y="11" width="20" height="16" fill="#D4A060"/>
+    <rect x="30" y="11" width="16" height="14" fill="#DCA868"/>
+    <rect x="31" y="15" width="4" height="4" fill="#1A1008"/>
+    <rect x="41" y="15" width="4" height="4" fill="#1A1008"/>
+    <rect x="32" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.45"/>
+    <rect x="42" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.45"/>
+    <rect x="37" y="20" width="2" height="3" fill="#B07848"/>
+    <rect x="33" y="24" width="10" height="2" fill="#804020"/>
+    <rect x="25" y="15" width="4" height="6" fill="#C89048"/>
+    <rect x="47" y="15" width="4" height="6" fill="#C89048"/>
+    <rect x="22" y="17" width="5" height="5" fill="#D4A830"/>
+    <rect x="49" y="17" width="5" height="5" fill="#D4A830"/>
+    <rect x="34" y="27" width="8" height="4" fill="#C89048"/>
+    <!-- cabo -->
+    <rect x="24" y="31" width="28" height="36" fill="#B88820"/>
+    <rect x="26" y="31" width="24" height="34" fill="#D4A830"/>
+    <rect x="36" y="35" width="4"  height="4"  fill="#F0D050"/>
+    <rect x="34" y="37" width="8"  height="4"  fill="#F0D050"/>
+    <rect x="36" y="41" width="4"  height="4"  fill="#F0D050"/>
+    <rect x="26" y="47" width="24" height="2" fill="#907010"/>
+    <rect x="26" y="49" width="4" height="4" fill="#907010"/>
+    <rect x="30" y="49" width="4" height="4" fill="#E8C040"/>
+    <rect x="34" y="49" width="4" height="4" fill="#907010"/>
+    <rect x="38" y="49" width="4" height="4" fill="#E8C040"/>
+    <rect x="42" y="49" width="4" height="4" fill="#907010"/>
+    <rect x="46" y="49" width="4" height="4" fill="#E8C040"/>
+    <!-- virola -->
+    <rect x="26" y="67" width="24" height="5" fill="#A07020"/>
+    <rect x="28" y="67" width="20" height="5" fill="#C89828"/>
+    <rect x="30" y="68" width="16" height="3" fill="#E8C040"/>
+    <!-- haste -->
+    <rect x="32" y="72" width="12" height="18" fill="#B0B8C0"/>
+    <rect x="34" y="72" width="8"  height="18" fill="#C8D0D8"/>
+    <rect x="34" y="72" width="3"  height="18" fill="#E0E8F0" opacity="0.55"/>
+    <!-- lâmina -->
+    <rect x="16" y="94"  width="44" height="4"  fill="#B8C0C8"/>
+    <rect x="18" y="94"  width="40" height="4"  fill="#C8D0D8"/>
+    <rect x="12" y="98"  width="52" height="4"  fill="#B8C0C8"/>
+    <rect x="14" y="98"  width="48" height="4"  fill="#C8D0D8"/>
+    <rect x="8"  y="102" width="60" height="4"  fill="#B8C0C8"/>
+    <rect x="10" y="102" width="56" height="4"  fill="#C8D0D8"/>
+    <rect x="6"  y="106" width="64" height="5"  fill="#B0B8C2"/>
+    <rect x="8"  y="106" width="60" height="5"  fill="#C0C8D2"/>
+    <rect x="8"  y="111" width="60" height="4"  fill="#B8C0C8"/>
+    <rect x="10" y="111" width="56" height="4"  fill="#C8D0D8"/>
+    <rect x="12" y="115" width="52" height="4"  fill="#B8C0C8"/>
+    <rect x="14" y="115" width="48" height="4"  fill="#C8D0D8"/>
+    <rect x="16" y="119" width="44" height="4"  fill="#B8C0C8"/>
+    <rect x="18" y="119" width="40" height="4"  fill="#C8D0D8"/>
+    <rect x="22" y="123" width="32" height="4"  fill="#B8C0C8"/>
+    <rect x="28" y="127" width="20" height="3"  fill="#B0B8C0"/>
+    <!-- gume afiado -->
+    <rect x="6"  y="106" width="2" height="9"  fill="#F4F8FC"/>
+    <rect x="68" y="106" width="2" height="9"  fill="#F4F8FC"/>
+    <!-- reflexo -->
+    <rect x="30" y="98"  width="16" height="28" fill="#FFFFFF" opacity="0.22"/>
+    <!-- incrustações -->
+    <rect x="16" y="102" width="6" height="6" fill="#2A8070"/>
+    <rect x="17" y="103" width="4" height="4" fill="#3AA090"/>
+    <rect x="54" y="102" width="6" height="6" fill="#2A8070"/>
+    <rect x="55" y="103" width="4" height="4" fill="#3AA090"/>
+    <rect x="36" y="96"  width="4" height="4" fill="#B82818"/>
+  </g>
+</g>
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 3,0 · HORIZONTAL (90°) · col3 row0
+     Tumi deitado — inventário / ícone de slot
+════════════════════════════════════════════════ -->
+<g transform="translate(420,0)">
+  <!-- rotacionado 90° ao redor do centro -->
+  <g transform="rotate(90,40,80)">
+    <rect x="36" y="4"  width="4" height="7" fill="#E8C040"/>
+    <rect x="28" y="6"  width="4" height="5" fill="#D4A830"/>
+    <rect x="44" y="6"  width="4" height="5" fill="#D4A830"/>
+    <rect x="22" y="10" width="4" height="4" fill="#C09020"/>
+    <rect x="50" y="10" width="4" height="4" fill="#C09020"/>
+    <rect x="26" y="8"  width="24" height="6"  fill="#C89828"/>
+    <rect x="28" y="7"  width="20" height="4"  fill="#D4A830"/>
+    <rect x="30" y="6"  width="16" height="3"  fill="#E8C040"/>
+    <rect x="34" y="5"  width="4"  height="2"  fill="#F0D050"/>
+    <rect x="28" y="11" width="20" height="16" fill="#D4A060"/>
+    <rect x="30" y="11" width="16" height="14" fill="#DCA868"/>
+    <rect x="31" y="15" width="4" height="4" fill="#1A1008"/>
+    <rect x="41" y="15" width="4" height="4" fill="#1A1008"/>
+    <rect x="32" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.45"/>
+    <rect x="42" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.45"/>
+    <rect x="37" y="20" width="2" height="3" fill="#B07848"/>
+    <rect x="33" y="24" width="10" height="2" fill="#804020"/>
+    <rect x="25" y="15" width="4" height="6" fill="#C89048"/>
+    <rect x="47" y="15" width="4" height="6" fill="#C89048"/>
+    <rect x="22" y="17" width="5" height="5" fill="#D4A830"/>
+    <rect x="49" y="17" width="5" height="5" fill="#D4A830"/>
+    <rect x="34" y="27" width="8" height="4" fill="#C89048"/>
+    <rect x="24" y="31" width="28" height="36" fill="#B88820"/>
+    <rect x="26" y="31" width="24" height="34" fill="#D4A830"/>
+    <rect x="36" y="35" width="4"  height="4"  fill="#F0D050"/>
+    <rect x="34" y="37" width="8"  height="4"  fill="#F0D050"/>
+    <rect x="36" y="41" width="4"  height="4"  fill="#F0D050"/>
+    <rect x="26" y="47" width="24" height="2" fill="#907010"/>
+    <rect x="26" y="49" width="4" height="4" fill="#907010"/>
+    <rect x="30" y="49" width="4" height="4" fill="#E8C040"/>
+    <rect x="34" y="49" width="4" height="4" fill="#907010"/>
+    <rect x="38" y="49" width="4" height="4" fill="#E8C040"/>
+    <rect x="42" y="49" width="4" height="4" fill="#907010"/>
+    <rect x="46" y="49" width="4" height="4" fill="#E8C040"/>
+    <rect x="26" y="67" width="24" height="5" fill="#A07020"/>
+    <rect x="28" y="67" width="20" height="5" fill="#C89828"/>
+    <rect x="30" y="68" width="16" height="3" fill="#E8C040"/>
+    <rect x="32" y="72" width="12" height="18" fill="#B0B8C0"/>
+    <rect x="34" y="72" width="8"  height="18" fill="#C8D0D8"/>
+    <rect x="34" y="72" width="3"  height="18" fill="#E0E8F0" opacity="0.55"/>
+    <rect x="26" y="90" width="24" height="4" fill="#B0B8C0"/>
+    <rect x="16" y="94"  width="44" height="4"  fill="#B8C0C8"/>
+    <rect x="12" y="98"  width="52" height="4"  fill="#B8C0C8"/>
+    <rect x="8"  y="102" width="60" height="4"  fill="#B8C0C8"/>
+    <rect x="6"  y="106" width="64" height="5"  fill="#B0B8C2"/>
+    <rect x="8"  y="111" width="60" height="4"  fill="#B8C0C8"/>
+    <rect x="12" y="115" width="52" height="4"  fill="#B8C0C8"/>
+    <rect x="16" y="119" width="44" height="4"  fill="#B8C0C8"/>
+    <rect x="22" y="123" width="32" height="4"  fill="#B8C0C8"/>
+    <rect x="28" y="127" width="20" height="3"  fill="#B0B8C0"/>
+    <rect x="6"  y="106" width="2" height="9"  fill="#F4F8FC"/>
+    <rect x="68" y="106" width="2" height="9"  fill="#F4F8FC"/>
+    <rect x="30" y="98"  width="16" height="28" fill="#FFFFFF" opacity="0.22"/>
+    <rect x="16" y="102" width="6" height="6" fill="#2A8070"/>
+    <rect x="17" y="103" width="4" height="4" fill="#3AA090"/>
+    <rect x="54" y="102" width="6" height="6" fill="#2A8070"/>
+    <rect x="55" y="103" width="4" height="4" fill="#3AA090"/>
+    <rect x="36" y="96"  width="4" height="4" fill="#B82818"/>
+  </g>
+</g>
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 0,1 · DANIFICADO / ENFERRUJADO · col0 row1
+     Versão gasta, com lascas e manchas
+════════════════════════════════════════════════ -->
+<g transform="translate(0,160)">
+  <!-- raios opacos / desgastados -->
+  <rect x="36" y="4"  width="4" height="7" fill="#9A7E20"/>
+  <rect x="28" y="6"  width="4" height="5" fill="#887018"/>
+  <rect x="44" y="6"  width="3" height="5" fill="#887018"/>
+  <rect x="22" y="10" width="3" height="4" fill="#786010"/>
+  <rect x="50" y="10" width="4" height="4" fill="#786010"/>
+
+  <!-- toca desgastada -->
+  <rect x="26" y="8"  width="24" height="6"  fill="#806010"/>
+  <rect x="28" y="7"  width="20" height="4"  fill="#9A7820"/>
+  <rect x="30" y="6"  width="16" height="3"  fill="#B09030"/>
+  <!-- lasca na toca -->
+  <rect x="34" y="6"  width="3"  height="3"  fill="#6A5010"/>
+  <rect x="34" y="5"  width="4"  height="2"  fill="#C8A840"/>
+
+  <!-- cabeça com dano -->
+  <rect x="28" y="11" width="20" height="16" fill="#B08040"/>
+  <rect x="30" y="11" width="16" height="14" fill="#C09050"/>
+  <!-- rachadura na cabeça -->
+  <rect x="38" y="12" width="1"  height="8"  fill="#604820" opacity="0.7"/>
+  <rect x="39" y="14" width="1"  height="5"  fill="#604820" opacity="0.5"/>
+  <rect x="31" y="15" width="4" height="4" fill="#1A1008"/>
+  <rect x="41" y="15" width="4" height="4" fill="#1A1008"/>
+  <rect x="32" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.30"/>
+  <rect x="42" y="15" width="2" height="2" fill="#FFFFFF" opacity="0.30"/>
+  <rect x="37" y="20" width="2" height="3" fill="#906038"/>
+  <rect x="33" y="24" width="10" height="2" fill="#603010"/>
+  <rect x="25" y="15" width="4" height="6" fill="#A07038"/>
+  <rect x="47" y="15" width="4" height="6" fill="#A07038"/>
+  <!-- brinco partido -->
+  <rect x="22" y="17" width="5" height="5" fill="#9A7020"/>
+  <rect x="49" y="17" width="4" height="5" fill="#9A7020"/>
+  <rect x="34" y="27" width="8" height="4" fill="#A07038"/>
+
+  <!-- cabo danificado -->
+  <rect x="24" y="31" width="28" height="36" fill="#806010"/>
+  <rect x="26" y="31" width="24" height="34" fill="#9A7820"/>
+  <!-- arranhões no cabo -->
+  <rect x="28" y="33" width="1"  height="12" fill="#604808" opacity="0.7"/>
+  <rect x="44" y="38" width="1"  height="8"  fill="#604808" opacity="0.6"/>
+  <rect x="33" y="42" width="8"  height="1"  fill="#604808" opacity="0.5"/>
+  <!-- padrão geométrico apagado -->
+  <rect x="36" y="35" width="4"  height="4"  fill="#B09028" opacity="0.7"/>
+  <rect x="34" y="37" width="8"  height="4"  fill="#B09028" opacity="0.7"/>
+  <rect x="36" y="41" width="4"  height="4"  fill="#B09028" opacity="0.7"/>
+  <rect x="26" y="47" width="24" height="2" fill="#604808"/>
+  <rect x="26" y="57" width="24" height="2" fill="#604808"/>
+  <rect x="26" y="49" width="4" height="4" fill="#604808"/>
+  <rect x="30" y="49" width="4" height="4" fill="#9A7820"/>
+  <rect x="34" y="49" width="4" height="4" fill="#604808"/>
+  <rect x="38" y="49" width="4" height="4" fill="#9A7820"/>
+  <rect x="42" y="49" width="4" height="4" fill="#604808"/>
+  <rect x="46" y="49" width="4" height="4" fill="#9A7820"/>
+
+  <!-- virola enferrujada -->
+  <rect x="26" y="67" width="24" height="5" fill="#706010"/>
+  <rect x="28" y="67" width="20" height="5" fill="#8A7018"/>
+  <rect x="30" y="68" width="16" height="3" fill="#A08820"/>
+
+  <!-- haste enferrujada -->
+  <rect x="32" y="72" width="12" height="18" fill="#8090A0"/>
+  <rect x="34" y="72" width="8"  height="18" fill="#9098A8"/>
+  <!-- manchas de ferrugem -->
+  <rect x="34" y="74" width="4"  height="3"  fill="#805020" opacity="0.55"/>
+  <rect x="36" y="80" width="5"  height="4"  fill="#804818" opacity="0.50"/>
+  <rect x="32" y="76" width="12" height="2"  fill="#707880"/>
+  <rect x="32" y="84" width="12" height="2"  fill="#707880"/>
+
+  <!-- lâmina danificada / lascada -->
+  <rect x="26" y="90" width="24" height="4" fill="#8090A0"/>
+  <rect x="16" y="94"  width="44" height="4"  fill="#8898A0"/>
+  <rect x="18" y="94"  width="40" height="4"  fill="#9098A8"/>
+  <rect x="12" y="98"  width="52" height="4"  fill="#8898A0"/>
+  <rect x="14" y="98"  width="48" height="4"  fill="#9098A8"/>
+  <rect x="8"  y="102" width="60" height="4"  fill="#8898A0"/>
+  <rect x="10" y="102" width="56" height="4"  fill="#9098A8"/>
+  <rect x="6"  y="106" width="64" height="5"  fill="#8090A0"/>
+  <rect x="8"  y="106" width="60" height="5"  fill="#8898A8"/>
+  <rect x="8"  y="111" width="60" height="4"  fill="#8898A0"/>
+  <rect x="10" y="111" width="56" height="4"  fill="#9098A8"/>
+  <rect x="12" y="115" width="52" height="4"  fill="#8898A0"/>
+  <rect x="14" y="115" width="48" height="4"  fill="#9098A8"/>
+  <rect x="16" y="119" width="44" height="4"  fill="#8898A0"/>
+  <rect x="18" y="119" width="40" height="4"  fill="#9098A8"/>
+  <rect x="22" y="123" width="32" height="4"  fill="#8898A0"/>
+  <rect x="28" y="127" width="20" height="3"  fill="#8090A0"/>
+  <!-- manchas de ferrugem na lâmina -->
+  <rect x="20" y="100" width="8"  height="5"  fill="#804820" opacity="0.45"/>
+  <rect x="44" y="108" width="10" height="4"  fill="#804820" opacity="0.40"/>
+  <rect x="30" y="118" width="6"  height="4"  fill="#805020" opacity="0.38"/>
+  <!-- lascas / bordas irregulares -->
+  <rect x="6"  y="107" width="3"  height="3"  fill="#606870"/>
+  <rect x="66" y="112" width="3"  height="3"  fill="#606870"/>
+  <rect x="14" y="120" width="3"  height="3"  fill="#606870"/>
+  <!-- gumes opacos (sem brilho) -->
+  <rect x="6"  y="106" width="2" height="9"  fill="#C8D0D8" opacity="0.60"/>
+  <rect x="68" y="106" width="2" height="9"  fill="#C8D0D8" opacity="0.60"/>
+  <!-- incrustações (pedras faltando/quebradas) -->
+  <rect x="16" y="102" width="6" height="6" fill="#206050"/>
+  <rect x="17" y="103" width="3" height="3" fill="#307868"/>
+  <!-- pedra direita faltando -->
+  <rect x="54" y="102" width="6" height="6" fill="#505858"/>
+  <rect x="36" y="96"  width="4" height="4" fill="#903010"/>
+</g>
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 1,1 · ENCANTADO · col1 row1
+     Aura mágica azul-violeta pulsante
+════════════════════════════════════════════════ -->
+<g transform="translate(140,160)">
+  <!-- aura mágica -->
+  <rect x="8"  y="0"   width="60" height="148" fill="#6040C0" opacity="0.07" rx="8"/>
+  <rect x="12" y="4"   width="52" height="140" fill="#8060E0" opacity="0.09" rx="6"/>
+  <!-- partículas mágicas -->
+  <rect x="4"  y="16"  width="4" height="4" fill="#A080FF" opacity="0.85"/>
+  <rect x="68" y="26"  width="4" height="4" fill="#A080FF" opacity="0.85"/>
+  <rect x="2"  y="56"  width="3" height="3" fill="#C0A0FF" opacity="0.75"/>
+  <rect x="71" y="68"  width="3" height="3" fill="#C0A0FF" opacity="0.75"/>
+  <rect x="6"  y="96"  width="4" height="4" fill="#A080FF" opacity="0.80"/>
+  <rect x="66" y="108" width="4" height="4" fill="#A080FF" opacity="0.80"/>
+  <rect x="12" y="6"   width="3" height="3" fill="#E0D0FF" opacity="0.90"/>
+  <rect x="60" y="6"   width="3" height="3" fill="#E0D0FF" opacity="0.90"/>
+  <rect x="8"  y="130" width="3" height="3" fill="#B090FF" opacity="0.70"/>
+  <rect x="64" y="130" width="3" height="3" fill="#B090FF" opacity="0.70"/>
+  <!-- runas flutuantes -->
+  <rect x="4"  y="40"  width="2" height="6" fill="#8060D0" opacity="0.60"/>
+  <rect x="2"  y="42"  width="6" height="2" fill="#8060D0" opacity="0.60"/>
+  <rect x="68" y="80"  width="2" height="6" fill="#8060D0" opacity="0.60"/>
+  <rect x="66" y="82"  width="6" height="2" fill="#8060D0" opacity="0.60"/>
+
+  <!-- raios com brilho violeta -->
+  <rect x="36" y="4"  width="4" height="7" fill="#C8A0FF"/>
+  <rect x="28" y="6"  width="4" height="5" fill="#B090E8"/>
+  <rect x="44" y="6"  width="4" height="5" fill="#B090E8"/>
+  <rect x="22" y="10" width="4" height="4" fill="#A080D8"/>
+  <rect x="50" y="10" width="4" height="4" fill="#A080D8"/>
+  <rect x="17" y="15" width="4" height="4" fill="#9070C8"/>
+  <rect x="55" y="15" width="4" height="4" fill="#9070C8"/>
+  <rect x="24" y="10" width="28" height="3" fill="#C0A0FF" opacity="0.45"/>
+
+  <!-- toca encantada -->
+  <rect x="26" y="8"  width="24" height="6"  fill="#8060C8"/>
+  <rect x="28" y="7"  width="20" height="4"  fill="#9870D8"/>
+  <rect x="30" y="6"  width="16" height="3"  fill="#B090F0"/>
+  <rect x="34" y="5"  width="4"  height="2"  fill="#D0B8FF"/>
+  <rect x="38" y="5"  width="4"  height="2"  fill="#6848A8"/>
+
+  <!-- cabeça com aura -->
+  <rect x="28" y="11" width="20" height="16" fill="#C898C0"/>
+  <rect x="30" y="11" width="16" height="14" fill="#D8A8D0"/>
+  <!-- brilho mágico no rosto -->
+  <rect x="30" y="11" width="5"  height="10" fill="#E0C8FF" opacity="0.40"/>
+  <rect x="31" y="15" width="4" height="4" fill="#1A1028"/>
+  <rect x="41" y="15" width="4" height="4" fill="#1A1028"/>
+  <rect x="32" y="15" width="2" height="2" fill="#C0A8FF" opacity="0.70"/>
+  <rect x="42" y="15" width="2" height="2" fill="#C0A8FF" opacity="0.70"/>
+  <rect x="37" y="20" width="2" height="3" fill="#A07898"/>
+  <rect x="33" y="24" width="10" height="2" fill="#604068"/>
+  <rect x="25" y="15" width="4" height="6" fill="#B888B0"/>
+  <rect x="47" y="15" width="4" height="6" fill="#B888B0"/>
+  <rect x="22" y="17" width="5" height="5" fill="#A080D8"/>
+  <rect x="23" y="18" width="3" height="3" fill="#C0A8FF"/>
+  <rect x="49" y="17" width="5" height="5" fill="#A080D8"/>
+  <rect x="50" y="18" width="3" height="3" fill="#C0A8FF"/>
+  <rect x="34" y="27" width="8" height="4" fill="#B888B0"/>
+
+  <!-- cabo encantado (violeta) -->
+  <rect x="24" y="31" width="28" height="36" fill="#6848A8"/>
+  <rect x="26" y="31" width="24" height="34" fill="#8060C8"/>
+  <rect x="27" y="32" width="4"  height="32" fill="#C0A8FF" opacity="0.35"/>
+  <rect x="36" y="35" width="4"  height="4"  fill="#D0B8FF"/>
+  <rect x="34" y="37" width="8"  height="4"  fill="#D0B8FF"/>
+  <rect x="36" y="41" width="4"  height="4"  fill="#D0B8FF"/>
+  <rect x="26" y="47" width="24" height="2" fill="#503888"/>
+  <rect x="26" y="57" width="24" height="2" fill="#503888"/>
+  <rect x="26" y="49" width="4" height="4" fill="#503888"/>
+  <rect x="30" y="49" width="4" height="4" fill="#A080D8"/>
+  <rect x="34" y="49" width="4" height="4" fill="#503888"/>
+  <rect x="38" y="49" width="4" height="4" fill="#A080D8"/>
+  <rect x="42" y="49" width="4" height="4" fill="#503888"/>
+  <rect x="46" y="49" width="4" height="4" fill="#A080D8"/>
+
+  <!-- virola encantada -->
+  <rect x="26" y="67" width="24" height="5" fill="#503888"/>
+  <rect x="28" y="67" width="20" height="5" fill="#7060B0"/>
+  <rect x="30" y="68" width="16" height="3" fill="#A080D8"/>
+  <rect x="28" y="68" width="2"  height="2" fill="#C0A8FF"/>
+  <rect x="46" y="68" width="2"  height="2" fill="#C0A8FF"/>
+
+  <!-- haste encantada -->
+  <rect x="32" y="72" width="12" height="18" fill="#9080B8"/>
+  <rect x="34" y="72" width="8"  height="18" fill="#A898D0"/>
+  <rect x="34" y="72" width="3"  height="18" fill="#C8B8FF" opacity="0.55"/>
+  <rect x="32" y="76" width="12" height="2"  fill="#705898"/>
+  <rect x="32" y="84" width="12" height="2"  fill="#705898"/>
+
+  <!-- lâmina encantada (azul-violeta brilhante) -->
+  <rect x="26" y="90" width="24" height="4" fill="#9080C0"/>
+  <rect x="16" y="94"  width="44" height="4"  fill="#9898D0"/>
+  <rect x="18" y="94"  width="40" height="4"  fill="#A8A8E0"/>
+  <rect x="12" y="98"  width="52" height="4"  fill="#9898D0"/>
+  <rect x="14" y="98"  width="48" height="4"  fill="#A8A8E0"/>
+  <rect x="8"  y="102" width="60" height="4"  fill="#9898D0"/>
+  <rect x="10" y="102" width="56" height="4"  fill="#A8A8E0"/>
+  <rect x="6"  y="106" width="64" height="5"  fill="#9090C8"/>
+  <rect x="8"  y="106" width="60" height="5"  fill="#A0A0D8"/>
+  <rect x="8"  y="111" width="60" height="4"  fill="#9898D0"/>
+  <rect x="10" y="111" width="56" height="4"  fill="#A8A8E0"/>
+  <rect x="12" y="115" width="52" height="4"  fill="#9898D0"/>
+  <rect x="14" y="115" width="48" height="4"  fill="#A8A8E0"/>
+  <rect x="16" y="119" width="44" height="4"  fill="#9898D0"/>
+  <rect x="18" y="119" width="40" height="4"  fill="#A8A8E0"/>
+  <rect x="22" y="123" width="32" height="4"  fill="#9090C8"/>
+  <rect x="28" y="127" width="20" height="3"  fill="#8888C0"/>
+  <!-- overlay mágico na lâmina -->
+  <rect x="10" y="94"  width="56" height="36" fill="#8060D0" opacity="0.18"/>
+  <!-- reflexo mágico -->
+  <rect x="30" y="94"  width="16" height="36" fill="#C0B0FF" opacity="0.32"/>
+  <!-- gumes mágicos -->
+  <rect x="6"  y="106" width="2" height="9"  fill="#E0D0FF"/>
+  <rect x="68" y="106" width="2" height="9"  fill="#E0D0FF"/>
+  <!-- incrustações mágicas pulsando -->
+  <rect x="16" y="102" width="6" height="6" fill="#2060A8"/>
+  <rect x="17" y="103" width="4" height="4" fill="#4090E0"/>
+  <rect x="17" y="103" width="2" height="2" fill="#90C8FF" opacity="0.8"/>
+  <rect x="54" y="102" width="6" height="6" fill="#2060A8"/>
+  <rect x="55" y="103" width="4" height="4" fill="#4090E0"/>
+  <rect x="55" y="103" width="2" height="2" fill="#90C8FF" opacity="0.8"/>
+  <rect x="36" y="96"  width="4" height="4" fill="#A020D0"/>
+  <rect x="37" y="97"  width="2" height="2" fill="#D060FF" opacity="0.9"/>
+</g>
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 2,1 · ÍCONE UI / MINIATURA · col2 row1
+     Versão compacta para slot de inventário (32×64)
+     Centralizada em canvas 80×160
+════════════════════════════════════════════════ -->
+<g transform="translate(280,160)">
+  <!-- versão em escala 0.60 centralizada -->
+  <g transform="translate(16,32) scale(0.60)">
+    <!-- raios solares -->
+    <rect x="36" y="4"  width="4" height="7" fill="#E8C040"/>
+    <rect x="28" y="6"  width="4" height="5" fill="#D4A830"/>
+    <rect x="44" y="6"  width="4" height="5" fill="#D4A830"/>
+    <rect x="22" y="10" width="4" height="4" fill="#C09020"/>
+    <rect x="50" y="10" width="4" height="4" fill="#C09020"/>
+    <!-- toca -->
+    <rect x="26" y="8"  width="24" height="6"  fill="#C89828"/>
+    <rect x="28" y="7"  width="20" height="4"  fill="#D4A830"/>
+    <rect x="30" y="6"  width="16" height="3"  fill="#E8C040"/>
+    <rect x="34" y="5"  width="4"  height="2"  fill="#F0D050"/>
+    <!-- cabeça simplificada -->
+    <rect x="28" y="11" width="20" height="16" fill="#D4A060"/>
+    <rect x="31" y="15" width="4" height="4" fill="#1A1008"/>
+    <rect x="41" y="15" width="4" height="4" fill="#1A1008"/>
+    <rect x="33" y="24" width="10" height="2" fill="#804020"/>
+    <rect x="25" y="15" width="4" height="6" fill="#C89048"/>
+    <rect x="47" y="15" width="4" height="6" fill="#C89048"/>
+    <rect x="22" y="17" width="5" height="5" fill="#D4A830"/>
+    <rect x="49" y="17" width="5" height="5" fill="#D4A830"/>
+    <rect x="34" y="27" width="8" height="4" fill="#C89048"/>
+    <!-- cabo -->
+    <rect x="26" y="31" width="24" height="36" fill="#C89828"/>
+    <rect x="28" y="31" width="20" height="34" fill="#D4A830"/>
+    <rect x="36" y="35" width="4"  height="4"  fill="#F0D050"/>
+    <rect x="34" y="37" width="8"  height="4"  fill="#F0D050"/>
+    <rect x="36" y="41" width="4"  height="4"  fill="#F0D050"/>
+    <rect x="28" y="49" width="4" height="4" fill="#E8C040"/>
+    <rect x="36" y="49" width="4" height="4" fill="#E8C040"/>
+    <rect x="44" y="49" width="4" height="4" fill="#E8C040"/>
+    <!-- virola -->
+    <rect x="28" y="67" width="20" height="5" fill="#C89828"/>
+    <rect x="30" y="68" width="16" height="3" fill="#E8C040"/>
+    <!-- haste -->
+    <rect x="34" y="72" width="8"  height="18" fill="#C8D0D8"/>
+    <!-- lâmina simplificada -->
+    <rect x="18" y="90" width="40" height="4"  fill="#B8C0C8"/>
+    <rect x="14" y="94"  width="48" height="4"  fill="#C8D0D8"/>
+    <rect x="10" y="98"  width="56" height="4"  fill="#C8D0D8"/>
+    <rect x="8"  y="102" width="60" height="4"  fill="#C8D0D8"/>
+    <rect x="6"  y="106" width="64" height="5"  fill="#C0C8D0"/>
+    <rect x="8"  y="111" width="60" height="4"  fill="#C8D0D8"/>
+    <rect x="10" y="115" width="56" height="4"  fill="#C8D0D8"/>
+    <rect x="14" y="119" width="48" height="4"  fill="#C8D0D8"/>
+    <rect x="18" y="123" width="40" height="4"  fill="#B8C0C8"/>
+    <rect x="24" y="127" width="28" height="3"  fill="#B0B8C0"/>
+    <!-- gumes -->
+    <rect x="6"  y="106" width="2" height="9"  fill="#F4F8FC"/>
+    <rect x="68" y="106" width="2" height="9"  fill="#F4F8FC"/>
+    <!-- reflexo -->
+    <rect x="32" y="94"  width="12" height="32" fill="#FFFFFF" opacity="0.22"/>
+    <!-- incrustações -->
+    <rect x="14" y="100" width="6" height="6" fill="#2A8070"/>
+    <rect x="15" y="101" width="4" height="4" fill="#3AA090"/>
+    <rect x="56" y="100" width="6" height="6" fill="#2A8070"/>
+    <rect x="57" y="101" width="4" height="4" fill="#3AA090"/>
+    <rect x="36" y="93"  width="4" height="4" fill="#B82818"/>
+  </g>
+  <!-- moldura de slot de UI -->
+  <rect x="18" y="30" width="44" height="96" fill="none" stroke="#C8A830" stroke-width="2" rx="4" opacity="0.55"/>
+  <rect x="18" y="30" width="44" height="2"  fill="#E8C040" opacity="0.40"/>
+  <rect x="18" y="124" width="44" height="2" fill="#E8C040" opacity="0.40"/>
+</g>
+
+<!-- ═══════════════════════════════════════════════
+     SPRITE 3,1 · SILHUETA / SOMBRA · col3 row1
+     Para sombra no chão ou preview de coleta
+════════════════════════════════════════════════ -->
+<g transform="translate(420,160)">
+  <!-- silhueta preta/escura total do tumi -->
+  <!-- raios -->
+  <rect x="36" y="4"  width="4" height="7" fill="#1A1C20"/>
+  <rect x="28" y="6"  width="4" height="5" fill="#1A1C20"/>
+  <rect x="44" y="6"  width="4" height="5" fill="#1A1C20"/>
+  <rect x="22" y="10" width="4" height="4" fill="#1A1C20"/>
+  <rect x="50" y="10" width="4" height="4" fill="#1A1C20"/>
+  <rect x="17" y="15" width="4" height="4" fill="#1A1C20"/>
+  <rect x="55" y="15" width="4" height="4" fill="#1A1C20"/>
+  <!-- toca -->
+  <rect x="26" y="8"  width="24" height="6"  fill="#1A1C20"/>
+  <rect x="28" y="7"  width="20" height="4"  fill="#1A1C20"/>
+  <rect x="30" y="6"  width="16" height="3"  fill="#1A1C20"/>
+  <rect x="34" y="5"  width="8"  height="2"  fill="#1A1C20"/>
+  <!-- cabeça -->
+  <rect x="25" y="11" width="26" height="18" fill="#1A1C20"/>
+  <rect x="22" y="15" width="4"  height="6"  fill="#1A1C20"/>
+  <rect x="50" y="15" width="4"  height="6"  fill="#1A1C20"/>
+  <rect x="19" y="17" width="6"  height="5"  fill="#1A1C20"/>
+  <rect x="51" y="17" width="6"  height="5"  fill="#1A1C20"/>
+  <rect x="34" y="27" width="8"  height="4"  fill="#1A1C20"/>
+  <!-- cabo -->
+  <rect x="24" y="31" width="28" height="36" fill="#1A1C20"/>
+  <!-- virola -->
+  <rect x="24" y="67" width="28" height="5"  fill="#1A1C20"/>
+  <!-- haste -->
+  <rect x="30" y="72" width="16" height="18" fill="#1A1C20"/>
+  <!-- base lâmina -->
+  <rect x="24" y="90" width="28" height="4"  fill="#1A1C20"/>
+  <!-- lâmina -->
+  <rect x="14" y="94"  width="48" height="4"  fill="#1A1C20"/>
+  <rect x="10" y="98"  width="56" height="4"  fill="#1A1C20"/>
+  <rect x="6"  y="102" width="62" height="4"  fill="#1A1C20"/>
+  <rect x="4"  y="106" width="66" height="5"  fill="#1A1C20"/>
+  <rect x="6"  y="111" width="62" height="4"  fill="#1A1C20"/>
+  <rect x="10" y="115" width="56" height="4"  fill="#1A1C20"/>
+  <rect x="14" y="119" width="48" height="4"  fill="#1A1C20"/>
+  <rect x="20" y="123" width="36" height="4"  fill="#1A1C20"/>
+  <rect x="26" y="127" width="24" height="3"  fill="#1A1C20"/>
+
+  <!-- silhueta semi-transparente (para sombra projetada) -->
+  <rect x="14" y="94"  width="48" height="37" fill="#0A0C10" opacity="0.40"/>
+
+  <!-- brilho interno sutil (contorno interno) para não virar borrão -->
+  <rect x="18" y="98"  width="40" height="4"  fill="#282C30" opacity="0.50"/>
+  <rect x="14" y="102" width="48" height="4"  fill="#282C30" opacity="0.45"/>
+  <rect x="12" y="106" width="52" height="5"  fill="#282C30" opacity="0.40"/>
+  <rect x="14" y="111" width="48" height="4"  fill="#282C30" opacity="0.45"/>
+  <rect x="18" y="115" width="40" height="4"  fill="#282C30" opacity="0.50"/>
+  <rect x="28" y="31"  width="20" height="34" fill="#282C30" opacity="0.30"/>
+</g>
+
+</svg>

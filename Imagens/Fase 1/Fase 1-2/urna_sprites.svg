@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 896 1120" width="896" height="1120"
+     style="background:#080a10; shape-rendering:crispEdges; image-rendering:pixelated;">
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       URNA FUNERÁRIA MARAJOARA – SPRITE SHEET COMPLETO
+       Fase 1.2 – O Ouro dos Rios │ Godot 4 AnimatedSprite2D
+       Referência: pixel art globular, cerâmica vermelha/cinza,
+       padrão labirinto Marajoara preto/branco nas alças e faixa central
+       ═══════════════════════════════════════════════════════════════════ -->
+
+  <defs>
+    <!-- Glow vermelho/laranja – revelar / destaque -->
+    <filter id="redGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feFlood flood-color="#cc2200" flood-opacity="0.55" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Glow branco – sparkle -->
+    <filter id="whiteGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.7" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Sépia enterrada -->
+    <filter id="buried">
+      <feColorMatrix type="matrix"
+        values="0.55 0.30 0.10 0 0.08
+                0.28 0.48 0.12 0 0.04
+                0.10 0.18 0.28 0 0.02
+                0    0    0    1 0"/>
+    </filter>
+    <!-- Grade -->
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#0f1320" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- ════ SÍMBOLO URNA BASE (48×56 px, corpo globular) ════
+         Desenhado pixel-a-pixel fiel à referência:
+         - Corpo: vermelho #cc2200 / #aa1a00, degrade cinza #888 no topo
+         - Faixa: labirinto geométrico branco/preto estilo Marajoara
+         - Alças: pretas com detalhe branco
+         - Boca: faixa branca achatada no topo
+    -->
+    <symbol id="urna-base" viewBox="0 0 48 56">
+      <!-- === CORPO PRINCIPAL === -->
+      <!-- Base sombra -->
+      <ellipse cx="24" cy="52" rx="18" ry="4" fill="#200800" opacity="0.5"/>
+
+      <!-- Corpo inferior vermelho escuro -->
+      <rect x="7"  y="38" width="34" height="12" rx="2" fill="#aa1a00"/>
+      <!-- Corpo central arredondado vermelho -->
+      <rect x="5"  y="22" width="38" height="20" rx="4" fill="#cc2200"/>
+      <!-- Barriga mais larga -->
+      <rect x="4"  y="26" width="40" height="12" rx="5" fill="#cc2200"/>
+      <!-- Cúpula topo cinza -->
+      <ellipse cx="24" cy="22" rx="19" ry="11" fill="#777a7a"/>
+      <ellipse cx="24" cy="22" rx="16" ry="9"  fill="#888c8c"/>
+      <!-- Reflexo topo cinza claro -->
+      <ellipse cx="20" cy="18" rx="8"  ry="4"  fill="#b0b4b4" opacity="0.55"/>
+      <!-- Sombra curva corpo -->
+      <rect x="4"  y="30" width="4"  height="10" rx="2" fill="#881500" opacity="0.5"/>
+      <rect x="40" y="30" width="4"  height="10" rx="2" fill="#881500" opacity="0.4"/>
+      <!-- Highlight vermelho claro -->
+      <rect x="8"  y="25" width="6"  height="8"  rx="2" fill="#ee3311" opacity="0.35"/>
+
+      <!-- === BOCA / TOPO BRANCO === -->
+      <rect x="13" y="10" width="22" height="6"  rx="1" fill="#e0e2e2"/>
+      <rect x="15" y="11" width="18" height="4"  rx="1" fill="#ffffff"/>
+      <rect x="16" y="11" width="14" height="2"  fill="#cccccc" opacity="0.5"/>
+      <!-- Aro topo vermelho -->
+      <rect x="12" y="15" width="24" height="3"  fill="#cc2200"/>
+      <rect x="13" y="16" width="22" height="2"  fill="#dd3311"/>
+
+      <!-- === ALÇAS LATERAIS (padrão preto/branco) === -->
+      <!-- Alça esquerda -->
+      <rect x="1"  y="22" width="5"  height="10" rx="2" fill="#1a1a1a"/>
+      <rect x="2"  y="23" width="3"  height="8"  rx="1" fill="#333333"/>
+      <rect x="2"  y="24" width="3"  height="2"  fill="#ffffff" opacity="0.5"/>
+      <!-- Alça direita -->
+      <rect x="42" y="22" width="5"  height="10" rx="2" fill="#1a1a1a"/>
+      <rect x="43" y="23" width="3"  height="8"  rx="1" fill="#333333"/>
+      <rect x="43" y="24" width="3"  height="2"  fill="#ffffff" opacity="0.5"/>
+
+      <!-- === FAIXA LABIRINTO MARAJOARA (pixel art) === -->
+      <!-- Fundo da faixa: preto -->
+      <rect x="5" y="32" width="38" height="10" fill="#111111"/>
+      <!-- Motivo labirinto em branco – espiral quadrada estilo Marajoara -->
+      <!-- Bloco esquerdo: espiral -->
+      <rect x="7"  y="33" width="2" height="8" fill="#ffffff"/>
+      <rect x="7"  y="33" width="8" height="2" fill="#ffffff"/>
+      <rect x="13" y="33" width="2" height="6" fill="#ffffff"/>
+      <rect x="9"  y="39" width="6" height="2" fill="#ffffff"/>
+      <rect x="9"  y="35" width="2" height="5" fill="#ffffff"/>
+      <rect x="9"  y="35" width="4" height="2" fill="#ffffff"/>
+      <rect x="11" y="35" width="2" height="3" fill="#ffffff"/>
+      <!-- Bloco central: motivo em C / gancho -->
+      <rect x="18" y="33" width="12" height="2" fill="#ffffff"/>
+      <rect x="18" y="33" width="2"  height="8" fill="#ffffff"/>
+      <rect x="28" y="33" width="2"  height="8" fill="#ffffff"/>
+      <rect x="18" y="39" width="12" height="2" fill="#ffffff"/>
+      <rect x="20" y="35" width="8"  height="2" fill="#ffffff"/>
+      <rect x="20" y="37" width="2"  height="3" fill="#ffffff"/>
+      <rect x="26" y="37" width="2"  height="3" fill="#ffffff"/>
+      <!-- Bloco direito: espiral espelhada -->
+      <rect x="31" y="33" width="8" height="2" fill="#ffffff"/>
+      <rect x="37" y="33" width="2" height="8" fill="#ffffff"/>
+      <rect x="31" y="33" width="2" height="6" fill="#ffffff"/>
+      <rect x="31" y="39" width="6" height="2" fill="#ffffff"/>
+      <rect x="33" y="35" width="4" height="2" fill="#ffffff"/>
+      <rect x="35" y="35" width="2" height="3" fill="#ffffff"/>
+      <rect x="33" y="35" width="2" height="5" fill="#ffffff"/>
+
+      <!-- === FAIXA VERMELHA INFERIOR === -->
+      <rect x="6"  y="42" width="36" height="3" fill="#cc2200"/>
+      <rect x="7"  y="43" width="34" height="1" fill="#dd3311" opacity="0.6"/>
+
+      <!-- Base da urna -->
+      <rect x="9"  y="48" width="30" height="4" rx="2" fill="#881500"/>
+      <rect x="11" y="49" width="26" height="2" rx="1" fill="#aa1a00"/>
+    </symbol>
+
+  </defs>
+
+  <!-- Fundo e grade -->
+  <rect width="896" height="1120" fill="#080a10"/>
+  <rect width="896" height="1120" fill="url(#grid)" opacity="0.6"/>
+
+  <!-- ══════════════════ CABEÇALHO ══════════════════ -->
+  <rect x="0" y="0" width="896" height="38" fill="#0e1020"/>
+  <text x="448" y="24" text-anchor="middle"
+        fill="#cc4422" font-size="13" font-weight="bold"
+        font-family="'Courier New',monospace" letter-spacing="3">
+    ⚱ URNA FUNERÁRIA MARAJOARA – SPRITE SHEET │ FASE 1.2 │ GODOT 4
+  </text>
+  <line x1="0" y1="38" x2="896" y2="38" stroke="#2a1a10" stroke-width="1"/>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SEÇÃO 1 – 4 ESTADOS PRINCIPAIS (fiel à referência)
+  ════════════════════════════════════════════════════════════ -->
+  <text x="14" y="58" fill="#cc4422" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">
+    ▸ ESTADOS PRINCIPAIS (fiel à referência)
+  </text>
+  <line x1="0" y1="62" x2="896" y2="62" stroke="#1e1810" stroke-width="0.5"/>
+
+  <!-- ── ESTADO 01: IDLE – FRENTE (topo-esquerda da ref) ── -->
+  <g transform="translate(40,74)">
+    <rect x="0" y="0" width="144" height="144" fill="#0d0f1c" rx="2"/>
+    <!-- Urna escalada 3× (48→144, 56→168 clip) -->
+    <use href="#urna-base" x="0" y="-8" width="144" height="168"/>
+    <!-- Sombra no chão -->
+    <ellipse cx="72" cy="138" rx="44" ry="7" fill="#000" opacity="0.35"/>
+    <text x="72" y="158" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="8">01 IDLE – FRENTE</text>
+    <text x="72" y="167" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">INVENTÁRIO / CENA</text>
+  </g>
+
+  <!-- ── ESTADO 02: BRILHANDO / DESCOBERTA (ref topo-direita) ── -->
+  <g transform="translate(224,74)">
+    <rect x="0" y="0" width="144" height="144" fill="#0d0f1c" rx="2"/>
+    <use href="#urna-base" x="0" y="-8" width="144" height="168" filter="url(#redGlow)"/>
+    <!-- Sparkles brancos pixel-art -->
+    <!-- ✦ grande centro-esquerdo -->
+    <line x1="28" y1="60" x2="28" y2="44" stroke="#fff" stroke-width="3"/>
+    <line x1="20" y1="52" x2="36" y2="52" stroke="#fff" stroke-width="3"/>
+    <line x1="22" y1="46" x2="34" y2="58" stroke="#fff" stroke-width="1.5"/>
+    <line x1="22" y1="58" x2="34" y2="46" stroke="#fff" stroke-width="1.5"/>
+    <!-- ✦ pequeno topo -->
+    <line x1="68" y1="12" x2="68" y2="4"  stroke="#fff" stroke-width="2"/>
+    <line x1="64" y1="8"  x2="72" y2="8"  stroke="#fff" stroke-width="2"/>
+    <!-- ✦ pequeno direita topo -->
+    <line x1="108" y1="22" x2="108" y2="14" stroke="#fff" stroke-width="2"/>
+    <line x1="104" y1="18" x2="112" y2="18" stroke="#fff" stroke-width="2"/>
+    <!-- + miúdos espalhados -->
+    <line x1="120" y1="52" x2="120" y2="46" stroke="#fff" stroke-width="1.5"/>
+    <line x1="117" y1="49" x2="123" y2="49" stroke="#fff" stroke-width="1.5"/>
+    <line x1="16"  y1="90" x2="16"  y2="84" stroke="#fff" stroke-width="1.5"/>
+    <line x1="13"  y1="87" x2="19"  y2="87" stroke="#fff" stroke-width="1.5"/>
+    <line x1="130" y1="88" x2="130" y2="82" stroke="#fff" stroke-width="1.5"/>
+    <line x1="127" y1="85" x2="133" y2="85" stroke="#fff" stroke-width="1.5"/>
+    <!-- pontos menores -->
+    <rect x="46"  y="32" width="3" height="3" fill="#fff" opacity="0.8"/>
+    <rect x="90"  y="18" width="3" height="3" fill="#fff" opacity="0.7"/>
+    <rect x="130" y="40" width="2" height="2" fill="#fff" opacity="0.6"/>
+    <rect x="10"  y="40" width="2" height="2" fill="#fff" opacity="0.6"/>
+    <!-- Sombra -->
+    <ellipse cx="72" cy="138" rx="44" ry="7" fill="#000" opacity="0.35"/>
+    <text x="72" y="158" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="8">02 DESCOBERTA</text>
+    <text x="72" y="167" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">SPARKLE / ENCONTROU</text>
+  </g>
+
+  <!-- ── ESTADO 03: CAINDO / TOMBADA (ref baixo-esquerda) ── -->
+  <g transform="translate(408,74)">
+    <rect x="0" y="0" width="144" height="144" fill="#0d0f1c" rx="2"/>
+    <!-- Urna inclinada ~40° na direção horizontal, levemente menor -->
+    <g transform="translate(72,80) rotate(40) translate(-58,-52)">
+      <use href="#urna-base" x="0" y="0" width="116" height="135"/>
+    </g>
+    <!-- Poeira/terra ao cair -->
+    <ellipse cx="72" cy="124" rx="36" ry="6" fill="#5a3818" opacity="0.4"/>
+    <ellipse cx="40" cy="118" rx="8" ry="3" fill="#4a2808" opacity="0.3"/>
+    <ellipse cx="104" cy="122" rx="6" ry="2" fill="#4a2808" opacity="0.3"/>
+    <rect x="30" y="112" width="4" height="4" fill="#6a4820" opacity="0.4"/>
+    <rect x="100" y="116" width="3" height="3" fill="#5a3818" opacity="0.35"/>
+    <ellipse cx="72" cy="138" rx="44" ry="7" fill="#000" opacity="0.35"/>
+    <text x="72" y="158" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="8">03 TOMBADA</text>
+    <text x="72" y="167" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">CAINDO / PUZZLE</text>
+  </g>
+
+  <!-- ── ESTADO 04: REVELAÇÃO TOTAL (ref baixo-direita, sparkles pixel) ── -->
+  <g transform="translate(592,74)">
+    <rect x="0" y="0" width="144" height="144" fill="#0d0f1c" rx="2"/>
+    <use href="#urna-base" x="0" y="-8" width="144" height="168" filter="url(#whiteGlow)"/>
+    <!-- Quadradinhos brancos pixel-art (exatamente como na referência) -->
+    <!-- Grupo topo -->
+    <rect x="56" y="4"  width="6" height="6" fill="#fff"/>
+    <rect x="78" y="2"  width="4" height="4" fill="#fff"/>
+    <rect x="94" y="8"  width="4" height="4" fill="#fff"/>
+    <!-- Grupo esquerda -->
+    <rect x="4"  y="36" width="8" height="8" fill="#fff"/>
+    <rect x="8"  y="58" width="5" height="5" fill="#fff"/>
+    <rect x="2"  y="80" width="6" height="6" fill="#fff"/>
+    <rect x="6"  y="100" width="4" height="4" fill="#fff"/>
+    <!-- Grupo direita -->
+    <rect x="130" y="34" width="8" height="8" fill="#fff"/>
+    <rect x="128" y="56" width="5" height="5" fill="#fff"/>
+    <rect x="132" y="78" width="6" height="6" fill="#fff"/>
+    <rect x="128" y="98" width="4" height="4" fill="#fff"/>
+    <!-- Grupo inferior -->
+    <rect x="46" y="128" width="6" height="6" fill="#fff"/>
+    <rect x="82" y="130" width="5" height="5" fill="#fff"/>
+    <rect x="106" y="126" width="4" height="4" fill="#fff"/>
+    <!-- Pontos miúdos -->
+    <rect x="22"  y="20"  width="3" height="3" fill="#fff" opacity="0.7"/>
+    <rect x="112" y="16"  width="3" height="3" fill="#fff" opacity="0.7"/>
+    <rect x="18"  y="116" width="3" height="3" fill="#fff" opacity="0.6"/>
+    <rect x="118" y="114" width="3" height="3" fill="#fff" opacity="0.6"/>
+    <ellipse cx="72" cy="138" rx="44" ry="7" fill="#000" opacity="0.35"/>
+    <text x="72" y="158" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="8">04 REVELAÇÃO</text>
+    <text x="72" y="167" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">POP-UP / COLETA</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SEÇÃO 2 – ESTADOS ENTERRADA / ESCAVAÇÃO (lógica cena)
+  ════════════════════════════════════════════════════════════ -->
+  <text x="14" y="268" fill="#cc4422" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">
+    ▸ ESCAVAÇÃO PROGRESSIVA – 5 FRAMES (Cena 4 mechanic)
+  </text>
+  <line x1="0" y1="272" x2="896" y2="272" stroke="#1e1810" stroke-width="0.5"/>
+
+  <!-- FRAME E1: totalmente enterrada (só topo visível) -->
+  <g transform="translate(16,284)">
+    <rect x="0" y="0" width="144" height="130" fill="#0d0f1c" rx="2"/>
+    <!-- Solo amazônico -->
+    <rect x="0" y="50" width="144" height="80" fill="#3a2008" rx="2"/>
+    <rect x="0" y="50" width="144" height="8"  fill="#4a2c10" opacity="0.8"/>
+    <!-- Raízes -->
+    <path d="M 20,50 Q 30,80 25,130" fill="none" stroke="#5a3418" stroke-width="2"/>
+    <path d="M 120,50 Q 110,90 115,130" fill="none" stroke="#5a3418" stroke-width="1.5"/>
+    <!-- Só boca visível -->
+    <g clip-path="url(#clip-e1)">
+      <use href="#urna-base" x="0" y="6" width="144" height="168" filter="url(#buried)"/>
+    </g>
+    <clipPath id="clip-e1">
+      <rect x="0" y="0" width="144" height="55"/>
+    </clipPath>
+    <!-- Terra sobre ela -->
+    <rect x="0" y="52" width="144" height="6"  fill="#3a2008"/>
+    <rect x="0" y="55" width="144" height="75" fill="#3a2008"/>
+    <!-- Fragmentos cerâmica visíveis na terra -->
+    <rect x="30" y="62" width="8" height="5"  fill="#cc2200" opacity="0.6" transform="rotate(-15,34,64)"/>
+    <rect x="90" y="75" width="6" height="4"  fill="#aa1a00" opacity="0.5" transform="rotate(20,93,77)"/>
+    <rect x="55" y="88" width="10" height="6" fill="#cc2200" opacity="0.5" transform="rotate(-8,60,91)"/>
+    <!-- Ícone ! de descoberta -->
+    <rect x="60" y="8" width="24" height="24" rx="3" fill="none" stroke="#ffcc44" stroke-width="1.5" opacity="0.7"/>
+    <text x="72" y="26" text-anchor="middle" fill="#ffcc44" font-size="14">!</text>
+    <text x="72" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">E1 – ENTERRADA</text>
+    <text x="72" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">SÓ FRAGMENTOS</text>
+  </g>
+
+  <!-- FRAME E2: 25% escavada -->
+  <g transform="translate(176,284)">
+    <rect x="0" y="0" width="144" height="130" fill="#0d0f1c" rx="2"/>
+    <rect x="0" y="68" width="144" height="62" fill="#3a2008" rx="2"/>
+    <rect x="0" y="68" width="144" height="6"  fill="#4a2c10"/>
+    <!-- Urna parcialmente visível -->
+    <g clip-path="url(#clip-e2)">
+      <use href="#urna-base" x="0" y="4" width="144" height="168" filter="url(#buried)"/>
+    </g>
+    <clipPath id="clip-e2">
+      <rect x="0" y="0" width="144" height="72"/>
+    </clipPath>
+    <!-- Solo -->
+    <rect x="0" y="70" width="144" height="60" fill="#3a2008"/>
+    <!-- Mão escavando (ícone simples) -->
+    <rect x="104" y="55" width="20" height="14" rx="3" fill="#c8855a" opacity="0.8"/>
+    <rect x="108" y="49" width="4"  height="8"  rx="2" fill="#c8855a" opacity="0.8"/>
+    <rect x="114" y="50" width="4"  height="7"  rx="2" fill="#c8855a" opacity="0.8"/>
+    <rect x="120" y="52" width="4"  height="6"  rx="2" fill="#c8855a" opacity="0.8"/>
+    <text x="72" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">E2 – 25% LIVRE</text>
+    <text x="72" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">ESCAVANDO</text>
+  </g>
+
+  <!-- FRAME E3: 50% escavada -->
+  <g transform="translate(336,284)">
+    <rect x="0" y="0" width="144" height="130" fill="#0d0f1c" rx="2"/>
+    <rect x="0" y="90" width="144" height="40" fill="#3a2008" rx="2"/>
+    <!-- Urna até a metade -->
+    <g clip-path="url(#clip-e3)">
+      <use href="#urna-base" x="0" y="4" width="144" height="168" filter="url(#buried)"/>
+    </g>
+    <clipPath id="clip-e3">
+      <rect x="0" y="0" width="144" height="94"/>
+    </clipPath>
+    <rect x="0" y="92" width="144" height="38" fill="#3a2008"/>
+    <!-- Partículas de terra -->
+    <rect x="22" y="78" width="5" height="4" fill="#5a3818" opacity="0.6" transform="rotate(-20,24,80)"/>
+    <rect x="112" y="82" width="4" height="3" fill="#5a3818" opacity="0.5" transform="rotate(15,114,83)"/>
+    <text x="72" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">E3 – 50% LIVRE</text>
+    <text x="72" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">LIMPANDO SOLO</text>
+  </g>
+
+  <!-- FRAME E4: 80% escavada, padrão Marajoara visível -->
+  <g transform="translate(496,284)">
+    <rect x="0" y="0" width="144" height="130" fill="#0d0f1c" rx="2"/>
+    <rect x="0" y="112" width="144" height="18" fill="#3a2008" rx="2"/>
+    <!-- Urna quase toda visível -->
+    <use href="#urna-base" x="0" y="4" width="144" height="168" filter="url(#buried)"/>
+    <rect x="0" y="114" width="144" height="16" fill="#3a2008"/>
+    <!-- Terra caindo dos lados -->
+    <rect x="10" y="106" width="6" height="4" fill="#5a3818" opacity="0.5" transform="rotate(-30,13,108)"/>
+    <rect x="122" y="108" width="5" height="4" fill="#5a3818" opacity="0.5" transform="rotate(25,124,110)"/>
+    <rect x="60" y="116" width="8" height="5" fill="#4a2808" opacity="0.6"/>
+    <text x="72" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">E4 – 80% LIVRE</text>
+    <text x="72" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">PADRÃO VISÍVEL</text>
+  </g>
+
+  <!-- FRAME E5: 100% – Urna totalmente revelada, brilhando -->
+  <g transform="translate(656,284)">
+    <rect x="0" y="0" width="144" height="130" fill="#0d0f1c" rx="2"/>
+    <!-- Urna limpa brilhando -->
+    <use href="#urna-base" x="0" y="-8" width="144" height="168" filter="url(#redGlow)"/>
+    <!-- Partículas de terra saindo -->
+    <rect x="10"  y="30" width="5" height="4" fill="#5a3818" opacity="0.7" transform="rotate(-45,12,32)"/>
+    <rect x="128" y="28" width="5" height="4" fill="#5a3818" opacity="0.7" transform="rotate(45,130,30)"/>
+    <rect x="20"  y="14" width="4" height="3" fill="#4a2808" opacity="0.5" transform="rotate(-60,22,15)"/>
+    <rect x="118" y="14" width="4" height="3" fill="#4a2808" opacity="0.5" transform="rotate(60,120,15)"/>
+    <!-- Estrelas brancas (coleta!) -->
+    <line x1="72" y1="4"  x2="72" y2="14" stroke="#fff" stroke-width="2.5"/>
+    <line x1="67" y1="9"  x2="77" y2="9"  stroke="#fff" stroke-width="2.5"/>
+    <line x1="64" y1="5"  x2="68" y2="9"  stroke="#fff" stroke-width="1"/>
+    <line x1="80" y1="5"  x2="76" y2="9"  stroke="#fff" stroke-width="1"/>
+    <!-- Sombra -->
+    <ellipse cx="72" cy="122" rx="44" ry="7" fill="#000" opacity="0.35"/>
+    <text x="72" y="118" text-anchor="middle" fill="#ffcc44"
+          font-family="'Courier New',monospace" font-size="7">E5 – REVELADA!</text>
+    <text x="72" y="127" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="6">COLETA COMPLETA</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SEÇÃO 3 – ANIMAÇÃO SPARKLE (8 frames horizontais)
+  ════════════════════════════════════════════════════════════ -->
+  <text x="14" y="440" fill="#cc4422" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">
+    ▸ ANIMAÇÃO SPARKLE – 8 FRAMES │ AnimatedSprite2D "sparkle" │ FPS: 8
+  </text>
+  <line x1="0" y1="444" x2="896" y2="444" stroke="#1e1810" stroke-width="0.5"/>
+
+  <!-- Atlas horizontal de 8 frames, cada um 96×96 -->
+  <rect x="16" y="456" width="864" height="96" fill="#080c16" rx="2" stroke="#1a1c28" stroke-width="1"/>
+
+  <!-- Frame S1: nenhum sparkle -->
+  <g transform="translate(16,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112"/>
+    <text x="48" y="90" text-anchor="middle" fill="#3a2818"
+          font-family="'Courier New',monospace" font-size="7">S1</text>
+  </g>
+  <line x1="124" y1="456" x2="124" y2="552" stroke="#1e2030" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Frame S2: 2 sparkles pequenos -->
+  <g transform="translate(124,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112"/>
+    <line x1="16" y1="26" x2="16" y2="14" stroke="#fff" stroke-width="2"/>
+    <line x1="10" y1="20" x2="22" y2="20" stroke="#fff" stroke-width="2"/>
+    <line x1="78" y1="32" x2="78" y2="24" stroke="#fff" stroke-width="1.5"/>
+    <line x1="74" y1="28" x2="82" y2="28" stroke="#fff" stroke-width="1.5"/>
+    <text x="48" y="90" text-anchor="middle" fill="#3a2818"
+          font-family="'Courier New',monospace" font-size="7">S2</text>
+  </g>
+  <line x1="232" y1="456" x2="232" y2="552" stroke="#1e2030" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Frame S3: 4 sparkles médios -->
+  <g transform="translate(232,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112"/>
+    <line x1="14" y1="30" x2="14" y2="14" stroke="#fff" stroke-width="2.5"/>
+    <line x1="6"  y1="22" x2="22" y2="22" stroke="#fff" stroke-width="2.5"/>
+    <line x1="80" y1="28" x2="80" y2="16" stroke="#fff" stroke-width="2"/>
+    <line x1="74" y1="22" x2="86" y2="22" stroke="#fff" stroke-width="2"/>
+    <line x1="48" y1="10" x2="48" y2="4"  stroke="#fff" stroke-width="1.5"/>
+    <line x1="45" y1="7"  x2="51" y2="7"  stroke="#fff" stroke-width="1.5"/>
+    <rect x="84" y="52" width="4" height="4" fill="#fff" opacity="0.8"/>
+    <text x="48" y="90" text-anchor="middle" fill="#3a2818"
+          font-family="'Courier New',monospace" font-size="7">S3</text>
+  </g>
+  <line x1="340" y1="456" x2="340" y2="552" stroke="#1e2030" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Frame S4: sparkles grandes + quadradinhos -->
+  <g transform="translate(340,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112" filter="url(#redGlow)"/>
+    <line x1="12" y1="34" x2="12" y2="10" stroke="#fff" stroke-width="3"/>
+    <line x1="0"  y1="22" x2="24" y2="22" stroke="#fff" stroke-width="3"/>
+    <line x1="8"  y1="14" x2="12" y2="22" stroke="#fff" stroke-width="1"/>
+    <line x1="16" y1="14" x2="12" y2="22" stroke="#fff" stroke-width="1"/>
+    <line x1="84" y1="30" x2="84" y2="14" stroke="#fff" stroke-width="2.5"/>
+    <line x1="76" y1="22" x2="92" y2="22" stroke="#fff" stroke-width="2.5"/>
+    <rect x="44" y="2"  width="6" height="6" fill="#fff"/>
+    <rect x="88" y="54" width="5" height="5" fill="#fff"/>
+    <rect x="2"  y="58" width="5" height="5" fill="#fff"/>
+    <text x="48" y="90" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">S4 ✦</text>
+  </g>
+  <line x1="448" y1="456" x2="448" y2="552" stroke="#1e2030" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Frame S5: pico máximo -->
+  <g transform="translate(448,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112" filter="url(#whiteGlow)"/>
+    <!-- Cruz grande esquerda -->
+    <line x1="10" y1="36" x2="10" y2="6"  stroke="#fff" stroke-width="3"/>
+    <line x1="-4" y1="21" x2="24" y2="21" stroke="#fff" stroke-width="3"/>
+    <line x1="4"  y1="12" x2="10" y2="21" stroke="#fff" stroke-width="1.2"/>
+    <line x1="16" y1="12" x2="10" y2="21" stroke="#fff" stroke-width="1.2"/>
+    <line x1="10" y1="30" x2="4"  y2="36" stroke="#fff" stroke-width="1.2"/>
+    <line x1="10" y1="30" x2="16" y2="36" stroke="#fff" stroke-width="1.2"/>
+    <!-- Cruz grande direita -->
+    <line x1="86" y1="32" x2="86" y2="8"  stroke="#fff" stroke-width="3"/>
+    <line x1="74" y1="20" x2="98" y2="20" stroke="#fff" stroke-width="3"/>
+    <!-- Quadradinhos -->
+    <rect x="40" y="0"  width="8"  height="8"  fill="#fff"/>
+    <rect x="84" y="52" width="6"  height="6"  fill="#fff"/>
+    <rect x="2"  y="52" width="6"  height="6"  fill="#fff"/>
+    <rect x="86" y="76" width="4"  height="4"  fill="#fff" opacity="0.8"/>
+    <rect x="2"  y="74" width="4"  height="4"  fill="#fff" opacity="0.8"/>
+    <rect x="40" y="82" width="5"  height="5"  fill="#fff" opacity="0.7"/>
+    <text x="48" y="90" text-anchor="middle" fill="#fff"
+          font-family="'Courier New',monospace" font-size="7">S5 MAX</text>
+  </g>
+  <line x1="556" y1="456" x2="556" y2="552" stroke="#1e2030" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Frame S6: decaindo -->
+  <g transform="translate(556,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112"/>
+    <line x1="12" y1="30" x2="12" y2="16" stroke="#fff" stroke-width="2" opacity="0.7"/>
+    <line x1="6"  y1="23" x2="18" y2="23" stroke="#fff" stroke-width="2" opacity="0.7"/>
+    <line x1="82" y1="26" x2="82" y2="18" stroke="#fff" stroke-width="1.5" opacity="0.6"/>
+    <line x1="78" y1="22" x2="86" y2="22" stroke="#fff" stroke-width="1.5" opacity="0.6"/>
+    <rect x="46" y="4"  width="4" height="4" fill="#fff" opacity="0.5"/>
+    <rect x="84" y="54" width="3" height="3" fill="#fff" opacity="0.4"/>
+    <text x="48" y="90" text-anchor="middle" fill="#3a2818"
+          font-family="'Courier New',monospace" font-size="7">S6</text>
+  </g>
+  <line x1="664" y1="456" x2="664" y2="552" stroke="#1e2030" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Frame S7: quase apagado -->
+  <g transform="translate(664,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112"/>
+    <line x1="14" y1="26" x2="14" y2="20" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+    <line x1="11" y1="23" x2="17" y2="23" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+    <rect x="80" y="22" width="4" height="4" fill="#fff" opacity="0.3"/>
+    <text x="48" y="90" text-anchor="middle" fill="#3a2818"
+          font-family="'Courier New',monospace" font-size="7">S7</text>
+  </g>
+  <line x1="772" y1="456" x2="772" y2="552" stroke="#1e2030" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- Frame S8: igual S1 (loop) -->
+  <g transform="translate(772,456)">
+    <use href="#urna-base" x="0" y="-6" width="96" height="112"/>
+    <text x="48" y="90" text-anchor="middle" fill="#3a2818"
+          font-family="'Courier New',monospace" font-size="7">S8 ⟳</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SEÇÃO 4 – ESTADOS EXTRAS (UI / pop-up / dano)
+  ════════════════════════════════════════════════════════════ -->
+  <text x="14" y="572" fill="#cc4422" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">
+    ▸ ESTADOS EXTRAS – UI / POPUP / HOVER / DANO
+  </text>
+  <line x1="0" y1="576" x2="896" y2="576" stroke="#1e1810" stroke-width="0.5"/>
+
+  <!-- UI 01: Ícone miniatura inventário (32×32) zoom 4× -->
+  <g transform="translate(16,588)">
+    <rect x="0" y="0" width="128" height="128" fill="#0d0f1c" rx="2"/>
+    <text x="64" y="16" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="8">32×32 INVENTÁRIO</text>
+    <use href="#urna-base" x="8" y="10" width="112" height="130"/>
+    <text x="64" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">U1 – ÍCONE INV.</text>
+    <text x="64" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">HUD / BARRA ITENS</text>
+  </g>
+
+  <!-- UI 02: Selecionada (borda dourada UI) -->
+  <g transform="translate(160,588)">
+    <rect x="0" y="0" width="128" height="128" fill="#0d0f1c" rx="2"/>
+    <!-- Cantos UI dourados -->
+    <line x1="4"   y1="4"   x2="18"  y2="4"   stroke="#ffcc44" stroke-width="2"/>
+    <line x1="4"   y1="4"   x2="4"   y2="18"  stroke="#ffcc44" stroke-width="2"/>
+    <line x1="124" y1="4"   x2="110" y2="4"   stroke="#ffcc44" stroke-width="2"/>
+    <line x1="124" y1="4"   x2="124" y2="18"  stroke="#ffcc44" stroke-width="2"/>
+    <line x1="4"   y1="124" x2="18"  y2="124" stroke="#ffcc44" stroke-width="2"/>
+    <line x1="4"   y1="124" x2="4"   y2="110" stroke="#ffcc44" stroke-width="2"/>
+    <line x1="124" y1="124" x2="110" y2="124" stroke="#ffcc44" stroke-width="2"/>
+    <line x1="124" y1="124" x2="124" y2="110" stroke="#ffcc44" stroke-width="2"/>
+    <use href="#urna-base" x="8" y="10" width="112" height="130" filter="url(#redGlow)"/>
+    <text x="64" y="118" text-anchor="middle" fill="#ffcc44"
+          font-family="'Courier New',monospace" font-size="7">U2 – SELECIONADA</text>
+    <text x="64" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">UI HOVER / FOCO</text>
+  </g>
+
+  <!-- UI 03: Danificada (rachada) -->
+  <g transform="translate(304,588)">
+    <rect x="0" y="0" width="128" height="128" fill="#0d0f1c" rx="2"/>
+    <use href="#urna-base" x="8" y="10" width="112" height="130"/>
+    <!-- Rachaduras sobre a urna -->
+    <path d="M 52,24 L 48,40 L 56,52 L 50,70" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M 48,40 L 40,46" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M 80,28 L 76,48 L 82,58" fill="none" stroke="#000" stroke-width="2"/>
+    <path d="M 76,48 L 68,52" fill="none" stroke="#000" stroke-width="1.5"/>
+    <!-- Fragmento saindo -->
+    <rect x="34" y="50" width="12" height="10" rx="1" fill="#cc2200"
+          transform="rotate(-20,40,55)" opacity="0.9"/>
+    <rect x="36" y="52" width="8"  height="3"  fill="#111"
+          transform="rotate(-20,40,55)" opacity="0.6"/>
+    <!-- Poeira -->
+    <ellipse cx="40" cy="80" rx="8" ry="3" fill="#5a3818" opacity="0.4"/>
+    <text x="64" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">U3 – RACHADA</text>
+    <text x="64" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">DANO / CUIDADO</text>
+  </g>
+
+  <!-- UI 04: No chão / mapa (sombra mais forte, inclinada levemente) -->
+  <g transform="translate(448,588)">
+    <rect x="0" y="0" width="128" height="128" fill="#0d0f1c" rx="2"/>
+    <!-- Solo -->
+    <rect x="0" y="96" width="128" height="32" fill="#2a1808" rx="2"/>
+    <!-- Raíz decorativa -->
+    <path d="M 10,96 Q 20,110 18,128" fill="none" stroke="#3a2010" stroke-width="1.5"/>
+    <path d="M 114,96 Q 106,114 110,128" fill="none" stroke="#3a2010" stroke-width="1.5"/>
+    <!-- Urna com leve inclinação (estilo "pousada") -->
+    <g transform="translate(64,56) rotate(4) translate(-56,-56)">
+      <use href="#urna-base" x="8" y="4" width="96" height="112"/>
+    </g>
+    <!-- Sombra -->
+    <ellipse cx="64" cy="98" rx="42" ry="7" fill="#000" opacity="0.4"/>
+    <!-- Ícone ! -->
+    <rect x="52" y="4" width="24" height="22" rx="3" fill="none" stroke="#ffcc44" stroke-width="1.5" opacity="0.7"/>
+    <text x="64" y="20" text-anchor="middle" fill="#ffcc44"
+          font-family="'Courier New',monospace" font-size="12">!</text>
+    <text x="64" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">U4 – NO CHÃO</text>
+    <text x="64" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">COLETÁVEL MAPA</text>
+  </g>
+
+  <!-- UI 05: Popup / destaque narrativo -->
+  <g transform="translate(592,588)">
+    <rect x="0" y="0" width="128" height="128" fill="#0d0f1c" rx="2"/>
+    <!-- Moldura pop-up simples -->
+    <rect x="6" y="6" width="116" height="116" rx="3" fill="none" stroke="#cc2200" stroke-width="2"/>
+    <rect x="8" y="8" width="112" height="112" rx="2" fill="none" stroke="#441008" stroke-width="1"/>
+    <!-- Estrelinhas nos cantos -->
+    <text x="14"  y="20"  fill="#cc2200" font-size="10">✦</text>
+    <text x="108" y="20"  fill="#cc2200" font-size="10">✦</text>
+    <text x="14"  y="116" fill="#cc2200" font-size="10">✦</text>
+    <text x="108" y="116" fill="#cc2200" font-size="10">✦</text>
+    <use href="#urna-base" x="10" y="8" width="108" height="126" filter="url(#redGlow)"/>
+    <text x="64" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">U5 – POPUP</text>
+    <text x="64" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">MOLDURA NARRATIVA</text>
+  </g>
+
+  <!-- UI 06: Sombra / silhueta (escondida sob folhas) -->
+  <g transform="translate(736,588)">
+    <rect x="0" y="0" width="128" height="128" fill="#0d0f1c" rx="2"/>
+    <!-- Folhas amazônicas cobrindo -->
+    <ellipse cx="36" cy="48" rx="28" ry="18" fill="#1a4010" opacity="0.85" transform="rotate(-20,36,48)"/>
+    <ellipse cx="80" cy="44" rx="24" ry="16" fill="#1a5015" opacity="0.80" transform="rotate(15,80,44)"/>
+    <ellipse cx="60" cy="60" rx="30" ry="14" fill="#2a5a18" opacity="0.75" transform="rotate(-8,60,60)"/>
+    <!-- Silhueta da urna visível por baixo -->
+    <use href="#urna-base" x="8" y="10" width="112" height="130" opacity="0.25"/>
+    <!-- Veias nas folhas -->
+    <path d="M 20,42 Q 36,36 52,44" fill="none" stroke="#0e2a08" stroke-width="1" opacity="0.6"/>
+    <path d="M 60,38 Q 80,30 96,42" fill="none" stroke="#0e2a08" stroke-width="1" opacity="0.6"/>
+    <path d="M 30,58 Q 60,50 88,58" fill="none" stroke="#0e2a08" stroke-width="1" opacity="0.5"/>
+    <!-- Ícone ? -->
+    <rect x="50" y="4" width="28" height="22" rx="3" fill="none" stroke="#ffcc44" stroke-width="1.5" opacity="0.7"/>
+    <text x="64" y="20" text-anchor="middle" fill="#ffcc44"
+          font-family="'Courier New',monospace" font-size="13">?</text>
+    <text x="64" y="118" text-anchor="middle" fill="#cc4422"
+          font-family="'Courier New',monospace" font-size="7">U6 – ESCONDIDA</text>
+    <text x="64" y="127" text-anchor="middle" fill="#4a3828"
+          font-family="'Courier New',monospace" font-size="6">SOB VEGETAÇÃO</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SEÇÃO 5 – PALETA OFICIAL
+  ════════════════════════════════════════════════════════════ -->
+  <text x="14" y="742" fill="#cc4422" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">
+    ▸ PALETA OFICIAL – URNA FUNERÁRIA MARAJOARA
+  </text>
+  <line x1="0" y1="746" x2="896" y2="746" stroke="#1e1810" stroke-width="0.5"/>
+
+  <g transform="translate(16,758)" font-family="'Courier New',monospace">
+    <rect x="0"   y="0" width="40" height="40" fill="#cc2200" rx="2"/>
+    <text x="20"  y="54" text-anchor="middle" fill="#cc2200" font-size="7">VERMELHO</text>
+    <text x="20"  y="63" text-anchor="middle" fill="#4a3828" font-size="6">#CC2200</text>
+
+    <rect x="56"  y="0" width="40" height="40" fill="#aa1a00" rx="2"/>
+    <text x="76"  y="54" text-anchor="middle" fill="#aa1a00" font-size="7">VERM.ESC</text>
+    <text x="76"  y="63" text-anchor="middle" fill="#4a3828" font-size="6">#AA1A00</text>
+
+    <rect x="112" y="0" width="40" height="40" fill="#881500" rx="2"/>
+    <text x="132" y="54" text-anchor="middle" fill="#881500" font-size="7">SOMBRA</text>
+    <text x="132" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#881500</text>
+
+    <rect x="168" y="0" width="40" height="40" fill="#ee3311" rx="2"/>
+    <text x="188" y="54" text-anchor="middle" fill="#ee3311" font-size="7">REALCE</text>
+    <text x="188" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#EE3311</text>
+
+    <rect x="224" y="0" width="40" height="40" fill="#888c8c" rx="2"/>
+    <text x="244" y="54" text-anchor="middle" fill="#888c8c" font-size="7">CINZA</text>
+    <text x="244" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#888C8C</text>
+
+    <rect x="280" y="0" width="40" height="40" fill="#b0b4b4" rx="2"/>
+    <text x="300" y="54" text-anchor="middle" fill="#b0b4b4" font-size="7">CZ.CLR</text>
+    <text x="300" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#B0B4B4</text>
+
+    <rect x="336" y="0" width="40" height="40" fill="#1a1a1a" rx="2" stroke="#333" stroke-width="1"/>
+    <text x="356" y="54" text-anchor="middle" fill="#555" font-size="7">PRETO</text>
+    <text x="356" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#1A1A1A</text>
+
+    <rect x="392" y="0" width="40" height="40" fill="#333333" rx="2"/>
+    <text x="412" y="54" text-anchor="middle" fill="#555" font-size="7">ALÇA</text>
+    <text x="412" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#333333</text>
+
+    <rect x="448" y="0" width="40" height="40" fill="#ffffff" rx="2"/>
+    <text x="468" y="54" text-anchor="middle" fill="#fff" font-size="7">BRANCO</text>
+    <text x="468" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#FFFFFF</text>
+
+    <rect x="504" y="0" width="40" height="40" fill="#e0e2e2" rx="2"/>
+    <text x="524" y="54" text-anchor="middle" fill="#e0e2e2" font-size="7">BOCA</text>
+    <text x="524" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#E0E2E2</text>
+
+    <rect x="560" y="0" width="40" height="40" fill="#3a2008" rx="2"/>
+    <text x="580" y="54" text-anchor="middle" fill="#7a5030" font-size="7">TERRA</text>
+    <text x="580" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#3A2008</text>
+
+    <rect x="616" y="0" width="40" height="40" fill="#111111" rx="2" stroke="#333" stroke-width="1"/>
+    <text x="636" y="54" text-anchor="middle" fill="#555" font-size="7">LABIRINTO</text>
+    <text x="636" y="63" text-anchor="middle" fill="#4a3828" font-size="6">#111111</text>
+
+    <!-- transparente -->
+    <rect x="672" y="0" width="40" height="40" fill="none" stroke="#2a3048" stroke-width="1" rx="2"/>
+    <line x1="672" y1="0"  x2="712" y2="40" stroke="#1e2030" stroke-width="1"/>
+    <line x1="672" y1="40" x2="712" y2="0"  stroke="#1e2030" stroke-width="1"/>
+    <text x="692" y="54" text-anchor="middle" fill="#2a3048" font-size="7">TRANSP.</text>
+    <text x="692" y="63" text-anchor="middle" fill="#4a3828" font-size="6">ALPHA 0</text>
+  </g>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SEÇÃO 6 – GODOT GUIDE
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="16" y="848" width="864" height="240" fill="#06080e" rx="3" stroke="#1a0c08" stroke-width="1"/>
+  <text x="36" y="870" fill="#cc4422" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ GUIA GODOT 4 – IMPLEMENTAÇÃO</text>
+  <line x1="36" y1="876" x2="876" y2="876" stroke="#1a0c08" stroke-width="0.5"/>
+
+  <!-- Col esquerda -->
+  <text x="36"  y="894" fill="#8a4030" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">ANIMAÇÕES RECOMENDADAS:</text>
+  <text x="36"  y="910" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "idle"       → Estado 01       (1 frame, inventário/cena)</text>
+  <text x="36"  y="924" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "sparkle"    → S1→S8           (8 frames, FPS:8, loop)</text>
+  <text x="36"  y="938" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "discover"   → Estado 02       (sparkle único ao encontrar)</text>
+  <text x="36"  y="952" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "dig"        → E1→E5           (5 frames, FPS:4, once)</text>
+  <text x="36"  y="966" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "fall"       → Estado 03       (cuidado = dano se cair)</text>
+  <text x="36"  y="980" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "collected"  → Estado 04       (revelação final + popup)</text>
+  <text x="36"  y="994" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "damaged"    → U3              (se jogador usar picareta)</text>
+  <text x="36" y="1008" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• "hidden"     → U6              (sob vegetação, mapa)</text>
+
+  <text x="36" y="1028" fill="#8a4030" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">NODE SETUP:</text>
+  <text x="36" y="1044" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">  Node2D → AnimatedSprite2D</text>
+  <text x="36" y="1058" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">  Texture Filter: Nearest  │  Scale: (2,2) ou (3,3)</text>
+  <text x="36" y="1072" fill="#cc4422" font-family="'Courier New',monospace" font-size="8">  CanvasItem → Use Parent Material: false</text>
+
+  <!-- Col direita -->
+  <text x="470" y="894" fill="#8a4030" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">LÓGICA CENA 4 – MECÂNICA ESCAVAÇÃO:</text>
+  <text x="470" y="910" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• Fragmentos → clique/toque revela E1→E5</text>
+  <text x="470" y="924" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• Picareta proibida → play("damaged") + penalidade</text>
+  <text x="470" y="938" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• E5 completo → play("sparkle") + popup pedagógico</text>
+  <text x="470" y="952" fill="#7a6858" font-family="'Courier New',monospace" font-size="8">• Visib. baixa → use Lanterna (Fase 1.1) para ver U6</text>
+
+  <text x="470" y="972" fill="#8a4030" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">GDSCRIPT:</text>
+  <rect x="470" y="978" width="390" height="98" fill="#080c14" rx="2" stroke="#1a0c08" stroke-width="1"/>
+  <text x="480" y="994" fill="#5a8a66" font-family="'Courier New',monospace" font-size="8">signal urna_revelada</text>
+  <text x="480" y="1006" fill="#5a8a66" font-family="'Courier New',monospace" font-size="8">var clicks_restantes := 5</text>
+  <text x="480" y="1018" fill="#7a9ab0" font-family="'Courier New',monospace" font-size="8">func escavar():</text>
+  <text x="480" y="1030" fill="#7a9ab0" font-family="'Courier New',monospace" font-size="8">  clicks_restantes -= 1</text>
+  <text x="480" y="1042" fill="#7a9ab0" font-family="'Courier New',monospace" font-size="8">  play("dig"); frame = 5 - clicks_restantes</text>
+  <text x="480" y="1054" fill="#7a9ab0" font-family="'Courier New',monospace" font-size="8">  if clicks_restantes == 0:</text>
+  <text x="480" y="1066" fill="#cc4422" font-family="'Courier New',monospace" font-size="8">    play("sparkle"); emit_signal("urna_revelada")</text>
+
+  <!-- Rodapé -->
+  <line x1="16" y1="1098" x2="880" y2="1098" stroke="#1a0c08" stroke-width="0.5"/>
+  <text x="36" y="1112" fill="#2a1810" font-family="'Courier New',monospace" font-size="8">
+    Fase 1.2 – O Ouro dos Rios │ 15 sprites │ 8 frames sparkle │ 5 frames escavação │ Paleta 12 cores + alpha │ Godot 4
+  </text>
+
+</svg>

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dng3vurrsljxs"]
+
+[ext_resource type="Script" uid="uid://cycrolsdi6pev" path="res://Menu Principal/card_phase.gd" id="1_otf7b"]
+[ext_resource type="Texture2D" uid="uid://cku2enrq2rh8n" path="res://Menu Principal/Assets/cadeado_spritesheet.svg" id="2_t1m7x"]
+[ext_resource type="AudioStream" uid="uid://ffj7raw5pi2i" path="res://Menu Principal/Golden_Key_Unlocked.mp3" id="3_7mojj"]
+
+[sub_resource type="Animation" id="Animation_7mojj"]
+resource_name = "unlock"
+length = 0.001
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnlockSound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_7mojj")
+}],
+"times": PackedFloat32Array(0.033333335)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bv0v"]
+_data = {
+&"unlock": SubResource("Animation_7mojj")
+}
+
+[node name="CardPhase" type="Node2D" unique_id=783619987]
+script = ExtResource("1_otf7b")
+
+[node name="CardButton" type="TextureButton" parent="." unique_id=1867375956]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardImage" type="TextureRect" parent="CardButton" unique_id=770290358]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LockOverlay" type="TextureRect" parent="CardButton/CardImage" unique_id=970502561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t1m7x")
+
+[node name="GrayOverlay" type="ColorRect" parent="." unique_id=976712630]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="." unique_id=1689121258]
+libraries/ = SubResource("AnimationLibrary_3bv0v")
+
+[node name="UnlockSound" type="AudioStreamPlayer" parent="." unique_id=1488797800]
+stream = ExtResource("3_7mojj")

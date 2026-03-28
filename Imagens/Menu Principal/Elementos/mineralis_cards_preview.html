@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Mineralis - Preview dos Cards</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #1a0f08;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+    color: #D4B896;
+  }
+  h1 {
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #FFD700;
+    margin-bottom: 6px;
+    text-shadow: 0 0 20px #FFD70066;
+  }
+  .subtitle {
+    font-size: 12px;
+    color: #8B6835;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+  }
+  .continent-label {
+    font-size: 14px;
+    color: #C8A060;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .cards-row {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .card {
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    image-rendering: pixelated;
+    position: relative;
+  }
+  .card:hover { transform: scale(1.06); }
+  .card:active { transform: scale(0.97); }
+  .card svg { width: 100%; height: 100%; }
+
+  /* Estado bloqueado */
+  .card.locked svg {
+    filter: grayscale(100%) brightness(0.6);
+  }
+  .lock-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    pointer-events: none;
+    opacity: 0.9;
+    text-shadow: 0 2px 8px #000;
+  }
+  .card.locked .lock-icon { display: block; }
+  .card.unlocked .lock-icon { display: none; }
+
+  /* Animação de desbloqueio */
+  @keyframes unlock-flash {
+    0%   { filter: brightness(3) grayscale(0); transform: scale(1.15); }
+    40%  { filter: brightness(1.5) grayscale(0); transform: scale(1.1); }
+    100% { filter: brightness(1) grayscale(0); transform: scale(1); }
+  }
+  @keyframes unlock-pulse {
+    0%  { box-shadow: 0 0 0 0 #FFD70088; }
+    50% { box-shadow: 0 0 30px 15px #FFD70033; }
+    100%{ box-shadow: 0 0 0 0 #FFD70000; }
+  }
+  .card.unlocking {
+    animation: unlock-flash 0.6s ease-out forwards, unlock-pulse 0.8s ease-out;
+  }
+
+  /* Shimmer overlay */
+  .shimmer-overlay {
+    position: absolute;
+    top: 0; left: -50%;
+    width: 40%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
+    pointer-events: none;
+    opacity: 0;
+  }
+  .shimmer-overlay.active {
+    animation: shimmer 0.5s 0.3s ease-out forwards;
+  }
+  @keyframes shimmer {
+    0%  { left: -50%; opacity: 1; }
+    100%{ left: 120%; opacity: 0; }
+  }
+
+  /* Botão */
+  .unlock-btn {
+    background: none;
+    border: 1px solid #8B6835;
+    color: #C8A060;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .unlock-btn:hover {
+    background: #8B6835;
+    color: #1a0f08;
+  }
+  .unlock-btn:disabled {
+    border-color: #3D2810;
+    color: #3D2810;
+    cursor: default;
+  }
+  .phase-label {
+    font-size: 10px;
+    color: #6B4520;
+    letter-spacing: 1px;
+  }
+  .phase-label.active { color: #C8A060; }
+
+  .controls {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .reset-btn {
+    background: none;
+    border: 1px solid #4A1810;
+    color: #6B2810;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { background: #4A1810; color: #C84020; }
+
+  .instruction {
+    font-size: 11px;
+    color: #4A3318;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>Mineralis</h1>
+<div class="subtitle">◆ América do Sul — Preview dos Cards ◆</div>
+<div class="continent-label">Selecione uma fase</div>
+
+<div class="cards-row">
+
+  <!-- Card 1.1 - Minas de Prata dos Andes -->
+  <div class="card-wrapper">
+    <div class="card unlocked" id="card-1-1" onclick="selectCard('1-1')">
+      <div class="shimmer-overlay" id="shimmer-1-1"></div>
+      <div class="lock-icon">🔒</div>
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+        <rect x="0" y="0" width="80" height="80" fill="#2C1810"/>
+        <rect x="2" y="2" width="76" height="76" fill="#3D2214"/>
+        <rect x="3" y="3" width="74" height="74" fill="#1a0f08"/>
+        <rect x="3" y="3" width="74" height="1" fill="#6B3A1F"/>
+        <rect x="3" y="3" width="1" height="74" fill="#6B3A1F"/>
+        <rect x="3" y="76" width="74" height="1" fill="#0d0804"/>
+        <rect x="76" y="3" width="1" height="74" fill="#0d0804"/>
+        <rect x="4" y="4" width="72" height="45" fill="#1B3A6B"/>
+        <rect x="4" y="4" width="72" height="8" fill="#2B5EA7"/>
+        <rect x="60" y="6" width="6" height="6" fill="#FFD700"/>
+        <rect x="30" y="10" width="2" height="1" fill="#111"/>
+        <rect x="29" y="11" width="4" height="1" fill="#111"/>
+        <rect x="28" y="12" width="6" height="1" fill="#111"/>
+        <!-- Mountains far -->
+        <rect x="4" y="26" width="4" height="23" fill="#3A5078"/>
+        <rect x="6" y="23" width="4" height="26" fill="#3A5078"/>
+        <rect x="8" y="20" width="4" height="29" fill="#3A5078"/>
+        <rect x="8" y="20" width="4" height="2" fill="#C8D8E8"/>
+        <rect x="28" y="22" width="5" height="27" fill="#2E4468"/>
+        <rect x="30" y="19" width="5" height="30" fill="#2E4468"/>
+        <rect x="32" y="16" width="5" height="33" fill="#2E4468"/>
+        <rect x="32" y="16" width="5" height="2" fill="#DDEEFF"/>
+        <rect x="58" y="24" width="4" height="25" fill="#3A5078"/>
+        <rect x="60" y="21" width="4" height="28" fill="#3A5078"/>
+        <rect x="62" y="18" width="4" height="31" fill="#3A5078"/>
+        <rect x="62" y="18" width="4" height="2" fill="#C8D8E8"/>
+        <!-- Main mountain -->
+        <rect x="4" y="35" width="72" height="14" fill="#5C4020"/>
+        <rect x="18" y="26" width="44" height="23" fill="#6B4D28"/>
+        <rect x="32" y="21" width="16" height="28" fill="#6B4D28"/>
+        <rect x="36" y="19" width="8" height="30" fill="#7A5A30"/>
+        <rect x="34" y="19" width="12" height="3" fill="#E8F0FF"/>
+        <rect x="36" y="15" width="8" height="4" fill="#FFFFFF"/>
+        <rect x="38" y="12" width="4" height="3" fill="#FFFFFF"/>
+        <!-- Mine entrance -->
+        <rect x="14" y="39" width="8" height="9" fill="#1A0F05"/>
+        <rect x="14" y="39" width="2" height="9" fill="#6B4520"/>
+        <rect x="20" y="39" width="2" height="9" fill="#6B4520"/>
+        <rect x="14" y="39" width="8" height="2" fill="#7A5228"/>
+        <!-- Ground -->
+        <rect x="4" y="49" width="72" height="15" fill="#4A3318"/>
+        <rect x="4" y="49" width="72" height="2" fill="#5C4020"/>
+        <!-- Silver veins -->
+        <rect x="10" y="55" width="3" height="2" fill="#A8B8C8"/>
+        <rect x="25" y="57" width="2" height="3" fill="#A8B8C8"/>
+        <rect x="45" y="56" width="3" height="2" fill="#C8D0D8"/>
+        <rect x="65" y="54" width="3" height="3" fill="#A8B8C8"/>
+        <!-- Corvan -->
+        <rect x="34" y="48" width="4" height="6" fill="#B22222"/>
+        <rect x="34" y="46" width="4" height="2" fill="#D4956A"/>
+        <rect x="33" y="44" width="6" height="2" fill="#5C3A1E"/>
+        <rect x="36" y="43" width="2" height="1" fill="#FFD700"/>
+        <rect x="34" y="54" width="2" height="2" fill="#3D2810"/>
+        <rect x="36" y="54" width="2" height="2" fill="#3D2810"/>
+        <rect x="38" y="49" width="4" height="1" fill="#8B6835"/>
+        <rect x="41" y="48" width="2" height="2" fill="#999"/>
+        <!-- Llama -->
+        <rect x="22" y="51" width="2" height="4" fill="#D4B896"/>
+        <rect x="22" y="49" width="3" height="2" fill="#D4B896"/>
+        <rect x="24" y="47" width="2" height="1" fill="#C8A882"/>
+        <rect x="24" y="50" width="4" height="3" fill="#D4B896"/>
+        <rect x="26" y="53" width="1" height="2" fill="#C8A882"/>
+        <rect x="27" y="53" width="1" height="2" fill="#C8A882"/>
+        <!-- Stars -->
+        <rect x="27" y="70" width="5" height="5" fill="#FFD700"/><rect x="28" y="69" width="3" height="1" fill="#FFD700"/><rect x="29" y="68" width="1" height="1" fill="#FFD700"/><rect x="26" y="71" width="1" height="2" fill="#FFD700"/><rect x="31" y="71" width="1" height="2" fill="#FFD700"/>
+        <rect x="37" y="70" width="5" height="5" fill="#FFD700"/><rect x="38" y="69" width="3" height="1" fill="#FFD700"/><rect x="39" y="68" width="1" height="1" fill="#FFD700"/><rect x="36" y="71" width="1" height="2" fill="#FFD700"/><rect x="41" y="71" width="1" height="2" fill="#FFD700"/>
+        <rect x="47" y="70" width="5" height="5" fill="#FFD700"/><rect x="48" y="69" width="3" height="1" fill="#FFD700"/><rect x="49" y="68" width="1" height="1" fill="#FFD700"/><rect x="46" y="71" width="1" height="2" fill="#FFD700"/><rect x="51" y="71" width="1" height="2" fill="#FFD700"/>
+        <!-- Corners -->
+        <rect x="4" y="4" width="3" height="3" fill="#C8A060"/><rect x="73" y="4" width="3" height="3" fill="#C8A060"/><rect x="4" y="73" width="3" height="3" fill="#C8A060"/><rect x="73" y="73" width="3" height="3" fill="#C8A060"/>
+        <rect x="5" y="5" width="1" height="1" fill="#FFD080"/><rect x="74" y="5" width="1" height="1" fill="#FFD080"/><rect x="5" y="74" width="1" height="1" fill="#FFD080"/><rect x="74" y="74" width="1" height="1" fill="#FFD080"/>
+      </svg>
+    </div>
+    <div class="phase-label active" id="label-1-1">1.1 · Andes</div>
+    <button class="unlock-btn" disabled onclick="toggleLock('1-1', this)">✓ Desbloqueado</button>
+  </div>
+
+  <!-- Card 1.2 - Amazônia -->
+  <div class="card-wrapper">
+    <div class="card locked" id="card-1-2" onclick="selectCard('1-2')">
+      <div class="shimmer-overlay" id="shimmer-1-2"></div>
+      <div class="lock-icon">🔒</div>
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+        <rect x="0" y="0" width="80" height="80" fill="#2C1810"/>
+        <rect x="2" y="2" width="76" height="76" fill="#3D2214"/>
+        <rect x="3" y="3" width="74" height="74" fill="#1a0f08"/>
+        <rect x="3" y="3" width="74" height="1" fill="#6B3A1F"/>
+        <rect x="3" y="3" width="1" height="74" fill="#6B3A1F"/>
+        <rect x="3" y="76" width="74" height="1" fill="#0d0804"/>
+        <rect x="76" y="3" width="1" height="74" fill="#0d0804"/>
+        <!-- Sky jungle -->
+        <rect x="4" y="4" width="72" height="20" fill="#1A3D1A"/>
+        <!-- Canopy trees -->
+        <rect x="4" y="8" width="12" height="16" fill="#1E4D1E"/>
+        <rect x="6" y="4" width="8" height="20" fill="#2A7A2A"/>
+        <rect x="14" y="7" width="10" height="17" fill="#256325"/>
+        <rect x="24" y="6" width="10" height="18" fill="#2A7A2A"/>
+        <rect x="38" y="4" width="10" height="20" fill="#256325"/>
+        <rect x="50" y="6" width="10" height="18" fill="#2A7A2A"/>
+        <rect x="62" y="5" width="8" height="19" fill="#256325"/>
+        <!-- Vines -->
+        <rect x="12" y="4" width="1" height="30" fill="#3D6B20"/>
+        <rect x="35" y="4" width="1" height="28" fill="#3D6B20"/>
+        <rect x="58" y="4" width="1" height="26" fill="#3D6B20"/>
+        <!-- Jungle floor -->
+        <rect x="4" y="34" width="72" height="15" fill="#2A5C1E"/>
+        <!-- Large leaves -->
+        <rect x="4" y="28" width="10" height="10" fill="#4A9030"/>
+        <rect x="64" y="27" width="10" height="11" fill="#4A9030"/>
+        <!-- River -->
+        <rect x="4" y="49" width="72" height="12" fill="#6B4E2A"/>
+        <rect x="4" y="50" width="72" height="2" fill="#7A5C35"/>
+        <!-- Gold in river -->
+        <rect x="15" y="53" width="3" height="2" fill="#FFD700"/>
+        <rect x="16" y="52" width="2" height="4" fill="#FFC800"/>
+        <rect x="30" y="54" width="2" height="2" fill="#FFD700"/>
+        <rect x="50" y="53" width="3" height="2" fill="#FFD700"/>
+        <rect x="63" y="54" width="2" height="2" fill="#FFD700"/>
+        <!-- Sluice box -->
+        <rect x="36" y="48" width="12" height="4" fill="#8B6835"/>
+        <rect x="38" y="49" width="1" height="3" fill="#6B4820"/>
+        <rect x="40" y="49" width="1" height="3" fill="#6B4820"/>
+        <rect x="42" y="49" width="1" height="3" fill="#6B4820"/>
+        <rect x="44" y="49" width="1" height="3" fill="#6B4820"/>
+        <!-- Corvan -->
+        <rect x="34" y="46" width="4" height="5" fill="#B22222"/>
+        <rect x="34" y="44" width="4" height="2" fill="#D4956A"/>
+        <rect x="33" y="42" width="6" height="2" fill="#5C3A1E"/>
+        <rect x="36" y="41" width="2" height="1" fill="#FFD700"/>
+        <rect x="34" y="51" width="2" height="2" fill="#3D2810"/>
+        <rect x="36" y="51" width="2" height="2" fill="#3D2810"/>
+        <!-- Pottery -->
+        <rect x="9" y="55" width="6" height="3" fill="#A0522D"/>
+        <rect x="64" y="57" width="6" height="2" fill="#A0522D"/>
+        <!-- Ground -->
+        <rect x="4" y="61" width="72" height="15" fill="#4A3318"/>
+        <!-- Gems -->
+        <rect x="44" y="64" width="3" height="3" fill="#50C878"/>
+        <!-- Stars -->
+        <rect x="27" y="70" width="5" height="5" fill="#FFD700"/><rect x="28" y="69" width="3" height="1" fill="#FFD700"/><rect x="29" y="68" width="1" height="1" fill="#FFD700"/><rect x="26" y="71" width="1" height="2" fill="#FFD700"/><rect x="31" y="71" width="1" height="2" fill="#FFD700"/>
+        <rect x="37" y="70" width="5" height="5" fill="#FFD700"/><rect x="38" y="69" width="3" height="1" fill="#FFD700"/><rect x="39" y="68" width="1" height="1" fill="#FFD700"/><rect x="36" y="71" width="1" height="2" fill="#FFD700"/><rect x="41" y="71" width="1" height="2" fill="#FFD700"/>
+        <rect x="47" y="70" width="5" height="5" fill="#FFD700"/><rect x="48" y="69" width="3" height="1" fill="#FFD700"/><rect x="49" y="68" width="1" height="1" fill="#FFD700"/><rect x="46" y="71" width="1" height="2" fill="#FFD700"/><rect x="51" y="71" width="1" height="2" fill="#FFD700"/>
+        <!-- Corners -->
+        <rect x="4" y="4" width="3" height="3" fill="#C8A060"/><rect x="73" y="4" width="3" height="3" fill="#C8A060"/><rect x="4" y="73" width="3" height="3" fill="#C8A060"/><rect x="73" y="73" width="3" height="3" fill="#C8A060"/>
+        <rect x="5" y="5" width="1" height="1" fill="#FFD080"/><rect x="74" y="5" width="1" height="1" fill="#FFD080"/><rect x="5" y="74" width="1" height="1" fill="#FFD080"/><rect x="74" y="74" width="1" height="1" fill="#FFD080"/>
+      </svg>
+    </div>
+    <div class="phase-label" id="label-1-2">1.2 · Amazônia</div>
+    <button class="unlock-btn" onclick="toggleLock('1-2', this)">🔓 Desbloquear</button>
+  </div>
+
+  <!-- Card 1.3 - Machu Picchu -->
+  <div class="card-wrapper">
+    <div class="card locked" id="card-1-3" onclick="selectCard('1-3')">
+      <div class="shimmer-overlay" id="shimmer-1-3"></div>
+      <div class="lock-icon">🔒</div>
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+        <rect x="0" y="0" width="80" height="80" fill="#2C1810"/>
+        <rect x="2" y="2" width="76" height="76" fill="#3D2214"/>
+        <rect x="3" y="3" width="74" height="74" fill="#1a0f08"/>
+        <rect x="3" y="3" width="74" height="1" fill="#6B3A1F"/>
+        <rect x="3" y="3" width="1" height="74" fill="#6B3A1F"/>
+        <rect x="3" y="76" width="74" height="1" fill="#0d0804"/>
+        <rect x="76" y="3" width="1" height="74" fill="#0d0804"/>
+        <!-- Sky misty -->
+        <rect x="4" y="4" width="72" height="35" fill="#4A6B8A"/>
+        <rect x="4" y="4" width="72" height="10" fill="#5A7FA0"/>
+        <!-- Sun halo -->
+        <rect x="57" y="5" width="4" height="8" fill="#C8DCE8"/>
+        <rect x="58" y="6" width="2" height="6" fill="#E8F0F8"/>
+        <!-- Mist -->
+        <rect x="4" y="16" width="20" height="5" fill="#6A8AA0"/>
+        <rect x="30" y="14" width="25" height="4" fill="#6A8AA0"/>
+        <rect x="60" y="15" width="16" height="5" fill="#6A8AA0"/>
+        <!-- Green mountains -->
+        <rect x="4" y="20" width="8" height="19" fill="#3D6B3D"/>
+        <rect x="8" y="13" width="8" height="26" fill="#527A52"/>
+        <rect x="26" y="11" width="8" height="28" fill="#527A52"/>
+        <rect x="26" y="11" width="8" height="3" fill="#D8E8F0"/>
+        <rect x="56" y="10" width="8" height="29" fill="#527A52"/>
+        <rect x="56" y="10" width="8" height="3" fill="#D8E8F0"/>
+        <rect x="66" y="18" width="10" height="21" fill="#3D6B3D"/>
+        <!-- Green hill -->
+        <rect x="4" y="31" width="72" height="18" fill="#5C8030"/>
+        <!-- Terraces -->
+        <rect x="4" y="38" width="72" height="3" fill="#6A9038"/>
+        <rect x="4" y="41" width="72" height="1" fill="#8A7055"/>
+        <rect x="4" y="42" width="72" height="3" fill="#5C8830"/>
+        <rect x="4" y="45" width="72" height="1" fill="#7A6045"/>
+        <!-- Inca ruins -->
+        <rect x="20" y="20" width="40" height="18" fill="#9A9080"/>
+        <rect x="22" y="18" width="36" height="20" fill="#A8A090"/>
+        <!-- Bricks -->
+        <rect x="22" y="18" width="6" height="3" fill="#989080"/>
+        <rect x="28" y="18" width="6" height="3" fill="#A0988A"/>
+        <rect x="34" y="18" width="6" height="3" fill="#989080"/>
+        <rect x="40" y="18" width="6" height="3" fill="#A0988A"/>
+        <rect x="46" y="18" width="6" height="3" fill="#989080"/>
+        <rect x="52" y="18" width="6" height="3" fill="#A0988A"/>
+        <!-- Doorway -->
+        <rect x="36" y="27" width="8" height="11" fill="#2A1E10"/>
+        <rect x="36" y="27" width="1" height="10" fill="#7A6848"/>
+        <rect x="43" y="27" width="1" height="10" fill="#7A6848"/>
+        <!-- Gold accents -->
+        <rect x="24" y="19" width="2" height="1" fill="#FFD700"/>
+        <rect x="46" y="19" width="2" height="1" fill="#FFD700"/>
+        <!-- Small ruins -->
+        <rect x="4" y="30" width="14" height="9" fill="#9A9080"/>
+        <rect x="6" y="33" width="4" height="4" fill="#2A1E10"/>
+        <rect x="62" y="30" width="14" height="9" fill="#9A9080"/>
+        <rect x="70" y="33" width="4" height="4" fill="#2A1E10"/>
+        <!-- Corvan -->
+        <rect x="48" y="30" width="4" height="5" fill="#B22222"/>
+        <rect x="48" y="28" width="4" height="2" fill="#D4956A"/>
+        <rect x="47" y="26" width="6" height="2" fill="#5C3A1E"/>
+        <rect x="50" y="25" width="2" height="1" fill="#FFD700"/>
+        <!-- Gold artifacts -->
+        <rect x="14" y="37" width="3" height="3" fill="#FFD700"/>
+        <rect x="60" y="36" width="3" height="3" fill="#FFD700"/>
+        <!-- Ground -->
+        <rect x="4" y="46" width="72" height="20" fill="#4A3318"/>
+        <!-- Stone steps -->
+        <rect x="30" y="46" width="20" height="2" fill="#7A7060"/>
+        <rect x="32" y="48" width="16" height="2" fill="#8A8070"/>
+        <!-- Pottery -->
+        <rect x="7" y="51" width="6" height="3" fill="#A0522D"/>
+        <rect x="9" y="52" width="1" height="1" fill="#FFD700"/>
+        <!-- Stars (4) -->
+        <rect x="22" y="70" width="5" height="5" fill="#FFD700"/><rect x="23" y="69" width="3" height="1" fill="#FFD700"/><rect x="24" y="68" width="1" height="1" fill="#FFD700"/><rect x="21" y="71" width="1" height="2" fill="#FFD700"/><rect x="26" y="71" width="1" height="2" fill="#FFD700"/>
+        <rect x="31" y="70" width="5" height="5" fill="#FFD700"/><rect x="32" y="69" width="3" height="1" fill="#FFD700"/><rect x="33" y="68" width="1" height="1" fill="#FFD700"/><rect x="30" y="71" width="1" height="2" fill="#FFD700"/><rect x="35" y="71" width="1" height="2" fill="#FFD700"/>
+        <rect x="40" y="70" width="5" height="5" fill="#FFD700"/><rect x="41" y="69" width="3" height="1" fill="#FFD700"/><rect x="42" y="68" width="1" height="1" fill="#FFD700"/><rect x="39" y="71" width="1" height="2" fill="#FFD700"/><rect x="44" y="71" width="1" height="2" fill="#FFD700"/>
+        <rect x="49" y="70" width="5" height="5" fill="#FFD700"/><rect x="50" y="69" width="3" height="1" fill="#FFD700"/><rect x="51" y="68" width="1" height="1" fill="#FFD700"/><rect x="48" y="71" width="1" height="2" fill="#FFD700"/><rect x="53" y="71" width="1" height="2" fill="#FFD700"/>
+        <!-- Corners -->
+        <rect x="4" y="4" width="3" height="3" fill="#C8A060"/><rect x="73" y="4" width="3" height="3" fill="#C8A060"/><rect x="4" y="73" width="3" height="3" fill="#C8A060"/><rect x="73" y="73" width="3" height="3" fill="#C8A060"/>
+        <rect x="5" y="5" width="1" height="1" fill="#FFD080"/><rect x="74" y="5" width="1" height="1" fill="#FFD080"/><rect x="5" y="74" width="1" height="1" fill="#FFD080"/><rect x="74" y="74" width="1" height="1" fill="#FFD080"/>
+      </svg>
+    </div>
+    <div class="phase-label" id="label-1-3">1.3 · Machu Picchu</div>
+    <button class="unlock-btn" onclick="toggleLock('1-3', this)">🔓 Desbloquear</button>
+  </div>
+
+</div>
+
+<div class="controls">
+  <button class="reset-btn" onclick="resetAll()">↺ Resetar tudo</button>
+</div>
+
+<div class="instruction">Clique nos botões para simular o desbloqueio das fases · Os cards são SVG puro em pixel art</div>
+
+<script>
+  function toggleLock(id, btn) {
+    const card = document.getElementById('card-' + id);
+    const label = document.getElementById('label-' + id);
+    const shimmer = document.getElementById('shimmer-' + id);
+
+    if (card.classList.contains('locked')) {
+      // Desbloquear com animação
+      card.classList.remove('locked');
+      card.classList.add('unlocking');
+      shimmer.classList.add('active');
+
+      btn.textContent = '✓ Desbloqueado';
+      btn.disabled = true;
+      label.classList.add('active');
+
+      setTimeout(() => {
+        card.classList.remove('unlocking');
+        card.classList.add('unlocked');
+        shimmer.classList.remove('active');
+      }, 800);
+    }
+  }
+
+  function selectCard(id) {
+    const card = document.getElementById('card-' + id);
+    if (card.classList.contains('unlocked')) {
+      card.style.outline = '2px solid #FFD700';
+      setTimeout(() => card.style.outline = '', 300);
+    }
+  }
+
+  function resetAll() {
+    ['1-2', '1-3'].forEach(id => {
+      const card = document.getElementById('card-' + id);
+      const label = document.getElementById('label-' + id);
+      const btn = card.parentElement.querySelector('.unlock-btn');
+      card.classList.remove('unlocked', 'unlocking');
+      card.classList.add('locked');
+      label.classList.remove('active');
+      btn.textContent = '🔓 Desbloquear';
+      btn.disabled = false;
+    });
+  }
+</script>
+</body>
+</html>

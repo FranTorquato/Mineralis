@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 960 1120" width="960" height="1120"
+     style="background:#080c08; shape-rendering:crispEdges; image-rendering:pixelated;">
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       OURO – SPRITE SHEET COMPLETO │ Fase 1.2 – O Ouro dos Rios
+       Pepitas aluviais, partículas, explosão de coleta, sparkles
+       Godot 4 AnimatedSprite2D │ fiel à referência pixel art
+       ═══════════════════════════════════════════════════════════════════ -->
+
+  <defs>
+    <filter id="goldGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feFlood flood-color="#ffaa00" flood-opacity="0.7" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="goldGlowSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feFlood flood-color="#ffcc00" flood-opacity="0.55" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starBurst" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feFlood flood-color="#ffeeaa" flood-opacity="0.9" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#0c1008" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- ═══ SÍMBOLO: PEPITA PEQUENA (16×12 px base) ═══ -->
+    <symbol id="pepita-sm" viewBox="0 0 16 12">
+      <rect x="3"  y="1"  width="10" height="10" rx="3" fill="#8b4500"/>
+      <rect x="4"  y="1"  width="8"  height="9"  rx="3" fill="#cc7700"/>
+      <rect x="4"  y="1"  width="8"  height="7"  rx="3" fill="#dd9900"/>
+      <rect x="4"  y="1"  width="8"  height="5"  rx="2" fill="#eebb00"/>
+      <rect x="5"  y="2"  width="6"  height="4"  rx="2" fill="#ffcc22"/>
+      <rect x="5"  y="2"  width="4"  height="2"  rx="1" fill="#ffee88" opacity="0.7"/>
+    </symbol>
+
+    <!-- ═══ SÍMBOLO: PEPITA MÉDIA (24×18 px base) ═══ -->
+    <symbol id="pepita-md" viewBox="0 0 24 18">
+      <rect x="3"  y="2"  width="18" height="14" rx="5" fill="#7a3c00"/>
+      <rect x="4"  y="2"  width="16" height="13" rx="4" fill="#aa5a00"/>
+      <rect x="4"  y="2"  width="16" height="11" rx="4" fill="#cc7700"/>
+      <rect x="4"  y="2"  width="16" height="9"  rx="3" fill="#dd9900"/>
+      <rect x="5"  y="2"  width="14" height="7"  rx="3" fill="#eebb00"/>
+      <rect x="6"  y="3"  width="12" height="5"  rx="2" fill="#ffcc22"/>
+      <rect x="6"  y="3"  width="8"  height="3"  rx="2" fill="#ffee88" opacity="0.65"/>
+      <!-- veia escura interna -->
+      <rect x="14" y="6"  width="4"  height="3"  rx="1" fill="#cc8800" opacity="0.4"/>
+    </symbol>
+
+    <!-- ═══ SÍMBOLO: PEPITA GRANDE (40×30 px base) ═══ -->
+    <symbol id="pepita-lg" viewBox="0 0 40 30">
+      <rect x="2"  y="3"  width="36" height="24" rx="8"  fill="#5a2c00"/>
+      <rect x="3"  y="3"  width="34" height="22" rx="7"  fill="#8b4500"/>
+      <rect x="3"  y="3"  width="34" height="20" rx="6"  fill="#aa5a00"/>
+      <rect x="3"  y="3"  width="34" height="17" rx="6"  fill="#cc7700"/>
+      <rect x="4"  y="3"  width="32" height="14" rx="5"  fill="#dd9900"/>
+      <rect x="5"  y="4"  width="30" height="11" rx="4"  fill="#eebb00"/>
+      <rect x="6"  y="4"  width="28" height="8"  rx="3"  fill="#ffcc22"/>
+      <rect x="7"  y="5"  width="18" height="5"  rx="2"  fill="#ffee88" opacity="0.6"/>
+      <!-- detalhe mineral escuro -->
+      <rect x="24" y="9"  width="8"  height="5"  rx="2"  fill="#bb7700" opacity="0.5"/>
+      <rect x="10" y="14" width="6"  height="4"  rx="1"  fill="#996600" opacity="0.35"/>
+    </symbol>
+
+  </defs>
+
+  <!-- Fundo + grade -->
+  <rect width="960" height="1120" fill="#080c08"/>
+  <rect width="960" height="1120" fill="url(#grid)" opacity="0.7"/>
+
+  <!-- ══ CABEÇALHO ══ -->
+  <rect x="0" y="0" width="960" height="38" fill="#0c1008"/>
+  <text x="480" y="24" text-anchor="middle" fill="#ddaa00"
+        font-family="'Courier New',monospace" font-size="13"
+        font-weight="bold" letter-spacing="3">
+    ✦ OURO – SPRITE SHEET COMPLETO │ FASE 1.2 – O OURO DOS RIOS │ GODOT 4
+  </text>
+  <line x1="0" y1="38" x2="960" y2="38" stroke="#1a1c08" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SEÇÃO 1 – PEPITAS BASE (3 tamanhos × 3 estados)
+  ══════════════════════════════════════════════════════════ -->
+  <text x="14" y="58" fill="#ddaa00" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ PEPITAS BASE – PEQUENA / MÉDIA / GRANDE (idle · brilhando · na lama)</text>
+  <line x1="0" y1="62" x2="960" y2="62" stroke="#181a08" stroke-width="0.5"/>
+
+  <!-- PEQUENA IDLE -->
+  <g transform="translate(24,72)">
+    <rect x="0" y="0" width="88" height="88" fill="#0c100c" rx="2"/>
+    <use href="#pepita-sm" x="20" y="28" width="48" height="36"/>
+    <ellipse cx="44" cy="74" rx="20" ry="4" fill="#000" opacity="0.3"/>
+    <text x="44" y="82" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">P1 – PEQUENA</text>
+    <text x="44" y="90" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">IDLE</text>
+  </g>
+
+  <!-- PEQUENA BRILHANDO -->
+  <g transform="translate(128,72)">
+    <rect x="0" y="0" width="88" height="88" fill="#0c100c" rx="2"/>
+    <use href="#pepita-sm" x="20" y="28" width="48" height="36" filter="url(#goldGlowSoft)"/>
+    <!-- estrelinhas de 4 pontas estilo ref -->
+    <line x1="44" y1="14" x2="44" y2="24" stroke="#ffee88" stroke-width="2.5"/>
+    <line x1="39" y1="19" x2="49" y2="19" stroke="#ffee88" stroke-width="2.5"/>
+    <line x1="41" y1="16" x2="44" y2="19" stroke="#ffee88" stroke-width="1"/>
+    <line x1="47" y1="16" x2="44" y2="19" stroke="#ffee88" stroke-width="1"/>
+    <line x1="41" y1="22" x2="44" y2="19" stroke="#ffee88" stroke-width="1"/>
+    <line x1="47" y1="22" x2="44" y2="19" stroke="#ffee88" stroke-width="1"/>
+    <ellipse cx="44" cy="74" rx="20" ry="4" fill="#000" opacity="0.3"/>
+    <text x="44" y="82" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">P2 – BRILHANDO</text>
+    <text x="44" y="90" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">SPARKLE</text>
+  </g>
+
+  <!-- PEQUENA NA LAMA -->
+  <g transform="translate(232,72)">
+    <rect x="0" y="0" width="88" height="88" fill="#0c100c" rx="2"/>
+    <!-- lama -->
+    <ellipse cx="44" cy="62" rx="28" ry="10" fill="#3a2008" opacity="0.85"/>
+    <ellipse cx="44" cy="60" rx="24" ry="7"  fill="#4a2c10"/>
+    <use href="#pepita-sm" x="20" y="38" width="48" height="36" opacity="0.6"/>
+    <!-- lama sobre a pepita -->
+    <ellipse cx="44" cy="58" rx="20" ry="5" fill="#5a3818" opacity="0.55"/>
+    <ellipse cx="44" cy="74" rx="20" ry="4" fill="#000" opacity="0.3"/>
+    <text x="44" y="82" text-anchor="middle" fill="#8a6a30"
+          font-family="'Courier New',monospace" font-size="7">P3 – NA LAMA</text>
+    <text x="44" y="90" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">OBSCURECIDA</text>
+  </g>
+
+  <!-- MÉDIA IDLE -->
+  <g transform="translate(344,72)">
+    <rect x="0" y="0" width="96" height="88" fill="#0c100c" rx="2"/>
+    <use href="#pepita-md" x="12" y="20" width="72" height="54"/>
+    <ellipse cx="48" cy="76" rx="26" ry="5" fill="#000" opacity="0.3"/>
+    <text x="48" y="84" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">M1 – MÉDIA</text>
+    <text x="48" y="92" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">IDLE</text>
+  </g>
+
+  <!-- MÉDIA BRILHANDO -->
+  <g transform="translate(456,72)">
+    <rect x="0" y="0" width="96" height="88" fill="#0c100c" rx="2"/>
+    <use href="#pepita-md" x="12" y="20" width="72" height="54" filter="url(#goldGlowSoft)"/>
+    <!-- ✦ grande ref topo-centro -->
+    <line x1="48" y1="6"  x2="48" y2="20" stroke="#fff6aa" stroke-width="3"/>
+    <line x1="41" y1="13" x2="55" y2="13" stroke="#fff6aa" stroke-width="3"/>
+    <line x1="43" y1="8"  x2="48" y2="13" stroke="#ffe066" stroke-width="1.2"/>
+    <line x1="53" y1="8"  x2="48" y2="13" stroke="#ffe066" stroke-width="1.2"/>
+    <line x1="43" y1="18" x2="48" y2="13" stroke="#ffe066" stroke-width="1.2"/>
+    <line x1="53" y1="18" x2="48" y2="13" stroke="#ffe066" stroke-width="1.2"/>
+    <!-- pontinhos lat -->
+    <rect x="14" y="28" width="4" height="4" fill="#ffdd66" opacity="0.7"/>
+    <rect x="78" y="32" width="3" height="3" fill="#ffdd66" opacity="0.6"/>
+    <ellipse cx="48" cy="76" rx="26" ry="5" fill="#000" opacity="0.3"/>
+    <text x="48" y="84" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">M2 – BRILHANDO</text>
+    <text x="48" y="92" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">SPARKLE</text>
+  </g>
+
+  <!-- MÉDIA INCLINADA (como ref centro-esquerda) -->
+  <g transform="translate(568,72)">
+    <rect x="0" y="0" width="96" height="88" fill="#0c100c" rx="2"/>
+    <g transform="translate(48,44) rotate(-20) translate(-36,-27)">
+      <use href="#pepita-md" x="0" y="0" width="72" height="54"/>
+    </g>
+    <ellipse cx="48" cy="76" rx="26" ry="5" fill="#000" opacity="0.3"/>
+    <text x="48" y="84" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">M3 – INCLINADA</text>
+    <text x="48" y="92" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">QUEDA/BATEIA</text>
+  </g>
+
+  <!-- GRANDE IDLE -->
+  <g transform="translate(680,72)">
+    <rect x="0" y="0" width="112" height="88" fill="#0c100c" rx="2"/>
+    <use href="#pepita-lg" x="8" y="14" width="96" height="72"/>
+    <ellipse cx="56" cy="78" rx="36" ry="6" fill="#000" opacity="0.3"/>
+    <text x="56" y="86" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">G1 – GRANDE</text>
+    <text x="56" y="94" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">IDLE</text>
+  </g>
+
+  <!-- GRANDE BRILHANDO (como ref topo-centro com sparkle duplo) -->
+  <g transform="translate(808,72)">
+    <rect x="0" y="0" width="144" height="88" fill="#0c100c" rx="2"/>
+    <use href="#pepita-lg" x="8" y="10" width="128" height="66" filter="url(#goldGlow)"/>
+    <!-- ✦ duplo topo ref -->
+    <line x1="56" y1="2"  x2="56" y2="18" stroke="#fffacc" stroke-width="3.5"/>
+    <line x1="48" y1="10" x2="64" y2="10" stroke="#fffacc" stroke-width="3.5"/>
+    <line x1="50" y1="4"  x2="56" y2="10" stroke="#ffe088" stroke-width="1.5"/>
+    <line x1="62" y1="4"  x2="56" y2="10" stroke="#ffe088" stroke-width="1.5"/>
+    <line x1="50" y1="16" x2="56" y2="10" stroke="#ffe088" stroke-width="1.5"/>
+    <line x1="62" y1="16" x2="56" y2="10" stroke="#ffe088" stroke-width="1.5"/>
+    <!-- segundo sparkle menor -->
+    <line x1="108" y1="22" x2="108" y2="12" stroke="#fff8aa" stroke-width="2"/>
+    <line x1="103" y1="17" x2="113" y2="17" stroke="#fff8aa" stroke-width="2"/>
+    <ellipse cx="72" cy="80" rx="42" ry="7" fill="#000" opacity="0.3"/>
+    <text x="72" y="86" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">G2 – GRANDE BRILHO</text>
+    <text x="72" y="94" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">SPARKLE DUPLO</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SEÇÃO 2 – EXPLOSÃO DE COLETA (8 frames – ref centro)
+  ══════════════════════════════════════════════════════════ -->
+  <text x="14" y="192" fill="#ddaa00" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ EXPLOSÃO DE COLETA – 8 FRAMES │ "collect_burst" │ FPS: 12</text>
+  <line x1="0" y1="196" x2="960" y2="196" stroke="#181a08" stroke-width="0.5"/>
+
+  <!-- Atlas horizontal 8 × 112px -->
+  <rect x="16" y="208" width="928" height="112" fill="#08100a" rx="2" stroke="#161e10" stroke-width="1"/>
+
+  <!-- C1: apenas pepita, sem partículas -->
+  <g transform="translate(16,208)">
+    <use href="#pepita-md" x="32" y="36" width="48" height="36"/>
+    <text x="56" y="106" text-anchor="middle" fill="#3a3810"
+          font-family="'Courier New',monospace" font-size="7">C1</text>
+  </g>
+  <line x1="132" y1="208" x2="132" y2="320" stroke="#1a2010" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- C2: primeiros quadradinhos saindo (pequenos, próximos) -->
+  <g transform="translate(132,208)">
+    <use href="#pepita-md" x="32" y="36" width="48" height="36"/>
+    <!-- partículas próximas pequenas -->
+    <rect x="22" y="38" width="6" height="6" fill="#cc7700"/>
+    <rect x="88" y="42" width="6" height="6" fill="#cc7700"/>
+    <rect x="52" y="14" width="8" height="8" fill="#ddaa00"/>
+    <rect x="56" y="86" width="6" height="6" fill="#bb8800"/>
+    <text x="56" y="106" text-anchor="middle" fill="#3a3810"
+          font-family="'Courier New',monospace" font-size="7">C2</text>
+  </g>
+  <line x1="248" y1="208" x2="248" y2="320" stroke="#1a2010" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- C3: explosão inicial – quadradinhos médios em todas as direções -->
+  <g transform="translate(248,208)">
+    <use href="#pepita-md" x="28" y="34" width="56" height="42" filter="url(#goldGlowSoft)"/>
+    <!-- anel de quadrados médios -->
+    <rect x="10" y="34" width="10" height="10" fill="#cc7700"/>
+    <rect x="96" y="38" width="10" height="10" fill="#cc8800"/>
+    <rect x="48" y="4"  width="12" height="12" fill="#ddaa00"/>
+    <rect x="52" y="88" width="10" height="10" fill="#bb7700"/>
+    <rect x="14" y="14" width="8"  height="8"  fill="#ddaa00"/>
+    <rect x="92" y="16" width="8"  height="8"  fill="#cc9900"/>
+    <rect x="14" y="82" width="8"  height="8"  fill="#cc7700"/>
+    <rect x="90" y="84" width="8"  height="8"  fill="#cc8800"/>
+    <text x="56" y="106" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">C3</text>
+  </g>
+  <line x1="364" y1="208" x2="364" y2="320" stroke="#1a2010" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- C4: pico da explosão – fiel à ref (pepita no centro, quadradinhos de todos tamanhos) -->
+  <g transform="translate(364,208)">
+    <use href="#pepita-md" x="24" y="30" width="64" height="48" filter="url(#goldGlow)"/>
+    <!-- quadradinhos grandes -->
+    <rect x="4"   y="28" width="14" height="14" fill="#cc7700"/>
+    <rect x="96"  y="32" width="14" height="14" fill="#dd9900"/>
+    <rect x="44"  y="2"  width="16" height="16" fill="#eebb00"/>
+    <rect x="50"  y="88" width="12" height="12" fill="#cc8800"/>
+    <!-- médios diagonais -->
+    <rect x="8"   y="8"  width="10" height="10" fill="#ddaa00"/>
+    <rect x="94"  y="10" width="10" height="10" fill="#eebb00"/>
+    <rect x="8"   y="86" width="10" height="10" fill="#cc7700"/>
+    <rect x="94"  y="84" width="10" height="10" fill="#ddaa00"/>
+    <!-- pequenos espalhados -->
+    <rect x="22"  y="4"  width="6"  height="6"  fill="#ffcc22"/>
+    <rect x="82"  y="4"  width="6"  height="6"  fill="#ffcc22"/>
+    <rect x="2"   y="52" width="6"  height="6"  fill="#cc8800"/>
+    <rect x="104" y="52" width="6"  height="6"  fill="#cc9900"/>
+    <rect x="30"  y="96" width="6"  height="6"  fill="#bb7700"/>
+    <rect x="72"  y="96" width="6"  height="6"  fill="#cc8800"/>
+    <!-- ✦ brilho central -->
+    <line x1="56" y1="22" x2="56" y2="14" stroke="#fff8cc" stroke-width="3"/>
+    <line x1="50" y1="18" x2="62" y2="18" stroke="#fff8cc" stroke-width="3"/>
+    <text x="56" y="106" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">C4 ✦ PICO</text>
+  </g>
+  <line x1="480" y1="208" x2="480" y2="320" stroke="#1a2010" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- C5: máximo – ainda mais espalhado -->
+  <g transform="translate(480,208)">
+    <use href="#pepita-md" x="24" y="30" width="64" height="48" filter="url(#goldGlow)"/>
+    <rect x="2"   y="24" width="14" height="14" fill="#cc7700" opacity="0.9"/>
+    <rect x="98"  y="28" width="14" height="14" fill="#dd9900" opacity="0.9"/>
+    <rect x="42"  y="0"  width="16" height="16" fill="#eebb00"/>
+    <rect x="48"  y="92" width="12" height="12" fill="#cc8800"/>
+    <rect x="4"   y="4"  width="10" height="10" fill="#ddaa00" opacity="0.8"/>
+    <rect x="100" y="6"  width="10" height="10" fill="#eebb00" opacity="0.8"/>
+    <rect x="4"   y="90" width="10" height="10" fill="#cc7700" opacity="0.8"/>
+    <rect x="100" y="88" width="10" height="10" fill="#ddaa00" opacity="0.8"/>
+    <rect x="0"   y="42" width="8"  height="8"  fill="#cc7700" opacity="0.7"/>
+    <rect x="106" y="44" width="8"  height="8"  fill="#ddaa00" opacity="0.7"/>
+    <rect x="18"  y="2"  width="6"  height="6"  fill="#ffcc22" opacity="0.7"/>
+    <rect x="86"  y="2"  width="6"  height="6"  fill="#ffcc22" opacity="0.7"/>
+    <!-- ✦ grande -->
+    <line x1="56" y1="18" x2="56" y2="8"  stroke="#fffacc" stroke-width="4"/>
+    <line x1="50" y1="13" x2="62" y2="13" stroke="#fffacc" stroke-width="4"/>
+    <line x1="52" y1="9"  x2="56" y2="13" stroke="#ffe088" stroke-width="1.5"/>
+    <line x1="60" y1="9"  x2="56" y2="13" stroke="#ffe088" stroke-width="1.5"/>
+    <line x1="52" y1="17" x2="56" y2="13" stroke="#ffe088" stroke-width="1.5"/>
+    <line x1="60" y1="17" x2="56" y2="13" stroke="#ffe088" stroke-width="1.5"/>
+    <text x="56" y="106" text-anchor="middle" fill="#ffee88"
+          font-family="'Courier New',monospace" font-size="7">C5 MÁXIMO</text>
+  </g>
+  <line x1="596" y1="208" x2="596" y2="320" stroke="#1a2010" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- C6: decaindo – quadradinhos mais distantes, menores -->
+  <g transform="translate(596,208)">
+    <use href="#pepita-sm" x="28" y="36" width="48" height="36" filter="url(#goldGlowSoft)"/>
+    <rect x="0"   y="20" width="10" height="10" fill="#cc7700" opacity="0.6"/>
+    <rect x="100" y="22" width="10" height="10" fill="#dd9900" opacity="0.6"/>
+    <rect x="42"  y="2"  width="12" height="12" fill="#eebb00" opacity="0.7"/>
+    <rect x="48"  y="90" width="10" height="10" fill="#cc8800" opacity="0.6"/>
+    <rect x="6"   y="6"  width="8"  height="8"  fill="#ddaa00" opacity="0.5"/>
+    <rect x="98"  y="8"  width="8"  height="8"  fill="#eebb00" opacity="0.5"/>
+    <rect x="18"  y="0"  width="5"  height="5"  fill="#ffcc22" opacity="0.5"/>
+    <rect x="86"  y="0"  width="5"  height="5"  fill="#ffcc22" opacity="0.5"/>
+    <rect x="0"   y="50" width="5"  height="5"  fill="#cc8800" opacity="0.4"/>
+    <rect x="106" y="52" width="5"  height="5"  fill="#cc9900" opacity="0.4"/>
+    <text x="56" y="106" text-anchor="middle" fill="#aa8820"
+          font-family="'Courier New',monospace" font-size="7">C6 DECAINDO</text>
+  </g>
+  <line x1="712" y1="208" x2="712" y2="320" stroke="#1a2010" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- C7: residual – poucos quadradinhos distantes -->
+  <g transform="translate(712,208)">
+    <use href="#pepita-sm" x="30" y="38" width="44" height="32"/>
+    <rect x="4"   y="18" width="6" height="6" fill="#cc7700" opacity="0.4"/>
+    <rect x="100" y="20" width="6" height="6" fill="#dd9900" opacity="0.4"/>
+    <rect x="46"  y="4"  width="8" height="8" fill="#ddaa00" opacity="0.5"/>
+    <rect x="48"  y="90" width="6" height="6" fill="#bb7700" opacity="0.35"/>
+    <rect x="8"   y="8"  width="4" height="4" fill="#cc9900" opacity="0.3"/>
+    <rect x="98"  y="10" width="4" height="4" fill="#cc9900" opacity="0.3"/>
+    <text x="56" y="106" text-anchor="middle" fill="#6a5810"
+          font-family="'Courier New',monospace" font-size="7">C7 RESIDUAL</text>
+  </g>
+  <line x1="828" y1="208" x2="828" y2="320" stroke="#1a2010" stroke-width="0.5" stroke-dasharray="2,2"/>
+
+  <!-- C8: apenas brilho final (volta ao idle) -->
+  <g transform="translate(828,208)">
+    <use href="#pepita-sm" x="34" y="38" width="44" height="32"/>
+    <!-- pontinho brilho residual -->
+    <line x1="56" y1="26" x2="56" y2="32" stroke="#ffe066" stroke-width="1.5" opacity="0.6"/>
+    <line x1="53" y1="29" x2="59" y2="29" stroke="#ffe066" stroke-width="1.5" opacity="0.6"/>
+    <text x="56" y="106" text-anchor="middle" fill="#4a4010"
+          font-family="'Courier New',monospace" font-size="7">C8 ⟳ IDLE</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SEÇÃO 3 – EXPLOSÃO ESTELAR (ref baixo-esquerda – raios pixel)
+  ══════════════════════════════════════════════════════════ -->
+  <text x="14" y="342" fill="#ddaa00" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ EXPLOSÃO ESTELAR – 6 FRAMES │ "star_burst" │ FPS: 10 (ref baixo-esq)</text>
+  <line x1="0" y1="346" x2="960" y2="346" stroke="#181a08" stroke-width="0.5"/>
+
+  <!-- SB1: núcleo compacto -->
+  <g transform="translate(16,358)">
+    <rect x="0" y="0" width="128" height="128" fill="#08100a" rx="2"/>
+    <use href="#pepita-sm" x="40" y="44" width="48" height="36"/>
+    <text x="64" y="120" text-anchor="middle" fill="#3a3810"
+          font-family="'Courier New',monospace" font-size="7">SB1 – NÚCLEO</text>
+    <text x="64" y="128" text-anchor="middle" fill="#2a2808"
+          font-family="'Courier New',monospace" font-size="6">COMPACTO</text>
+  </g>
+
+  <!-- SB2: primeiros raios curtos -->
+  <g transform="translate(160,358)">
+    <rect x="0" y="0" width="128" height="128" fill="#08100a" rx="2"/>
+    <use href="#pepita-sm" x="40" y="44" width="48" height="36" filter="url(#goldGlowSoft)"/>
+    <!-- raios curtos pixel em 8 dir -->
+    <rect x="60" y="24" width="8" height="12" fill="#eebb00"/>
+    <rect x="60" y="92" width="8" height="12" fill="#cc8800"/>
+    <rect x="22" y="58" width="12" height="8" fill="#dd9900"/>
+    <rect x="94" y="58" width="12" height="8" fill="#dd9900"/>
+    <rect x="36" y="30" width="8" height="8"  fill="#ddaa00" transform="rotate(-45,40,34)"/>
+    <rect x="84" y="30" width="8" height="8"  fill="#ddaa00" transform="rotate(45,88,34)"/>
+    <text x="64" y="120" text-anchor="middle" fill="#aa8820"
+          font-family="'Courier New',monospace" font-size="7">SB2 – RAIOS</text>
+    <text x="64" y="128" text-anchor="middle" fill="#2a2808"
+          font-family="'Courier New',monospace" font-size="6">CURTOS</text>
+  </g>
+
+  <!-- SB3: raios médios + núcleo brilhante -->
+  <g transform="translate(304,358)">
+    <rect x="0" y="0" width="128" height="128" fill="#08100a" rx="2"/>
+    <use href="#pepita-md" x="28" y="36" width="72" height="54" filter="url(#goldGlow)"/>
+    <!-- raios médios pixel em 8 dir -->
+    <rect x="57" y="8"  width="10" height="24" fill="#eebb00"/>
+    <rect x="57" y="96" width="10" height="24" fill="#cc8800"/>
+    <rect x="8"  y="57" width="24" height="10" fill="#dd9900"/>
+    <rect x="96" y="57" width="24" height="10" fill="#dd9900"/>
+    <!-- diagonais -->
+    <rect x="20" y="20" width="10" height="10" fill="#ddaa00" transform="rotate(-45,25,25)"/>
+    <rect x="98" y="20" width="10" height="10" fill="#ddaa00" transform="rotate(45,103,25)"/>
+    <rect x="20" y="98" width="10" height="10" fill="#cc8800" transform="rotate(45,25,103)"/>
+    <rect x="98" y="98" width="10" height="10" fill="#cc8800" transform="rotate(-45,103,103)"/>
+    <!-- ✦ central -->
+    <line x1="64" y1="28" x2="64" y2="14" stroke="#fffaaa" stroke-width="4"/>
+    <line x1="57" y1="21" x2="71" y2="21" stroke="#fffaaa" stroke-width="4"/>
+    <text x="64" y="120" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">SB3 – MÉDIO</text>
+    <text x="64" y="128" text-anchor="middle" fill="#2a2808"
+          font-family="'Courier New',monospace" font-size="6">BRILHO CENTRAL</text>
+  </g>
+
+  <!-- SB4: PICO – raios longos, quadradinhos + estrela (fiel à ref) -->
+  <g transform="translate(448,358)">
+    <rect x="0" y="0" width="128" height="128" fill="#08100a" rx="2"/>
+    <use href="#pepita-md" x="28" y="36" width="72" height="54" filter="url(#goldGlow)"/>
+    <!-- raios longos principais em 8 dir (estilo ref) -->
+    <!-- cima -->
+    <rect x="59" y="2"  width="10" height="32" fill="#ffcc22"/>
+    <!-- baixo -->
+    <rect x="59" y="94" width="10" height="32" fill="#eebb00"/>
+    <!-- esq -->
+    <rect x="2"  y="59" width="32" height="10" fill="#eebb00"/>
+    <!-- dir -->
+    <rect x="94" y="59" width="32" height="10" fill="#eebb00"/>
+    <!-- diag longa NE -->
+    <rect x="82" y="10" width="8" height="28" fill="#ddaa00" transform="rotate(45,86,24)"/>
+    <!-- diag longa NO -->
+    <rect x="36" y="10" width="8" height="28" fill="#ddaa00" transform="rotate(-45,40,24)"/>
+    <!-- diag longa SE -->
+    <rect x="82" y="88" width="8" height="28" fill="#cc9900" transform="rotate(-45,86,102)"/>
+    <!-- diag longa SO -->
+    <rect x="36" y="88" width="8" height="28" fill="#cc9900" transform="rotate(45,40,102)"/>
+    <!-- quadradinhos dispersos -->
+    <rect x="4"  y="4"  width="8" height="8"  fill="#cc8800"/>
+    <rect x="116" y="4"  width="8" height="8"  fill="#cc8800"/>
+    <rect x="4"  y="116" width="8" height="8"  fill="#bb7700"/>
+    <rect x="116" y="116" width="8" height="8"  fill="#bb7700"/>
+    <!-- núcleo estrela -->
+    <line x1="64" y1="26" x2="64" y2="10" stroke="#ffffff" stroke-width="5"/>
+    <line x1="56" y1="18" x2="72" y2="18" stroke="#ffffff" stroke-width="5"/>
+    <line x1="58" y1="12" x2="64" y2="18" stroke="#ffe8aa" stroke-width="2"/>
+    <line x1="70" y1="12" x2="64" y2="18" stroke="#ffe8aa" stroke-width="2"/>
+    <line x1="58" y1="24" x2="64" y2="18" stroke="#ffe8aa" stroke-width="2"/>
+    <line x1="70" y1="24" x2="64" y2="18" stroke="#ffe8aa" stroke-width="2"/>
+    <text x="64" y="120" text-anchor="middle" fill="#ffffff"
+          font-family="'Courier New',monospace" font-size="7" filter="url(#goldGlowSoft)">SB4 ✦ PICO</text>
+    <text x="64" y="128" text-anchor="middle" fill="#aa8820"
+          font-family="'Courier New',monospace" font-size="6">RAIOS LONGOS</text>
+  </g>
+
+  <!-- SB5: decaindo – raios curtos, quadradinhos saindo -->
+  <g transform="translate(592,358)">
+    <rect x="0" y="0" width="128" height="128" fill="#08100a" rx="2"/>
+    <use href="#pepita-sm" x="34" y="42" width="60" height="44" filter="url(#goldGlowSoft)"/>
+    <rect x="60" y="10" width="8" height="18" fill="#ddaa00" opacity="0.7"/>
+    <rect x="60" y="100" width="8" height="18" fill="#cc8800" opacity="0.6"/>
+    <rect x="10" y="60" width="18" height="8" fill="#cc9900" opacity="0.6"/>
+    <rect x="100" y="60" width="18" height="8" fill="#cc9900" opacity="0.6"/>
+    <!-- quadradinhos residuais -->
+    <rect x="8"   y="16" width="8" height="8" fill="#cc8800" opacity="0.5"/>
+    <rect x="112" y="18" width="8" height="8" fill="#cc8800" opacity="0.5"/>
+    <rect x="10"  y="104" width="8" height="8" fill="#bb7700" opacity="0.45"/>
+    <rect x="110" y="102" width="8" height="8" fill="#bb7700" opacity="0.45"/>
+    <text x="64" y="120" text-anchor="middle" fill="#886a18"
+          font-family="'Courier New',monospace" font-size="7">SB5 – DECAINDO</text>
+    <text x="64" y="128" text-anchor="middle" fill="#2a2808"
+          font-family="'Courier New',monospace" font-size="6">RAIOS CURTOS</text>
+  </g>
+
+  <!-- SB6: extinção – só quadradinhos flutuantes + brilho mínimo -->
+  <g transform="translate(736,358)">
+    <rect x="0" y="0" width="128" height="128" fill="#08100a" rx="2"/>
+    <use href="#pepita-sm" x="36" y="44" width="56" height="42"/>
+    <!-- quadradinhos residuais espalhados (como ref fundo centro) -->
+    <rect x="16"  y="12"  width="6" height="6" fill="#cc8800" opacity="0.5"/>
+    <rect x="48"  y="8"   width="8" height="8" fill="#ddaa00" opacity="0.6"/>
+    <rect x="72"  y="6"   width="8" height="8" fill="#ddaa00" opacity="0.5"/>
+    <rect x="100" y="12"  width="6" height="6" fill="#cc8800" opacity="0.4"/>
+    <rect x="6"   y="50"  width="6" height="6" fill="#cc7700" opacity="0.4"/>
+    <rect x="116" y="52"  width="6" height="6" fill="#cc7700" opacity="0.4"/>
+    <rect x="24"  y="98"  width="6" height="6" fill="#bb7700" opacity="0.35"/>
+    <rect x="90"  y="100" width="6" height="6" fill="#bb7700" opacity="0.35"/>
+    <!-- + pequenos -->
+    <rect x="36" y="4"   width="4" height="4" fill="#eebb00" opacity="0.4"/>
+    <rect x="84" y="4"   width="4" height="4" fill="#eebb00" opacity="0.4"/>
+    <text x="64" y="120" text-anchor="middle" fill="#4a4010"
+          font-family="'Courier New',monospace" font-size="7">SB6 ⟳ EXTINÇÃO</text>
+    <text x="64" y="128" text-anchor="middle" fill="#2a2808"
+          font-family="'Courier New',monospace" font-size="6">PARTÍC. RESIDUAIS</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SEÇÃO 4 – DISPERSÃO / TRILHA DE PARTÍCULAS (ref lateral dir)
+  ══════════════════════════════════════════════════════════ -->
+  <text x="14" y="508" fill="#ddaa00" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ DISPERSÃO DE PARTÍCULAS – TRILHA / SPAWN │ GPUParticles2D</text>
+  <line x1="0" y1="512" x2="960" y2="512" stroke="#181a08" stroke-width="0.5"/>
+
+  <!-- Partículas tamanho G (16px) -->
+  <g transform="translate(16,524)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <rect x="20" y="20" width="16" height="16" fill="#eebb00" rx="1"/>
+    <rect x="21" y="21" width="12" height="10" fill="#ffcc22"/>
+    <rect x="21" y="21" width="8"  height="5"  fill="#ffee88" opacity="0.6"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">D1 – 16px</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">GRANDE</text>
+  </g>
+
+  <!-- Partículas 12px -->
+  <g transform="translate(112,524)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <rect x="22" y="22" width="12" height="12" fill="#ddaa00" rx="1"/>
+    <rect x="23" y="23" width="8"  height="7"  fill="#eebb00"/>
+    <rect x="23" y="23" width="5"  height="4"  fill="#ffcc22" opacity="0.7"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">D2 – 12px</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">MÉDIO</text>
+  </g>
+
+  <!-- Partículas 8px -->
+  <g transform="translate(208,524)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <rect x="24" y="24" width="8" height="8" fill="#cc8800" rx="1"/>
+    <rect x="25" y="25" width="5" height="4" fill="#ddaa00"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">D3 – 8px</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">PEQUENO</text>
+  </g>
+
+  <!-- Partículas 4px -->
+  <g transform="translate(304,524)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <rect x="26" y="26" width="4" height="4" fill="#bb7700"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">D4 – 4px</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">MICRO</text>
+  </g>
+
+  <!-- Trilha dispersa (ref topo-direita – vários quadradinhos espalhados) -->
+  <g transform="translate(400,524)">
+    <rect x="0" y="0" width="256" height="80" fill="#08100a" rx="2"/>
+    <!-- Quadradinhos em padrão disperso tipo ref topo-dir -->
+    <rect x="8"   y="8"   width="16" height="16" fill="#eebb00"/>
+    <rect x="32"  y="4"   width="16" height="16" fill="#ddaa00"/>
+    <rect x="58"  y="10"  width="12" height="12" fill="#cc9900"/>
+    <rect x="80"  y="6"   width="14" height="14" fill="#eebb00"/>
+    <rect x="100" y="12"  width="10" height="10" fill="#cc8800"/>
+    <rect x="118" y="4"   width="12" height="12" fill="#ddaa00"/>
+    <rect x="140" y="8"   width="10" height="10" fill="#cc9900"/>
+    <rect x="16"  y="32"  width="10" height="10" fill="#cc8800"/>
+    <rect x="40"  y="36"  width="8"  height="8"  fill="#ddaa00"/>
+    <rect x="64"  y="34"  width="8"  height="8"  fill="#cc9900"/>
+    <rect x="86"  y="38"  width="6"  height="6"  fill="#cc8800"/>
+    <rect x="108" y="32"  width="8"  height="8"  fill="#ddaa00"/>
+    <rect x="130" y="36"  width="6"  height="6"  fill="#cc8800"/>
+    <rect x="150" y="32"  width="8"  height="8"  fill="#cc9900"/>
+    <!-- micro -->
+    <rect x="24"  y="56"  width="4"  height="4"  fill="#bb7700" opacity="0.7"/>
+    <rect x="56"  y="58"  width="4"  height="4"  fill="#cc8800" opacity="0.6"/>
+    <rect x="96"  y="54"  width="4"  height="4"  fill="#bb7700" opacity="0.6"/>
+    <rect x="128" y="58"  width="4"  height="4"  fill="#bb7700" opacity="0.5"/>
+    <rect x="160" y="52"  width="4"  height="4"  fill="#aa6600" opacity="0.5"/>
+    <text x="128" y="72" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">D5 – TRILHA DISPERSA (GPUParticles2D)</text>
+    <text x="128" y="80" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">PADRÃO COLUNA REF │ 5 TAMANHOS</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SEÇÃO 5 – SPARKLE TIPO ✦ (ref sparkles – 4 variações)
+  ══════════════════════════════════════════════════════════ -->
+  <text x="14" y="628" fill="#ddaa00" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ SPARKLES ✦ – 4 TAMANHOS │ "sparkle_anim" │ FPS: 8</text>
+  <line x1="0" y1="632" x2="960" y2="632" stroke="#181a08" stroke-width="0.5"/>
+
+  <!-- Sparkle XS (ref pontinhos + pequenos) -->
+  <g transform="translate(16,644)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <line x1="40" y1="28" x2="40" y2="36" stroke="#ffee88" stroke-width="2"/>
+    <line x1="36" y1="32" x2="44" y2="32" stroke="#ffee88" stroke-width="2"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">SP1 – XS</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">PONTINHO</text>
+  </g>
+
+  <!-- Sparkle S -->
+  <g transform="translate(112,644)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <line x1="40" y1="20" x2="40" y2="36" stroke="#ffee88" stroke-width="2.5"/>
+    <line x1="32" y1="28" x2="48" y2="28" stroke="#ffee88" stroke-width="2.5"/>
+    <line x1="34" y1="22" x2="40" y2="28" stroke="#ffe066" stroke-width="1"/>
+    <line x1="46" y1="22" x2="40" y2="28" stroke="#ffe066" stroke-width="1"/>
+    <line x1="34" y1="34" x2="40" y2="28" stroke="#ffe066" stroke-width="1"/>
+    <line x1="46" y1="34" x2="40" y2="28" stroke="#ffe066" stroke-width="1"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">SP2 – S</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">PEQUENO</text>
+  </g>
+
+  <!-- Sparkle M (igual à ref lateral direita) -->
+  <g transform="translate(208,644)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <!-- centro preto pequeno (fiel à ref) -->
+    <rect x="36" y="36" width="8" height="8" fill="#1a1a0a"/>
+    <line x1="40" y1="14" x2="40" y2="36" stroke="#ffcc22" stroke-width="3"/>
+    <line x1="40" y1="44" x2="40" y2="66" stroke="#ffcc22" stroke-width="3"/>
+    <line x1="14" y1="40" x2="36" y2="40" stroke="#ffcc22" stroke-width="3"/>
+    <line x1="44" y1="40" x2="66" y2="40" stroke="#ffcc22" stroke-width="3"/>
+    <line x1="21" y1="21" x2="36" y2="36" stroke="#ddaa00" stroke-width="2"/>
+    <line x1="59" y1="21" x2="44" y2="36" stroke="#ddaa00" stroke-width="2"/>
+    <line x1="21" y1="59" x2="36" y2="44" stroke="#ddaa00" stroke-width="2"/>
+    <line x1="59" y1="59" x2="44" y2="44" stroke="#ddaa00" stroke-width="2"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">SP3 – M</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">MÉDIO (REF)</text>
+  </g>
+
+  <!-- Sparkle L (núcleo preto maior, raios grossos – ref baixo-dir) -->
+  <g transform="translate(304,644)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <rect x="32" y="32" width="16" height="16" fill="#0a0a04"/>
+    <line x1="40" y1="6"  x2="40" y2="32" stroke="#ffcc22" stroke-width="4"/>
+    <line x1="40" y1="48" x2="40" y2="74" stroke="#eebb00" stroke-width="4"/>
+    <line x1="6"  y1="40" x2="32" y2="40" stroke="#eebb00" stroke-width="4"/>
+    <line x1="48" y1="40" x2="74" y2="40" stroke="#eebb00" stroke-width="4"/>
+    <line x1="14" y1="14" x2="32" y2="32" stroke="#ddaa00" stroke-width="2.5"/>
+    <line x1="66" y1="14" x2="48" y2="32" stroke="#ddaa00" stroke-width="2.5"/>
+    <line x1="14" y1="66" x2="32" y2="48" stroke="#cc9900" stroke-width="2.5"/>
+    <line x1="66" y1="66" x2="48" y2="48" stroke="#cc9900" stroke-width="2.5"/>
+    <!-- mini halo -->
+    <rect x="4"   y="38" width="4" height="4" fill="#ffcc22" opacity="0.5"/>
+    <rect x="72"  y="38" width="4" height="4" fill="#ffcc22" opacity="0.5"/>
+    <rect x="38"  y="4"  width="4" height="4" fill="#ffee88" opacity="0.6"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">SP4 – L</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">GRANDE (REF)</text>
+  </g>
+
+  <!-- Sparkle + (tipo cruz simples ref) -->
+  <g transform="translate(400,644)">
+    <rect x="0" y="0" width="80" height="80" fill="#08100a" rx="2"/>
+    <rect x="37" y="24" width="6" height="32" fill="#ddaa00"/>
+    <rect x="24" y="37" width="32" height="6" fill="#ddaa00"/>
+    <rect x="38" y="25" width="4" height="8"  fill="#ffee88" opacity="0.6"/>
+    <text x="40" y="70" text-anchor="middle" fill="#ddaa00"
+          font-family="'Courier New',monospace" font-size="7">SP5 – CRUZ +</text>
+    <text x="40" y="78" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">SIMPLES</text>
+  </g>
+
+  <!-- Cluster sparkle (ref baixo-dir – vários juntos) -->
+  <g transform="translate(496,644)">
+    <rect x="0" y="0" width="240" height="80" fill="#08100a" rx="2"/>
+    <!-- Núcleo pepita -->
+    <use href="#pepita-sm" x="86" y="28" width="64" height="48"/>
+    <!-- Sparkles ao redor -->
+    <line x1="58" y1="28" x2="58" y2="18" stroke="#ffcc22" stroke-width="2.5"/>
+    <line x1="53" y1="23" x2="63" y2="23" stroke="#ffcc22" stroke-width="2.5"/>
+    <line x1="55" y1="19" x2="58" y2="23" stroke="#ffee66" stroke-width="1"/>
+    <line x1="61" y1="19" x2="58" y2="23" stroke="#ffee66" stroke-width="1"/>
+    <line x1="55" y1="27" x2="58" y2="23" stroke="#ffee66" stroke-width="1"/>
+    <line x1="61" y1="27" x2="58" y2="23" stroke="#ffee66" stroke-width="1"/>
+    <!-- + cruzes simples -->
+    <rect x="28"  y="35" width="4" height="16" fill="#ddaa00"/>
+    <rect x="22"  y="41" width="16" height="4" fill="#ddaa00"/>
+    <rect x="194" y="30" width="4" height="16" fill="#cc9900"/>
+    <rect x="188" y="36" width="16" height="4" fill="#cc9900"/>
+    <!-- pontinhos -->
+    <rect x="44"  y="14" width="6" height="6" fill="#eebb00" opacity="0.7"/>
+    <rect x="68"  y="10" width="6" height="6" fill="#eebb00" opacity="0.6"/>
+    <rect x="160" y="12" width="6" height="6" fill="#ddaa00" opacity="0.6"/>
+    <rect x="178" y="20" width="4" height="4" fill="#cc9900" opacity="0.5"/>
+    <!-- segundo sparkle M -->
+    <rect x="148" y="24" width="8" height="8" fill="#0a0a04"/>
+    <line x1="152" y1="10" x2="152" y2="24" stroke="#ffcc22" stroke-width="2.5"/>
+    <line x1="152" y1="32" x2="152" y2="46" stroke="#eebb00" stroke-width="2.5"/>
+    <line x1="138" y1="28" x2="152" y2="28" stroke="#eebb00" stroke-width="2.5"/>
+    <line x1="160" y1="28" x2="174" y2="28" stroke="#eebb00" stroke-width="2.5"/>
+    <text x="120" y="72" text-anchor="middle" fill="#ffcc22"
+          font-family="'Courier New',monospace" font-size="7">SP6 – CLUSTER (REF BAIXO-DIR)</text>
+    <text x="120" y="80" text-anchor="middle" fill="#4a4018"
+          font-family="'Courier New',monospace" font-size="6">GRUPO DE SPARKLES + PEPITA</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SEÇÃO 6 – PALETA + GUIA GODOT
+  ══════════════════════════════════════════════════════════ -->
+  <text x="14" y="750" fill="#ddaa00" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ PALETA OFICIAL + GODOT 4</text>
+  <line x1="0" y1="754" x2="960" y2="754" stroke="#181a08" stroke-width="0.5"/>
+
+  <!-- Swatches -->
+  <g transform="translate(16,766)" font-family="'Courier New',monospace">
+    <rect x="0"   y="0" width="40" height="40" fill="#ffee88" rx="2"/>
+    <text x="20"  y="54" text-anchor="middle" fill="#ffee88" font-size="7">REFLEXO</text>
+    <text x="20"  y="62" text-anchor="middle" fill="#4a4018" font-size="6">#FFEE88</text>
+
+    <rect x="52"  y="0" width="40" height="40" fill="#ffcc22" rx="2"/>
+    <text x="72"  y="54" text-anchor="middle" fill="#ffcc22" font-size="7">BRILHO</text>
+    <text x="72"  y="62" text-anchor="middle" fill="#4a4018" font-size="6">#FFCC22</text>
+
+    <rect x="104" y="0" width="40" height="40" fill="#eebb00" rx="2"/>
+    <text x="124" y="54" text-anchor="middle" fill="#eebb00" font-size="7">OURO CLR</text>
+    <text x="124" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#EEBB00</text>
+
+    <rect x="156" y="0" width="40" height="40" fill="#ddaa00" rx="2"/>
+    <text x="176" y="54" text-anchor="middle" fill="#ddaa00" font-size="7">OURO MED</text>
+    <text x="176" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#DDAA00</text>
+
+    <rect x="208" y="0" width="40" height="40" fill="#cc8800" rx="2"/>
+    <text x="228" y="54" text-anchor="middle" fill="#cc8800" font-size="7">OURO ESC</text>
+    <text x="228" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#CC8800</text>
+
+    <rect x="260" y="0" width="40" height="40" fill="#aa5a00" rx="2"/>
+    <text x="280" y="54" text-anchor="middle" fill="#aa5a00" font-size="7">ÂMBAR</text>
+    <text x="280" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#AA5A00</text>
+
+    <rect x="312" y="0" width="40" height="40" fill="#8b4500" rx="2"/>
+    <text x="332" y="54" text-anchor="middle" fill="#8b4500" font-size="7">BRONZE</text>
+    <text x="332" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#8B4500</text>
+
+    <rect x="364" y="0" width="40" height="40" fill="#5a2c00" rx="2"/>
+    <text x="384" y="54" text-anchor="middle" fill="#7a4c20" font-size="7">ESCURO</text>
+    <text x="384" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#5A2C00</text>
+
+    <rect x="416" y="0" width="40" height="40" fill="#ffffff" rx="2"/>
+    <text x="436" y="54" text-anchor="middle" fill="#fff" font-size="7">SPARKLE</text>
+    <text x="436" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#FFFFFF</text>
+
+    <rect x="468" y="0" width="40" height="40" fill="#fffacc" rx="2"/>
+    <text x="488" y="54" text-anchor="middle" fill="#fffacc" font-size="7">HALO</text>
+    <text x="488" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#FFFACC</text>
+
+    <rect x="520" y="0" width="40" height="40" fill="#0a0a04" rx="2" stroke="#222208" stroke-width="1"/>
+    <text x="540" y="54" text-anchor="middle" fill="#3a3820" font-size="7">NÚCLEO ✦</text>
+    <text x="540" y="62" text-anchor="middle" fill="#4a4018" font-size="6">#0A0A04</text>
+
+    <!-- Transp -->
+    <rect x="572" y="0" width="40" height="40" fill="none" stroke="#1a2010" stroke-width="1" rx="2"/>
+    <line x1="572" y1="0"  x2="612" y2="40" stroke="#1a2010" stroke-width="1"/>
+    <line x1="572" y1="40" x2="612" y2="0"  stroke="#1a2010" stroke-width="1"/>
+    <text x="592" y="54" text-anchor="middle" fill="#2a3018" font-size="7">TRANSP.</text>
+    <text x="592" y="62" text-anchor="middle" fill="#4a4018" font-size="6">ALPHA 0</text>
+  </g>
+
+  <!-- Guia Godot -->
+  <rect x="16" y="848" width="928" height="240" fill="#06080a" rx="3" stroke="#101808" stroke-width="1"/>
+  <text x="36" y="870" fill="#ddaa00" font-size="10"
+        font-family="'Courier New',monospace" letter-spacing="2">▸ GUIA GODOT 4 – OURO</text>
+  <line x1="36" y1="876" x2="936" y2="876" stroke="#101808" stroke-width="0.5"/>
+
+  <!-- Col esquerda -->
+  <text x="36"  y="894" fill="#886a18" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">ANIMAÇÕES:</text>
+  <text x="36"  y="910" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• "idle"          → P1/M1/G1     (1 frame, no chão/bateia)</text>
+  <text x="36"  y="924" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• "sparkle"       → M2/G2        (loop, água limpa)</text>
+  <text x="36"  y="938" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• "collect_burst" → C1→C8        (8fr, FPS:12, once)</text>
+  <text x="36"  y="952" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• "star_burst"    → SB1→SB6      (6fr, FPS:10, once)</text>
+  <text x="36"  y="966" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• "float"         → M3 inclinada (loop 2fr, leve balanço)</text>
+  <text x="36"  y="980" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• "hidden"        → P3 na lama   (obstáculo água turva)</text>
+
+  <text x="36" y="1000" fill="#886a18" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">PARTÍCULAS (GPUParticles2D):</text>
+  <text x="36" y="1016" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">  Texture → D3 (8px quadrado dourado)</text>
+  <text x="36" y="1030" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">  Amount: 24 │ Lifetime: 0.8s │ Explosiveness: 0.9</text>
+  <text x="36" y="1044" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">  Dir: Vector2(0,-1) │ Spread: 180° │ Gravity: (0,98)</text>
+  <text x="36" y="1058" fill="#ddaa00" font-family="'Courier New',monospace" font-size="8">  CanvasItem → Texture Filter: Nearest (pixel perfect!)</text>
+
+  <!-- Col direita -->
+  <text x="490" y="894" fill="#886a18" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">LÓGICA FASE 1.2:</text>
+  <text x="490" y="910" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• Água limpa  → play("sparkle") + chance coleta alta</text>
+  <text x="490" y="924" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• Água turva  → play("hidden"), sem sparkle</text>
+  <text x="490" y="938" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• Coleta ok   → play("collect_burst") ou "star_burst"</text>
+  <text x="490" y="952" fill="#6a5818" font-family="'Courier New',monospace" font-size="8">• 3 pepitas   → star_burst grande + sinal UI</text>
+
+  <text x="490" y="972" fill="#886a18" font-family="'Courier New',monospace" font-size="9" letter-spacing="1">GDSCRIPT:</text>
+  <rect x="490" y="978" width="430" height="98" fill="#06080a" rx="2" stroke="#101808" stroke-width="1"/>
+  <text x="500" y="994" fill="#5a8a40" font-family="'Courier New',monospace" font-size="8">signal pepita_coletada(tipo: String)</text>
+  <text x="500" y="1006" fill="#6a8a58" font-family="'Courier New',monospace" font-size="8">func coletar_pepita(tamanho: String):</text>
+  <text x="500" y="1018" fill="#8aaa78" font-family="'Courier New',monospace" font-size="8">  match tamanho:</text>
+  <text x="500" y="1030" fill="#8aaa78" font-family="'Courier New',monospace" font-size="8">    "grande": play("star_burst")</text>
+  <text x="500" y="1042" fill="#8aaa78" font-family="'Courier New',monospace" font-size="8">    "media":  play("collect_burst")</text>
+  <text x="500" y="1054" fill="#8aaa78" font-family="'Courier New',monospace" font-size="8">    "pequena": play("sparkle")</text>
+  <text x="500" y="1066" fill="#ddaa00" font-family="'Courier New',monospace" font-size="8">  emit_signal("pepita_coletada", tamanho)</text>
+
+  <!-- Rodapé -->
+  <line x1="16" y1="1098" x2="944" y2="1098" stroke="#101808" stroke-width="0.5"/>
+  <text x="36" y="1112" fill="#2a2808" font-family="'Courier New',monospace" font-size="8">
+    Fase 1.2 – O Ouro dos Rios │ 3 pepitas × 3 estados │ 8fr burst │ 6fr starburst │ 4 sparkles │ Paleta 11+alpha │ Godot 4
+  </text>
+
+</svg>

@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://dx1mq35klmc0o"]
+
+[ext_resource type="Texture2D" uid="uid://bs26hee246nfh" path="res://Fase 1/Fase 1-1/Cena01.JPG" id="1_oiilf"]
+[ext_resource type="Texture2D" uid="uid://k7qfp5uge1e0" path="res://Fase 1/Fase 1-1/34969.svg" id="2_oiilf"]
+[ext_resource type="Script" uid="uid://fubstkeqny0s" path="res://Fase 1/Fase 1-1/character_body_2d.gd" id="3_k4bgr"]
+[ext_resource type="Texture2D" uid="uid://5rhguax0c8ks" path="res://Fase 1/Fase 1-1/Corvan.svg" id="4_avg25"]
+
+[sub_resource type="GDScript" id="GDScript_6qgxj"]
+
+[sub_resource type="GDScript" id="GDScript_oiilf"]
+script/source = "extends CharacterBody2D
+
+var speed = 150.0
+var move_direction = Vector2.RIGHT
+
+func _ready():
+	$AnimatedSprite2D.play(\"default\")
+
+func _physics_process(_delta):
+	# Aplica o movimento
+	velocity = move_direction * speed
+	move_and_slide()
+	
+	# Pega o limite da tela
+	var screen_size = get_viewport_rect().size
+	
+	# SE SAIR PELA DIREITA:
+	if global_position.x > screen_size.x + 100 and move_direction == Vector2.RIGHT:
+		move_direction = Vector2.LEFT      # Muda direção para esquerda
+		$AnimatedSprite2D.flip_h = true    # Espelha o desenho horizontalmente
+		
+	# SE SAIR PELA ESQUERDA:
+	elif global_position.x < -100 and move_direction == Vector2.LEFT:
+		move_direction = Vector2.RIGHT     # Muda direção para direita
+		$AnimatedSprite2D.flip_h = false   # Volta o desenho ao normal
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qgxj"]
+region = Rect2(0, 0, 450, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfqmf"]
+region = Rect2(450, 0, 450, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqhyg"]
+region = Rect2(1350, 0, 450, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6psh"]
+region = Rect2(1800, 0, 450, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s4nd"]
+region = Rect2(2250, 0, 450, 236)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfqmf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qgxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfqmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqhyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6psh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s4nd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frj78"]
+size = Vector2(295.5, 190.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiilf"]
+region = Rect2(0, 0, 469, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4bgr"]
+region = Rect2(469, 0, 469, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avg25"]
+region = Rect2(938, 0, 469, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbegu"]
+region = Rect2(1407, 0, 469, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb285"]
+region = Rect2(1876, 0, 469, 427)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w64wn"]
+region = Rect2(2345, 0, 469, 427)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqhyg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiilf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4bgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avg25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbegu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb285")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_w64wn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qgxj"]
+size = Vector2(383, 290)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfqmf"]
+distance = -91.69999
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbegu"]
+
+[node name="Cena01" type="Node2D" unique_id=1525857177]
+script = SubResource("GDScript_6qgxj")
+
+[node name="Cena01" type="Sprite2D" parent="." unique_id=124441891]
+position = Vector2(958.3358, 541.36035)
+scale = Vector2(1.521377, 1.1876024)
+texture = ExtResource("1_oiilf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=435352443]
+
+[node name="Condor" type="CharacterBody2D" parent="." unique_id=765979434]
+process_mode = 3
+position = Vector2(-19, -28)
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 1.1728612
+script = SubResource("GDScript_oiilf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Condor" unique_id=957231378]
+position = Vector2(30, 69)
+scale = Vector2(0.5977778, 0.55508476)
+sprite_frames = SubResource("SpriteFrames_gfqmf")
+frame_progress = 0.8725073
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Condor" unique_id=1253771158]
+visible = false
+position = Vector2(48, 90)
+shape = SubResource("RectangleShape2D_frj78")
+
+[node name="LhamaComendo" type="CharacterBody2D" parent="." unique_id=1072681719]
+position = Vector2(197, 458)
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+safe_margin = 0.245
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LhamaComendo" unique_id=1261148963]
+position = Vector2(1549, 361)
+scale = Vector2(0.66548294, 0.66824645)
+sprite_frames = SubResource("SpriteFrames_lqhyg")
+frame_progress = 0.29659927
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LhamaComendo" unique_id=1970577187]
+visible = false
+position = Vector2(1502, 376)
+shape = SubResource("RectangleShape2D_6qgxj")
+
+[node name="Chão" type="StaticBody2D" parent="." unique_id=287216526]
+position = Vector2(-19, -28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão" unique_id=2013779778]
+position = Vector2(955, 44.999996)
+scale = Vector2(10, 10)
+shape = SubResource("WorldBoundaryShape2D_gfqmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chão" unique_id=985513004]
+visible = false
+modulate = Color(0.14117648, 0.09411765, 0.03137255, 1)
+top_level = true
+position = Vector2(1019.00006, 1041.875)
+scale = Vector2(1.2352079, 0.13255717)
+texture = ExtResource("2_oiilf")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1177828111]
+position = Vector2(-19, -28)
+script = ExtResource("3_k4bgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2097991171]
+position = Vector2(289.7, 876.7)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_avg25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1730058081]
+position = Vector2(288.70004, 877.7001)
+scale = Vector2(3, 6)
+shape = SubResource("RectangleShape2D_sbegu")
