@@ -13,6 +13,10 @@ config_version=5
 config/name="Mineralis"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+ProgressManager="*uid://b8sj0sllmrblg"
+
 [display]
 
 window/size/viewport_width=1920

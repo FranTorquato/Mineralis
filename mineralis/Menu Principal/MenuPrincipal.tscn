@@ -2,9 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://cykrlomrly5wi" path="res://Menu Principal/Assets/mapa_menu_principal.svg" id="1_8qkx0"]
 [ext_resource type="PackedScene" uid="uid://dng3vurrsljxs" path="res://Menu Principal/card_phase.tscn" id="2_40j08"]
-[ext_resource type="Texture2D" uid="uid://cim7y3xdwpbs" path="res://Menu Principal/Assets/card_1_1_andes.svg" id="3_cf3kj"]
-[ext_resource type="Texture2D" uid="uid://bm2qgotm8d3xr" path="res://Menu Principal/Assets/card_1_2_amazonia.svg" id="4_o1yen"]
-[ext_resource type="Texture2D" uid="uid://lgeaqu40cenj" path="res://Menu Principal/Assets/card_1_3_machu_picchu.svg" id="5_864k4"]
+[ext_resource type="Texture2D" uid="uid://cim7y3xdwpbs" path="res://Menu Principal/Assets/card_1_1_andes.svg" id="3_40j08"]
+[ext_resource type="Texture2D" uid="uid://bm2qgotm8d3xr" path="res://Menu Principal/Assets/card_1_2_amazonia.svg" id="4_cf3kj"]
+[ext_resource type="Texture2D" uid="uid://lgeaqu40cenj" path="res://Menu Principal/Assets/card_1_3_machu_picchu.svg" id="5_o1yen"]
+
+[sub_resource type="Environment" id="Environment_40j08"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 0
 
 [node name="MenuPrincipal" type="Node2D" unique_id=802552858]
 
@@ -18,13 +23,33 @@ scale = Vector2(2.828438, 1.9625001)
 texture = ExtResource("1_8qkx0")
 
 [node name="Card_1_1" parent="." unique_id=783619987 instance=ExtResource("2_40j08")]
-position = Vector2(404, 225)
-phase_texture = ExtResource("3_cf3kj")
+self_modulate = Color(1, 1, 1, 0.34509805)
+offset_left = 202.0
+offset_top = 490.00003
+offset_right = 362.0
+offset_bottom = 650.0
+scale = Vector2(0.6, 0.6)
+phase_texture = ExtResource("3_40j08")
 
 [node name="Card_1_2" parent="." unique_id=1932664492 instance=ExtResource("2_40j08")]
-position = Vector2(1188, 252)
-phase_texture = ExtResource("4_o1yen")
+self_modulate = Color(1, 1, 1, 0.34509805)
+offset_left = 325.0
+offset_top = 476.00003
+offset_right = 485.0
+offset_bottom = 636.0
+scale = Vector2(0.6, 0.6)
+phase_id = "1_2"
+phase_texture = ExtResource("4_cf3kj")
 
 [node name="Card_1_3" parent="." unique_id=1263194238 instance=ExtResource("2_40j08")]
-position = Vector2(1780, 212)
-phase_texture = ExtResource("5_864k4")
+self_modulate = Color(1, 1, 1, 0.34509805)
+offset_left = 282.0
+offset_top = 590.0
+offset_right = 442.0
+offset_bottom = 750.0
+scale = Vector2(0.6, 0.6)
+phase_id = "1_3"
+phase_texture = ExtResource("5_o1yen")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1135981951]
+environment = SubResource("Environment_40j08")
