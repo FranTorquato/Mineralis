@@ -1,16 +1,23 @@
 extends Node
 
-var unlocked_phases = {
-	"1_1": true,   # Andes liberada
-	"1_2": false,  # Amazônia bloqueada
-	"1_3": false   # Machu Picchu bloqueada
+signal phase_unlocked(id)
+
+const UNLOCK_MAP = {
+	"1_1": "1_2",
+	"1_2": "1_3",
 }
 
-func is_phase_unlocked(id: String) -> bool:
-	if unlocked_phases.has(id):
-		return unlocked_phases[id]
-	return false
+func is_unlocked(id: String) -> bool:
+	return id in SaveManager.get_unlocked()
 
-func unlock_phase(id: String):
-	if unlocked_phases.has(id):
-		unlocked_phases[id] = true
+func is_completed(id: String) -> bool:
+	return id in SaveManager.get_completed()
+
+func complete_phase(id: String) -> void:
+	if not is_unlocked(id): return
+	SaveManager.complete_phase(id)
+	if id in UNLOCK_MAP:
+		var next = UNLOCK_MAP[id]
+		if not is_unlocked(next):
+			SaveManager.unlock_phase(next)
+			emit_signal("phase_unlocked", next)

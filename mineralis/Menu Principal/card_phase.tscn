@@ -85,6 +85,25 @@ _data = {
 &"unlock": SubResource("Animation_7mojj")
 }
 
+[sub_resource type="Gradient" id="Gradient_7mojj"]
+offsets = PackedFloat32Array(0, 0.54334676, 1)
+colors = PackedColorArray(1, 0.84313726, 0, 1, 1, 0.54901963, 0, 0.78431374, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3bv0v"]
+gradient = SubResource("Gradient_7mojj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_35g52"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 160.0
+angular_velocity_min = -360.0
+angular_velocity_max = 359.99997
+gravity = Vector3(0, 250, 0)
+scale_min = 0.5
+scale_max = 1.1999999
+color_ramp = SubResource("GradientTexture1D_3bv0v")
+
 [node name="CardPhase" type="Control" unique_id=1166536511]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -93,6 +112,7 @@ offset_right = 110.0
 offset_bottom = 121.0
 pivot_offset = Vector2(80, 80)
 script = ExtResource("1_otf7b")
+phase_id = null
 
 [node name="CardButton" type="TextureButton" parent="." unique_id=1867375956]
 self_modulate = Color(1, 1, 1, 0.53333336)
@@ -139,3 +159,12 @@ mouse_filter = 2
 libraries/ = SubResource("AnimationLibrary_3bv0v")
 
 [node name="UnlockSound" type="AudioStreamPlayer" parent="." unique_id=1488797800]
+
+[node name="StarParticles" type="GPUParticles2D" parent="." unique_id=597498851]
+position = Vector2(80, 80)
+emitting = false
+amount = 20
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.92
+process_material = SubResource("ParticleProcessMaterial_35g52")

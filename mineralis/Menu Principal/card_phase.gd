@@ -16,6 +16,7 @@ var is_hovering: bool = false
 @onready var lock_icon  = $CardButton/CardImage/LockOverlay  
 @onready var flash      = $GrayOverlay
 @onready var sfx        = $UnlockSound
+@onready var stars      = $StarParticles
 
 var mat : ShaderMaterial
 
@@ -37,13 +38,22 @@ func _ready() -> void:
 	
 	card_btn.pressed.connect(_on_pressed)
 	
-	is_unlocked = ProgressManager.is_phase_unlocked(phase_id)
+	is_unlocked = ProgressManager.is_unlocked(phase_id)
 	
 	# Aplica o estado inicial
 	if is_unlocked:
 		_apply_unlocked_appearance()
 	else:
 		_apply_locked_appearance()
+
+func _fire_stars() -> void:
+	stars.emitting = false
+	await get_tree().process_frame
+	stars.emitting = true
+
+# Se quiser limpar após o fim:
+# await get_tree().create_timer(stars.lifetime + 0.2).timeout
+# stars.emitting = false
 
 func _process(_delta: float) -> void:
 	if is_animating: return
@@ -90,6 +100,7 @@ func _on_pressed() -> void:
 		emit_signal("card_pressed", phase_id)
 
 func unlock(animate: bool = true) -> void:
+	print("unlock() chamado — phase_id:", phase_id, " is_unlocked:", is_unlocked)
 	if is_unlocked: return
 	is_unlocked = true
 	if animate: _play_unlock_animation()
@@ -117,6 +128,7 @@ func _play_unlock_animation() -> void:
 		_apply_unlocked_appearance()
 		is_animating = false
 		flash.visible = false
+		_fire_stars()        # ← única linha adicionada
 		_play_shimmer_effect()
 	)
 

@@ -29,6 +29,7 @@ offset_top = 490.00003
 offset_right = 362.0
 offset_bottom = 650.0
 scale = Vector2(0.6, 0.6)
+phase_id = "1_1"
 phase_texture = ExtResource("3_40j08")
 
 [node name="Card_1_2" parent="." unique_id=1932664492 instance=ExtResource("2_40j08")]
