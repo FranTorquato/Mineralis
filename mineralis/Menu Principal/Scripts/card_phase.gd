@@ -1,21 +1,8 @@
-extends Node2D
-# ──────────────────────────────────────────────────────────────
-# MenuPrincipal.gd
-# Salve em: res://Menu Principal/Scripts/MenuPrincipal.gd
-#
-# Sua cena tem:
-#   MenuPrincipal (Node2D)
-#   ├── MapaFundo
-#   ├── MapaMenuPrincipal
-#   ├── Card_1_1  (instância de card_phase.tscn)
-#   ├── Card_1_2
-#   ├── Card_1_3
-#   └── WorldEnvironment
-# ──────────────────────────────────────────────────────────────
+extends Control
 
-@onready var card_1_1 : Control = $Card_1_1
-@onready var card_1_2 : Control = $Card_1_2
-@onready var card_1_3 : Control = $Card_1_3
+@onready var card_1_1 = $Card_1_1
+@onready var card_1_2 = $Card_1_2
+@onready var card_1_3 = $Card_1_3
 
 # Mapa phase_id → nó do card
 var _cards : Dictionary = {}
@@ -27,21 +14,12 @@ func _ready() -> void:
 		"1_3": card_1_3,
 	}
 
-	# ── FIX CRÍTICO ──────────────────────────────────────────
-	# Control dentro de Node2D não recebe input automaticamente.
-	# Precisamos garantir que o viewport propague os eventos UI.
-	# ─────────────────────────────────────────────────────────
-	# (nenhum código extra necessário aqui — o fix já está no
-	#  mouse_filter = PASS do card_phase.gd)
-
 	# Conecta sinais e aplica estado inicial
 	for phase_id in _cards:
 		var card = _cards[phase_id]
 		if not card.card_pressed.is_connected(_on_card_pressed):
 			card.card_pressed.connect(_on_card_pressed)
 
-	# Aplica estados salvos (cards já fazem isso no próprio _ready,
-	# mas o MenuPrincipal pode sobrescrever se necessário)
 	_refresh_cards()
 
 	# Escuta desbloqueios futuros
@@ -64,8 +42,6 @@ func _refresh_cards() -> void:
 		else:
 			card.lock()
 
-
-# ── Callbacks ────────────────────────────────────────────────
 
 func _on_phase_unlocked(phase_id: String) -> void:
 	if _cards.has(phase_id):

@@ -126,28 +126,17 @@ grow_vertical = 2
 
 [node name="CardImage" type="TextureRect" parent="CardButton" unique_id=770290358]
 material = SubResource("ShaderMaterial_35g52")
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -55.0
-offset_top = -68.5
-offset_right = 45.0
-offset_bottom = 31.5
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
 expand_mode = 1
 stretch_mode = 5
 
 [node name="LockOverlay" type="Sprite2D" parent="CardButton/CardImage" unique_id=111740826]
 self_modulate = Color(1, 1, 1, 0.627451)
-position = Vector2(34, 33)
-scale = Vector2(0.8, 0.8)
+position = Vector2(77, 81)
 texture = SubResource("CompressedTexture2D_t1m7x")
-offset = Vector2(20, 25)
 hframes = 4
 region_enabled = true
 region_rect = Rect2(9.688507, 30.243935, 441.57263, 117.12801)
@@ -171,7 +160,7 @@ libraries/ = SubResource("AnimationLibrary_3bv0v")
 [node name="UnlockSound" type="AudioStreamPlayer" parent="." unique_id=1488797800]
 
 [node name="StarParticles" type="GPUParticles2D" parent="." unique_id=597498851]
-position = Vector2(58, 74)
+position = Vector2(80, 80)
 emitting = false
 amount = 20
 lifetime = 0.8

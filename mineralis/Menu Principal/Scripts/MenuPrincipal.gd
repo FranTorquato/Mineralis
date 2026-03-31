@@ -19,12 +19,12 @@ var _mat         : ShaderMaterial
 # Referências — LockOverlay declarado como Node
 # para aceitar Sprite2D OU TextureRect sem erro
 # ─────────────────────────────────────────────────
-@onready var card_btn   : TextureButton      = $CardButton
-@onready var card_img   : TextureRect        = $CardButton/CardImage
-@onready var lock_icon  : Node               = $CardButton/LockOverlay
-@onready var flash      : ColorRect          = $GrayOverlay
-@onready var sfx        : AudioStreamPlayer  = $UnlockSound
-@onready var stars      : GPUParticles2D     = $StarParticles
+@onready var card_btn   : TextureButton   = $CardButton
+@onready var card_img   : TextureRect     = $CardButton/CardImage
+@onready var lock_icon  : Node            = $CardButton/CardImage/LockOverlay
+@onready var flash      : ColorRect       = $GrayOverlay
+@onready var sfx        : AudioStreamPlayer = $UnlockSound
+@onready var stars      : GPUParticles2D  = $StarParticles
 
 signal card_pressed(phase_id: String)
 
@@ -113,18 +113,27 @@ func _apply_visual(animate: bool) -> void:
 var _was_hovered := false
 
 func _process(_delta: float) -> void:
-	if is_animating or not is_unlocked:
+	if is_animating:
 		return
+
+# 1. Detecta se o mouse está sobre o card agora
 	var hovered := get_global_rect().has_point(get_viewport().get_mouse_position())
-	if hovered == _was_hovered:
-		return
-	_was_hovered = hovered
-	z_index = 10 if hovered else 0
-	create_tween()\
-		.set_ease(Tween.EASE_OUT)\
-		.set_trans(Tween.TRANS_QUAD)\
-		.tween_property(self, "scale",
-			Vector2(1.08, 1.08) if hovered else Vector2(1.0, 1.0), 0.1)
+
+# 2. SÓ EXECUTA se o estado mudou (evita o zoom no primeiro frame)
+	if hovered != _was_hovered:
+		_was_hovered = hovered
+
+# Ajusta a profundidade visual
+		z_index = 10 if hovered else 0
+
+# Cria o Tween para suavizar a transição
+	var tw := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+
+	if hovered:
+		# Aplica o zoom (apenas 8% maior para não cobrir o mapa)
+		tw.tween_property(self, "scale", Vector2(1.08, 1.08), 0.1)
+	else:
+		tw.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)
 
 
 # ─────────────────────────────────────────────────
