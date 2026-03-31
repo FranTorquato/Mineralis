@@ -1,0 +1,407 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.guide{font-family:var(--font-sans);padding:1rem 0}
+.steps-nav{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.step-dot{width:32px;height:32px;border-radius:50%;border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary);color:var(--color-text-secondary);font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.step-dot.active{background:#B87333;border-color:#B87333;color:#fff}
+.step-dot.done{background:var(--color-background-success);border-color:var(--color-border-success);color:var(--color-text-success)}
+.step-panel{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:1rem}
+.step-header{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.step-num{width:28px;height:28px;border-radius:50%;background:#B87333;color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-title{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.step-sub{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.step-body{font-size:13px;color:var(--color-text-secondary);line-height:1.7}
+.code-block{background:var(--color-background-tertiary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:1rem;margin:0.75rem 0;font-family:var(--font-mono);font-size:12px;color:var(--color-text-primary);white-space:pre;overflow-x:auto;line-height:1.6}
+.kw{color:#7F77DD}
+.fn{color:#1D9E75}
+.st{color:#B87333}
+.cm{color:var(--color-text-tertiary)}
+.num{color:#D4537E}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;margin-bottom:8px}
+.tag-file{background:var(--color-background-info);color:var(--color-text-info)}
+.tag-where{background:var(--color-background-warning);color:var(--color-text-warning)}
+.tag-tip{background:var(--color-background-success);color:var(--color-text-success)}
+.inline-img{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0.75rem;margin:0.75rem 0;font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:10px}
+.tree{font-family:var(--font-mono);font-size:12px;line-height:1.8;background:var(--color-background-tertiary);border-radius:var(--border-radius-md);padding:0.75rem;border:0.5px solid var(--color-border-tertiary)}
+.tree .root{color:#7F77DD;font-weight:500}
+.tree .script{color:#B87333}
+.tree .node{color:var(--color-text-primary)}
+.tree .hint{color:var(--color-text-tertiary);font-size:11px}
+.highlight-box{border-left:2px solid #B87333;padding:0.6rem 0.75rem;background:var(--color-background-secondary);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;margin:0.75rem 0;font-size:13px;color:var(--color-text-secondary)}
+.nav-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:1rem}
+.btn-prev,.btn-next{padding:6px 16px;font-size:13px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;transition:all .15s}
+.btn-next{background:#B87333;border-color:#B87333;color:#fff}
+.btn-prev:hover{background:var(--color-background-secondary)}
+.btn-next:hover{opacity:.88}
+.checklist{list-style:none;margin:0.5rem 0}
+.checklist li{font-size:13px;color:var(--color-text-secondary);padding:4px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.checklist li::before{content:"";width:14px;height:14px;border-radius:3px;border:0.5px solid var(--color-border-secondary);flex-shrink:0;margin-top:2px}
+.demo-area{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem;margin:0.75rem 0;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.demo-card{width:64px;height:64px;border-radius:6px;border:2px solid #6B3A1F;background:#1a0f08;position:relative;overflow:hidden;cursor:pointer;transition:transform .15s;image-rendering:pixelated;flex-shrink:0}
+.demo-card:hover{transform:scale(1.05)}
+.demo-card svg{width:100%;height:100%}
+.demo-card.locked-state svg{filter:grayscale(1) brightness(.55)}
+.demo-card .lock-badge{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:18px}
+.demo-card.locked-state .lock-badge{opacity:.9}
+.demo-card.unlocked-state .lock-badge{opacity:0}
+@keyframes demo-flash{0%{filter:brightness(4) grayscale(0);transform:scale(1.2)}50%{filter:brightness(1.5) grayscale(0);transform:scale(1.08)}100%{filter:brightness(1) grayscale(0);transform:scale(1)}}
+@keyframes demo-pulse{0%{box-shadow:0 0 0 0 rgba(255,215,0,.7)}60%{box-shadow:0 0 0 12px rgba(255,215,0,0)}100%{box-shadow:0 0 0 0 rgba(255,215,0,0)}}
+.demo-card.unlocking{animation:demo-flash .7s ease-out forwards,demo-pulse .9s ease-out}
+.demo-label{font-size:11px;color:var(--color-text-tertiary);text-align:center}
+.demo-btn{font-size:12px;padding:5px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-primary);cursor:pointer;transition:all .15s}
+.demo-btn:hover{background:var(--color-background-secondary)}
+.demo-btn.active{background:#B87333;border-color:#B87333;color:#fff}
+.step-content{display:none}
+.step-content.visible{display:block}
+.progress{height:3px;background:var(--color-border-tertiary);border-radius:2px;margin-bottom:1.5rem}
+.progress-fill{height:100%;background:#B87333;border-radius:2px;transition:width .3s}
+</style>
+
+<div class="guide">
+  <div class="progress"><div class="progress-fill" id="prog" style="width:14%"></div></div>
+  <div class="steps-nav" id="nav"></div>
+
+  <div class="step-panel">
+
+    <div class="step-content visible" id="s1">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div><div class="step-title">Criar o shader de cinza</div><div class="step-sub">O coração do efeito bloqueado</div></div>
+      </div>
+      <div class="step-body">
+        <span class="tag tag-file">res://shaders/gray_card.gdshader</span>
+        <p style="margin-bottom:.5rem">Crie a pasta <code>shaders/</code> no seu projeto e salve este arquivo:</p>
+        <div class="code-block"><span class="kw">shader_type</span> canvas_item;
+
+<span class="cm">// 0.0 = colorido   1.0 = cinza total</span>
+<span class="kw">uniform float</span> gray_amount : <span class="fn">hint_range</span>(<span class="num">0.0</span>, <span class="num">1.0</span>) = <span class="num">1.0</span>;
+<span class="cm">// 1.0 = normal   0.6 = escurecido</span>
+<span class="kw">uniform float</span> brightness : <span class="fn">hint_range</span>(<span class="num">0.5</span>, <span class="num">1.5</span>) = <span class="num">0.6</span>;
+
+<span class="kw">void</span> <span class="fn">fragment</span>() {
+    <span class="kw">vec4</span> color = <span class="fn">texture</span>(TEXTURE, UV);
+    <span class="kw">float</span> gray = <span class="fn">dot</span>(color.rgb, <span class="kw">vec3</span>(<span class="num">0.299</span>, <span class="num">0.587</span>, <span class="num">0.114</span>));
+    <span class="kw">vec3</span> result = <span class="fn">mix</span>(color.rgb, <span class="kw">vec3</span>(gray), gray_amount);
+    result *= brightness;
+    COLOR = <span class="kw">vec4</span>(result, color.a);
+}</div>
+        <div class="highlight-box">O uniform <code>gray_amount</code> é o que vamos animar: vai de <code>1.0</code> (cinza) para <code>0.0</code> (colorido) durante o desbloqueio.</div>
+      </div>
+    </div>
+
+    <div class="step-content" id="s2">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div><div class="step-title">Montar a cena do card</div><div class="step-sub">Estrutura de nós no Godot</div></div>
+      </div>
+      <div class="step-body">
+        <span class="tag tag-where">Scene > New Scene</span>
+        <p style="margin-bottom:.75rem">Crie <code>card_phase.tscn</code> com esta hierarquia exata:</p>
+        <div class="tree">
+<span class="root">📄 Control</span>  <span class="script">← card_phase.gd aqui</span>
+├── <span class="node">TextureButton</span>  <span class="hint">"CardButton"   (tamanho: 160×160)</span>
+│   ├── <span class="node">TextureRect</span>   <span class="hint">"CardImage"    (Expand Mode: Ignore Size)</span>
+│   └── <span class="node">TextureRect</span>   <span class="hint">"LockOverlay"  (ícone cadeado, centralizado)</span>
+├── <span class="node">ColorRect</span>     <span class="hint">"FlashOverlay" (160×160, color branco, visible=false)</span>
+└── <span class="node">AudioStreamPlayer</span> <span class="hint">"UnlockSound"</span></div>
+        <div class="highlight-box">Selecione <code>CardImage</code> → Inspector → CanvasItem → Material → <b>New ShaderMaterial</b> → arraste o <code>gray_card.gdshader</code> no campo Shader.</div>
+        <p style="margin-top:.75rem">No <code>Control</code> raiz, defina <b>Custom Minimum Size</b> para <code>160 × 160</code> e <b>Layout > Anchors</b> como "Full Rect" para que caiba no mapa.</p>
+      </div>
+    </div>
+
+    <div class="step-content" id="s3">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div><div class="step-title">Escrever card_phase.gd</div><div class="step-sub">Script completo com estados e animação</div></div>
+      </div>
+      <div class="step-body">
+        <span class="tag tag-file">res://scripts/card_phase.gd</span>
+        <div class="code-block"><span class="kw">extends</span> Control
+
+<span class="cm"># Arraste os nós no Inspector</span>
+<span class="kw">@export var</span> phase_id   : <span class="fn">String</span>
+<span class="kw">@export var</span> card_texture : Texture2D
+
+<span class="kw">@onready var</span> card_btn   = $CardButton
+<span class="kw">@onready var</span> card_img   = $CardButton/CardImage
+<span class="kw">@onready var</span> lock_icon  = $CardButton/LockOverlay
+<span class="kw">@onready var</span> flash      = $FlashOverlay
+<span class="kw">@onready var</span> sfx        = $UnlockSound
+
+<span class="kw">var</span> mat : ShaderMaterial
+<span class="kw">var</span> unlocked := <span class="kw">false</span>
+
+<span class="kw">signal</span> <span class="fn">card_pressed</span>(id)
+
+<span class="kw">func</span> <span class="fn">_ready</span>():
+    card_img.texture = card_texture
+    mat = card_img.material <span class="kw">as</span> ShaderMaterial
+    card_btn.pressed.<span class="fn">connect</span>(_on_pressed)
+    <span class="fn">_apply_locked</span>(<span class="kw">false</span>)   <span class="cm"># estado inicial sem animação</span>
+
+<span class="kw">func</span> <span class="fn">unlock</span>(animate := <span class="kw">true</span>):
+    <span class="kw">if</span> unlocked: <span class="kw">return</span>
+    unlocked = <span class="kw">true</span>
+    <span class="kw">if</span> animate: <span class="fn">_play_unlock</span>()
+    <span class="kw">else</span>: <span class="fn">_apply_unlocked</span>(<span class="kw">false</span>)
+
+<span class="kw">func</span> <span class="fn">_apply_locked</span>(anim):
+    card_btn.disabled = <span class="kw">true</span>
+    lock_icon.visible = <span class="kw">true</span>
+    mat.<span class="fn">set_shader_parameter</span>(<span class="st">"gray_amount"</span>, <span class="num">1.0</span>)
+    mat.<span class="fn">set_shader_parameter</span>(<span class="st">"brightness"</span>, <span class="num">0.6</span>)
+
+<span class="kw">func</span> <span class="fn">_apply_unlocked</span>(anim):
+    card_btn.disabled = <span class="kw">false</span>
+    lock_icon.visible = <span class="kw">false</span>
+    mat.<span class="fn">set_shader_parameter</span>(<span class="st">"gray_amount"</span>, <span class="num">0.0</span>)
+    mat.<span class="fn">set_shader_parameter</span>(<span class="st">"brightness"</span>, <span class="num">1.0</span>)
+
+<span class="kw">func</span> <span class="fn">_on_pressed</span>():
+    <span class="kw">if</span> unlocked:
+        <span class="fn">emit_signal</span>(<span class="st">"card_pressed"</span>, phase_id)
+</div>
+      </div>
+    </div>
+
+    <div class="step-content" id="s4">
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div><div class="step-title">Animar o desbloqueio</div><div class="step-sub">A função _play_unlock() em detalhe</div></div>
+      </div>
+      <div class="step-body">
+        <p style="margin-bottom:.75rem">Adicione esta função no mesmo <code>card_phase.gd</code>. O efeito tem <b>4 etapas em sequência</b>:</p>
+        <div class="demo-area" id="demo4">
+          <div>
+            <div class="demo-card locked-state" id="demo-card-4">
+              <svg viewBox="0 0 80 80" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="80" height="80" fill="#2C1810"/>
+                <rect x="3" y="3" width="74" height="74" fill="#1B3A6B"/>
+                <rect x="3" y="3" width="74" height="1" fill="#6B3A1F"/>
+                <rect x="3" y="3" width="1" height="74" fill="#6B3A1F"/>
+                <rect x="8" y="20" width="4" height="29" fill="#3A5078"/>
+                <rect x="8" y="20" width="4" height="2" fill="#C8D8E8"/>
+                <rect x="32" y="16" width="5" height="33" fill="#2E4468"/>
+                <rect x="32" y="16" width="5" height="2" fill="#DDEEFF"/>
+                <rect x="62" y="18" width="4" height="31" fill="#3A5078"/>
+                <rect x="62" y="18" width="4" height="2" fill="#C8D8E8"/>
+                <rect x="4" y="35" width="72" height="14" fill="#5C4020"/>
+                <rect x="32" y="21" width="16" height="28" fill="#6B4D28"/>
+                <rect x="36" y="15" width="8" height="4" fill="#FFFFFF"/>
+                <rect x="14" y="39" width="8" height="9" fill="#1A0F05"/>
+                <rect x="14" y="39" width="2" height="9" fill="#6B4520"/>
+                <rect x="20" y="39" width="2" height="9" fill="#6B4520"/>
+                <rect x="4" y="49" width="72" height="15" fill="#4A3318"/>
+                <rect x="10" y="55" width="3" height="2" fill="#A8B8C8"/>
+                <rect x="45" y="56" width="3" height="2" fill="#C8D0D8"/>
+                <rect x="34" y="48" width="4" height="6" fill="#B22222"/>
+                <rect x="34" y="46" width="4" height="2" fill="#D4956A"/>
+                <rect x="33" y="44" width="6" height="2" fill="#5C3A1E"/>
+                <rect x="36" y="43" width="2" height="1" fill="#FFD700"/>
+                <rect x="27" y="70" width="5" height="5" fill="#FFD700"/>
+                <rect x="37" y="70" width="5" height="5" fill="#FFD700"/>
+                <rect x="47" y="70" width="5" height="5" fill="#FFD700"/>
+                <rect x="4" y="4" width="3" height="3" fill="#C8A060"/>
+                <rect x="73" y="4" width="3" height="3" fill="#C8A060"/>
+                <rect x="4" y="73" width="3" height="3" fill="#C8A060"/>
+                <rect x="73" y="73" width="3" height="3" fill="#C8A060"/>
+              </svg>
+              <div class="lock-badge">🔒</div>
+            </div>
+            <div class="demo-label" id="demo4-label">bloqueado</div>
+          </div>
+          <button class="demo-btn" id="demo4-btn" onclick="playDemoUnlock()">▶ Simular unlock()</button>
+        </div>
+        <div class="code-block"><span class="kw">func</span> <span class="fn">_play_unlock</span>():
+    sfx.<span class="fn">play</span>()
+    <span class="cm"># ── Etapa 1: flash branco ──────────────────────</span>
+    flash.color = Color(<span class="num">1</span>, <span class="num">1</span>, <span class="num">1</span>, <span class="num">0.85</span>)
+    flash.visible = <span class="kw">true</span>
+    <span class="kw">var</span> t = <span class="fn">create_tween</span>()
+    t.<span class="fn">set_parallel</span>(<span class="kw">true</span>)
+    t.<span class="fn">tween_property</span>(flash, <span class="st">"color:a"</span>, <span class="num">0.0</span>, <span class="num">0.25</span>)
+    <span class="cm"># ── Etapa 2: pulse de escala ───────────────────</span>
+    t.<span class="fn">tween_property</span>(<span class="kw">self</span>, <span class="st">"scale"</span>, Vector2(<span class="num">1.18</span>, <span class="num">1.18</span>), <span class="num">0.12</span>)
+    t.<span class="fn">set_parallel</span>(<span class="kw">false</span>)
+    t.<span class="fn">tween_property</span>(<span class="kw">self</span>, <span class="st">"scale"</span>, Vector2(<span class="num">1.0</span>, <span class="num">1.0</span>), <span class="num">0.22</span>)\
+     .<span class="fn">set_trans</span>(Tween.TRANS_BACK).<span class="fn">set_ease</span>(Tween.EASE_OUT)
+    <span class="cm"># ── Etapa 3: desgrayificar (shader) ───────────</span>
+    t.<span class="fn">set_parallel</span>(<span class="kw">true</span>)
+    t.<span class="fn">tween_method</span>(
+        <span class="kw">func</span>(v): mat.<span class="fn">set_shader_parameter</span>(<span class="st">"gray_amount"</span>, v),
+        <span class="num">1.0</span>, <span class="num">0.0</span>, <span class="num">0.5</span>)
+    t.<span class="fn">tween_method</span>(
+        <span class="kw">func</span>(v): mat.<span class="fn">set_shader_parameter</span>(<span class="st">"brightness"</span>, v),
+        <span class="num">0.6</span>, <span class="num">1.0</span>, <span class="num">0.5</span>)
+    <span class="cm"># ── Etapa 4: esconder cadeado + shimmer ───────</span>
+    t.<span class="fn">set_parallel</span>(<span class="kw">false</span>)
+    t.<span class="fn">tween_callback</span>(<span class="kw">func</span>():
+        lock_icon.visible = <span class="kw">false</span>
+        card_btn.disabled = <span class="kw">false</span>
+        flash.visible = <span class="kw">false</span>
+        <span class="fn">_play_shimmer</span>()
+    )</div>
+      </div>
+    </div>
+
+    <div class="step-content" id="s5">
+      <div class="step-header">
+        <div class="step-num">5</div>
+        <div><div class="step-title">Efeito shimmer (brilho diagonal)</div><div class="step-sub">O toque final após o desbloqueio</div></div>
+      </div>
+      <div class="step-body">
+        <p style="margin-bottom:.75rem">Adicione também no <code>card_phase.gd</code>. Cria um <code>ColorRect</code> temporário que atravessa o card:</p>
+        <div class="code-block"><span class="kw">func</span> <span class="fn">_play_shimmer</span>():
+    <span class="kw">var</span> s = ColorRect.<span class="fn">new</span>()
+    s.color     = Color(<span class="num">1</span>, <span class="num">1</span>, <span class="num">1</span>, <span class="num">0.35</span>)
+    s.size      = Vector2(<span class="num">50</span>, <span class="num">160</span>)
+    s.position  = Vector2(<span class="num">-55</span>, <span class="num">0</span>)
+    s.rotation  = <span class="fn">deg_to_rad</span>(<span class="num">20</span>)  <span class="cm"># diagonal</span>
+    <span class="fn">add_child</span>(s)
+
+    <span class="kw">var</span> t = <span class="fn">create_tween</span>()
+    t.<span class="fn">tween_property</span>(s, <span class="st">"position:x"</span>, <span class="num">180.0</span>, <span class="num">0.4</span>)\
+     .<span class="fn">set_trans</span>(Tween.TRANS_SINE).<span class="fn">set_ease</span>(Tween.EASE_IN_OUT)
+    t.<span class="fn">tween_callback</span>(s.<span class="fn">queue_free</span>)
+
+<span class="cm"># Hover effect (só quando desbloqueado)</span>
+<span class="kw">func</span> <span class="fn">_on_mouse_entered</span>():
+    <span class="kw">if not</span> unlocked: <span class="kw">return</span>
+    <span class="fn">create_tween</span>().<span class="fn">tween_property</span>(<span class="kw">self</span>,<span class="st">"scale"</span>,Vector2(<span class="num">1.07</span>,<span class="num">1.07</span>),<span class="num">0.1</span>)
+
+<span class="kw">func</span> <span class="fn">_on_mouse_exited</span>():
+    <span class="kw">if not</span> unlocked: <span class="kw">return</span>
+    <span class="fn">create_tween</span>().<span class="fn">tween_property</span>(<span class="kw">self</span>,<span class="st">"scale"</span>,Vector2(<span class="num">1.0</span>,<span class="num">1.0</span>),<span class="num">0.15</span>)</div>
+        <div class="highlight-box">Conecte os sinais <code>mouse_entered</code> e <code>mouse_exited</code> do <code>CardButton</code> nas funções acima. No Inspector do CardButton → Node → Signals.</div>
+      </div>
+    </div>
+
+    <div class="step-content" id="s6">
+      <div class="step-header">
+        <div class="step-num">6</div>
+        <div><div class="step-title">Configurar no Inspector</div><div class="step-sub">Cada card precisa de 3 ajustes</div></div>
+      </div>
+      <div class="step-body">
+        <span class="tag tag-where">Selecione o nó raiz Control de cada card</span>
+        <ul class="checklist">
+          <li>Em <b>Script Variables</b> → <code>Phase Id</code>: preencha com <code>"1_1"</code>, <code>"1_2"</code>, <code>"1_3"</code> etc.</li>
+          <li>Em <b>Script Variables</b> → <code>Card Texture</code>: arraste o SVG/PNG do card correspondente.</li>
+          <li>Selecione <code>CardImage</code> → <b>Material</b> → confirme que o ShaderMaterial com <code>gray_card.gdshader</code> está aplicado.</li>
+          <li>Selecione <code>LockOverlay</code> → arraste uma textura de cadeado (ou deixe um TextureRect vazio que só mostra cor de sobreposição).</li>
+          <li>Selecione <code>FlashOverlay</code> (ColorRect) → defina <b>Color</b> como branco e <b>Visible = false</b> no começo.</li>
+        </ul>
+        <div class="highlight-box">Para usar o mesmo ShaderMaterial em vários cards sem que compartilhem estado, no Inspector do Material clique no ícone de corrente e escolha <b>"Make Unique"</b> em cada instância.</div>
+      </div>
+    </div>
+
+    <div class="step-content" id="s7">
+      <div class="step-header">
+        <div class="step-num">7</div>
+        <div><div class="step-title">Chamar o unlock() do mapa</div><div class="step-sub">Conectando tudo no world_map.gd</div></div>
+      </div>
+      <div class="step-body">
+        <span class="tag tag-file">res://scripts/world_map.gd</span>
+        <div class="code-block"><span class="kw">extends</span> Control
+
+<span class="kw">@onready var</span> card_1_1 = $Cards/Card_1_1
+<span class="kw">@onready var</span> card_1_2 = $Cards/Card_1_2
+<span class="kw">@onready var</span> card_1_3 = $Cards/Card_1_3
+
+<span class="kw">func</span> <span class="fn">_ready</span>():
+    <span class="fn">_setup_cards</span>()
+    ProgressManager.phase_unlocked.<span class="fn">connect</span>(_on_unlocked)
+
+<span class="kw">func</span> <span class="fn">_setup_cards</span>():
+    <span class="cm"># Aplica estado salvo SEM animação</span>
+    <span class="kw">var</span> cards = {<span class="st">"1_1"</span>:card_1_1, <span class="st">"1_2"</span>:card_1_2, <span class="st">"1_3"</span>:card_1_3}
+    <span class="kw">for</span> id <span class="kw">in</span> cards:
+        <span class="kw">if</span> ProgressManager.<span class="fn">is_unlocked</span>(id):
+            cards[id].<span class="fn">unlock</span>(<span class="kw">false</span>)  <span class="cm"># false = sem anim</span>
+        cards[id].card_pressed.<span class="fn">connect</span>(_on_card_pressed)
+
+<span class="kw">func</span> <span class="fn">_on_unlocked</span>(id):
+    <span class="cm"># Chamado pelo ProgressManager — COM animação</span>
+    <span class="kw">match</span> id:
+        <span class="st">"1_1"</span>: card_1_1.<span class="fn">unlock</span>(<span class="kw">true</span>)
+        <span class="st">"1_2"</span>: card_1_2.<span class="fn">unlock</span>(<span class="kw">true</span>)
+        <span class="st">"1_3"</span>: card_1_3.<span class="fn">unlock</span>(<span class="kw">true</span>)
+
+<span class="kw">func</span> <span class="fn">_on_card_pressed</span>(id):
+    <span class="cm"># Navega para a fase</span>
+    get_tree().<span class="fn">change_scene_to_file</span>(<span class="st">"res://scenes/phase_%s.tscn"</span> % id)
+
+<span class="cm"># Chame isto ao FINAL de cada fase jogada:</span>
+<span class="cm"># ProgressManager.complete_phase("1_1")</span></div>
+        <div class="highlight-box">O fluxo completo: jogador termina fase → chama <code>ProgressManager.complete_phase("1_1")</code> → o manager desbloqueia <code>"1_2"</code> → emite o sinal <code>phase_unlocked</code> → o mapa recebe e chama <code>card_1_2.unlock(true)</code> → animação toca.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn-prev" id="btn-prev" onclick="changeStep(-1)" style="display:none">← Anterior</button>
+    <button class="btn-next" id="btn-next" onclick="changeStep(1)">Próximo →</button>
+  </div>
+</div>
+
+<script>
+const TOTAL = 7;
+let cur = 1;
+const labels = ['Shader de cinza','Estrutura da cena','Script do card','Animação unlock','Shimmer & hover','Inspector','Conectar ao mapa'];
+
+function buildNav(){
+  const nav = document.getElementById('nav');
+  nav.innerHTML = '';
+  for(let i=1;i<=TOTAL;i++){
+    const d = document.createElement('div');
+    d.className = 'step-dot' + (i===cur?' active':i<cur?' done':'');
+    d.title = labels[i-1];
+    d.textContent = i < cur ? '✓' : i;
+    d.onclick = ()=>{cur=i;render()};
+    nav.appendChild(d);
+  }
+}
+
+function render(){
+  for(let i=1;i<=TOTAL;i++){
+    const el = document.getElementById('s'+i);
+    if(el) el.className = 'step-content' + (i===cur?' visible':'');
+  }
+  document.getElementById('prog').style.width = Math.round(cur/TOTAL*100)+'%';
+  document.getElementById('btn-prev').style.display = cur>1?'':'none';
+  document.getElementById('btn-next').textContent = cur===TOTAL?'✓ Concluído':'Próximo →';
+  buildNav();
+}
+
+function changeStep(d){
+  cur = Math.max(1, Math.min(TOTAL, cur+d));
+  render();
+}
+
+let demoPlaying = false;
+function playDemoUnlock(){
+  if(demoPlaying) return;
+  const card = document.getElementById('demo-card-4');
+  const label = document.getElementById('demo4-label');
+  const btn = document.getElementById('demo4-btn');
+  if(card.classList.contains('unlocked-state')){
+    card.className = 'demo-card locked-state';
+    card.querySelector('.lock-badge').style.opacity = '.9';
+    card.style.filter = '';
+    label.textContent = 'bloqueado';
+    btn.textContent = '▶ Simular unlock()';
+    return;
+  }
+  demoPlaying = true;
+  btn.textContent = '...animando';
+  card.classList.remove('locked-state');
+  card.classList.add('unlocking');
+  label.textContent = '① flash + escala';
+  setTimeout(()=>{ label.textContent = '② shader: gray → color'; },300);
+  setTimeout(()=>{ label.textContent = '③ shimmer diagonal'; card.classList.remove('unlocking'); card.classList.add('unlocked-state'); },700);
+  setTimeout(()=>{ label.textContent = '✓ desbloqueado!'; btn.textContent = '↺ Resetar'; demoPlaying = false; },1100);
+}
+
+render();
+</script>

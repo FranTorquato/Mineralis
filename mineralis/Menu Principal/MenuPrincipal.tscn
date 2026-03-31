@@ -2,9 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cykrlomrly5wi" path="res://Menu Principal/Assets/mapa_menu_principal.svg" id="1_8qkx0"]
 [ext_resource type="PackedScene" uid="uid://dng3vurrsljxs" path="res://Menu Principal/card_phase.tscn" id="2_40j08"]
-[ext_resource type="Texture2D" uid="uid://cim7y3xdwpbs" path="res://Menu Principal/Assets/card_1_1_andes.svg" id="3_40j08"]
-[ext_resource type="Texture2D" uid="uid://bm2qgotm8d3xr" path="res://Menu Principal/Assets/card_1_2_amazonia.svg" id="4_cf3kj"]
-[ext_resource type="Texture2D" uid="uid://lgeaqu40cenj" path="res://Menu Principal/Assets/card_1_3_machu_picchu.svg" id="5_o1yen"]
+[ext_resource type="FontFile" uid="uid://6i4yhwb215mo" path="res://Fontes/Silkscreen-Bold.ttf" id="3_ttmfc"]
 
 [sub_resource type="Environment" id="Environment_40j08"]
 background_mode = 3
@@ -29,8 +27,6 @@ offset_top = 490.00003
 offset_right = 362.0
 offset_bottom = 650.0
 scale = Vector2(0.6, 0.6)
-phase_id = "1_1"
-phase_texture = ExtResource("3_40j08")
 
 [node name="Card_1_2" parent="." unique_id=1932664492 instance=ExtResource("2_40j08")]
 self_modulate = Color(1, 1, 1, 0.34509805)
@@ -39,8 +35,6 @@ offset_top = 476.00003
 offset_right = 485.0
 offset_bottom = 636.0
 scale = Vector2(0.6, 0.6)
-phase_id = "1_2"
-phase_texture = ExtResource("4_cf3kj")
 
 [node name="Card_1_3" parent="." unique_id=1263194238 instance=ExtResource("2_40j08")]
 self_modulate = Color(1, 1, 1, 0.34509805)
@@ -49,8 +43,18 @@ offset_top = 590.0
 offset_right = 442.0
 offset_bottom = 750.0
 scale = Vector2(0.6, 0.6)
-phase_id = "1_3"
-phase_texture = ExtResource("5_o1yen")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1135981951]
 environment = SubResource("Environment_40j08")
+
+[node name="Título" type="Label" parent="." unique_id=297412176]
+offset_left = 626.0
+offset_top = 640.0
+offset_right = 1313.0
+offset_bottom = 873.0
+theme_override_colors/font_color = Color(0.43529412, 0.30588236, 0.21568628, 1)
+theme_override_colors/font_shadow_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
+theme_override_colors/font_outline_color = Color(0.29411766, 0.21176471, 0.12941177, 1)
+theme_override_fonts/font = ExtResource("3_ttmfc")
+theme_override_font_sizes/font_size = 89
+text = "MINERALIS"

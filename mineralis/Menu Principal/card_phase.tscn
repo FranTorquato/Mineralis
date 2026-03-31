@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dng3vurrsljxs"]
 
-[ext_resource type="Script" uid="uid://cycrolsdi6pev" path="res://Menu Principal/card_phase.gd" id="1_otf7b"]
-[ext_resource type="Shader" uid="uid://8u3st7hj2w7i" path="res://Menu Principal/Shaders/gray_card.gdshader" id="2_7mojj"]
-[ext_resource type="AudioStream" uid="uid://ffj7raw5pi2i" path="res://Menu Principal/Golden_Key_Unlocked.mp3" id="3_7mojj"]
+[ext_resource type="Script" uid="uid://cycrolsdi6pev" path="res://Menu Principal/Scripts/card_phase.gd" id="1_otf7b"]
+[ext_resource type="Shader" uid="uid://cboqdmgc3prxo" path="res://Menu Principal/Shaders/gray_card.gdshader" id="2_7mojj"]
+[ext_resource type="AudioStream" uid="uid://ffj7raw5pi2i" path="res://Menu Principal/Assets/Golden_Key_Unlocked.mp3" id="3_7mojj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3bv0v"]
 shader = ExtResource("2_7mojj")
@@ -112,7 +112,6 @@ offset_right = 110.0
 offset_bottom = 121.0
 pivot_offset = Vector2(80, 80)
 script = ExtResource("1_otf7b")
-phase_id = null
 
 [node name="CardButton" type="TextureButton" parent="." unique_id=1867375956]
 self_modulate = Color(1, 1, 1, 0.53333336)

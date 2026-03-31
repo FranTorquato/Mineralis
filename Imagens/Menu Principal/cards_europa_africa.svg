@@ -1,0 +1,740 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" width="720" height="900">
+<rect width="720" height="900" fill="#1a1410" rx="8"/>
+<text x="360" y="28" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold" fill="#c8a040">MINERALIS · CARDS DE FASE · EUROPA + ÁFRICA</text>
+<text x="360" y="46" text-anchor="middle" font-family="monospace" font-size="9" fill="#706050">160×160px · Colorido (desbloqueado) | Cinza (bloqueado)</text>
+
+<!-- ══ SEÇÃO EUROPA ══ -->
+<text x="20" y="74" font-family="monospace" font-size="11" fill="#d4a030">▸ EUROPA</text>
+<line x1="20" y1="78" x2="700" y2="78" stroke="#4a3820" stroke-width="1"/>
+
+<!-- ═══ FASE 3.1 · MINAS ROMANAS - RIO TINTO ═══ -->
+<g transform="translate(20,85)">
+  <rect x="0" y="0" width="160" height="160" fill="#2a1008" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#1e0c04" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#802010"/>
+  <rect x="148" y="0" width="12" height="12" fill="#802010"/>
+  <rect x="0" y="148" width="12" height="12" fill="#802010"/>
+  <rect x="148" y="148" width="12" height="12" fill="#802010"/>
+  <rect x="2" y="2" width="8" height="8" fill="#c03018"/>
+  <rect x="150" y="2" width="8" height="8" fill="#c03018"/>
+  <rect x="2" y="150" width="8" height="8" fill="#c03018"/>
+  <rect x="150" y="150" width="8" height="8" fill="#c03018"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#802010" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#c03018" stroke-width="1"/>
+  <!-- CÉU - pôr do sol romano, quente -->
+  <rect x="11" y="11" width="138" height="50" fill="#a84020"/>
+  <rect x="11" y="11" width="138" height="18" fill="#803010"/>
+  <rect x="11" y="28" width="138" height="16" fill="#c05028"/>
+  <rect x="11" y="42" width="138" height="12" fill="#d06030"/>
+  <!-- sol romano -->
+  <rect x="55" y="15" width="20" height="20" fill="#f0a020" rx="10"/>
+  <rect x="63" y="9" width="4" height="8" fill="#f0a020"/>
+  <rect x="63" y="39" width="4" height="8" fill="#f0a020"/>
+  <rect x="47" y="23" width="8" height="4" fill="#f0a020"/>
+  <rect x="75" y="23" width="8" height="4" fill="#f0a020"/>
+  <!-- aqueduto romano (fundo) -->
+  <rect x="80" y="30" width="70" height="35" fill="#9a7850"/>
+  <!-- arcos do aqueduto -->
+  <rect x="82" y="44" width="12" height="21" fill="#1e0c04"/>
+  <rect x="98" y="44" width="12" height="21" fill="#1e0c04"/>
+  <rect x="114" y="44" width="12" height="21" fill="#1e0c04"/>
+  <rect x="130" y="44" width="18" height="21" fill="#1e0c04"/>
+  <rect x="82" y="32" width="66" height="14" fill="#b08858"/>
+  <!-- colunas romanas em ruínas -->
+  <rect x="14" y="35" width="10" height="30" fill="#c0a870"/>
+  <rect x="12" y="33" width="14" height="5" fill="#d0b878"/>
+  <rect x="12" y="63" width="14" height="3" fill="#d0b878"/>
+  <rect x="28" y="40" width="10" height="25" fill="#b89860"/>
+  <rect x="26" y="38" width="14" height="5" fill="#c8a870"/>
+  <!-- COLUNA QUEBRADA -->
+  <rect x="42" y="50" width="8" height="15" fill="#c0a870"/>
+  <rect x="40" y="48" width="12" height="4" fill="#d0b878"/>
+  <!-- RIO TINTO - água avermelhada/ferrugem -->
+  <rect x="11" y="65" width="138" height="20" fill="#8a3010"/>
+  <rect x="11" y="67" width="138" height="15" fill="#a04020"/>
+  <!-- ondas ácidas vermelhas -->
+  <rect x="20" y="70" width="20" height="3" fill="#c05030" opacity="0.7" rx="1"/>
+  <rect x="50" y="72" width="25" height="3" fill="#c05030" opacity="0.6" rx="1"/>
+  <rect x="85" y="70" width="30" height="3" fill="#c05030" opacity="0.7" rx="1"/>
+  <rect x="125" y="72" width="22" height="3" fill="#c05030" opacity="0.6" rx="1"/>
+  <!-- MINA A CÉU ABERTO -->
+  <rect x="11" y="85" width="138" height="39" fill="#5a2010"/>
+  <rect x="11" y="85" width="138" height="10" fill="#6a2c18"/>
+  <!-- escadaria mina romana -->
+  <rect x="40" y="88" width="80" height="4" fill="#7a3820"/>
+  <rect x="45" y="92" width="70" height="4" fill="#6a2c18"/>
+  <rect x="50" y="96" width="60" height="4" fill="#7a3820"/>
+  <rect x="55" y="100" width="50" height="4" fill="#6a2c18"/>
+  <!-- PRATA e CHUMBO extraído -->
+  <rect x="15" y="108" width="20" height="8" fill="#b0b0b8" rx="1"/><!-- barra prata -->
+  <rect x="18" y="106" width="14" height="4" fill="#c8c8d0"/>
+  <rect x="40" y="110" width="16" height="6" fill="#707080" rx="1"/><!-- barra chumbo -->
+  <rect x="110" y="108" width="20" height="8" fill="#b0b0b8" rx="1"/>
+  <rect x="130" y="110" width="16" height="6" fill="#707080" rx="1"/>
+  <!-- RODA D'ÁGUA romana (drenagem) -->
+  <circle cx="118" cy="76" r="12" fill="none" stroke="#6a4020" stroke-width="3"/>
+  <rect x="116" y="64" width="4" height="24" fill="#6a4020"/>
+  <rect x="106" y="74" width="24" height="4" fill="#6a4020"/>
+
+  <rect x="11" y="135" width="138" height="24" fill="#0a0402" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#c03018"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#f04030" font-weight="bold">MINAS ROMANAS</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#a02818">Rio Tinto · Espanha</text>
+  <text x="27" y="133" font-family="monospace" font-size="9" fill="#f0c020">★★★</text>
+  <text x="79" y="133" font-family="monospace" font-size="9" fill="#2a0808">★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#802010" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#ffffff" font-weight="bold">3.1</text>
+</g>
+
+<!-- [BLOQUEADO] 3.1 -->
+<g transform="translate(200,85)">
+  <rect x="0" y="0" width="160" height="160" fill="#222222" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#1a1a1a" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#444444"/>
+  <rect x="148" y="0" width="12" height="12" fill="#444444"/>
+  <rect x="0" y="148" width="12" height="12" fill="#444444"/>
+  <rect x="148" y="148" width="12" height="12" fill="#444444"/>
+  <rect x="2" y="2" width="8" height="8" fill="#606060"/>
+  <rect x="150" y="2" width="8" height="8" fill="#606060"/>
+  <rect x="2" y="150" width="8" height="8" fill="#606060"/>
+  <rect x="150" y="150" width="8" height="8" fill="#606060"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#444444" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#555555" stroke-width="1"/>
+  <rect x="11" y="11" width="138" height="50" fill="#252525"/>
+  <rect x="80" y="30" width="70" height="35" fill="#2d2d2d"/>
+  <rect x="82" y="44" width="12" height="21" fill="#141414"/>
+  <rect x="98" y="44" width="12" height="21" fill="#141414"/>
+  <rect x="114" y="44" width="12" height="21" fill="#141414"/>
+  <rect x="14" y="35" width="10" height="30" fill="#333333"/>
+  <rect x="28" y="40" width="10" height="25" fill="#2d2d2d"/>
+  <rect x="11" y="65" width="138" height="20" fill="#202020"/>
+  <rect x="11" y="85" width="138" height="39" fill="#252525"/>
+  <rect x="62" y="85" width="36" height="28" fill="#484848" rx="4"/>
+  <rect x="69" y="76" width="22" height="16" fill="none" stroke="#484848" stroke-width="5" rx="11"/>
+  <rect x="78" y="94" width="6" height="10" fill="#303030"/>
+  <rect x="11" y="135" width="138" height="24" fill="#141414" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#444444"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#707070" font-weight="bold">MINAS ROMANAS</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#555555">Rio Tinto · Espanha</text>
+  <text x="60" y="133" font-family="monospace" font-size="9" fill="#404040">★★★★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#444444" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#888888" font-weight="bold">3.1</text>
+</g>
+
+<!-- ═══ FASE 3.2 · SAL GEMA HALLSTATT ═══ -->
+<g transform="translate(380,85)">
+  <rect x="0" y="0" width="160" height="160" fill="#102038" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#081828" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#204878"/>
+  <rect x="148" y="0" width="12" height="12" fill="#204878"/>
+  <rect x="0" y="148" width="12" height="12" fill="#204878"/>
+  <rect x="148" y="148" width="12" height="12" fill="#204878"/>
+  <rect x="2" y="2" width="8" height="8" fill="#4080c0"/>
+  <rect x="150" y="2" width="8" height="8" fill="#4080c0"/>
+  <rect x="2" y="150" width="8" height="8" fill="#4080c0"/>
+  <rect x="150" y="150" width="8" height="8" fill="#4080c0"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#204878" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#4080c0" stroke-width="1"/>
+  <!-- CÉU - alpes austríacos, claro e frio -->
+  <rect x="11" y="11" width="138" height="48" fill="#3878c8"/>
+  <rect x="11" y="11" width="138" height="16" fill="#2868b8"/>
+  <!-- neve e nuvens -->
+  <rect x="14" y="16" width="32" height="12" fill="#e8f0fc" rx="6"/>
+  <rect x="8" y="20" width="14" height="8" fill="#e8f0fc" rx="4"/>
+  <rect x="85" y="14" width="38" height="14" fill="#f0f4ff" rx="7"/>
+  <rect x="130" y="18" width="22" height="10" fill="#e8f0fc" rx="5"/>
+  <!-- ALPES nevados -->
+  <polygon points="11,59 35,18 55,40 75,12 95,35 120,10 149,32 149,59" fill="#5a6878"/>
+  <polygon points="35,18 27,42 43,42" fill="#e8eef8"/>
+  <polygon points="75,12 67,38 83,38" fill="#f0f4ff"/>
+  <polygon points="120,10 112,36 128,36" fill="#e8eef8"/>
+  <!-- pinheiros alpinos -->
+  <polygon points="19,59 23,46 27,59" fill="#1a4010"/>
+  <polygon points="30,59 34,44 38,59" fill="#1a4010"/>
+  <polygon points="130,59 134,47 138,59" fill="#1a4010"/>
+  <polygon points="140,59 144,48 148,59" fill="#1a4010"/>
+  <!-- LAGO HALLSTATT (reflexo perfeito) -->
+  <rect x="11" y="59" width="138" height="22" fill="#1848a8"/>
+  <rect x="11" y="61" width="138" height="18" fill="#2058b8"/>
+  <!-- reflexo das montanhas -->
+  <rect x="25" y="63" width="28" height="14" fill="#4878c0" opacity="0.6" rx="2"/>
+  <rect x="65" y="62" width="22" height="15" fill="#4878c0" opacity="0.5" rx="2"/>
+  <rect x="100" y="63" width="30" height="14" fill="#4878c0" opacity="0.6" rx="2"/>
+  <!-- VILAREJO HALLSTATT (fundo do lago) -->
+  <rect x="38" y="50" width="80" height="12" fill="#8a7860"/>
+  <!-- casinhas -->
+  <rect x="40" y="46" width="14" height="16" fill="#9a8868"/>
+  <polygon points="40,46 47,38 54,46" fill="#c08060"/>
+  <rect x="57" y="47" width="14" height="15" fill="#8a7858"/>
+  <polygon points="57,47 64,39 71,47" fill="#b07850"/>
+  <rect x="74" y="46" width="14" height="16" fill="#9a8868"/>
+  <polygon points="74,46 81,38 88,46" fill="#c08060"/>
+  <rect x="91" y="47" width="14" height="15" fill="#8a7858"/>
+  <polygon points="91,47 98,39 105,47" fill="#b07850"/>
+  <!-- MINA DE SAL (entrada na rocha) -->
+  <rect x="11" y="81" width="138" height="43" fill="#3a3040"/>
+  <rect x="11" y="81" width="138" height="12" fill="#4a4050"/>
+  <!-- entrada da mina de sal -->
+  <rect x="55" y="78" width="50" height="32" fill="#1e1828" rx="3"/>
+  <rect x="57" y="74" width="46" height="10" fill="#5a5070"/>
+  <!-- estrutura de madeira -->
+  <rect x="53" y="74" width="6" height="40" fill="#5a4030"/>
+  <rect x="101" y="74" width="6" height="40" fill="#5a4030"/>
+  <rect x="53" y="74" width="54" height="6" fill="#6a5038"/>
+  <!-- abertura escura -->
+  <rect x="59" y="80" width="42" height="28" fill="#100c18"/>
+  <!-- CRISTAIS DE SAL brilhando -->
+  <rect x="65" y="84" width="8" height="8" fill="#d0e0f8" opacity="0.7" rx="1"/>
+  <rect x="78" y="82" width="6" height="6" fill="#e0ecfc" opacity="0.8" rx="1"/>
+  <rect x="88" y="86" width="8" height="7" fill="#d0e0f8" opacity="0.7" rx="1"/>
+  <!-- sal no chão -->
+  <rect x="15" y="106" width="30" height="8" fill="#c8d0e0" opacity="0.6" rx="1"/>
+  <rect x="115" y="107" width="28" height="6" fill="#c8d0e0" opacity="0.6" rx="1"/>
+  <!-- TOCHA CELTA -->
+  <rect x="117" y="84" width="4" height="14" fill="#6a4820"/>
+  <rect x="116" y="81" width="6" height="6" fill="#ff8820"/>
+  <rect x="118" y="79" width="2" height="4" fill="#ffcc40"/>
+
+  <rect x="11" y="135" width="138" height="24" fill="#040810" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#4080c0"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#80c0f0" font-weight="bold">SAL GEMA DE HALLSTATT</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#4080c0">Áustria · Idade do Bronze</text>
+  <text x="27" y="133" font-family="monospace" font-size="9" fill="#f0c020">★★★★</text>
+  <text x="95" y="133" font-family="monospace" font-size="9" fill="#081828">★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#103868" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#ffffff" font-weight="bold">3.2</text>
+</g>
+
+<!-- [BLOQUEADO] 3.2 -->
+<g transform="translate(560,85)">
+  <rect x="0" y="0" width="160" height="160" fill="#1e1e1e" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#181818" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#3a3a3a"/>
+  <rect x="148" y="0" width="12" height="12" fill="#3a3a3a"/>
+  <rect x="0" y="148" width="12" height="12" fill="#3a3a3a"/>
+  <rect x="148" y="148" width="12" height="12" fill="#3a3a3a"/>
+  <rect x="2" y="2" width="8" height="8" fill="#585858"/>
+  <rect x="150" y="2" width="8" height="8" fill="#585858"/>
+  <rect x="2" y="150" width="8" height="8" fill="#585858"/>
+  <rect x="150" y="150" width="8" height="8" fill="#585858"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#3a3a3a" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#484848" stroke-width="1"/>
+  <rect x="11" y="11" width="138" height="48" fill="#222222"/>
+  <polygon points="11,59 35,18 55,40 75,12 95,35 120,10 149,32 149,59" fill="#2d2d2d"/>
+  <polygon points="35,18 27,42 43,42" fill="#424242"/>
+  <polygon points="75,12 67,38 83,38" fill="#424242"/>
+  <polygon points="120,10 112,36 128,36" fill="#424242"/>
+  <rect x="11" y="59" width="138" height="22" fill="#1a1a1a"/>
+  <rect x="11" y="81" width="138" height="43" fill="#222222"/>
+  <rect x="55" y="78" width="50" height="32" fill="#141414" rx="3"/>
+  <rect x="59" y="80" width="42" height="28" fill="#0c0c0c"/>
+  <rect x="62" y="88" width="36" height="28" fill="#424242" rx="4"/>
+  <rect x="69" y="79" width="22" height="16" fill="none" stroke="#424242" stroke-width="5" rx="11"/>
+  <rect x="78" y="97" width="6" height="10" fill="#2a2a2a"/>
+  <rect x="11" y="135" width="138" height="24" fill="#101010" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#3a3a3a"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#606060" font-weight="bold">SAL GEMA DE HALLSTATT</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#484848">Áustria · Idade do Bronze</text>
+  <text x="60" y="133" font-family="monospace" font-size="9" fill="#353535">★★★★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#3a3a3a" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#777777" font-weight="bold">3.2</text>
+</g>
+
+<!-- ═══ FASE 3.3 · BACIAS CARBONÍFERAS RUHR ═══ -->
+<g transform="translate(20,270)">
+  <rect x="0" y="0" width="160" height="160" fill="#141820" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#0c1018" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#303848"/>
+  <rect x="148" y="0" width="12" height="12" fill="#303848"/>
+  <rect x="0" y="148" width="12" height="12" fill="#303848"/>
+  <rect x="148" y="148" width="12" height="12" fill="#303848"/>
+  <rect x="2" y="2" width="8" height="8" fill="#505870"/>
+  <rect x="150" y="2" width="8" height="8" fill="#505870"/>
+  <rect x="2" y="150" width="8" height="8" fill="#505870"/>
+  <rect x="150" y="150" width="8" height="8" fill="#505870"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#303848" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#505870" stroke-width="1"/>
+  <!-- CÉU - industrial, cinzento -->
+  <rect x="11" y="11" width="138" height="55" fill="#1e2030"/>
+  <rect x="11" y="11" width="138" height="18" fill="#141820"/>
+  <!-- fumaça densa -->
+  <rect x="25" y="11" width="16" height="30" fill="#282838" opacity="0.8" rx="6"/>
+  <rect x="45" y="11" width="20" height="35" fill="#303040" opacity="0.7" rx="8"/>
+  <rect x="70" y="11" width="14" height="28" fill="#282838" opacity="0.8" rx="6"/>
+  <rect x="90" y="11" width="18" height="32" fill="#303040" opacity="0.6" rx="7"/>
+  <rect x="115" y="11" width="14" height="26" fill="#282838" opacity="0.7" rx="5"/>
+  <!-- CHAMINÉS das fábricas -->
+  <rect x="22" y="34" width="12" height="32" fill="#181820"/>
+  <rect x="20" y="32" width="16" height="5" fill="#202028"/>
+  <rect x="42" y="28" width="14" height="38" fill="#141418"/>
+  <rect x="40" y="26" width="18" height="5" fill="#1c1c22"/>
+  <rect x="66" y="32" width="12" height="34" fill="#181820"/>
+  <rect x="64" y="30" width="16" height="5" fill="#202028"/>
+  <rect x="86" y="26" width="16" height="40" fill="#141418"/>
+  <rect x="84" y="24" width="20" height="5" fill="#1c1c22"/>
+  <rect x="112" y="30" width="12" height="36" fill="#181820"/>
+  <rect x="110" y="28" width="16" height="5" fill="#202028"/>
+  <!-- FÁBRICAS industriais -->
+  <rect x="11" y="50" width="45" height="30" fill="#1e2028"/>
+  <rect x="13" y="48" width="41" height="5" fill="#282838"/>
+  <rect x="16" y="54" width="10" height="12" fill="#0e0e16"/>
+  <rect x="30" y="54" width="10" height="12" fill="#0e0e16"/>
+  <rect x="60" y="46" width="50" height="34" fill="#181820"/>
+  <rect x="62" y="44" width="46" height="5" fill="#222230"/>
+  <rect x="65" y="50" width="12" height="14" fill="#0a0a12"/>
+  <rect x="82" y="50" width="12" height="14" fill="#0a0a12"/>
+  <rect x="115" y="50" width="34" height="30" fill="#1e2028"/>
+  <!-- TORRE DE EXTRAÇÃO (headframe) grande -->
+  <polygon points="58,80 68,40 78,80" fill="#202828"/>
+  <rect x="58" y="76" width="20" height="4" fill="#283038"/>
+  <rect x="62" y="56" width="12" height="4" fill="#303840"/>
+  <circle cx="68" cy="50" r="9" fill="none" stroke="#303840" stroke-width="3"/>
+  <!-- CARVÃO e mina subterrânea -->
+  <rect x="11" y="80" width="138" height="44" fill="#0c0c10"/>
+  <!-- perfil da mina -->
+  <rect x="11" y="80" width="138" height="8" fill="#141418"/>
+  <!-- vagões de carvão na linha -->
+  <rect x="11" y="92" width="138" height="2" fill="#202028"/>
+  <rect x="11" y="98" width="138" height="2" fill="#202028"/>
+  <!-- vagão 1 -->
+  <rect x="18" y="84" width="28" height="14" fill="#1a1a20"/>
+  <rect x="20" y="82" width="24" height="4" fill="#222228"/>
+  <rect x="20" y="82" width="6" height="3" fill="#0a0a0a"/>
+  <rect x="29" y="80" width="8" height="4" fill="#0a0a0a"/>
+  <rect x="38" y="82" width="6" height="3" fill="#0a0a0a"/>
+  <rect x="18" y="98" width="8" height="4" fill="#2a2a30" rx="2"/>
+  <rect x="34" y="98" width="8" height="4" fill="#2a2a30" rx="2"/>
+  <!-- vagão 2 -->
+  <rect x="60" y="84" width="28" height="14" fill="#1a1a20"/>
+  <rect x="62" y="82" width="24" height="4" fill="#222228"/>
+  <rect x="60" y="98" width="8" height="4" fill="#2a2a30" rx="2"/>
+  <rect x="76" y="98" width="8" height="4" fill="#2a2a30" rx="2"/>
+  <!-- vagão 3 -->
+  <rect x="100" y="84" width="28" height="14" fill="#1a1a20"/>
+  <rect x="102" y="98" width="8" height="4" fill="#2a2a30" rx="2"/>
+  <rect x="118" y="98" width="8" height="4" fill="#2a2a30" rx="2"/>
+  <!-- MÁQUINA A VAPOR (detalhe) -->
+  <rect x="128" y="82" width="20" height="18" fill="#202028"/>
+  <rect x="130" y="80" width="16" height="5" fill="#282838"/>
+  <rect x="136" y="75" width="6" height="8" fill="#1a1a20"/>
+  <rect x="137" y="72" width="4" height="4" fill="#282838"/><!-- vapor -->
+  <rect x="135" y="69" width="4" height="4" fill="#303040" rx="2" opacity="0.7"/>
+  <!-- camadas geológicas visíveis -->
+  <rect x="11" y="112" width="138" height="6" fill="#1e2030"/>
+  <rect x="11" y="118" width="138" height="5" fill="#181828"/>
+  <rect x="11" y="123" width="138" height="5" fill="#1e2030"/>
+
+  <rect x="11" y="135" width="138" height="24" fill="#080810" opacity="0.95"/>
+  <rect x="11" y="135" width="138" height="2" fill="#505870"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#7080a0" font-weight="bold">BACIAS DO RUHR</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#505870">Alemanha · Rev. Industrial</text>
+  <text x="27" y="133" font-family="monospace" font-size="9" fill="#f0c020">★★★★</text>
+  <text x="95" y="133" font-family="monospace" font-size="9" fill="#141820">★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#2a3040" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#a0b0c0" font-weight="bold">3.3</text>
+</g>
+
+<!-- [BLOQUEADO] 3.3 -->
+<g transform="translate(200,270)">
+  <rect x="0" y="0" width="160" height="160" fill="#1c1c1c" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#161616" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#383838"/>
+  <rect x="148" y="0" width="12" height="12" fill="#383838"/>
+  <rect x="0" y="148" width="12" height="12" fill="#383838"/>
+  <rect x="148" y="148" width="12" height="12" fill="#383838"/>
+  <rect x="2" y="2" width="8" height="8" fill="#565656"/>
+  <rect x="150" y="2" width="8" height="8" fill="#565656"/>
+  <rect x="2" y="150" width="8" height="8" fill="#565656"/>
+  <rect x="150" y="150" width="8" height="8" fill="#565656"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#383838" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#464646" stroke-width="1"/>
+  <rect x="11" y="11" width="138" height="55" fill="#1a1a1a"/>
+  <rect x="22" y="34" width="12" height="32" fill="#141414"/>
+  <rect x="42" y="28" width="14" height="38" fill="#121212"/>
+  <rect x="66" y="32" width="12" height="34" fill="#141414"/>
+  <rect x="86" y="26" width="16" height="40" fill="#121212"/>
+  <rect x="11" y="50" width="45" height="30" fill="#181818"/>
+  <rect x="60" y="46" width="50" height="34" fill="#141414"/>
+  <polygon points="58,80 68,40 78,80" fill="#1c1c1c"/>
+  <circle cx="68" cy="50" r="9" fill="none" stroke="#282828" stroke-width="3"/>
+  <rect x="11" y="80" width="138" height="44" fill="#0e0e0e"/>
+  <rect x="62" y="88" width="36" height="28" fill="#383838" rx="4"/>
+  <rect x="69" y="79" width="22" height="16" fill="none" stroke="#383838" stroke-width="5" rx="11"/>
+  <rect x="78" y="97" width="6" height="10" fill="#242424"/>
+  <rect x="11" y="135" width="138" height="24" fill="#0a0a0a" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#383838"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#5a5a5a" font-weight="bold">BACIAS DO RUHR</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#404040">Alemanha · Rev. Industrial</text>
+  <text x="60" y="133" font-family="monospace" font-size="9" fill="#323232">★★★★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#383838" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#767676" font-weight="bold">3.3</text>
+</g>
+
+<!-- ══ SEÇÃO ÁFRICA ══ -->
+<text x="20" y="456" font-family="monospace" font-size="11" fill="#d4a030">▸ ÁFRICA</text>
+<line x1="20" y1="460" x2="700" y2="460" stroke="#4a3820" stroke-width="1"/>
+
+<!-- ═══ FASE 4.1 · DIAMANTES DO KALAHARI ═══ -->
+<g transform="translate(20,467)">
+  <rect x="0" y="0" width="160" height="160" fill="#2a1808" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#201404" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#6080a0"/>
+  <rect x="148" y="0" width="12" height="12" fill="#6080a0"/>
+  <rect x="0" y="148" width="12" height="12" fill="#6080a0"/>
+  <rect x="148" y="148" width="12" height="12" fill="#6080a0"/>
+  <rect x="2" y="2" width="8" height="8" fill="#90b8d8"/>
+  <rect x="150" y="2" width="8" height="8" fill="#90b8d8"/>
+  <rect x="2" y="150" width="8" height="8" fill="#90b8d8"/>
+  <rect x="150" y="150" width="8" height="8" fill="#90b8d8"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#6080a0" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#90b8d8" stroke-width="1"/>
+  <!-- CÉU KALAHARI - azul intenso, seco -->
+  <rect x="11" y="11" width="138" height="52" fill="#3870c0"/>
+  <rect x="11" y="11" width="138" height="18" fill="#2860b0"/>
+  <!-- poucas nuvens -->
+  <rect x="50" y="20" width="30" height="12" fill="#d0e0f0" rx="6"/>
+  <rect x="110" y="25" width="22" height="10" fill="#d8e8f8" rx="5"/>
+  <!-- ÁRVORE ACÁCIA (savana/kalahari) -->
+  <rect x="14" y="40" width="5" height="25" fill="#5a3820"/><!-- tronco -->
+  <!-- copa espalhada acácia -->
+  <rect x="8" y="32" width="22" height="10" fill="#3a6020" rx="5"/>
+  <rect x="5" y="35" width="12" height="8" fill="#3a6020" rx="4"/>
+  <rect x="18" y="34" width="16" height="8" fill="#3a6020" rx="4"/>
+  <!-- acácia direita -->
+  <rect x="128" y="42" width="5" height="22" fill="#5a3820"/>
+  <rect x="121" y="34" width="22" height="10" fill="#3a6020" rx="5"/>
+  <rect x="118" y="37" width="12" height="7" fill="#3a6020" rx="4"/>
+
+  <!-- SOLO KALAHARI - laranja/ocre -->
+  <rect x="11" y="63" width="138" height="61" fill="#b05820"/>
+  <rect x="11" y="63" width="138" height="15" fill="#c06828"/>
+  <rect x="11" y="63" width="138" height="6" fill="#d07830"/>
+  <!-- rachaduras no solo seco -->
+  <rect x="20" y="70" width="30" height="2" fill="#903808" opacity="0.5"/>
+  <rect x="60" y="68" width="25" height="2" fill="#903808" opacity="0.4"/>
+  <rect x="95" y="72" width="35" height="2" fill="#903808" opacity="0.5"/>
+  <rect x="130" y="69" width="18" height="2" fill="#903808" opacity="0.4"/>
+  <rect x="15" y="78" width="2" height="20" fill="#903808" opacity="0.4"/>
+  <rect x="45" y="75" width="2" height="25" fill="#903808" opacity="0.3"/>
+  <rect x="100" y="77" width="2" height="18" fill="#903808" opacity="0.4"/>
+
+  <!-- CRATERA KIMBERLITO -->
+  <rect x="35" y="72" width="90" height="52" fill="#6a3010" rx="3"/>
+  <rect x="38" y="75" width="84" height="46" fill="#5a2808" rx="2"/>
+  <!-- profundidade da cratera -->
+  <rect x="42" y="80" width="76" height="38" fill="#401808"/>
+  <rect x="46" y="85" width="68" height="30" fill="#301008"/>
+  <!-- ROCHA KIMBERLITO escura -->
+  <rect x="50" y="90" width="20" height="16" fill="#2a1010" rx="2"/>
+  <rect x="74" y="88" width="24" height="18" fill="#201010" rx="2"/>
+  <rect x="100" y="90" width="18" height="16" fill="#2a1010" rx="2"/>
+
+  <!-- DIAMANTES brutos brilhando! -->
+  <rect x="55" y="96" width="8" height="8" fill="#d0e8f8" rx="1"/>
+  <rect x="57" y="94" width="4" height="4" fill="#e8f4fc" opacity="0.9"/>
+  <rect x="58" y="96" width="2" height="2" fill="#ffffff"/>
+  <rect x="79" y="94" width="8" height="8" fill="#d8ecfc" rx="1"/>
+  <rect x="81" y="92" width="4" height="4" fill="#ecf6ff" opacity="0.9"/>
+  <rect x="82" y="94" width="2" height="2" fill="#ffffff"/>
+  <rect x="93" y="97" width="6" height="6" fill="#d0e8f8" rx="1"/>
+  <rect x="95" y="95" width="3" height="3" fill="#ffffff"/>
+  <rect x="106" y="95" width="8" height="8" fill="#d8ecfc" rx="1"/>
+  <rect x="108" y="93" width="4" height="4" fill="#ecf6ff" opacity="0.9"/>
+  <!-- GRANADA (gema vermelha associada) -->
+  <rect x="70" y="98" width="6" height="6" fill="#a02020" rx="1"/>
+  <rect x="72" y="96" width="2" height="2" fill="#e04040" opacity="0.8"/>
+  <rect x="118" y="96" width="6" height="6" fill="#a02020" rx="1"/>
+
+  <rect x="11" y="135" width="138" height="24" fill="#100804" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#90b8d8"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#b0d8f8" font-weight="bold">DIAMANTES DO KALAHARI</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#7090b0">Botswana · Kimberlito</text>
+  <text x="27" y="133" font-family="monospace" font-size="9" fill="#f0c020">★★★★</text>
+  <text x="95" y="133" font-family="monospace" font-size="9" fill="#2a1808">★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#305080" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#ffffff" font-weight="bold">4.1</text>
+</g>
+
+<!-- [BLOQUEADO] 4.1 -->
+<g transform="translate(200,467)">
+  <rect x="0" y="0" width="160" height="160" fill="#202020" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#181818" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#404040"/>
+  <rect x="148" y="0" width="12" height="12" fill="#404040"/>
+  <rect x="0" y="148" width="12" height="12" fill="#404040"/>
+  <rect x="148" y="148" width="12" height="12" fill="#404040"/>
+  <rect x="2" y="2" width="8" height="8" fill="#606060"/>
+  <rect x="150" y="2" width="8" height="8" fill="#606060"/>
+  <rect x="2" y="150" width="8" height="8" fill="#606060"/>
+  <rect x="150" y="150" width="8" height="8" fill="#606060"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#404040" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#505050" stroke-width="1"/>
+  <rect x="11" y="11" width="138" height="52" fill="#242424"/>
+  <rect x="14" y="40" width="5" height="25" fill="#2a2a2a"/>
+  <rect x="8" y="32" width="22" height="10" fill="#2d2d2d" rx="5"/>
+  <rect x="128" y="42" width="5" height="22" fill="#2a2a2a"/>
+  <rect x="121" y="34" width="22" height="10" fill="#2d2d2d" rx="5"/>
+  <rect x="11" y="63" width="138" height="61" fill="#272727"/>
+  <rect x="35" y="72" width="90" height="52" fill="#1e1e1e" rx="3"/>
+  <rect x="42" y="80" width="76" height="38" fill="#181818"/>
+  <rect x="62" y="88" width="36" height="28" fill="#424242" rx="4"/>
+  <rect x="69" y="79" width="22" height="16" fill="none" stroke="#424242" stroke-width="5" rx="11"/>
+  <rect x="78" y="97" width="6" height="10" fill="#2a2a2a"/>
+  <rect x="11" y="135" width="138" height="24" fill="#0e0e0e" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#404040"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#636363" font-weight="bold">DIAMANTES DO KALAHARI</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#484848">Botswana · Kimberlito</text>
+  <text x="60" y="133" font-family="monospace" font-size="9" fill="#383838">★★★★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#404040" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#888888" font-weight="bold">4.1</text>
+</g>
+
+<!-- ═══ FASE 4.2 · OURO DOS FARAÓS ═══ -->
+<g transform="translate(380,467)">
+  <rect x="0" y="0" width="160" height="160" fill="#201808" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#181204" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#c09020"/>
+  <rect x="148" y="0" width="12" height="12" fill="#c09020"/>
+  <rect x="0" y="148" width="12" height="12" fill="#c09020"/>
+  <rect x="148" y="148" width="12" height="12" fill="#c09020"/>
+  <rect x="2" y="2" width="8" height="8" fill="#f0c030"/>
+  <rect x="150" y="2" width="8" height="8" fill="#f0c030"/>
+  <rect x="2" y="150" width="8" height="8" fill="#f0c030"/>
+  <rect x="150" y="150" width="8" height="8" fill="#f0c030"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#c09020" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#f0c030" stroke-width="1"/>
+  <!-- CÉU EGÍPCIO - laranja/dorado -->
+  <rect x="11" y="11" width="138" height="56" fill="#d06828"/>
+  <rect x="11" y="11" width="138" height="20" fill="#b84e18"/>
+  <rect x="11" y="28" width="138" height="18" fill="#d87830"/>
+  <rect x="11" y="44" width="138" height="16" fill="#e89038"/>
+  <!-- sol egípcio grande -->
+  <rect x="60" y="14" width="22" height="22" fill="#f8b820" rx="11"/>
+  <rect x="69" y="8" width="4" height="8" fill="#f8b820"/>
+  <rect x="69" y="36" width="4" height="8" fill="#f8b820"/>
+  <rect x="54" y="23" width="8" height="4" fill="#f8b820"/>
+  <rect x="80" y="23" width="8" height="4" fill="#f8b820"/>
+  <!-- raios diagonais sol -->
+  <rect x="57" y="17" width="6" height="4" fill="#f8b820" opacity="0.7"/>
+  <rect x="79" y="17" width="6" height="4" fill="#f8b820" opacity="0.7"/>
+  <!-- PALMEIRAS EGÍPCIAS -->
+  <rect x="14" y="45" width="6" height="20" fill="#5a4020"/>
+  <rect x="8" y="38" width="18" height="10" fill="#2a6020" rx="4"/>
+  <rect x="5" y="40" width="10" height="6" fill="#2a6020" rx="3"/>
+  <rect x="16" y="36" width="10" height="8" fill="#346828" rx="4"/>
+  <rect x="130" y="47" width="6" height="18" fill="#5a4020"/>
+  <rect x="124" y="40" width="18" height="10" fill="#2a6020" rx="4"/>
+  <rect x="122" y="43" width="10" height="6" fill="#2a6020" rx="3"/>
+
+  <!-- RIO NILO -->
+  <rect x="11" y="67" width="138" height="12" fill="#2060a8"/>
+  <rect x="11" y="69" width="138" height="8" fill="#2870b8"/>
+  <!-- margem -->
+  <rect x="11" y="67" width="18" height="12" fill="#70a030"/><!-- vegetação margem -->
+  <rect x="131" y="67" width="18" height="12" fill="#70a030"/>
+
+  <!-- DESERTO DOURADO -->
+  <rect x="11" y="79" width="138" height="45" fill="#c87828"/>
+  <rect x="11" y="79" width="138" height="10" fill="#d88830"/>
+  <!-- dunas -->
+  <rect x="11" y="84" width="50" height="10" fill="#e09838" rx="5"/>
+  <rect x="50" y="82" width="60" height="12" fill="#d88830" rx="6"/>
+  <rect x="100" y="85" width="49" height="9" fill="#e09838" rx="5"/>
+
+  <!-- PIRÂMIDES (icônico) -->
+  <polygon points="30,79 55,50 80,79" fill="#c88828"/>
+  <polygon points="32,79 55,52 78,79" fill="#d89838"/>
+  <!-- sombra pirâmide -->
+  <polygon points="55,79 80,79 80,75" fill="#a87020"/>
+  <!-- pirâmide menor fundo -->
+  <polygon points="90,79 110,60 130,79" fill="#c08020" opacity="0.8"/>
+  <polygon points="92,79 110,62 128,79" fill="#d09030" opacity="0.8"/>
+  <!-- efeito pedras pirâmide -->
+  <rect x="33" y="72" width="44" height="2" fill="#b87818" opacity="0.5"/>
+  <rect x="36" y="67" width="38" height="2" fill="#b87818" opacity="0.4"/>
+  <rect x="40" y="62" width="30" height="2" fill="#b87818" opacity="0.3"/>
+
+  <!-- ENTRADA MINA - cova dourada -->
+  <rect x="58" y="90" width="44" height="28" fill="#7a4818" rx="2"/>
+  <rect x="61" y="87" width="38" height="8" fill="#9a5820"/>
+  <!-- abertura -->
+  <rect x="63" y="91" width="34" height="24" fill="#180e04"/>
+  <!-- HIERÓGLIFOS nas paredes -->
+  <rect x="62" y="93" width="4" height="4" fill="#d09020" opacity="0.6"/>
+  <rect x="62" y="99" width="4" height="3" fill="#d09020" opacity="0.5"/>
+  <rect x="94" y="93" width="4" height="4" fill="#d09020" opacity="0.6"/>
+  <rect x="94" y="99" width="4" height="3" fill="#d09020" opacity="0.5"/>
+  <!-- OURO em pilha -->
+  <rect x="68" y="104" width="24" height="8" fill="#f0c020"/>
+  <rect x="70" y="100" width="20" height="6" fill="#f8d030"/>
+  <rect x="72" y="97" width="16" height="5" fill="#ffe040"/>
+  <!-- brilho ouro -->
+  <rect x="78" y="96" width="4" height="2" fill="#ffffff" opacity="0.6"/>
+  <!-- jarra canopo -->
+  <rect x="112" y="99" width="12" height="14" fill="#c08040" rx="3"/>
+  <rect x="114" y="96" width="8" height="6" fill="#d09050" rx="2"/>
+  <rect x="116" y="94" width="4" height="4" fill="#b07030" rx="2"/>
+  <rect x="20" y="100" width="10" height="12" fill="#c08040" rx="2"/>
+  <rect x="22" y="98" width="6" height="4" fill="#d09050" rx="2"/>
+
+  <rect x="11" y="135" width="138" height="24" fill="#0c0804" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#f0c030"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#f8d040" font-weight="bold">OURO DOS FARAÓS</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#c09020">Deserto Oriental · Egito</text>
+  <text x="17" y="133" font-family="monospace" font-size="9" fill="#f0c020">★★★★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#9a7010" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#ffffff" font-weight="bold">4.2</text>
+</g>
+
+<!-- [BLOQUEADO] 4.2 -->
+<g transform="translate(560,467)">
+  <rect x="0" y="0" width="160" height="160" fill="#202020" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#181818" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#424242"/>
+  <rect x="148" y="0" width="12" height="12" fill="#424242"/>
+  <rect x="0" y="148" width="12" height="12" fill="#424242"/>
+  <rect x="148" y="148" width="12" height="12" fill="#424242"/>
+  <rect x="2" y="2" width="8" height="8" fill="#626262"/>
+  <rect x="150" y="2" width="8" height="8" fill="#626262"/>
+  <rect x="2" y="150" width="8" height="8" fill="#626262"/>
+  <rect x="150" y="150" width="8" height="8" fill="#626262"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#424242" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#525252" stroke-width="1"/>
+  <rect x="11" y="11" width="138" height="56" fill="#262626"/>
+  <rect x="14" y="45" width="6" height="20" fill="#282828"/>
+  <rect x="8" y="38" width="18" height="10" fill="#2a2a2a" rx="4"/>
+  <rect x="130" y="47" width="6" height="18" fill="#282828"/>
+  <rect x="11" y="67" width="138" height="12" fill="#202020"/>
+  <rect x="11" y="79" width="138" height="45" fill="#2a2a2a"/>
+  <polygon points="30,79 55,50 80,79" fill="#282828"/>
+  <polygon points="90,79 110,60 130,79" fill="#222222"/>
+  <rect x="58" y="90" width="44" height="28" fill="#1c1c1c" rx="2"/>
+  <rect x="63" y="91" width="34" height="24" fill="#101010"/>
+  <rect x="62" y="88" width="36" height="28" fill="#424242" rx="4"/>
+  <rect x="69" y="79" width="22" height="16" fill="none" stroke="#424242" stroke-width="5" rx="11"/>
+  <rect x="78" y="97" width="6" height="10" fill="#2c2c2c"/>
+  <rect x="11" y="135" width="138" height="24" fill="#0e0e0e" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#424242"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#686868" font-weight="bold">OURO DOS FARAÓS</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#4c4c4c">Deserto Oriental · Egito</text>
+  <text x="60" y="133" font-family="monospace" font-size="9" fill="#3c3c3c">★★★★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#424242" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#888888" font-weight="bold">4.2</text>
+</g>
+
+<!-- ═══ FASE 4.3 · MINAS DE COBRE DO CONGO ═══ -->
+<g transform="translate(20,652)">
+  <rect x="0" y="0" width="160" height="160" fill="#0e2010" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#081808" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#b06020"/>
+  <rect x="148" y="0" width="12" height="12" fill="#b06020"/>
+  <rect x="0" y="148" width="12" height="12" fill="#b06020"/>
+  <rect x="148" y="148" width="12" height="12" fill="#b06020"/>
+  <rect x="2" y="2" width="8" height="8" fill="#e08030"/>
+  <rect x="150" y="2" width="8" height="8" fill="#e08030"/>
+  <rect x="2" y="150" width="8" height="8" fill="#e08030"/>
+  <rect x="150" y="150" width="8" height="8" fill="#e08030"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#b06020" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#e08030" stroke-width="1"/>
+  <!-- CÉU CONGO - verde-azulado tropical -->
+  <rect x="11" y="11" width="138" height="45" fill="#1e4828"/>
+  <rect x="11" y="11" width="138" height="16" fill="#143818"/>
+  <!-- nuvens tropicais -->
+  <rect x="20" y="18" width="28" height="10" fill="#304838" opacity="0.7" rx="5"/>
+  <rect x="60" y="15" width="35" height="12" fill="#2a4030" opacity="0.6" rx="6"/>
+  <rect x="108" y="20" width="26" height="9" fill="#304838" opacity="0.7" rx="4"/>
+  <!-- FLORESTA DENSA CONGO -->
+  <rect x="11" y="40" width="138" height="30" fill="#1a3810"/>
+  <!-- árvores tropicais diversas -->
+  <rect x="11" y="36" width="22" height="22" fill="#224818" rx="5"/>
+  <rect x="30" y="30" width="26" height="28" fill="#285820" rx="7"/>
+  <rect x="52" y="35" width="22" height="23" fill="#224818" rx="5"/>
+  <rect x="70" y="28" width="28" height="30" fill="#306028" rx="8"/>
+  <rect x="94" y="33" width="24" height="25" fill="#224818" rx="6"/>
+  <rect x="114" y="30" width="26" height="28" fill="#285820" rx="7"/>
+  <rect x="135" y="36" width="14" height="22" fill="#224818" rx="5"/>
+  <!-- troncos -->
+  <rect x="20" y="58" width="6" height="12" fill="#2a1808"/>
+  <rect x="40" y="56" width="6" height="14" fill="#2a1808"/>
+  <rect x="57" y="57" width="6" height="13" fill="#2a1808"/>
+  <rect x="82" y="56" width="7" height="14" fill="#2a1808"/>
+  <rect x="104" y="57" width="6" height="13" fill="#2a1808"/>
+  <rect x="125" y="56" width="6" height="14" fill="#2a1808"/>
+
+  <!-- MINA A CÉU ABERTO (pit mine) -->
+  <rect x="11" y="70" width="138" height="54" fill="#7a4818"/>
+  <rect x="11" y="70" width="138" height="10" fill="#8a5820"/>
+  <!-- camadas geológicas da mina -->
+  <rect x="11" y="80" width="138" height="8" fill="#7a4010"/>
+  <rect x="11" y="88" width="138" height="8" fill="#6a3808"/>
+  <rect x="11" y="96" width="138" height="8" fill="#5a3010"/>
+  <!-- veios de cobre laranja -->
+  <rect x="15" y="82" width="25" height="3" fill="#c06820" opacity="0.8"/>
+  <rect x="50" y="80" width="30" height="3" fill="#d07830" opacity="0.9"/>
+  <rect x="90" y="82" width="20" height="3" fill="#c06820" opacity="0.8"/>
+  <rect x="120" y="80" width="22" height="3" fill="#d07830" opacity="0.9"/>
+  <rect x="20" y="90" width="20" height="3" fill="#b85c18" opacity="0.7"/>
+  <rect x="55" y="88" width="35" height="3" fill="#c87030" opacity="0.8"/>
+  <rect x="100" y="90" width="28" height="3" fill="#b85c18" opacity="0.7"/>
+  <!-- COBRE BRUTO em pedaços -->
+  <rect x="18" y="100" width="16" height="10" fill="#c07020" rx="2"/>
+  <rect x="20" y="98" width="10" height="4" fill="#e08030"/>
+  <rect x="48" y="102" width="14" height="8" fill="#c07020" rx="2"/>
+  <rect x="80" y="100" width="18" height="10" fill="#c07020" rx="2"/>
+  <rect x="82" y="98" width="12" height="4" fill="#e08030"/>
+  <rect x="120" y="102" width="14" height="8" fill="#c07020" rx="2"/>
+  <!-- ESCAVADEIRA (mina moderna) -->
+  <rect x="58" y="72" width="45" height="18" fill="#505028"/><!-- corpo máquina -->
+  <rect x="60" y="70" width="41" height="5" fill="#606030"/>
+  <rect x="95" y="65" width="20" height="30" fill="#484820"/><!-- braço -->
+  <rect x="112" y="78" width="18" height="12" fill="#404018"/><!-- caçamba -->
+  <rect x="58" y="90" width="10" height="6" fill="#303018" rx="2"/><!-- roda lag -->
+  <rect x="90" y="90" width="10" height="6" fill="#303018" rx="2"/>
+
+  <rect x="11" y="135" width="138" height="24" fill="#050c04" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#e08030"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#f09040" font-weight="bold">MINAS DO CONGO</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#b06020">Cinturão de Cobre · RDC</text>
+  <text x="27" y="133" font-family="monospace" font-size="9" fill="#f0c020">★★★</text>
+  <text x="79" y="133" font-family="monospace" font-size="9" fill="#0e2010">★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#8a4010" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#ffffff" font-weight="bold">4.3</text>
+</g>
+
+<!-- [BLOQUEADO] 4.3 -->
+<g transform="translate(200,652)">
+  <rect x="0" y="0" width="160" height="160" fill="#1e1e1e" rx="4"/>
+  <rect x="3" y="3" width="154" height="154" fill="#181818" rx="3"/>
+  <rect x="0" y="0" width="12" height="12" fill="#404040"/>
+  <rect x="148" y="0" width="12" height="12" fill="#404040"/>
+  <rect x="0" y="148" width="12" height="12" fill="#404040"/>
+  <rect x="148" y="148" width="12" height="12" fill="#404040"/>
+  <rect x="2" y="2" width="8" height="8" fill="#606060"/>
+  <rect x="150" y="2" width="8" height="8" fill="#606060"/>
+  <rect x="2" y="150" width="8" height="8" fill="#606060"/>
+  <rect x="150" y="150" width="8" height="8" fill="#606060"/>
+  <rect x="8" y="8" width="144" height="144" fill="none" stroke="#404040" stroke-width="2"/>
+  <rect x="10" y="10" width="140" height="140" fill="none" stroke="#505050" stroke-width="1"/>
+  <rect x="11" y="11" width="138" height="45" fill="#232323"/>
+  <rect x="11" y="40" width="138" height="30" fill="#1e1e1e"/>
+  <rect x="11" y="36" width="22" height="22" fill="#252525" rx="5"/>
+  <rect x="30" y="30" width="26" height="28" fill="#272727" rx="7"/>
+  <rect x="70" y="28" width="28" height="30" fill="#2a2a2a" rx="8"/>
+  <rect x="114" y="30" width="26" height="28" fill="#272727" rx="7"/>
+  <rect x="11" y="70" width="138" height="54" fill="#252525"/>
+  <rect x="58" y="72" width="45" height="18" fill="#2a2a2a"/>
+  <rect x="18" y="100" width="16" height="10" fill="#2d2d2d" rx="2"/>
+  <rect x="80" y="100" width="18" height="10" fill="#2d2d2d" rx="2"/>
+  <rect x="62" y="88" width="36" height="28" fill="#424242" rx="4"/>
+  <rect x="69" y="79" width="22" height="16" fill="none" stroke="#424242" stroke-width="5" rx="11"/>
+  <rect x="78" y="97" width="6" height="10" fill="#2c2c2c"/>
+  <rect x="11" y="135" width="138" height="24" fill="#0e0e0e" opacity="0.9"/>
+  <rect x="11" y="135" width="138" height="2" fill="#404040"/>
+  <text x="80" y="148" text-anchor="middle" font-family="monospace" font-size="7" fill="#656565" font-weight="bold">MINAS DO CONGO</text>
+  <text x="80" y="157" text-anchor="middle" font-family="monospace" font-size="6" fill="#484848">Cinturão de Cobre · RDC</text>
+  <text x="60" y="133" font-family="monospace" font-size="9" fill="#383838">★★★★★</text>
+  <rect x="11" y="11" width="30" height="12" fill="#404040" rx="2"/>
+  <text x="26" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#888888" font-weight="bold">4.3</text>
+</g>
+
+</svg>
