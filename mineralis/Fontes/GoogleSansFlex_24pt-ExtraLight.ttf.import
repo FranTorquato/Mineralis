@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cqu50xell28li"
-path="res://.godot/imported/Silkscreen-Bold.ttf-a56c231b4fec8b3fcef39bd539a457a2.fontdata"
+uid="uid://dc14e50iqalt3"
+path="res://.godot/imported/GoogleSansFlex_24pt-ExtraLight.ttf-b0470cb3cc2c30fb0a8f9f045cdb18bb.fontdata"
 
 [deps]
 
-source_file="res://Fontes/Silkscreen-Bold.ttf"
-dest_files=["res://.godot/imported/Silkscreen-Bold.ttf-a56c231b4fec8b3fcef39bd539a457a2.fontdata"]
+source_file="res://Fontes/GoogleSansFlex_24pt-ExtraLight.ttf"
+dest_files=["res://.godot/imported/GoogleSansFlex_24pt-ExtraLight.ttf-b0470cb3cc2c30fb0a8f9f045cdb18bb.fontdata"]
 
 [params]
 

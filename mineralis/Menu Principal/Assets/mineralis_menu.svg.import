@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cykrlomrly5wi"
-path="res://.godot/imported/mapa_menu_principal.svg-7a0878b0a8f586e2da765e841ae1c9e8.ctex"
+uid="uid://b6vewr3usuiet"
+path="res://.godot/imported/mineralis_menu.svg-d509f8e31a6e1a4469b91a12f6142423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu Principal/Assets/mapa_menu_principal.svg"
-dest_files=["res://.godot/imported/mapa_menu_principal.svg-7a0878b0a8f586e2da765e841ae1c9e8.ctex"]
+source_file="res://Menu Principal/Assets/mineralis_menu.svg"
+dest_files=["res://.godot/imported/mineralis_menu.svg-d509f8e31a6e1a4469b91a12f6142423.ctex"]
 
 [params]
 

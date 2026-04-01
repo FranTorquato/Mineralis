@@ -15,7 +15,6 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
-SaveManager="*uid://dsxiqdadoyfmk"
 ProgressManager="*uid://b8sj0sllmrblg"
 
 [display]
