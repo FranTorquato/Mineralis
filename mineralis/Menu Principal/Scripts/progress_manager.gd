@@ -1,13 +1,4 @@
 extends Node
-# ──────────────────────────────────────────────────────────────
-# progress_manager.gd
-# Salve em: res://Menu Principal/Scripts/progress_manager.gd
-#
-# Adicione como Autoload:
-#   Project > Project Settings > Globals > Autoload
-#   Nome:   ProgressManager
-#   Caminho: res://Menu Principal/Scripts/progress_manager.gd
-# ──────────────────────────────────────────────────────────────
 
 const SAVE_PATH    = "user://mineralis_save.json"
 const SAVE_VERSION = "1.1"
@@ -40,13 +31,14 @@ var _unlocked : Dictionary = {}
 
 signal phase_unlocked(phase_id: String)
 
-# ── Lifecycle ─────────────────────────────────────────────────
 
 func _ready() -> void:
+	reset()
 	_load()
+	
+	# Se mesmo assim não abrir, descomente a linha abaixo por UM SEGUNDO, rode o jogo e apague ela:
+	# reset()
 
-
-# ── API pública ───────────────────────────────────────────────
 
 ## Retorna true se a fase está desbloqueada
 func is_unlocked(phase_id: String) -> bool:
@@ -79,7 +71,6 @@ func reset() -> void:
 		DirAccess.remove_absolute(SAVE_PATH)
 
 
-# ── Save / Load ───────────────────────────────────────────────
 
 func _save() -> void:
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -92,27 +83,22 @@ func _save() -> void:
 
 
 func _load() -> void:
-	# Garante fases iniciais
+	# 1. Primeiro, tentamos carregar o que existe no arquivo
+	if FileAccess.file_exists(SAVE_PATH):
+		var f := FileAccess.open(SAVE_PATH, FileAccess.READ)
+		if f:
+			var json := JSON.new()
+			if json.parse(f.get_as_text()) == OK:
+				var data = json.get_data()
+				var key := "unlocked" if data.has("unlocked") else "unlocked_phases"
+				if data.has(key):
+					_unlocked = data[key]
+			f.close()
+
+	# 2. Forçamos o desbloqueio das fases iniciais 
+	# DEPOIS de carregar o save. Isso garante que a 1_1 sempre esteja aberta.
 	for pid in STARTING_PHASES:
 		_unlocked[pid] = true
-
-	if not FileAccess.file_exists(SAVE_PATH):
-		return
-
-	var f := FileAccess.open(SAVE_PATH, FileAccess.READ)
-	if not f:
-		return
-
-	var txt  := f.get_as_text()
-	f.close()
-
-	var json := JSON.new()
-	if json.parse(txt) != OK:
-		push_warning("ProgressManager: save corrompido, ignorando.")
-		return
-
-	var data = json.get_data()
-	# Suporte ao formato antigo ("unlocked_phases") e novo ("unlocked")
-	var key := "unlocked" if data.has("unlocked") else "unlocked_phases"
-	if data.has(key):
-		_unlocked.merge(data[key], true)
+	
+	# Salva de volta para corrigir o arquivo se necessário
+	_save()

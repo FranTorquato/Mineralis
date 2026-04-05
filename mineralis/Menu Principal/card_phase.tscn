@@ -105,13 +105,14 @@ scale_max = 1.1999999
 color_ramp = SubResource("GradientTexture1D_3bv0v")
 
 [node name="CardPhase" type="Control" unique_id=1166536511]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(140, 140)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 110.0
 offset_bottom = 121.0
 pivot_offset = Vector2(80, 80)
 script = ExtResource("1_otf7b")
+metadata/_edit_horizontal_guides_ = [-18.0]
 
 [node name="CardButton" type="TextureButton" parent="." unique_id=1867375956]
 self_modulate = Color(1, 1, 1, 0.53333336)
@@ -147,23 +148,10 @@ self_modulate = Color(1, 1, 1, 0.627451)
 position = Vector2(34, 33)
 scale = Vector2(0.8, 0.8)
 texture = SubResource("CompressedTexture2D_t1m7x")
-offset = Vector2(20, 25)
+offset = Vector2(25, 35)
 hframes = 4
 region_enabled = true
 region_rect = Rect2(9.688507, 30.243935, 441.57263, 117.12801)
-
-[node name="GrayOverlay" type="ColorRect" parent="." unique_id=976712630]
-visible = false
-modulate = Color(0.78431374, 0.78431374, 0.78431374, 0.5019608)
-self_modulate = Color(1, 1, 1, 0.6745098)
-custom_minimum_size = Vector2(160, 160)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="AnimPlayer" type="AnimationPlayer" parent="." unique_id=1689121258]
 libraries/ = SubResource("AnimationLibrary_3bv0v")
@@ -178,3 +166,20 @@ lifetime = 0.8
 one_shot = true
 explosiveness = 0.92
 process_material = SubResource("ParticleProcessMaterial_35g52")
+
+[node name="GrayOverlay" type="ColorRect" parent="." unique_id=976712630]
+visible = false
+modulate = Color(0.78431374, 0.78431374, 0.78431374, 0.5019608)
+self_modulate = Color(1, 1, 1, 0.6745098)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -19.5
+offset_right = 25.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

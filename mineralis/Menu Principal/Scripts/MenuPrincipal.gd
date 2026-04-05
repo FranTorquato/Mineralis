@@ -56,43 +56,24 @@ func _ready() -> void:
 		if phase_texture:
 			card_img.texture = phase_texture
 			
-		var sm := ShaderMaterial.new()
-		# Verifique se este caminho do shader está correto no seu projeto!
-		var shader_path = "res://Menu Principal/Shaders/gray_card.gdshader"
-		if FileAccess.file_exists(shader_path):
-			sm.shader = load(shader_path)
-			card_img.material = sm
-			_mat = sm
-		
-		if not card_btn.pressed.is_connected(_on_pressed):
-			card_btn.pressed.connect(_on_pressed)
-		
-		var unlocked := starts_unlocked
-		if not unlocked and Engine.has_singleton("ProgressManager"):
-			unlocked = ProgressManager.get_singleton().is_unlocked(phase_id)
-		
-		is_unlocked = unlocked
-		_apply_visual(false)
-
-# ─────────────────────────────────────────────────
-# Lógica de Animação do Menu
-# ─────────────────────────────────────────────────
 func _on_titulo_pressed() -> void:
-	if is_animating: return
-	
 	if titulo_btn and menu_opcoes:
-		is_animating = true
-		var tw = create_tween().set_parallel(true).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+		# Desativa o clique para não bugar se o jogador clicar rápido demais
+		titulo_btn.disabled = true
 		
-		# Título aumenta levemente e some (efeito "Mineralis")
-		tw.tween_property(titulo_btn, "scale", Vector2(1.1, 1.1), 0.3)
-		tw.tween_property(titulo_btn, "modulate:a", 0.0, 0.3)
+		# Cria o Tween para sumir os dois juntos
+		var tw = create_tween().set_parallel(true)
 		
-		# Quando terminar de sumir, chama os botões
+		# 1. Faz o Título (e o Corvan junto) crescer um pouco (efeito de zoom)
+		tw.tween_property(titulo_btn, "scale", Vector2(1.1, 1.1), 0.25).set_trans(Tween.TRANS_QUAD)
+		
+		# 2. Faz a transparência ir para zero (os dois somem juntos aqui)
+		tw.tween_property(titulo_btn, "modulate:a", 0.0, 0.25)
+		
+		# 3. Quando a animação acabar, esconde de vez e mostra o menu rústico
 		tw.set_parallel(false)
 		tw.tween_callback(func(): 
 			titulo_btn.visible = false
-			is_animating = false
 			_show_rustic_menu()
 		)
 
